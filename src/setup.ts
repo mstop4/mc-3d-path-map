@@ -5,14 +5,16 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-const camX = -50;
+const camX = -100;
 const camY = 100;
-const camZ = -50;
+const camZ = -100;
 
 export type AnimateParams = {
   scene: THREE.Scene,
   camera: THREE.PerspectiveCamera,
+  cameraControls: OrbitControls,
   renderer: THREE.WebGLRenderer,
 }
 
@@ -22,6 +24,8 @@ export type PathData = {
 }
 
 export type RoomData = {
+  label: string,
+  displayLabel: boolean,
   type: string,
   corners: number[][],
 }
@@ -53,11 +57,13 @@ export function createRoom(roomData: RoomData, material: THREE.MeshBasicMaterial
 
 export function setupScene(): AnimateParams {
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
+  const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
   const renderer = new THREE.WebGLRenderer();
+  
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild( renderer.domElement );
+
+  const cameraControls = new OrbitControls(camera, renderer.domElement);
 
   // cube
   const cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
@@ -78,10 +84,12 @@ export function setupScene(): AnimateParams {
 
   camera.position.set(camX, camY, camZ);
   camera.lookAt(camX + 1, camY - 1, camZ + 1);
+  cameraControls.update();
 
   return {
     scene,
     camera,
+    cameraControls,
     renderer
   };
 }
@@ -92,8 +100,10 @@ export function render(params: AnimateParams) {
   const {
     scene,
     camera,
+    cameraControls,
     renderer,
   } = params;
 
+  cameraControls.update();
 	renderer.render( scene, camera );
 }

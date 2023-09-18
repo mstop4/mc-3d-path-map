@@ -1,9 +1,20 @@
 [
   {
+    "label": "World Origin Portal Room",
+    "displayLabel": false,
     "type": "ogRoom",
     "corners": [
       [-4, 88, -5],
       [4, 84, 5]
+    ]
+  },
+  {
+    "label": "Arch House Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "corners": [
+      [-43, 77, 18],
+      [-37, 74, 23]
     ]
   }
 ]
