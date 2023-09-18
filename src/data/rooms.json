@@ -11,10 +11,37 @@
   {
     "label": "Arch House Portal Room",
     "displayLabel": false,
-    "type": "ogRoom",
+    "type": "ugRoom",
     "corners": [
       [-43, 77, 18],
       [-37, 74, 23]
+    ]
+  },
+  {
+    "label": "Roselook Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "corners": [
+      [-109, 45, 7],
+      [-105, 41, 14]
+    ]
+  },
+  {
+    "label": "Shattered Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-147, 51, 61],
+      [-149, 48, 66]
+    ]
+  },
+  {
+    "label": "Modest Portector Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-337, 73, 54],
+      [-334, 70, 56]
     ]
   }
 ]
