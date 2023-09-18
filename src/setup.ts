@@ -6,9 +6,9 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
 
-const camX = 30;
+const camX = -50;
 const camY = 100;
-const camZ = 30;
+const camZ = -50;
 
 export type AnimateParams = {
   scene: THREE.Scene,
@@ -39,15 +39,15 @@ export function createPath(pathData: PathData, material: LineMaterial) {
 
 export function createRoom(roomData: RoomData, material: THREE.MeshBasicMaterial) {
   const { corners } = roomData;
-  const width = Math.abs(corners[1][0] - corners[0][0]);
-  const length = Math.abs(corners[1][1] - corners[0][1]);
-  const height = Math.abs(corners[1][2] - corners[0][2]);
+  const width = Math.abs(corners[1][0] - corners[0][0]) + 1;
+  const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
+  const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
 
-  const cubeGeometry = new THREE.BoxGeometry( width, length, height );
+  const cubeGeometry = new THREE.BoxGeometry( width, height, length );
   const cube = new THREE.Mesh( cubeGeometry, material );
-  cube.position.x = corners[0][0] + width / 2;
-  cube.position.y = corners[0][1] + length / 2;
-  cube.position.z = corners[0][2] + height / 2;
+  cube.position.x = (corners[0][0] + corners[1][0]) / 2;
+  cube.position.y = (corners[0][1] + corners[1][1]) / 2;
+  cube.position.z = (corners[0][2] + corners[1][2]) / 2;
   return cube;
 }
 
@@ -61,11 +61,14 @@ export function setupScene(): AnimateParams {
 
   // cube
   const cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
-  const cube = createRoom(roomsData[0], cubeMaterial);
-  scene.add( cube );
+
+  for (let room of roomsData) {
+    const cube = createRoom(room, cubeMaterial);
+    scene.add(cube);
+  }
 
   // lines
-  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 0.25 } );
+  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 1 } );
   lineMaterial.worldUnits = true;
   
   for (let path of pathsData) {
@@ -74,7 +77,7 @@ export function setupScene(): AnimateParams {
   }
 
   camera.position.set(camX, camY, camZ);
-  camera.lookAt(camX - 1, camY - 1, camZ - 1);
+  camera.lookAt(camX + 1, camY - 1, camZ + 1);
 
   return {
     scene,
