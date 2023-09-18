@@ -1,10 +1,12 @@
 import * as THREE from 'three';
+import { Line2 } from 'three/addons/lines/Line2.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 
 export type AnimateParams = {
   scene: THREE.Scene,
   camera: THREE.PerspectiveCamera,
   renderer: THREE.WebGLRenderer,
-  cube: THREE.Mesh,
 }
 
 export function setupScene(): AnimateParams {
@@ -15,33 +17,44 @@ export function setupScene(): AnimateParams {
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild( renderer.domElement );
 
-  const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-  const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
-  const cube = new THREE.Mesh( geometry, material );
+  // cube
+  const cubeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+  const cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+  const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
   scene.add( cube );
 
-  camera.position.z = 5;
+  // lines
+  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 0.5 } );
+  lineMaterial.worldUnits = true;
+  const points = [];
+  points.push(-2, 0, 0);
+  points.push(0, 2, 0);
+  points.push(2, 0, 0);
+
+  const lineGeometry = new LineGeometry().setPositions( points );
+  const line = new Line2( lineGeometry, lineMaterial );
+  line.computeLineDistances();
+	line.scale.set( 1, 1, 1 );
+  scene.add(line);
+
+  camera.position.z = 5
+;
 
   return {
     scene,
     camera,
-    renderer,
-    cube,
+    renderer
   };
 }
 
-export function animate(params: AnimateParams) {
-	requestAnimationFrame(() => animate(params));
+export function render(params: AnimateParams) {
+	requestAnimationFrame(() => render(params));
 
   const {
     scene,
     camera,
     renderer,
-    cube,
   } = params;
-
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
 
 	renderer.render( scene, camera );
 }

@@ -1,10 +1,10 @@
-import { animate, setupScene } from "./setup";
+import { render, setupScene } from "./setup";
 
 
 
 function start() {
 	const elements = setupScene();
-	animate(elements);
+	render(elements);
 }
 
 start();
