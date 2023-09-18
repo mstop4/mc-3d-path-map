@@ -24,7 +24,7 @@ export function setupScene(): AnimateParams {
   scene.add( cube );
 
   // lines
-  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 0.5 } );
+  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 0.25 } );
   lineMaterial.worldUnits = true;
   const points = [];
   points.push(-2, 0, 0);
@@ -37,8 +37,8 @@ export function setupScene(): AnimateParams {
 	line.scale.set( 1, 1, 1 );
   scene.add(line);
 
-  camera.position.z = 5
-;
+  camera.position.set(5, 5, 5);
+  camera.lookAt(0, 0, 0);
 
   return {
     scene,
