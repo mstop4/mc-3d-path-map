@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import Stats from 'three/addons/libs/stats.module.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { createPath, createRoom } from './create';
@@ -14,6 +15,7 @@ let scene: THREE.Scene;
 let camera: THREE.OrthographicCamera | THREE.PerspectiveCamera;
 let cameraControls: OrbitControls;
 let renderer: THREE.WebGLRenderer;
+let stats: Stats;
 const materials: Record<string, THREE.Material|LineMaterial> = {};
 
 function initMaterials() {
@@ -31,6 +33,8 @@ export function setupScene() {
   camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
   // camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 10000);
   renderer = new THREE.WebGLRenderer();
+  stats = new Stats();
+  document.body.appendChild(stats.dom);
   
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild( renderer.domElement );
@@ -74,6 +78,7 @@ export function getMaterials(): Record<string, THREE.Material> {
 export function render() {
 	requestAnimationFrame(render);
 
+  stats.update();
   cameraControls.update();
 	renderer.render( scene, camera );
 }

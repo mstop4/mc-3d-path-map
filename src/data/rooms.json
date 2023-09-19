@@ -81,6 +81,15 @@
     ]
   },
   {
+    "label": "Azurelion Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-174, 94, 348],
+      [-171, 91, 349]
+    ]
+  },
+  {
     "label": "Eastern Frontier Temple Room",
     "displayLabel": false,
     "type": "ugRoom",
