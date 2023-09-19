@@ -10,6 +10,7 @@ export type PathTypes =
 export type RoomTypes = 'ugRoom' | 'ogRoom';
 export type DoorTypes = 'ex' | 'conn';
 export type DoorOrientation = 'x' | 'y' | 'z';
+export type Coordinates = [number, number, number];
 
 export type SceneComponents = {
   scene: THREE.Scene;
@@ -20,19 +21,24 @@ export type SceneComponents = {
 
 export type PathData = {
   type: PathTypes;
-  points: number[][];
+  points: Coordinates[];
 };
 
 export type RoomData = {
   label: string;
   displayLabel: boolean;
   type: RoomTypes;
-  corners: number[][];
+  corners: [Coordinates, Coordinates];
 };
 
 export type DoorData = {
   quantity: 1 | 2;
   orientation: DoorOrientation;
   type: DoorTypes;
-  location: number[];
+  location: Coordinates;
+};
+
+export type PortalData = {
+  label: string;
+  location: Coordinates;
 };

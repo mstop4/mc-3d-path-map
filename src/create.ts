@@ -4,12 +4,16 @@ import { Line2 } from 'three/addons/lines/Line2.js';
 
 import { type LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 
-import { DoorData, PathData, RoomData } from './types';
+import { DoorData, PathData, PortalData, RoomData } from './types';
 import { getMaterials } from './setup';
 
 const doorThickness = 0.25;
 const doorHeight = 2;
 const baseDoorWidth = 1;
+
+const portalSize = 1;
+const portalWidthSegments = 4;
+const portalHeightSegments = 2;
 
 export function createPath(pathData: PathData) {
   try {
@@ -76,6 +80,30 @@ export function createDoor(doorData: DoorData) {
     doorMesh.position.z = location[2];
 
     return doorMesh;
+  } catch (e) {
+    if (e instanceof Error) {
+      console.error(e.message);
+    }
+    return null;
+  }
+}
+
+export function createPortal(portalData: PortalData) {
+  try {
+    const { location } = portalData;
+    const material = getMaterials().portal;
+
+    const portalGeom = new THREE.SphereGeometry(
+      portalSize,
+      portalWidthSegments,
+      portalHeightSegments,
+    );
+    const portalMesh = new THREE.Mesh(portalGeom, material);
+    portalMesh.position.x = location[0];
+    portalMesh.position.y = location[1] + portalSize / 2;
+    portalMesh.position.z = location[2];
+
+    return portalMesh;
   } catch (e) {
     if (e instanceof Error) {
       console.error(e.message);

@@ -2,13 +2,14 @@ import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { createDoor, createPath, createRoom } from './create';
+import { createDoor, createPath, createPortal, createRoom } from './create';
 
-import { DoorData, PathData, RoomData } from './types';
+import { DoorData, PathData, PortalData, RoomData } from './types';
 
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
 import doorsData from './data/doors.json';
+import portalsData from './data/portals.json';
 
 const camX = -100;
 const camY = 100;
@@ -24,11 +25,16 @@ const materials: Record<string, THREE.Material | LineMaterial> = {};
 function initMaterials() {
   materials.room = new THREE.MeshStandardMaterial({
     color: 0xffffff,
-    opacity: 0.75,
+    opacity: 0.5,
     transparent: true,
   });
   materials.door = new THREE.MeshStandardMaterial({
     color: 0xe0a060,
+    opacity: 0.75,
+    transparent: true,
+  });
+  materials.portal = new THREE.MeshStandardMaterial({
+    color: 0xc000ff,
     opacity: 0.75,
     transparent: true,
   });
@@ -86,6 +92,13 @@ export function setupScene() {
     const doorMesh = createDoor(door);
     if (doorMesh !== null) {
       scene.add(doorMesh);
+    }
+  }
+
+  for (const portal of portalsData as PortalData[]) {
+    const portalMesh = createPortal(portal);
+    if (portalMesh !== null) {
+      scene.add(portalMesh);
     }
   }
 
