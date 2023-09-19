@@ -81,12 +81,39 @@
     ]
   },
   {
-    "label": "Soaking Village Portal Room",
+    "label": "Eastern Frontier Temple Room",
     "displayLabel": false,
     "type": "ugRoom",
     "corners": [
-      [-174, 94, 348],
-      [-171, 91, 349]
+      [22, 49, -57],
+      [24, 46, -54]
+    ]
+  },
+  {
+    "label": "Respite House Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [3, 41, -122],
+      [8, 39, -116]
+    ]
+  },
+  {
+    "label": "Cut Hamlet Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-50, 42, -157],
+      [-46, 39, -154]
+    ]
+  },
+  {
+    "label": "Stony Bar Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-98, 90, -229],
+      [-95, 88, -226]
     ]
   }
 ]

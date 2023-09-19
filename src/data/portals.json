@@ -42,5 +42,21 @@
   {
     "label": "Azurelion Village",
     "location:": [ -172.5, 91, 347 ]
+  },
+  {
+    "label": "Eastern Frontier Temple",
+    "location:": [ 25, 46, -55.5 ]
+  },
+  {
+    "label": "Respite House",
+    "location:": [ 5.5, 39, -120 ]
+  },
+  {
+    "label": "Cut Hamlet",
+    "location:": [ -48.5, 39, -154 ]
+  },
+  {
+    "label": "Stony Bar Village",
+    "location:": [ -99, 88, -227.5 ]
   }
 ]

@@ -113,5 +113,45 @@
     "quantity": 2,
     "type": "conn",
     "location": [ -172.5, 91, 350 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ -18, 68, 65.5 ]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "location": [ 21, 46, -10 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ 21, 46, -55.5 ]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "location": [ 31, 46, -75 ]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "location": [ -49, 39, -160 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ -45.5, 39, -192 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ -12, 40, -224.5 ]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "location": [ -57, 88, -229.5 ]
   }
 ]
