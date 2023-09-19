@@ -22,14 +22,14 @@ let stats: Stats;
 const materials: Record<string, THREE.Material|LineMaterial> = {};
 
 function initMaterials() {
-   materials.room = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
-   materials.door = new THREE.MeshStandardMaterial({ color: 0xE0A060, opacity: 0.75, transparent: true});
-   materials.ogTunnel = new LineMaterial({ color: 0x8090FF, linewidth: 0.0025 });  // Overground Tunnel
-   materials.ugTunnel = new LineMaterial({ color: 0x80B0D0, linewidth: 0.0025 });  // Underground Tunnel
-   materials.cBridge = new LineMaterial({ color: 0x80FF80, linewidth: 0.0025 });   // Covered Bridge
-   materials.oBridge = new LineMaterial({ color: 0xFFD040, linewidth: 0.0025 });   // Open Bridge
-   materials.exPath = new LineMaterial({ color: 0xC00000, linewidth: 0.0025 });    // External Path
-   materials.nCave = new LineMaterial({ color: 0xC06000, linewidth: 0.0025 });     // Natural Cave
+  materials.room = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
+  materials.door = new THREE.MeshStandardMaterial({ color: 0xE0A060, opacity: 0.75, transparent: true});
+  materials.ogTunnel = new LineMaterial({ color: 0x8090FF, linewidth: 0.0025 });  // Overground Tunnel
+  materials.ugTunnel = new LineMaterial({ color: 0x80B0D0, linewidth: 0.0025 });  // Underground Tunnel
+  materials.cBridge = new LineMaterial({ color: 0x80FF80, linewidth: 0.0025 });   // Covered Bridge
+  materials.oBridge = new LineMaterial({ color: 0xFFD040, linewidth: 0.0025 });   // Open Bridge
+  materials.exPath = new LineMaterial({ color: 0xC00000, linewidth: 0.0025 });    // External Path
+  materials.nCave = new LineMaterial({ color: 0xC06000, linewidth: 0.0025 });     // Natural Cave
 }
 
 export function setupScene() {
@@ -55,21 +55,21 @@ export function setupScene() {
 
   initMaterials();
 
-  for (let room of roomsData as RoomData[]) {
+  for (const room of roomsData as RoomData[]) {
     const roomMesh = createRoom(room);
     if (roomMesh !== null) {
       scene.add(roomMesh);
     }
   }
 
-  for (let path of pathsData as PathData[]) {
+  for (const path of pathsData as PathData[]) {
     const pathMesh = createPath(path);
     if (pathMesh !== null) {
       scene.add(pathMesh);
     }
   }
 
-  for (let door of doorsData as DoorData[]) {
+  for (const door of doorsData as DoorData[]) {
     const doorMesh = createDoor(door);
     if (doorMesh !== null) {
       scene.add(doorMesh);
@@ -86,9 +86,9 @@ export function getMaterials(): Record<string, THREE.Material> {
 }
 
 export function render() {
-	requestAnimationFrame(render);
+  requestAnimationFrame(render);
 
   stats.update();
   cameraControls.update();
-	renderer.render( scene, camera );
+  renderer.render( scene, camera );
 }

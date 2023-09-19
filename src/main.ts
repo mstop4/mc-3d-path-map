@@ -1,10 +1,8 @@
-import { render, setupScene } from "./setup";
-
-
+import { render, setupScene } from './setup';
 
 function start() {
-	setupScene();
-	render();
+  setupScene();
+  render();
 }
 
 start();
