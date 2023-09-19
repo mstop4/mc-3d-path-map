@@ -98,5 +98,20 @@
     "quantity": 2,
     "type": "conn",
     "location": [ -163, 55, 114.5 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ -124, 73, 173.5 ]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "location": [ -111, 80, 191.5 ]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "location": [ -172.5, 91, 350 ]
   }
 ]

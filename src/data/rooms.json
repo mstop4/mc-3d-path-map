@@ -70,5 +70,23 @@
       [-187, 79, 151],
       [-181, 77, 158]
     ]
+  },
+  {
+    "label": "Soaking Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-109, 82, 172],
+      [-106, 80, 174]
+    ]
+  },
+  {
+    "label": "Soaking Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-174, 94, 348],
+      [-171, 91, 349]
+    ]
   }
 ]

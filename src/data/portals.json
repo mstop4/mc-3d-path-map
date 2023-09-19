@@ -34,5 +34,13 @@
   {
     "label": "Open House Village",
     "location:": [ -184, 77, 154.5 ]
+  },
+  {
+    "label": "Soaking Village",
+    "location:": [ -107.5, 80, 171 ]
+  },
+  {
+    "label": "Azurelion Village",
+    "location:": [ -172.5, 91, 347 ]
   }
 ]
