@@ -2,10 +2,13 @@ import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { createPath, createRoom } from './create';
+import { createDoor, createPath, createRoom } from './create';
+
+import { DoorData, PathData, RoomData } from './types';
 
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
+import doorsData from './data/doors.json';
 
 const camX = -100;
 const camY = 100;
@@ -20,6 +23,7 @@ const materials: Record<string, THREE.Material|LineMaterial> = {};
 
 function initMaterials() {
    materials.room = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
+   materials.door = new THREE.MeshStandardMaterial({ color: 0xE0A060, opacity: 0.75, transparent: true});
    materials.ogTunnel = new LineMaterial({ color: 0x8090FF, linewidth: 0.0025 });  // Overground Tunnel
    materials.ugTunnel = new LineMaterial({ color: 0x80B0D0, linewidth: 0.0025 });  // Underground Tunnel
    materials.cBridge = new LineMaterial({ color: 0x80FF80, linewidth: 0.0025 });   // Covered Bridge
@@ -51,18 +55,24 @@ export function setupScene() {
 
   initMaterials();
 
-  for (let room of roomsData) {
-    const cube = createRoom(room);
-    scene.add(cube);
+  for (let room of roomsData as RoomData[]) {
+    const roomMesh = createRoom(room);
+    if (roomMesh !== null) {
+      scene.add(roomMesh);
+    }
   }
 
-  // lines
+  for (let path of pathsData as PathData[]) {
+    const pathMesh = createPath(path);
+    if (pathMesh !== null) {
+      scene.add(pathMesh);
+    }
+  }
 
-  
-  for (let path of pathsData) {
-    const line = createPath(path);
-    if (line) {
-      scene.add(line);
+  for (let door of doorsData as DoorData[]) {
+    const doorMesh = createDoor(door);
+    if (doorMesh !== null) {
+      scene.add(doorMesh);
     }
   }
 

@@ -2,156 +2,187 @@
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "x",
     "location": [ -24, 81, 20.5 ]
   },
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "z",
     "location": [ -25.5, 81, 23 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -46, 74, 22.5 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "z",
     "location": [ -60, 74, 24 ]
   },
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "z",
     "location": [ -73.5, 65, 5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -104, 41, 10.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -110, 41, 10.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -147, 38, 28.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -146, 48, 63.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "z",
     "location": [ -135.5, 58, 70 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "z",
     "location": [ -335.5, 70, 57 ]
   },
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "z",
     "location": [ -342.5, 75, 53 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "x",
     "location": [ -41, 79, 60 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "x",
     "location": [ -33, 80, 67 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "z",
     "location": [ -98, 76, 54 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -99, 76, 55.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -114, 62, 84.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "z",
     "location": [ -167.5, 77, 156 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -180, 77, 154.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -163, 55, 114.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -124, 73, 173.5 ]
   },
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "x",
     "location": [ -111, 80, 191.5 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "z",
     "location": [ -172.5, 91, 350 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -18, 68, 65.5 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "x",
     "location": [ 21, 46, -10 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ 21, 46, -55.5 ]
   },
   {
     "quantity": 1,
     "type": "ex",
+    "orientation": "x",
     "location": [ 31, 46, -75 ]
   },
   {
     "quantity": 1,
     "type": "conn",
+    "orientation": "z",
     "location": [ -49, 39, -160 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "z",
     "location": [ -45.5, 39, -192 ]
   },
   {
     "quantity": 2,
     "type": "conn",
+    "orientation": "x",
     "location": [ -12, 40, -224.5 ]
   },
   {
     "quantity": 2,
     "type": "ex",
+    "orientation": "x",
     "location": [ -57, 88, -229.5 ]
   }
 ]
