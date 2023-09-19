@@ -17,10 +17,10 @@ export function createPath(pathData: PathData) {
     const points = rawPoints.flat(1);
     const material = getMaterials()[type] as LineMaterial;
 
-    const pathGeom = new LineGeometry().setPositions( points );
+    const pathGeom = new LineGeometry().setPositions(points);
     const pathMesh = new Line2(pathGeom, material);
     pathMesh.computeLineDistances();
-    pathMesh.scale.set( 1, 1, 1 );
+    pathMesh.scale.set(1, 1, 1);
     return pathMesh;
   } catch (e) {
     if (e instanceof Error) {
@@ -39,8 +39,8 @@ export function createRoom(roomData: RoomData) {
     const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
     const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
 
-    const roomGeom = new THREE.BoxGeometry( width, height, length );
-    const roomMesh = new THREE.Mesh( roomGeom, material );
+    const roomGeom = new THREE.BoxGeometry(width, height, length);
+    const roomMesh = new THREE.Mesh(roomGeom, material);
     roomMesh.position.x = (corners[0][0] + corners[1][0]) / 2;
     roomMesh.position.y = (corners[0][1] + corners[1][1]) / 2;
     roomMesh.position.z = (corners[0][2] + corners[1][2]) / 2;
@@ -69,8 +69,8 @@ export function createDoor(doorData: DoorData) {
       height = doorHeight;
     }
 
-    const doorGeom = new THREE.BoxGeometry( width, height, length );
-    const doorMesh = new THREE.Mesh( doorGeom, material );
+    const doorGeom = new THREE.BoxGeometry(width, height, length);
+    const doorMesh = new THREE.Mesh(doorGeom, material);
     doorMesh.position.x = location[0];
     doorMesh.position.y = location[1] + height / 2;
     doorMesh.position.z = location[2];

@@ -19,39 +19,52 @@ let camera: THREE.OrthographicCamera | THREE.PerspectiveCamera;
 let cameraControls: OrbitControls;
 let renderer: THREE.WebGLRenderer;
 let stats: Stats;
-const materials: Record<string, THREE.Material|LineMaterial> = {};
+const materials: Record<string, THREE.Material | LineMaterial> = {};
 
 function initMaterials() {
-  materials.room = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
-  materials.door = new THREE.MeshStandardMaterial({ color: 0xE0A060, opacity: 0.75, transparent: true});
-  materials.ogTunnel = new LineMaterial({ color: 0x8090FF, linewidth: 0.0025 });  // Overground Tunnel
-  materials.ugTunnel = new LineMaterial({ color: 0x80B0D0, linewidth: 0.0025 });  // Underground Tunnel
-  materials.cBridge = new LineMaterial({ color: 0x80FF80, linewidth: 0.0025 });   // Covered Bridge
-  materials.oBridge = new LineMaterial({ color: 0xFFD040, linewidth: 0.0025 });   // Open Bridge
-  materials.exPath = new LineMaterial({ color: 0xC00000, linewidth: 0.0025 });    // External Path
-  materials.nCave = new LineMaterial({ color: 0xC06000, linewidth: 0.0025 });     // Natural Cave
+  materials.room = new THREE.MeshStandardMaterial({
+    color: 0xffffff,
+    opacity: 0.75,
+    transparent: true,
+  });
+  materials.door = new THREE.MeshStandardMaterial({
+    color: 0xe0a060,
+    opacity: 0.75,
+    transparent: true,
+  });
+  materials.ogTunnel = new LineMaterial({ color: 0x8090ff, linewidth: 0.0025 }); // Overground Tunnel
+  materials.ugTunnel = new LineMaterial({ color: 0x80b0d0, linewidth: 0.0025 }); // Underground Tunnel
+  materials.cBridge = new LineMaterial({ color: 0x80ff80, linewidth: 0.0025 }); // Covered Bridge
+  materials.oBridge = new LineMaterial({ color: 0xffd040, linewidth: 0.0025 }); // Open Bridge
+  materials.exPath = new LineMaterial({ color: 0xc00000, linewidth: 0.0025 }); // External Path
+  materials.nCave = new LineMaterial({ color: 0xc06000, linewidth: 0.0025 }); // Natural Cave
 }
 
 export function setupScene() {
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  camera = new THREE.PerspectiveCamera(
+    90,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000,
+  );
   // camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 10000);
   renderer = new THREE.WebGLRenderer();
   stats = new Stats();
   document.body.appendChild(stats.dom);
-  
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  document.body.appendChild( renderer.domElement );
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
 
   cameraControls = new OrbitControls(camera, renderer.domElement);
 
-  const light = new THREE.AmbientLight( 0xffffff ); // soft white light
-  scene.add( light );
-  const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
+  const light = new THREE.AmbientLight(0xffffff); // soft white light
+  scene.add(light);
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight.position.x = 1;
   directionalLight.position.y = 1;
   directionalLight.position.z = 1;
-  scene.add( directionalLight );
+  scene.add(directionalLight);
 
   initMaterials();
 
@@ -90,5 +103,5 @@ export function render() {
 
   stats.update();
   cameraControls.update();
-  renderer.render( scene, camera );
+  renderer.render(scene, camera);
 }
