@@ -1,0 +1,38 @@
+[
+  {
+    "label": "World Origin",
+    "location:": [ 0, 84, -0.5 ]
+  },
+  {
+    "label": "Arch House",
+    "location:": [ -41, 74, 19.5 ]
+  },
+  {
+    "label": "Roselook Village",
+    "location:": [ -107, 41, 10.5 ]
+  },
+  {
+    "label": "Shattered Village",
+    "location:": [ -150, 48, 63.5 ]
+  },
+  {
+    "label": "Savanna Dam Village",
+    "location:": [ -177, 67, 78.5 ]
+  },
+  {
+    "label": "Modest Protector",
+    "location:": [ -335.5, 70, 55.5 ]
+  },
+  {
+    "label": "Struggle Village",
+    "location:": [ -3, 79, 63.5 ]
+  },
+  {
+    "label": "Cornflower Village",
+    "location:": [ -110, 62, 84.5 ]
+  },
+  {
+    "label": "Open House Village",
+    "location:": [ -184, 77, 154.5 ]
+  }
+]

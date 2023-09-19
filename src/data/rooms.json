@@ -43,5 +43,32 @@
       [-337, 73, 54],
       [-334, 70, 56]
     ]
+  },
+  {
+    "label": "Struggle Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-40, 82, 59],
+      [-34, 79, 67]
+    ]
+  },
+  {
+    "label": "Cornflower Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-113, 65, 83],
+      [-111, 62, 86]
+    ]
+  },
+  {
+    "label": "Open House Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-187, 79, 151],
+      [-181, 77, 158]
+    ]
   }
 ]

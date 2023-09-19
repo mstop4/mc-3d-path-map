@@ -41,7 +41,7 @@ export function createPath(pathData: PathData, material: LineMaterial) {
   return line;
 }
 
-export function createRoom(roomData: RoomData, material: THREE.MeshBasicMaterial) {
+export function createRoom(roomData: RoomData, material: THREE.Material) {
   const { corners } = roomData;
   const width = Math.abs(corners[1][0] - corners[0][0]) + 1;
   const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
@@ -65,8 +65,16 @@ export function setupScene(): AnimateParams {
 
   const cameraControls = new OrbitControls(camera, renderer.domElement);
 
+  const light = new THREE.AmbientLight( 0xffffff ); // soft white light
+  scene.add( light );
+  const directionalLight = new THREE.DirectionalLight( 0xffffff, 1 );
+  directionalLight.position.x = 1;
+  directionalLight.position.y = 1;
+  directionalLight.position.z = 1;
+  scene.add( directionalLight );
+
   // cube
-  const cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+  const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
 
   for (let room of roomsData) {
     const cube = createRoom(room, cubeMaterial);
