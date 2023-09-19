@@ -1,12 +1,14 @@
 {
-  "name": "my-vue-app",
+  "name": "mc-3d-path-map",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "npx eslint",
+    "check-ts": "npx tsc --noEmit",
     "prettier": "npx prettier . --write",
     "preview": "vite preview"
   },
@@ -15,6 +17,8 @@
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "eslint": "^8.49.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
