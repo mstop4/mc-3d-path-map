@@ -11,7 +11,7 @@ const camY = 100;
 const camZ = -100;
 
 let scene: THREE.Scene;
-let camera: THREE.PerspectiveCamera;
+let camera: THREE.OrthographicCamera | THREE.PerspectiveCamera;
 let cameraControls: OrbitControls;
 let renderer: THREE.WebGLRenderer;
 const materials: Record<string, THREE.Material|LineMaterial> = {};
@@ -29,6 +29,7 @@ function initMaterials() {
 export function setupScene() {
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  // camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 10000);
   renderer = new THREE.WebGLRenderer();
   
   renderer.setSize( window.innerWidth, window.innerHeight );
