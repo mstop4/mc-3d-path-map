@@ -1,6 +1,6 @@
 import { type OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-export type RenderParams = {
+export type SceneComponents = {
   scene: THREE.Scene,
   camera: THREE.PerspectiveCamera,
   cameraControls: OrbitControls,

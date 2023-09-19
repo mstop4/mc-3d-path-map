@@ -3,8 +3,6 @@ import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { createPath, createRoom } from './create';
 
-import { RenderParams } from './types';
-
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
 
@@ -12,15 +10,31 @@ const camX = -100;
 const camY = 100;
 const camZ = -100;
 
-export function setupScene(): RenderParams {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
-  const renderer = new THREE.WebGLRenderer();
+let scene: THREE.Scene;
+let camera: THREE.PerspectiveCamera;
+let cameraControls: OrbitControls;
+let renderer: THREE.WebGLRenderer;
+const materials: Record<string, THREE.Material|LineMaterial> = {};
+
+function initMaterials() {
+   materials.room = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
+   materials.ogTunnel = new LineMaterial({ color: 0x8090FF, linewidth: 0.0025 });  // Overground Tunnel
+   materials.ugTunnel = new LineMaterial({ color: 0x80B0D0, linewidth: 0.0025 });  // Underground Tunnel
+   materials.cBridge = new LineMaterial({ color: 0x80FF80, linewidth: 0.0025 });   // Covered Bridge
+   materials.oBridge = new LineMaterial({ color: 0xFFD040, linewidth: 0.0025 });   // Open Bridge
+   materials.exPath = new LineMaterial({ color: 0xC00000, linewidth: 0.0025 });    // External Path
+   materials.nCave = new LineMaterial({ color: 0xC06000, linewidth: 0.0025 });     // Natural Cave
+}
+
+export function setupScene() {
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  renderer = new THREE.WebGLRenderer();
   
   renderer.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild( renderer.domElement );
 
-  const cameraControls = new OrbitControls(camera, renderer.domElement);
+  cameraControls = new OrbitControls(camera, renderer.domElement);
 
   const light = new THREE.AmbientLight( 0xffffff ); // soft white light
   scene.add( light );
@@ -30,44 +44,34 @@ export function setupScene(): RenderParams {
   directionalLight.position.z = 1;
   scene.add( directionalLight );
 
-  // cube
-  const cubeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, opacity: 0.75, transparent: true});
+  initMaterials();
 
   for (let room of roomsData) {
-    const cube = createRoom(room, cubeMaterial);
+    const cube = createRoom(room);
     scene.add(cube);
   }
 
   // lines
-  const lineMaterial = new LineMaterial( { color: 0x0000ff, linewidth: 1 } );
-  lineMaterial.worldUnits = true;
+
   
   for (let path of pathsData) {
-    const line = createPath(path, lineMaterial);
-    scene.add(line);
+    const line = createPath(path);
+    if (line) {
+      scene.add(line);
+    }
   }
 
   camera.position.set(camX, camY, camZ);
   camera.lookAt(camX + 1, camY - 1, camZ + 1);
   cameraControls.update();
-
-  return {
-    scene,
-    camera,
-    cameraControls,
-    renderer
-  };
 }
 
-export function render(params: RenderParams) {
-	requestAnimationFrame(() => render(params));
+export function getMaterials(): Record<string, THREE.Material> {
+  return materials;
+}
 
-  const {
-    scene,
-    camera,
-    cameraControls,
-    renderer,
-  } = params;
+export function render() {
+	requestAnimationFrame(render);
 
   cameraControls.update();
 	renderer.render( scene, camera );
