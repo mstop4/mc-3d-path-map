@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
+import { MapControls } from 'three/addons/controls/MapControls.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
 
 import { DoorData, PathData, PortalData, RoomData } from './types';
@@ -17,7 +17,7 @@ const camZ = -100;
 
 let scene: THREE.Scene;
 let camera: THREE.PerspectiveCamera;
-let cameraControls: OrbitControls;
+let cameraControls: MapControls;
 let renderer: THREE.WebGLRenderer;
 let stats: Stats;
 const materials: Record<string, THREE.Material | LineMaterial> = {};
@@ -62,7 +62,8 @@ export function setupScene() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
-  cameraControls = new OrbitControls(camera, renderer.domElement);
+  cameraControls = new MapControls(camera, renderer.domElement);
+  cameraControls.enableDamping = false;
 
   const light = new THREE.AmbientLight(0xffffff); // soft white light
   scene.add(light);
