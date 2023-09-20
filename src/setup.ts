@@ -16,7 +16,7 @@ const camY = 100;
 const camZ = -100;
 
 let scene: THREE.Scene;
-let camera: THREE.OrthographicCamera | THREE.PerspectiveCamera;
+let camera: THREE.PerspectiveCamera;
 let cameraControls: OrbitControls;
 let renderer: THREE.WebGLRenderer;
 let stats: Stats;
@@ -105,10 +105,19 @@ export function setupScene() {
   camera.position.set(camX, camY, camZ);
   camera.lookAt(camX + 1, camY - 1, camZ + 1);
   cameraControls.update();
+
+  window.addEventListener('resize', onWindowResize, false);
 }
 
 export function getMaterials(): Record<string, THREE.Material> {
   return materials;
+}
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 export function render() {
