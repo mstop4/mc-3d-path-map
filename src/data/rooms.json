@@ -124,5 +124,32 @@
       [-98, 90, -229],
       [-95, 88, -226]
     ]
+  },
+  {
+    "label": "Birch Base Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "corners": [
+      [25, 101, 56],
+      [30, 98, 63]
+    ]
+  },
+  {
+    "label": "Bloodblast Base Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [-10, 73, 291],
+      [-5, 71, 296]
+    ]
+  },
+  {
+    "label": "Turtle-Beaver Resevoir Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [174, 69, 212],
+      [175, 67, 215]
+    ]
   }
 ]

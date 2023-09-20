@@ -6,7 +6,10 @@ export type PathTypes =
   | 'cBridge'
   | 'oBridge'
   | 'exPath'
-  | 'nCave';
+  | 'nCave'
+  | 'ladder'
+  | 'bastion'
+  | 'nFortress';
 export type RoomTypes = 'ugRoom' | 'ogRoom';
 export type DoorTypes = 'ex' | 'conn';
 export type DoorOrientation = 'x' | 'y' | 'z';

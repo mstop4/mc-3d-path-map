@@ -35,8 +35,6 @@ function initMaterials() {
   });
   materials.portal = new THREE.MeshStandardMaterial({
     color: 0xc000ff,
-    opacity: 0.75,
-    transparent: true,
   });
   materials.ogTunnel = new LineMaterial({ color: 0x8090ff, linewidth: 0.0025 }); // Overground Tunnel
   materials.ugTunnel = new LineMaterial({ color: 0x80b0d0, linewidth: 0.0025 }); // Underground Tunnel
@@ -44,6 +42,8 @@ function initMaterials() {
   materials.oBridge = new LineMaterial({ color: 0xffd040, linewidth: 0.0025 }); // Open Bridge
   materials.exPath = new LineMaterial({ color: 0xc00000, linewidth: 0.0025 }); // External Path
   materials.nCave = new LineMaterial({ color: 0xc06000, linewidth: 0.0025 }); // Natural Cave
+  materials.ladder = new LineMaterial({ color: 0xffffff, linewidth: 0.0025 }); // Ladder
+  materials.bastion = new LineMaterial({ color: 0x404080, linewidth: 0.0025 }); // Bastion
 }
 
 export function setupScene() {
