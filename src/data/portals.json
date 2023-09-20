@@ -74,5 +74,17 @@
   {
     "label": "Turtle-Beaver Resevoir",
     "location": [176, 67, 213.5]
+  },
+  {
+    "label": "Shattered Lands",
+    "location": [203.5, 66, 272]
+  },
+  {
+    "label": "Scenic Village",
+    "location": [346, 88, 222.5]
+  },
+  {
+    "label": "Garlic Kidney Mountain",
+    "location": [460.5, 79, 96]
   }
 ]

@@ -220,5 +220,35 @@
     "type": "conn",
     "orientation": "x",
     "location": [173, 67, 214]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "location": [203.5, 66, 268]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "location": [342, 88, 222]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "location": [353, 91, 222.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "location": [440, 82, 95.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "location": [456, 82, 95.5]
   }
 ]

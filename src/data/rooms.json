@@ -151,5 +151,32 @@
       [174, 69, 212],
       [175, 67, 215]
     ]
+  },
+  {
+    "label": "Shattered Lands Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [202, 69, 269],
+      [205, 66, 271]
+    ]
+  },
+  {
+    "label": "Scenic Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [343, 91, 219],
+      [349, 88, 226]
+    ]
+  },
+  {
+    "label": "Garlic Kidney Mountain Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [459, 81, 97],
+      [462, 79, 101]
+    ]
   }
 ]
