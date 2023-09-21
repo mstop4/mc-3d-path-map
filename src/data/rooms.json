@@ -178,5 +178,23 @@
       [459, 81, 97],
       [462, 79, 101]
     ]
+  },
+  {
+    "label": "Long Fall Cave Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [651, 104, 41],
+      [656, 101, 44]
+    ]
+  },
+  {
+    "label": "Ritual Burn Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [456, 101, -42],
+      [458, 98, -39]
+    ]
   }
 ]

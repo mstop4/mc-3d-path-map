@@ -250,5 +250,23 @@
     "type": "ex",
     "orientation": "x",
     "location": [456, 82, 95.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "location": [516.5, 90, -49]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "location": [506, 90, -43.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "location": [465, 98, -40.5]
   }
 ]

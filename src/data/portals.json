@@ -86,5 +86,17 @@
   {
     "label": "Garlic Kidney Mountain",
     "location": [460.5, 79, 96]
+  },
+  {
+    "label": "Long Fall Cave",
+    "location": [657, 101, 42.5]
+  },
+  {
+    "label": "Creeper Arch Village",
+    "location": [568, 102, -88.5]
+  },
+  {
+    "label": "Ritual Burn Village",
+    "location": [455, 98, -40.5]
   }
 ]
