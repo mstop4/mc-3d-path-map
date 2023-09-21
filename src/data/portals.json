@@ -98,5 +98,13 @@
   {
     "label": "Ritual Burn Village",
     "location": [455, 98, -40.5]
+  },
+  {
+    "label": "Resurrection Village",
+    "location": [412, 37, -118.5]
+  },
+  {
+    "label": "Mount Snowcone",
+    "location": [480, 115, -243.5]
   }
 ]

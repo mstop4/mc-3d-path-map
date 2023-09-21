@@ -268,5 +268,35 @@
     "type": "ex",
     "orientation": "x",
     "location": [465, 98, -40.5]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "location": [398, 89, -92]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "location": [373, 79, -96]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "location": [410, 37, -101]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "location": [398, 101, -176]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "location": [475, 115, -243.5]
   }
 ]

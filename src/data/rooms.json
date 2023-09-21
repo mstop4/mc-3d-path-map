@@ -196,5 +196,23 @@
       [456, 101, -42],
       [458, 98, -39]
     ]
+  },
+  {
+    "label": "Resurrection Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "corners": [
+      [415, 39, -114],
+      [408, 37, -122]
+    ]
+  },
+  {
+    "label": "Ritual Burn Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [476, 118, -245],
+      [479, 115, -242]
+    ]
   }
 ]

@@ -18,6 +18,7 @@ const portalHeightSegments = 2;
 export function createPath(pathData: PathData) {
   try {
     const { points: rawPoints, type } = pathData;
+    if (rawPoints.length === 0) return null;
     const points = rawPoints.flat(1);
     const material = getMaterials()[type] as LineMaterial;
 
