@@ -1,11 +1,11 @@
 import * as THREE from 'three';
+import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-
-import { type LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
-
-import { DoorData, PathData, PortalData, RoomData } from './types';
 import { getMaterials } from './setup';
+
+import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { DoorData, PathData, PortalData, RoomData } from './types';
 
 const doorThickness = 0.25;
 const doorHeight = 2;
@@ -91,9 +91,10 @@ export function createDoor(doorData: DoorData) {
 
 export function createPortal(portalData: PortalData) {
   try {
-    const { location } = portalData;
+    const { label, location } = portalData;
     const material = getMaterials().portal;
 
+    // Create portal marker
     const portalGeom = new THREE.SphereGeometry(
       portalSize,
       portalWidthSegments,
@@ -103,6 +104,18 @@ export function createPortal(portalData: PortalData) {
     portalMesh.position.x = location[0];
     portalMesh.position.y = location[1] + portalSize / 2;
     portalMesh.position.z = location[2];
+
+    portalMesh.layers.enableAll();
+
+    // Create portal label
+    const portalDiv = document.createElement('div');
+    portalDiv.className = 'portalLabel';
+    portalDiv.textContent = label;
+
+    const portalLabel = new CSS2DObject(portalDiv);
+    portalLabel.center.set(0.5, 1.5);
+    portalMesh.add(portalLabel);
+    portalLabel.layers.set(0);
 
     return portalMesh;
   } catch (e) {

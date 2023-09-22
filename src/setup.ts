@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
 
 import { DoorData, PathData, PortalData, RoomData } from './types';
@@ -19,6 +20,7 @@ let scene: THREE.Scene;
 let camera: THREE.PerspectiveCamera;
 let cameraControls: MapControls;
 let renderer: THREE.WebGLRenderer;
+let labelRenderer: CSS2DRenderer;
 let stats: Stats;
 const materials: Record<string, THREE.Material | LineMaterial> = {};
 
@@ -47,6 +49,7 @@ function initMaterials() {
 }
 
 export function setupScene() {
+  // Set up scene and camera
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(
     90,
@@ -55,16 +58,31 @@ export function setupScene() {
     1000,
   );
   // camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 10000);
+
+  // Set up 3D and 2D renderers
   renderer = new THREE.WebGLRenderer();
-  stats = new Stats();
-  document.body.appendChild(stats.dom);
 
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
+  labelRenderer = new CSS2DRenderer();
+  labelRenderer.setSize(window.innerWidth, window.innerHeight);
+  labelRenderer.domElement.className = 'labelRenderer';
+  document.body.appendChild(labelRenderer.domElement);
+
+  // Add Stats panel
+  stats = new Stats();
+  document.body.appendChild(stats.dom);
+
+  // Set up camera controls
   cameraControls = new MapControls(camera, renderer.domElement);
   cameraControls.enableDamping = false;
 
+  camera.position.set(camX, camY, camZ);
+  camera.lookAt(camX + 1, camY - 1, camZ + 1);
+  cameraControls.update();
+
+  // Set up lights
   const light = new THREE.AmbientLight(0xffffff); // soft white light
   scene.add(light);
   const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -75,6 +93,7 @@ export function setupScene() {
 
   initMaterials();
 
+  // Add map elements
   for (const room of roomsData as RoomData[]) {
     const roomMesh = createRoom(room);
     if (roomMesh !== null) {
@@ -103,10 +122,6 @@ export function setupScene() {
     }
   }
 
-  camera.position.set(camX, camY, camZ);
-  camera.lookAt(camX + 1, camY - 1, camZ + 1);
-  cameraControls.update();
-
   window.addEventListener('resize', onWindowResize, false);
 }
 
@@ -127,4 +142,5 @@ export function render() {
   stats.update();
   cameraControls.update();
   renderer.render(scene, camera);
+  labelRenderer.render(scene, camera);
 }
