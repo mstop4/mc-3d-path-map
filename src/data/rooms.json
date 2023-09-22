@@ -241,5 +241,23 @@
       [89, 41, -151],
       [91, 38, -148]
     ]
+  },
+  {
+    "label": "Dry Spot Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [198, 82, -113],
+      [201, 79, -110]
+    ]
+  },
+  {
+    "label": "Pretzel River Heights Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [200, 79, 115],
+      [203, 77, 118]
+    ]
   }
 ]

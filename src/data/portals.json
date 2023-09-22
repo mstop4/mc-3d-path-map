@@ -118,5 +118,17 @@
   {
     "label": "Lonely Temple",
     "location": [92, 38, -149.5]
+  },
+  {
+    "label": "Dry Spot",
+    "location": [202, 79, -111.5]
+  },
+  {
+    "label": "Canine Bank",
+    "location": [207, 68, 54.5]
+  },
+  {
+    "label": "Pretzel River Heights",
+    "location": [204, 77, 116.5]
   }
 ]
