@@ -106,5 +106,17 @@
   {
     "label": "Mount Snowcone",
     "location": [480, 115, -243.5]
+  },
+  {
+    "label": "Village of Boreal Bounty",
+    "location": [292.5, 115, -129]
+  },
+  {
+    "label": "Bunflower Village",
+    "location": [220.5, 57, -165]
+  },
+  {
+    "label": "Lonely Temple",
+    "location": [92, 38, -149.5]
   }
 ]

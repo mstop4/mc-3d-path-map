@@ -207,12 +207,39 @@
     ]
   },
   {
-    "label": "Ritual Burn Village Portal Room",
+    "label": "Mount Snowcone Portal Room",
     "displayLabel": false,
     "type": "ugRoom",
     "corners": [
       [476, 118, -245],
       [479, 115, -242]
+    ]
+  },
+  {
+    "label": "Village of Boreal Bounty Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [291, 118, -133],
+      [294, 115, -130]
+    ]
+  },
+  {
+    "label": "Bunflower Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "corners": [
+      [217, 59, -168],
+      [224, 57, -163]
+    ]
+  },
+  {
+    "label": "Lonely Temple Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [89, 41, -151],
+      [91, 38, -148]
     ]
   }
 ]
