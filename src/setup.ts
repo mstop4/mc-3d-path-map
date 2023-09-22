@@ -12,12 +12,13 @@ import roomsData from './data/rooms.json';
 import doorsData from './data/doors.json';
 import portalsData from './data/portals.json';
 
-const camX = -100;
-const camY = 100;
-const camZ = -100;
+const camX = -1;
+const camY = 1;
+const camZ = 1;
+const viewScale = 4;
 
 let scene: THREE.Scene;
-let camera: THREE.PerspectiveCamera;
+let camera: THREE.OrthographicCamera;
 let cameraControls: MapControls;
 let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
@@ -51,13 +52,20 @@ function initMaterials() {
 export function setupScene() {
   // Set up scene and camera
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(
-    90,
-    window.innerWidth / window.innerHeight,
-    0.1,
+  // camera = new THREE.PerspectiveCamera(
+  //   90,
+  //   window.innerWidth / window.innerHeight,
+  //   0.1,
+  //   1000,
+  // );
+  camera = new THREE.OrthographicCamera(
+    -window.innerWidth / viewScale,
+    window.innerWidth / viewScale,
+    window.innerHeight / viewScale,
+    -window.innerHeight / viewScale,
+    -1000,
     1000,
   );
-  // camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 0.1, 10000);
 
   // Set up 3D and 2D renderers
   renderer = new THREE.WebGLRenderer();
@@ -130,10 +138,14 @@ export function getMaterials(): Record<string, THREE.Material> {
 }
 
 function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.left = -window.innerWidth / viewScale;
+  camera.right = window.innerWidth / viewScale;
+  camera.top = window.innerHeight / viewScale;
+  camera.bottom = -window.innerHeight / viewScale;
   camera.updateProjectionMatrix();
 
   renderer.setSize(window.innerWidth, window.innerHeight);
+  labelRenderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 export function render() {
