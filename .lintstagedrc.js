@@ -1,5 +1,5 @@
 export default {
-  '**/*.(ts|tsx)': () => [
+  '**/*.ts': () => [
     `npm run prettier`,
     'npm run check-ts',
     `npm run lint`,
