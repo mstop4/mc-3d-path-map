@@ -352,5 +352,47 @@
     "type": "conn",
     "orientation": "x",
     "location": [199, 77, 116.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "location": [169, 95, -55]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "location": [175, 95, -55]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "location": [85.5, 48, 120]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "location": [23, 36, 119]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "location": [2.5, 37, 144]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "location": [5, 70, 154]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "location": [20, 69, 165]
   }
 ]

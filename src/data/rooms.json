@@ -259,5 +259,32 @@
       [200, 79, 115],
       [203, 77, 118]
     ]
+  },
+  {
+    "label": "Hoverblock Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [170, 98, -59],
+      [174, 95, -54]
+    ]
+  },
+  {
+    "label": "Reverse Oasis Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [85, 51, 115],
+      [87, 48, 118]
+    ]
+  },
+  {
+    "label": "Superpoint Caverns Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "corners": [
+      [5, 73, 150],
+      [8, 70, 153]
+    ]
   }
 ]

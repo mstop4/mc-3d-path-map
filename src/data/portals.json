@@ -130,5 +130,17 @@
   {
     "label": "Pretzel River Heights",
     "location": [204, 77, 116.5]
+  },
+  {
+    "label": "Hoverblock Village",
+    "location": [172, 95, -55.5]
+  },
+  {
+    "label": "Reverse Oasis",
+    "location": [88, 48, 116.5]
+  },
+  {
+    "label": "Superpoint Caverns",
+    "location": [6.5, 70, 149]
   }
 ]

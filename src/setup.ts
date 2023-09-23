@@ -39,6 +39,13 @@ function initMaterials() {
   materials.portal = new THREE.MeshStandardMaterial({
     color: 0xc000ff,
   });
+  materials.lava = new THREE.MeshStandardMaterial({
+    color: 0xffe0c0,
+    opacity: 0.5,
+    transparent: true,
+    side: THREE.DoubleSide,
+  });
+
   materials.ogTunnel = new LineMaterial({ color: 0x8090ff, linewidth: 0.0025 }); // Overground Tunnel
   materials.ugTunnel = new LineMaterial({ color: 0x80b0d0, linewidth: 0.0025 }); // Underground Tunnel
   materials.cBridge = new LineMaterial({ color: 0x80ff80, linewidth: 0.0025 }); // Covered Bridge
@@ -100,6 +107,13 @@ export function setupScene() {
   scene.add(directionalLight);
 
   initMaterials();
+
+  // Lava
+  // const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
+  // const lavaMesh = new THREE.Mesh(lavaGeom, getMaterials().lava);
+  // lavaMesh.rotation.x = Math.PI / 2;
+  // lavaMesh.position.y = 32;
+  // scene.add(lavaMesh);
 
   // Add map elements
   for (const room of roomsData as RoomData[]) {
