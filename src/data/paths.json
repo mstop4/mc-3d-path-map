@@ -1,6 +1,7 @@
 [
   {
     "type": "ogTunnel",
+    "visible": true,
     "points": [
       [-4, 84, -0.5],
       [-20, 84, -0.5],
@@ -16,6 +17,7 @@
   },
   {
     "type": "ogTunnel",
+    "visible": true,
     "points": [
       [-24, 81, 20.5],
       [-25.5, 81, 20.5],
@@ -27,6 +29,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [-43, 74, 22.5],
       [-61.5, 74, 22.5],
@@ -38,6 +41,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [-73.5, 65, 10.5],
       [-77, 65, 10.5],
@@ -47,6 +51,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-110, 41, 10.5],
       [-120, 42, 14],
@@ -58,6 +63,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-147, 38, 28.5],
       [-148.5, 38, 28.5],
@@ -74,6 +80,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-140.5, 48, 53.5],
       [-135.5, 48, 53.5],
@@ -84,6 +91,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-135.5, 58, 70],
       [-135.5, 58, 76.5],
@@ -96,6 +104,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [-158, 70, 75],
       [-167, 67, 75],
@@ -106,6 +115,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-179, 70, 71.5],
       [-335.5, 70, 71.5],
@@ -114,6 +124,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-337, 70, 55.5],
       [-341, 74, 55.5],
@@ -124,6 +135,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [-172.5, 67, 78.5],
       [-171.5, 67, 83.5],
@@ -132,6 +144,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-182.5, 67, 83.5],
       [-182.5, 67, 86.5],
@@ -141,6 +154,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-34.5, 74, 20.5],
       [-34.5, 74, 50.5],
@@ -151,6 +165,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-34.5, 74, 50.5],
       [-36, 74, 50.5],
@@ -166,6 +181,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [-97, 76, 55.5],
       [-101, 76, 55.5],
@@ -177,6 +193,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-112.5, 66, 73],
       [-112.5, 66, 75.5],
@@ -187,6 +204,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-135.5, 58, 76.5],
       [-135, 59, 82],
@@ -196,6 +214,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-135.5, 58, 84.5],
       [-148, 62, 84.5],
@@ -211,6 +230,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-163, 55, 114.5],
       [-161.5, 55, 114.5],
@@ -235,6 +255,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-167.5, 77, 154.5],
       [-180, 77, 154.5]
@@ -242,6 +263,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-159, 90, 86.5],
       [-151, 90, 88],
@@ -265,6 +287,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-130, 75, 164],
       [-128.5, 73, 173.5],
@@ -273,6 +296,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-124, 73, 173.5],
       [-116, 73, 173.5],
@@ -281,6 +305,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-108.5, 80, 175],
       [-108.5, 80, 191.5],
@@ -289,6 +314,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-108.5, 80, 191.5],
       [-106.5, 80, 191.5],
@@ -300,6 +326,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-126, 72, 211.5],
       [-132.5, 71, 211.5],
@@ -313,6 +340,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-145.5, 76, 277],
       [-145.5, 76, 282.5],
@@ -323,6 +351,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [-142.5, 95, 304],
       [-137, 94, 313],
@@ -334,6 +363,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [-153, 95, 347.5],
       [-167.5, 95, 347.5],
@@ -345,6 +375,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-34.5, 74, 51.5],
       [-17.5, 74, 51.5],
@@ -356,6 +387,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-17.5, 68, 65.5],
       [-19, 68, 65.5],
@@ -380,6 +412,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-10.5, 48, 70.5],
       [1.5, 48, 70.5],
@@ -403,6 +436,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [19.5, 46, -55.5],
       [21, 46, -55.5]
@@ -410,6 +444,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [4.5, 39, -123],
       [4.5, 39, -125.5],
@@ -422,6 +457,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-49, 39, -158],
       [-49, 39, -160]
@@ -429,6 +465,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [-49, 39, -160],
       [-45.5, 39, -192]
@@ -436,6 +473,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-45.5, 39, -192],
       [-45.5, 39, -222],
@@ -467,6 +505,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-12, 40, -224.5],
       [-99, 40, -224.5]
@@ -474,6 +513,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-64.5, 88, -227.5],
       [-95, 88, -227.5]
@@ -481,6 +521,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-17.5, 74, 51.5],
       [-12.5, 74, 51.5],
@@ -508,6 +549,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [14.5, 85, 76.5],
       [14.5, 85, 151.5],
@@ -516,6 +558,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [14.5, 85, 152],
       [18.5, 85, 151.5],
@@ -525,6 +568,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [14, 85, 177],
       [11, 85, 176.5],
@@ -552,6 +596,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-7.5, 71, 279],
       [-7.5, 71, 290]
@@ -559,6 +604,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [-7.5, 71, 297],
       [-7.5, 71, 302],
@@ -568,6 +614,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [8, 74, 264],
       [15, 73, 262.5],
@@ -582,6 +629,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [78, 74, 294],
       [84, 75, 295],
@@ -592,6 +640,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [99, 73, 319],
       [96, 73, 322],
@@ -601,6 +650,7 @@
   },
   {
     "type": "bastion",
+    "visible": true,
     "points": [
       [94.5, 72, 325],
       [94.5, 73, 326],
@@ -610,6 +660,7 @@
   },
   {
     "type": "bastion",
+    "visible": true,
     "points": [
       [95, 72, 323],
       [98, 71, 323]
@@ -617,6 +668,7 @@
   },
   {
     "type": "ladder",
+    "visible": true,
     "points": [
       [98, 71, 323],
       [98, 65, 323]
@@ -624,6 +676,7 @@
   },
   {
     "type": "bastion",
+    "visible": true,
     "points": [
       [98, 65, 323],
       [107, 65, 322.5],
@@ -635,6 +688,7 @@
   },
   {
     "type": "bastion",
+    "visible": true,
     "points": [
       [111.5, 63, 319],
       [111.5, 63, 318.5],
@@ -644,6 +698,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [128, 63, 318],
       [131.5, 63, 314.5],
@@ -671,6 +726,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [160, 67, 214],
       [159, 67, 224],
@@ -684,6 +740,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [160, 65, 271],
       [168, 66, 261],
@@ -719,6 +776,7 @@
   },
   {
     "type": "ogTunnel",
+    "visible": true,
     "points": [
       [350, 88, 222.5],
       [353, 91, 222.5],
@@ -727,6 +785,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [348.5, 88, 218],
       [348.5, 83, 213],
@@ -736,6 +795,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [344.5, 83, 197.5],
       [344.5, 83, 199],
@@ -748,6 +808,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [329, 69, 203.5],
       [323, 69, 203.5]
@@ -755,6 +816,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [323, 69, 203.5],
       [318, 69, 203.5],
@@ -766,6 +828,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [254, 77, 217.5],
       [231, 77, 217.5],
@@ -774,6 +837,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [201.5, 77, 217.5],
       [201.5, 77, 220.5],
@@ -792,6 +856,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [348.5, 83, 197.5],
       [348.5, 83, 179],
@@ -800,6 +865,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [348.5, 86, 176],
       [356, 87, 173],
@@ -824,6 +890,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [440, 82, 95.5],
       [454.5, 82, 95.5],
@@ -832,6 +899,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [454.5, 82, 95.5],
       [454.5, 82, 97],
@@ -842,6 +910,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [437, 82, 95.5],
       [433, 82, 89],
@@ -859,6 +928,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [426, 81, 25.5],
       [467, 81, 25.5]
@@ -866,6 +936,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [467, 81, 25.5],
       [476, 83, 33],
@@ -881,6 +952,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [530, 90, 9],
       [539, 92, 16],
@@ -900,6 +972,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [634, 101, 21.5],
       [651.5, 101, 21.5],
@@ -908,6 +981,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [593, 100, 5],
       [593, 101, -6],
@@ -932,6 +1006,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [577, 101, -68],
       [570, 100, -70],
@@ -943,6 +1018,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [532, 100, -60],
       [532, 97, -57],
@@ -955,6 +1031,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [525.5, 89, -49],
       [525.5, 90, -48],
@@ -965,6 +1042,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [525.5, 89, -51.5],
       [525, 90, -51.5],
@@ -974,6 +1052,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [516.5, 90, -49],
       [516.5, 90, -43.5],
@@ -982,6 +1061,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [506, 90, -43.5],
       [500.5, 90, -43.5],
@@ -1000,6 +1080,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [465, 98, -40.5],
       [458, 98, -40.5]
@@ -1007,6 +1088,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [457.5, 98, -42],
       [457.5, 98, -43],
@@ -1025,6 +1107,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [397.5, 89, -95.5],
       [397.5, 89, -101.5],
@@ -1054,6 +1137,7 @@
   },
   {
     "type": "ogTunnel",
+    "visible": true,
     "points": [
       [409.5, 37, -98.5],
       [409.5, 37, -114]
@@ -1061,6 +1145,7 @@
   },
   {
     "type": "ladder",
+    "visible": true,
     "points": [
       [408, 37, -117],
       [408, 32, -117]
@@ -1068,6 +1153,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [408, 32, -117],
       [408, 32, -116.5],
@@ -1076,6 +1162,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [384.5, 32, -116.5],
       [384.5, 32, -121]
@@ -1083,6 +1170,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [397.5, 89, -101.5],
       [397.5, 89, -102],
@@ -1095,6 +1183,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [397.5, 98, -168.5],
       [400.5, 98, -168.5],
@@ -1111,6 +1200,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [398.5, 118, -174.5],
       [398.5, 118, -176],
@@ -1122,6 +1212,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [398.5, 115, -230.5],
       [398.5, 115, -243.5],
@@ -1131,6 +1222,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [470.5, 115, -243.5],
       [470.5, 115, -246],
@@ -1148,6 +1240,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [484, 95, -227.5],
       [482, 94, -231.5]
@@ -1155,6 +1248,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [482, 94, -231.5],
       [488, 88, -231.5],
@@ -1166,6 +1260,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [490.5, 87, -234],
       [490.5, 82, -239]
@@ -1173,6 +1268,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [384.5, 89, -101.5],
       [384.5, 89, -104.5],
@@ -1187,6 +1283,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [325, 95, -118.5],
       [324, 94, -118.5],
@@ -1203,6 +1300,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [307.5, 94, -130.5],
       [307.5, 94, -132],
@@ -1216,6 +1314,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [292.5, 115, -144.5],
       [291.5, 115, -144.5],
@@ -1239,6 +1338,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [210.5, 67, -189.5],
       [210.5, 67, -187.5],
@@ -1251,6 +1351,7 @@
   },
   {
     "type": "ogTunnel",
+    "visible": true,
     "points": [
       [207, 60, -183.5],
       [209, 60, -183.5],
@@ -1261,6 +1362,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [220.5, 57, -181.5],
       [220.5, 57, -168]
@@ -1268,6 +1370,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [201.5, 60, -183.5],
       [201.5, 60, -183.5],
@@ -1280,6 +1383,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [139, 54, -169.5],
       [138, 53, -169.5],
@@ -1288,6 +1392,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [127, 53, -170.5],
       [111, 37, -170.5]
@@ -1295,6 +1400,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [111, 37, -170.5],
       [74.5, 37, -170.5],
@@ -1303,6 +1409,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [74.5, 37, -167],
       [74.5, 38, -166],
@@ -1312,6 +1419,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [74.5, 38, -149.5],
       [74.5, 38, -118.5],
@@ -1320,6 +1428,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [180.5, 54, -169.5],
       [180.5, 54, -168],
@@ -1339,6 +1448,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [179.5, 82, -150],
       [179.5, 82, -154]
@@ -1346,6 +1456,7 @@
   },
   {
     "type": "oBridge",
+    "visible": true,
     "points": [
       [179.5, 82, -154],
       [179.5, 82, -164]
@@ -1353,6 +1464,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [179.5, 82, -164],
       [171, 83, -165],
@@ -1391,6 +1503,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [179.5, 79, -119.5],
       [198.5, 79, -119.5],
@@ -1399,6 +1512,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [177.5, 79, -119.5],
       [177.5, 79, -119.5],
@@ -1408,6 +1522,7 @@
   },
   {
     "type": "cBridge",
+    "visible": true,
     "points": [
       [170.5, 79, -108],
       [170.5, 79, -59],
@@ -1417,6 +1532,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 79, -53.5],
       [174.5, 79, -53.5],
@@ -1436,6 +1552,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [206.5, 68, 47],
       [206.5, 68, 54.5],
@@ -1447,6 +1564,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [190.5, 69, 66.5],
       [185, 71, 72],
@@ -1457,6 +1575,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 77, 84.5],
       [170.5, 77, 103.5],
@@ -1467,6 +1586,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 77, 116.5],
       [199, 77, 116.5]
@@ -1474,6 +1594,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 77, 106.5],
       [172, 77, 106.5],
@@ -1487,6 +1608,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [206.5, 63, 18.5],
       [206.5, 63, 18.5],
@@ -1495,6 +1617,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [200.5, 63, 18.5],
       [200.5, 63, 7]
@@ -1503,6 +1626,7 @@
 
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 79, -59],
       [170, 79, -59]
@@ -1510,6 +1634,7 @@
   },
   {
     "type": "ladder",
+    "visible": true,
     "points": [
       [170, 79, -59],
       [170, 95, -59]
@@ -1517,6 +1642,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [175, 95, -55],
       [176, 95, -55],
@@ -1540,6 +1666,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [170.5, 77, 103.5],
       [166.5, 77, 103.5],
@@ -1551,6 +1678,7 @@
   },
   {
     "type": "nCave",
+    "visible": true,
     "points": [
       [168, 68, 114.5],
       [172, 64, 114.5],
@@ -1572,6 +1700,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [173, 55, 103.5],
       [172.5, 55, 103.5],
@@ -1603,6 +1732,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [84, 48, 116.5],
       [71, 35, 116.5],
@@ -1612,6 +1742,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [23, 36, 119],
       [21, 35, 127],
@@ -1624,6 +1755,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [2.5, 37, 144],
       [2.5, 37, 146],
@@ -1654,6 +1786,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [23, 70, 156.5],
       [23, 69, 162.5]
@@ -1661,6 +1794,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": [
       [147, 66, 213],
       [148, 66, 205],
@@ -1685,6 +1819,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [36, 56, 184.5],
       [33.5, 56, 184.5],
@@ -1696,6 +1831,7 @@
   },
   {
     "type": "ugTunnel",
+    "visible": true,
     "points": [
       [25, 67, 165],
       [25, 67, 162.5],
@@ -1708,6 +1844,7 @@
   },
   {
     "type": "exPath",
+    "visible": true,
     "points": []
   }
 ]

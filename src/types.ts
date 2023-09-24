@@ -24,6 +24,7 @@ export type SceneComponents = {
 
 export type PathData = {
   type: PathTypes;
+  visible: boolean;
   points: Coordinates[];
 };
 

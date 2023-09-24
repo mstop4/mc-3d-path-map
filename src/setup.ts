@@ -7,6 +7,9 @@ import { createDoor, createPath, createPortal, createRoom } from './create';
 
 import { DoorData, PathData, PortalData, RoomData } from './types';
 
+import featureConfig from './config/features.json';
+import materialDefs from './config/materials';
+
 import pathsData from './data/paths.json';
 import roomsData from './data/rooms.json';
 import doorsData from './data/doors.json';
@@ -26,34 +29,17 @@ let stats: Stats;
 const materials: Record<string, THREE.Material | LineMaterial> = {};
 
 function initMaterials() {
-  materials.room = new THREE.MeshStandardMaterial({
-    color: 0xffffff,
-    opacity: 0.5,
-    transparent: true,
-  });
-  materials.door = new THREE.MeshStandardMaterial({
-    color: 0xe0a060,
-    opacity: 0.75,
-    transparent: true,
-  });
-  materials.portal = new THREE.MeshStandardMaterial({
-    color: 0xc000ff,
-  });
-  materials.lava = new THREE.MeshStandardMaterial({
-    color: 0xffe0c0,
-    opacity: 0.5,
-    transparent: true,
-    side: THREE.DoubleSide,
-  });
+  const { mesh, line } = materialDefs;
 
-  materials.ogTunnel = new LineMaterial({ color: 0x8090ff, linewidth: 0.0025 }); // Overground Tunnel
-  materials.ugTunnel = new LineMaterial({ color: 0x80b0d0, linewidth: 0.0025 }); // Underground Tunnel
-  materials.cBridge = new LineMaterial({ color: 0x80ff80, linewidth: 0.0025 }); // Covered Bridge
-  materials.oBridge = new LineMaterial({ color: 0xffd040, linewidth: 0.0025 }); // Open Bridge
-  materials.exPath = new LineMaterial({ color: 0xc00000, linewidth: 0.0025 }); // External Path
-  materials.nCave = new LineMaterial({ color: 0xc06000, linewidth: 0.0025 }); // Natural Cave
-  materials.ladder = new LineMaterial({ color: 0xffffff, linewidth: 0.0025 }); // Ladder
-  materials.bastion = new LineMaterial({ color: 0x404080, linewidth: 0.0025 }); // Bastion
+  for (const materialName in mesh) {
+    const materialDef = mesh[materialName];
+    materials[materialName] = new THREE.MeshStandardMaterial(materialDef);
+  }
+
+  for (const materialName in line) {
+    const materialDef = line[materialName];
+    materials[materialName] = new LineMaterial(materialDef);
+  }
 }
 
 export function setupScene() {
@@ -109,11 +95,13 @@ export function setupScene() {
   initMaterials();
 
   // Lava
-  // const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
-  // const lavaMesh = new THREE.Mesh(lavaGeom, getMaterials().lava);
-  // lavaMesh.rotation.x = Math.PI / 2;
-  // lavaMesh.position.y = 32;
-  // scene.add(lavaMesh);
+  if (featureConfig.lavaGeometry) {
+    const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
+    const lavaMesh = new THREE.Mesh(lavaGeom, getMaterials().lava);
+    lavaMesh.rotation.x = Math.PI / 2;
+    lavaMesh.position.y = 32;
+    scene.add(lavaMesh);
+  }
 
   // Add map elements
   for (const room of roomsData as RoomData[]) {

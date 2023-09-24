@@ -4,6 +4,8 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { getMaterials } from './setup';
 
+import featureConfig from './config/features.json';
+
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { DoorData, PathData, PortalData, RoomData } from './types';
 
@@ -17,7 +19,8 @@ const portalHeightSegments = 2;
 
 export function createPath(pathData: PathData) {
   try {
-    const { points: rawPoints, type } = pathData;
+    const { points: rawPoints, type, visible } = pathData;
+    if (!visible) return null;
     if (rawPoints.length === 0) return null;
     const points = rawPoints.flat(1);
     const material = getMaterials()[type] as LineMaterial;
@@ -108,14 +111,16 @@ export function createPortal(portalData: PortalData) {
     portalMesh.layers.enableAll();
 
     // Create portal label
-    const portalDiv = document.createElement('div');
-    portalDiv.className = 'portalLabel';
-    portalDiv.textContent = label;
+    if (featureConfig.portalLabels) {
+      const portalDiv = document.createElement('div');
+      portalDiv.className = 'portalLabel';
+      portalDiv.textContent = label;
 
-    const portalLabel = new CSS2DObject(portalDiv);
-    portalLabel.center.set(0.5, 1.5);
-    portalMesh.add(portalLabel);
-    portalLabel.layers.set(0);
+      const portalLabel = new CSS2DObject(portalDiv);
+      portalLabel.center.set(0.5, 1.5);
+      portalMesh.add(portalLabel);
+      portalLabel.layers.set(0);
+    }
 
     return portalMesh;
   } catch (e) {
