@@ -347,5 +347,25 @@
     "radius": 5,
     "height": 4,
     "bottomCenter": [15, 72, 684]
+  },
+  {
+    "label": "Grand Watcher Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-260, 38, 166],
+      [-251, 34, 172]
+    ]
+  },
+  {
+    "label": "Grand Sinkhole Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-259, 37, 195],
+      [-252, 34, 199]
+    ]
   }
 ]
