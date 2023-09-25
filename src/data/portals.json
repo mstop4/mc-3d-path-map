@@ -142,5 +142,13 @@
   {
     "label": "Superpoint Caverns",
     "location": [6.5, 70, 149]
+  },
+  {
+    "label": "Cozy Snugg Village",
+    "location": [91, 37, 447.5]
+  },
+  {
+    "label": "Hideaway Outpost",
+    "location": [36.5, 77, 670]
   }
 ]

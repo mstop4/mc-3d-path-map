@@ -28,12 +28,37 @@ export type PathData = {
   points: Coordinates[];
 };
 
-export type RoomData = {
+type BaseRoomData = {
   label: string;
   displayLabel: boolean;
   type: RoomTypes;
+};
+
+type CuboidRoomData = BaseRoomData & {
+  shape: 'cuboid';
   corners: [Coordinates, Coordinates];
 };
+
+type CylindricalRoomData = BaseRoomData & {
+  shape: 'cylinder';
+  bottomCenter: Coordinates;
+  height: number;
+  radius: number;
+};
+
+export type RoomData = CuboidRoomData | CylindricalRoomData;
+
+export function isCuboidRoomData(
+  roomData: RoomData,
+): roomData is CuboidRoomData {
+  return roomData.shape === 'cuboid';
+}
+
+export function isCylindricalRoomData(
+  roomData: RoomData,
+): roomData is CuboidRoomData {
+  return roomData.shape === 'cylinder';
+}
 
 export type DoorData = {
   quantity: 1 | 2;

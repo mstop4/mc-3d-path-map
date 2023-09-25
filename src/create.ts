@@ -7,7 +7,14 @@ import { getMaterials } from './setup';
 import featureConfig from './config/features.json';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
-import { DoorData, PathData, PortalData, RoomData } from './types';
+import {
+  DoorData,
+  PathData,
+  PortalData,
+  RoomData,
+  isCuboidRoomData,
+  isCylindricalRoomData,
+} from './types';
 
 const doorThickness = 0.25;
 const doorHeight = 2;
@@ -40,18 +47,50 @@ export function createPath(pathData: PathData) {
 
 export function createRoom(roomData: RoomData) {
   try {
-    const { corners } = roomData;
+    let roomMesh: THREE.Mesh | null = null;
     const material = getMaterials().room as THREE.MeshStandardMaterial;
 
-    const width = Math.abs(corners[1][0] - corners[0][0]) + 1;
-    const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
-    const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
+    if (isCuboidRoomData(roomData)) {
+      const { corners } = roomData;
 
-    const roomGeom = new THREE.BoxGeometry(width, height, length);
-    const roomMesh = new THREE.Mesh(roomGeom, material);
-    roomMesh.position.x = (corners[0][0] + corners[1][0]) / 2;
-    roomMesh.position.y = (corners[0][1] + corners[1][1]) / 2;
-    roomMesh.position.z = (corners[0][2] + corners[1][2]) / 2;
+      const width = Math.abs(corners[1][0] - corners[0][0]) + 1;
+      const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
+      const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
+
+      const roomGeom = new THREE.BoxGeometry(width, height, length);
+      roomMesh = new THREE.Mesh(roomGeom, material);
+      roomMesh.position.x = (corners[0][0] + corners[1][0]) / 2;
+      roomMesh.position.y = (corners[0][1] + corners[1][1]) / 2;
+      roomMesh.position.z = (corners[0][2] + corners[1][2]) / 2;
+    } else if (isCylindricalRoomData(roomData)) {
+      const { height, radius, bottomCenter } = roomData;
+
+      const roomGeom = new THREE.CylinderGeometry(
+        radius + 1,
+        radius + 1,
+        height + 1,
+        8,
+        3,
+      );
+      roomMesh = new THREE.Mesh(roomGeom, material);
+      roomMesh.position.x = bottomCenter[0] / 2;
+      roomMesh.position.y = bottomCenter[1] / 2;
+      roomMesh.position.z = bottomCenter[2] / 2;
+    }
+
+    // Create room label
+    if (roomMesh !== null && roomData.displayLabel) {
+      roomMesh.layers.enableAll();
+      const labelDiv = document.createElement('div');
+      labelDiv.className = 'portalLabel';
+      labelDiv.textContent = roomData.label;
+
+      const roomLabel = new CSS2DObject(labelDiv);
+      roomLabel.center.set(0.5, 1.5);
+      roomMesh.add(roomLabel);
+      roomLabel.layers.set(0);
+    }
+
     return roomMesh;
   } catch (e) {
     if (e instanceof Error) {
@@ -108,10 +147,9 @@ export function createPortal(portalData: PortalData) {
     portalMesh.position.y = location[1] + portalSize / 2;
     portalMesh.position.z = location[2];
 
-    portalMesh.layers.enableAll();
-
     // Create portal label
     if (featureConfig.portalLabels) {
+      portalMesh.layers.enableAll();
       const portalDiv = document.createElement('div');
       portalDiv.className = 'portalLabel';
       portalDiv.textContent = label;
