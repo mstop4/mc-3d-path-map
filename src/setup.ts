@@ -65,8 +65,10 @@ export function setupScene() {
   document.body.appendChild(labelRenderer.domElement);
 
   // Add Stats panel
-  stats = new Stats();
-  document.body.appendChild(stats.dom);
+  if (import.meta.env.DEV) {
+    stats = new Stats();
+    document.body.appendChild(stats.dom);
+  }
 
   // Set up camera controls
   cameraControls = new MapControls(camera, renderer.domElement);

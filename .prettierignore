@@ -7,3 +7,4 @@ README.md
 .lintstagedrc.js
 tsconfig.json
 vite-env.d.ts
+vite.config.js
