@@ -73,9 +73,9 @@ export function createRoom(roomData: RoomData) {
         3,
       );
       roomMesh = new THREE.Mesh(roomGeom, material);
-      roomMesh.position.x = bottomCenter[0] / 2;
-      roomMesh.position.y = bottomCenter[1] / 2;
-      roomMesh.position.z = bottomCenter[2] / 2;
+      roomMesh.position.x = bottomCenter[0];
+      roomMesh.position.y = bottomCenter[1] + height / 2;
+      roomMesh.position.z = bottomCenter[2];
     }
 
     // Create room label
