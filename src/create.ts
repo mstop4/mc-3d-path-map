@@ -24,7 +24,7 @@ const portalSize = 1;
 const portalWidthSegments = 4;
 const portalHeightSegments = 2;
 
-export function createPath(pathData: PathData) {
+export function createPath(pathData: PathData, id: number) {
   try {
     const { points: rawPoints, type, visible, deprecated } = pathData;
     if (!visible) return null;
@@ -39,6 +39,9 @@ export function createPath(pathData: PathData) {
     const pathMesh = new Line2(pathGeom, material);
     pathMesh.computeLineDistances();
     pathMesh.scale.set(1, 1, 1);
+    pathMesh.name = `Path${id}`;
+    pathMesh.updateMatrixWorld();
+
     return pathMesh;
   } catch (e) {
     if (e instanceof Error) {
@@ -48,7 +51,7 @@ export function createPath(pathData: PathData) {
   }
 }
 
-export function createRoom(roomData: RoomData) {
+export function createRoom(roomData: RoomData, id: number) {
   try {
     let roomMesh: THREE.Mesh | null = null;
     const material = getMaterials().room as THREE.MeshStandardMaterial;
@@ -81,17 +84,23 @@ export function createRoom(roomData: RoomData) {
       roomMesh.position.z = bottomCenter[2];
     }
 
-    // Create room label
-    if (roomMesh !== null && roomData.displayLabel) {
-      roomMesh.layers.enableAll();
-      const labelDiv = document.createElement('div');
-      labelDiv.className = 'portalLabel';
-      labelDiv.textContent = roomData.label;
+    if (roomMesh !== null) {
+      roomMesh.name = `Room${id}`;
 
-      const roomLabel = new CSS2DObject(labelDiv);
-      roomLabel.center.set(0.5, 1.5);
-      roomMesh.add(roomLabel);
-      roomLabel.layers.set(0);
+      // Create room label
+      if (roomData.displayLabel) {
+        roomMesh.layers.enableAll();
+        const labelDiv = document.createElement('div');
+        labelDiv.className = 'portalLabel';
+        labelDiv.textContent = roomData.label;
+
+        const roomLabel = new CSS2DObject(labelDiv);
+        roomLabel.center.set(0.5, 1.5);
+        roomMesh.add(roomLabel);
+        roomLabel.layers.set(0);
+      }
+
+      roomMesh.updateMatrixWorld();
     }
 
     return roomMesh;
@@ -103,7 +112,7 @@ export function createRoom(roomData: RoomData) {
   }
 }
 
-export function createDoor(doorData: DoorData) {
+export function createDoor(doorData: DoorData, id: number) {
   try {
     const { quantity, location, orientation } = doorData;
     const material = getMaterials().door;
@@ -124,6 +133,8 @@ export function createDoor(doorData: DoorData) {
     doorMesh.position.x = location[0];
     doorMesh.position.y = location[1] + height / 2;
     doorMesh.position.z = location[2];
+    doorMesh.name = `Door${id}`;
+    doorMesh.updateMatrixWorld();
 
     return doorMesh;
   } catch (e) {
@@ -134,7 +145,7 @@ export function createDoor(doorData: DoorData) {
   }
 }
 
-export function createPortal(portalData: PortalData) {
+export function createPortal(portalData: PortalData, id: number) {
   try {
     const { label, location } = portalData;
     const material = getMaterials().portal;
@@ -149,6 +160,7 @@ export function createPortal(portalData: PortalData) {
     portalMesh.position.x = location[0];
     portalMesh.position.y = location[1] + portalSize / 2;
     portalMesh.position.z = location[2];
+    portalMesh.name = `Portal${id}`;
 
     // Create portal label
     if (featureConfig.portalLabels) {
@@ -162,6 +174,7 @@ export function createPortal(portalData: PortalData) {
       portalMesh.add(portalLabel);
       portalLabel.layers.set(0);
     }
+    portalMesh.updateMatrixWorld();
 
     return portalMesh;
   } catch (e) {

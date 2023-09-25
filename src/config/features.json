@@ -1,4 +1,5 @@
 {
   "portalLabels": true,
-  "lavaGeometry": false
+  "lavaGeometry": false,
+  "raycasterOn": false
 }

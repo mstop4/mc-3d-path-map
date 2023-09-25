@@ -24,15 +24,17 @@ let camera: THREE.OrthographicCamera;
 let cameraControls: MapControls;
 let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
+let raycaster: THREE.Raycaster;
+let pointer: THREE.Vector2;
 let stats: Stats;
 
-// const roomObjects = [];
-// const doorObjects = [];
-// const portalObjects = [];
-// const pathObjects = [];
+const roomObjects: THREE.Mesh[] = [];
+const doorObjects: THREE.Mesh[] = [];
+const portalObjects: THREE.Mesh[] = [];
+const pathObjects: THREE.Mesh[] = [];
 
 export function setupScene() {
-  // Set up scene and camera
+  // Set up scene, camera, raycaster
   scene = new THREE.Scene();
   // camera = new THREE.PerspectiveCamera(
   //   90,
@@ -48,6 +50,8 @@ export function setupScene() {
     -1000,
     1000,
   );
+  raycaster = new THREE.Raycaster();
+  pointer = new THREE.Vector2();
 
   // Set up 3D and 2D renderers
   renderer = new THREE.WebGLRenderer();
@@ -93,24 +97,37 @@ export function setupScene() {
   }
 
   // Add map elements
-  initObjects<RoomData>(roomsData, createRoom);
-  initObjects<PathData>(pathsData, createPath);
-  initObjects<DoorData>(doorsData, createDoor);
-  initObjects<PortalData>(portalsData, createPortal);
+  initMapObjects<RoomData>(roomsData, createRoom, roomObjects);
+  initMapObjects<PathData>(pathsData, createPath, pathObjects);
+  initMapObjects<DoorData>(doorsData, createDoor, doorObjects);
+  initMapObjects<PortalData>(portalsData, createPortal, portalObjects);
 
-  window.addEventListener('resize', onWindowResize, false);
+  if (featureConfig.raycasterOn) {
+    window.addEventListener('pointermove', onPointerDown);
+  }
+  window.addEventListener('resize', onWindowResize);
 }
 
-function initObjects<T>(
+function initMapObjects<T>(
   data: T[],
-  createObjFunc: (data: T) => THREE.Mesh | null,
+  createObjFunc: (data: T, id: number) => THREE.Mesh | null,
+  objectList: THREE.Mesh[],
 ) {
+  let id = 0;
+
   for (const object of data) {
-    const mesh = createObjFunc(object);
+    const mesh = createObjFunc(object, id);
     if (mesh !== null) {
       scene.add(mesh);
+      objectList.push(mesh);
+      id++;
     }
   }
+}
+
+function onPointerDown(event: MouseEvent) {
+  pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+  pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
 }
 
 function onWindowResize() {
@@ -127,8 +144,16 @@ function onWindowResize() {
 export function render() {
   requestAnimationFrame(render);
 
-  stats.update();
+  if (featureConfig.raycasterOn) {
+    raycaster.setFromCamera(pointer, camera);
+    const hitObjects = raycaster.intersectObjects(scene.children, true);
+    if (hitObjects.length > 0) {
+      console.log(hitObjects[0].object.name);
+    }
+  }
+
   cameraControls.update();
   renderer.render(scene, camera);
   labelRenderer.render(scene, camera);
+  stats.update();
 }
