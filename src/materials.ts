@@ -25,6 +25,7 @@ export function initMaterials() {
       ...materialDef,
       opacity: 0.5,
       transparent: true,
+      dashed: true,
     });
   }
 }

@@ -799,13 +799,21 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: true,
+    deprecated: false,
     points: [
       [160, 65, 271],
       [168, 66, 261],
       [180, 66, 262],
       [186, 66, 258],
       [199, 66, 260],
+      [203.5, 66, 267],
+    ],
+  },
+  {
+    type: 'exPath',
+    visible: true,
+    deprecated: true,
+    points: [
       [203.5, 66, 267],
       [208, 67, 267],
       [218, 68, 268],
@@ -1578,7 +1586,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [179.5, 82, -164],
       [171, 83, -165],
@@ -1612,7 +1620,6 @@ const data: PathData[] = [
       [-44, 84, -223],
       [-50, 87, -225],
       [-57, 88, -229.5],
-      [-64.5, 88, -229.5],
     ],
   },
   {
@@ -1770,7 +1777,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [175, 95, -55],
       [176, 95, -55],
@@ -1983,7 +1990,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [218, 68, 268],
       [217, 71, 273],
@@ -1998,7 +2005,7 @@ const data: PathData[] = [
   {
     type: 'ugTunnel',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [208.5, 87, 303],
       [208.5, 87, 310],
@@ -2008,7 +2015,7 @@ const data: PathData[] = [
   {
     type: 'nCave',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [208.5, 84, 313],
       [208.5, 84, 313.5],
@@ -2051,7 +2058,7 @@ const data: PathData[] = [
   {
     type: 'ugTunnel',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [225.5, 75, 373],
       [225.5, 67, 381],
@@ -2067,7 +2074,7 @@ const data: PathData[] = [
   {
     type: 'ugTunnel',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [239.5, 64, 376.5],
       [232, 64, 376.5],
@@ -2076,7 +2083,7 @@ const data: PathData[] = [
   {
     type: 'nCave',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [239.5, 59, 370],
       [239.5, 59, 366.5],
@@ -2091,7 +2098,7 @@ const data: PathData[] = [
   {
     type: 'ugTunnel',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [238.5, 52, 355.5],
       [237, 52, 355.5],
@@ -2114,7 +2121,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [205, 37, 373.5],
       [199, 35, 378],
@@ -2127,6 +2134,14 @@ const data: PathData[] = [
       [128, 43, 358],
       [124, 43, 361],
       [119, 38, 364],
+      [111, 35, 364],
+    ],
+  },
+  {
+    type: 'exPath',
+    visible: true,
+    deprecated: false,
+    points: [
       [111, 35, 364],
       [115, 35, 358],
       [116.5, 35, 352],
