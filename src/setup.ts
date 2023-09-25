@@ -1,19 +1,18 @@
 import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
+import { getMaterials, initMaterials } from './materials';
 
 import { DoorData, PathData, PortalData, RoomData } from './types';
 
 import featureConfig from './config/features.json';
-import materialDefs from './config/materials';
 
-import pathsData from './data/paths.json';
-import roomsData from './data/rooms.json';
-import doorsData from './data/doors.json';
-import portalsData from './data/portals.json';
+import pathsData from './data/paths';
+import roomsData from './data/rooms';
+import doorsData from './data/doors';
+import portalsData from './data/portals';
 
 const camX = -1;
 const camY = 1;
@@ -26,21 +25,11 @@ let cameraControls: MapControls;
 let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let stats: Stats;
-const materials: Record<string, THREE.Material | LineMaterial> = {};
 
-function initMaterials() {
-  const { mesh, line } = materialDefs;
-
-  for (const materialName in mesh) {
-    const materialDef = mesh[materialName];
-    materials[materialName] = new THREE.MeshStandardMaterial(materialDef);
-  }
-
-  for (const materialName in line) {
-    const materialDef = line[materialName];
-    materials[materialName] = new LineMaterial(materialDef);
-  }
-}
+// const roomObjects = [];
+// const doorObjects = [];
+// const portalObjects = [];
+// const pathObjects = [];
 
 export function setupScene() {
   // Set up scene and camera
@@ -104,39 +93,24 @@ export function setupScene() {
   }
 
   // Add map elements
-  for (const room of roomsData as RoomData[]) {
-    const roomMesh = createRoom(room);
-    if (roomMesh !== null) {
-      scene.add(roomMesh);
-    }
-  }
-
-  for (const path of pathsData as PathData[]) {
-    const pathMesh = createPath(path);
-    if (pathMesh !== null) {
-      scene.add(pathMesh);
-    }
-  }
-
-  for (const door of doorsData as DoorData[]) {
-    const doorMesh = createDoor(door);
-    if (doorMesh !== null) {
-      scene.add(doorMesh);
-    }
-  }
-
-  for (const portal of portalsData as PortalData[]) {
-    const portalMesh = createPortal(portal);
-    if (portalMesh !== null) {
-      scene.add(portalMesh);
-    }
-  }
+  initObjects<RoomData>(roomsData, createRoom);
+  initObjects<PathData>(pathsData, createPath);
+  initObjects<DoorData>(doorsData, createDoor);
+  initObjects<PortalData>(portalsData, createPortal);
 
   window.addEventListener('resize', onWindowResize, false);
 }
 
-export function getMaterials(): Record<string, THREE.Material> {
-  return materials;
+function initObjects<T>(
+  data: T[],
+  createObjFunc: (data: T) => THREE.Mesh | null,
+) {
+  for (const object of data) {
+    const mesh = createObjFunc(object);
+    if (mesh !== null) {
+      scene.add(mesh);
+    }
+  }
 }
 
 function onWindowResize() {

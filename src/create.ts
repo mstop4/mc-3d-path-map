@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-import { getMaterials } from './setup';
+import { getMaterials } from './materials';
 
 import featureConfig from './config/features.json';
 
@@ -26,11 +26,14 @@ const portalHeightSegments = 2;
 
 export function createPath(pathData: PathData) {
   try {
-    const { points: rawPoints, type, visible } = pathData;
+    const { points: rawPoints, type, visible, deprecated } = pathData;
     if (!visible) return null;
     if (rawPoints.length === 0) return null;
+
     const points = rawPoints.flat(1);
-    const material = getMaterials()[type] as LineMaterial;
+    const material = (
+      deprecated ? getMaterials()[`${type}Deprecated`] : getMaterials()[type]
+    ) as LineMaterial;
 
     const pathGeom = new LineGeometry().setPositions(points);
     const pathMesh = new Line2(pathGeom, material);
