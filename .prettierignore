@@ -8,3 +8,5 @@ README.md
 tsconfig.json
 vite-env.d.ts
 vite.config.js
+package.json
+package-lock.json

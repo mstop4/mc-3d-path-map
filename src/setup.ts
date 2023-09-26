@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
-import { GUI } from 'dat.gui';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
 import { getMaterials, initMaterials } from './materials';
 
+import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { DoorData, PathData, PortalData, RoomData } from './types';
 
 import featureConfig from './config/features.json';
@@ -14,6 +14,7 @@ import pathsData from './data/paths';
 import roomsData from './data/rooms';
 import doorsData from './data/doors';
 import portalsData from './data/portals';
+import { setupGUI } from './gui';
 
 const camX = -1;
 const camY = 1;
@@ -27,14 +28,13 @@ let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
-let gui: GUI;
 let stats: Stats;
 
 const roomObjects: THREE.Mesh[] = [];
 const doorObjects: THREE.Mesh[] = [];
 const portalObjects: THREE.Mesh[] = [];
 const pathObjects: THREE.Mesh[] = [];
-const labelObjects = [];
+const labelObjects: CSS2DObject[] = [];
 
 export function setupScene() {
   // Set up scene, camera, raycaster
@@ -156,6 +156,16 @@ export function setupScene() {
   setupGUI();
 }
 
+export function getMapObjects() {
+  return {
+    roomObjects,
+    pathObjects,
+    doorObjects,
+    portalObjects,
+    labelObjects,
+  };
+}
+
 function initMapObjects<T>(
   data: T[],
   createObjFunc: (object: T, id: number) => boolean,
@@ -166,12 +176,6 @@ function initMapObjects<T>(
     const incrementId = createObjFunc(object, id);
     if (incrementId) id++;
   }
-}
-
-function setupGUI() {
-  gui = new GUI();
-  const folder = gui.addFolder('test');
-  folder.open();
 }
 
 function onPointerDown(event: MouseEvent) {

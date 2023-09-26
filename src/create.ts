@@ -37,6 +37,7 @@ export function createPath(pathData: PathData, id: number) {
   pathMesh.computeLineDistances();
   pathMesh.scale.set(1, 1, 1);
   pathMesh.name = `Path${id}`;
+  pathMesh.userData.type = type;
   pathMesh.updateMatrixWorld();
 
   return pathMesh;
