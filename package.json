@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/dat.gui": "^0.7.10",
     "@types/three": "^0.156.0",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
@@ -24,6 +25,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "three": "^0.156.1"
   }
 }

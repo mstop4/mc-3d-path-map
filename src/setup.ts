@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
+import { GUI } from 'dat.gui';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
@@ -26,12 +27,14 @@ let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
+let gui: GUI;
 let stats: Stats;
 
 const roomObjects: THREE.Mesh[] = [];
 const doorObjects: THREE.Mesh[] = [];
 const portalObjects: THREE.Mesh[] = [];
 const pathObjects: THREE.Mesh[] = [];
+const labelObjects = [];
 
 export function setupScene() {
   // Set up scene, camera, raycaster
@@ -99,32 +102,76 @@ export function setupScene() {
   }
 
   // Add map elements
-  initMapObjects<RoomData>(roomsData, createRoom, roomObjects);
-  initMapObjects<PathData>(pathsData, createPath, pathObjects);
-  initMapObjects<DoorData>(doorsData, createDoor, doorObjects);
-  initMapObjects<PortalData>(portalsData, createPortal, portalObjects);
+  initMapObjects<RoomData>(roomsData, (object, id) => {
+    const { roomMesh, roomLabel } = createRoom(object, id);
+    let incrementId = false;
+
+    if (roomMesh !== null) {
+      roomObjects.push(roomMesh);
+      scene.add(roomMesh);
+      incrementId = true;
+    }
+
+    if (roomLabel !== null) {
+      labelObjects.push(roomLabel);
+    }
+
+    return incrementId;
+  });
+
+  initMapObjects<PathData>(pathsData, (object, id) => {
+    const pathMesh = createPath(object, id);
+    if (pathMesh !== null) {
+      pathObjects.push(pathMesh);
+      scene.add(pathMesh);
+      return true;
+    }
+    return false;
+  });
+
+  initMapObjects<DoorData>(doorsData, (object, id) => {
+    const doorMesh = createDoor(object, id);
+    doorObjects.push(doorMesh);
+    scene.add(doorMesh);
+    return true;
+  });
+
+  initMapObjects<PortalData>(portalsData, (object, id) => {
+    const { portalMesh, portalLabel } = createPortal(object, id);
+    portalObjects.push(portalMesh);
+    scene.add(portalMesh);
+
+    if (portalLabel !== null) {
+      labelObjects.push(portalLabel);
+    }
+
+    return true;
+  });
 
   if (featureConfig.raycasterOn) {
     window.addEventListener('pointermove', onPointerDown);
   }
   window.addEventListener('resize', onWindowResize);
+
+  setupGUI();
 }
 
 function initMapObjects<T>(
   data: T[],
-  createObjFunc: (data: T, id: number) => THREE.Mesh | null,
-  objectList: THREE.Mesh[],
+  createObjFunc: (object: T, id: number) => boolean,
 ) {
   let id = 0;
 
   for (const object of data) {
-    const mesh = createObjFunc(object, id);
-    if (mesh !== null) {
-      scene.add(mesh);
-      objectList.push(mesh);
-      id++;
-    }
+    const incrementId = createObjFunc(object, id);
+    if (incrementId) id++;
   }
+}
+
+function setupGUI() {
+  gui = new GUI();
+  const folder = gui.addFolder('test');
+  folder.open();
 }
 
 function onPointerDown(event: MouseEvent) {
