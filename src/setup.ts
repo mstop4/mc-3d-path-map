@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import Stats from 'three/addons/libs/stats.module.js';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
@@ -9,6 +8,7 @@ import {
   createRoom,
 } from './components/mapObjects';
 import { getMaterial, initMaterials } from './components/materials';
+import { addStatsPanel, updateStatsPanel } from './components/stats';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { DoorData, PathData, PortalData, RoomData } from './types';
@@ -33,7 +33,6 @@ let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
-let stats: Stats;
 
 const roomObjects: THREE.Mesh[] = [];
 const doorObjects: THREE.Mesh[] = [];
@@ -68,8 +67,7 @@ export function setupScene() {
 
   // Add Stats panel
   if (import.meta.env.DEV) {
-    stats = new Stats();
-    document.body.appendChild(stats.dom);
+    addStatsPanel();
   }
 
   // Set up camera controls
@@ -166,36 +164,14 @@ export function getMapObjects() {
   };
 }
 
-function initMapObjects<T>(
-  data: T[],
-  createObjFunc: (object: T, id: number) => boolean,
-) {
-  let id = 0;
-
-  for (const object of data) {
-    const incrementId = createObjFunc(object, id);
-    if (incrementId) id++;
-  }
+export function getSceneObjects() {
+  return {
+    renderer,
+  };
 }
 
 export function resetCamera() {
   cameraControls.reset();
-}
-
-function onPointerDown(event: MouseEvent) {
-  pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-  pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
-}
-
-function onWindowResize() {
-  camera.left = -window.innerWidth / viewScale;
-  camera.right = window.innerWidth / viewScale;
-  camera.top = window.innerHeight / viewScale;
-  camera.bottom = -window.innerHeight / viewScale;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  labelRenderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 export function render() {
@@ -212,5 +188,35 @@ export function render() {
   cameraControls.update();
   renderer.render(scene, camera);
   labelRenderer.render(scene, camera);
-  stats.update();
+  if (import.meta.env.DEV) {
+    updateStatsPanel();
+  }
+}
+
+function initMapObjects<T>(
+  data: T[],
+  createObjFunc: (object: T, id: number) => boolean,
+) {
+  let id = 0;
+
+  for (const object of data) {
+    const incrementId = createObjFunc(object, id);
+    if (incrementId) id++;
+  }
+}
+
+function onPointerDown(event: MouseEvent) {
+  pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+  pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
+}
+
+function onWindowResize() {
+  camera.left = -window.innerWidth / viewScale;
+  camera.right = window.innerWidth / viewScale;
+  camera.top = window.innerHeight / viewScale;
+  camera.bottom = -window.innerHeight / viewScale;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  labelRenderer.setSize(window.innerWidth, window.innerHeight);
 }
