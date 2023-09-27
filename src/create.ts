@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-import { getMaterials } from './materials';
+import { getMaterial } from './materials';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import {
@@ -29,7 +29,7 @@ export function createPath(pathData: PathData, id: number) {
 
   const points = rawPoints.flat(1);
   const material = (
-    deprecated ? getMaterials()[`${type}Deprecated`] : getMaterials()[type]
+    deprecated ? getMaterial(`${type}Deprecated`) : getMaterial(type)
   ) as LineMaterial;
 
   const pathGeom = new LineGeometry().setPositions(points);
@@ -47,7 +47,7 @@ export function createPath(pathData: PathData, id: number) {
 
 export function createRoom(roomData: RoomData, id: number) {
   let roomMesh: THREE.Mesh | null = null;
-  const material = getMaterials().room as THREE.MeshStandardMaterial;
+  const material = getMaterial('room') as THREE.MeshStandardMaterial;
 
   if (isCuboidRoomData(roomData)) {
     const { corners } = roomData;
@@ -106,7 +106,7 @@ export function createRoom(roomData: RoomData, id: number) {
 
 export function createDoor(doorData: DoorData, id: number) {
   const { quantity, location, orientation, deprecated } = doorData;
-  const material = getMaterials().door;
+  const material = getMaterial('door');
   let width, length, height;
 
   if (orientation === 'x') {
@@ -134,7 +134,7 @@ export function createDoor(doorData: DoorData, id: number) {
 
 export function createPortal(portalData: PortalData, id: number) {
   const { label, location } = portalData;
-  const material = getMaterials().portal;
+  const material = getMaterial('portal');
 
   // Create portal marker
   const portalGeom = new THREE.SphereGeometry(

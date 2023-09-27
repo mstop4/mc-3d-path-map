@@ -30,6 +30,6 @@ export function initMaterials() {
   }
 }
 
-export function getMaterials(): Record<string, THREE.Material> {
-  return materials;
+export function getMaterial(name: string): THREE.Material {
+  return materials[name] ?? null;
 }

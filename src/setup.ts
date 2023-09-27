@@ -3,7 +3,7 @@ import Stats from 'three/addons/libs/stats.module.js';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createDoor, createPath, createPortal, createRoom } from './create';
-import { getMaterials, initMaterials } from './materials';
+import { getMaterial, initMaterials } from './materials';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { DoorData, PathData, PortalData, RoomData } from './types';
@@ -90,7 +90,7 @@ export function setupScene() {
   // Lava
   if (featureConfig.lavaGeometry) {
     const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
-    const lavaMesh = new THREE.Mesh(lavaGeom, getMaterials().lava);
+    const lavaMesh = new THREE.Mesh(lavaGeom, getMaterial('lava'));
     lavaMesh.rotation.x = Math.PI / 2;
     lavaMesh.position.y = 32;
     scene.add(lavaMesh);
