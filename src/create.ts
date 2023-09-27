@@ -36,9 +36,11 @@ export function createPath(pathData: PathData, id: number) {
   const pathMesh = new Line2(pathGeom, material);
   pathMesh.computeLineDistances();
   pathMesh.scale.set(1, 1, 1);
+  pathMesh.updateMatrixWorld();
+
   pathMesh.name = `Path${id}`;
   pathMesh.userData.type = type;
-  pathMesh.updateMatrixWorld();
+  pathMesh.userData.deprecated = deprecated;
 
   return pathMesh;
 }
@@ -103,7 +105,7 @@ export function createRoom(roomData: RoomData, id: number) {
 }
 
 export function createDoor(doorData: DoorData, id: number) {
-  const { quantity, location, orientation } = doorData;
+  const { quantity, location, orientation, deprecated } = doorData;
   const material = getMaterials().door;
   let width, length, height;
 
@@ -122,8 +124,10 @@ export function createDoor(doorData: DoorData, id: number) {
   doorMesh.position.x = location[0];
   doorMesh.position.y = location[1] + height / 2;
   doorMesh.position.z = location[2];
-  doorMesh.name = `Door${id}`;
   doorMesh.updateMatrixWorld();
+
+  doorMesh.name = `Door${id}`;
+  doorMesh.userData.deprecated = deprecated;
 
   return doorMesh;
 }

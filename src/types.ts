@@ -65,6 +65,7 @@ export type DoorData = {
   quantity: 1 | 2;
   orientation: DoorOrientation;
   type: DoorTypes;
+  deprecated: boolean;
   location: Coordinates;
 };
 
