@@ -2404,7 +2404,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [-169.5, 55, 87.5],
       [-168.5, 55, 84],
