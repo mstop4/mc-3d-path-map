@@ -39,12 +39,6 @@ const labelObjects: CSS2DObject[] = [];
 export function setupScene() {
   // Set up scene, camera, raycaster
   scene = new THREE.Scene();
-  // camera = new THREE.PerspectiveCamera(
-  //   90,
-  //   window.innerWidth / window.innerHeight,
-  //   0.1,
-  //   1000,
-  // );
   camera = new THREE.OrthographicCamera(
     -window.innerWidth / viewScale,
     window.innerWidth / viewScale,
@@ -80,6 +74,7 @@ export function setupScene() {
   camera.position.set(camX, camY, camZ);
   camera.lookAt(camX + 1, camY - 1, camZ + 1);
   cameraControls.update();
+  cameraControls.saveState();
 
   // Set up lights
   const light = new THREE.AmbientLight(0xffffff); // soft white light
@@ -176,6 +171,10 @@ function initMapObjects<T>(
     const incrementId = createObjFunc(object, id);
     if (incrementId) id++;
   }
+}
+
+export function resetCamera() {
+  cameraControls.reset();
 }
 
 function onPointerDown(event: MouseEvent) {

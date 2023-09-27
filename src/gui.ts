@@ -1,5 +1,5 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects } from './setup';
+import { getMapObjects, resetCamera } from './setup';
 
 let gui: GUI;
 
@@ -8,12 +8,22 @@ const options = {
     labels: true,
     deprecatedPaths: true,
   },
+  resetCamera,
 };
 
 export function setupGUI() {
   gui = new GUI();
-  gui.add(options.visible, 'labels').onChange(toggleLabels);
-  gui.add(options.visible, 'deprecatedPaths').onChange(toggleDeprecatedPaths);
+  const showHideFolder = gui.addFolder('Show/Hide');
+  showHideFolder
+    .add(options.visible, 'labels')
+    .name('Labels')
+    .onChange(toggleLabels);
+  showHideFolder
+    .add(options.visible, 'deprecatedPaths')
+    .name('Deprecated Paths')
+    .onChange(toggleDeprecatedPaths);
+  showHideFolder.open();
+  gui.add(options, 'resetCamera').name('Reset Camera');
 }
 
 function toggleLabels() {
