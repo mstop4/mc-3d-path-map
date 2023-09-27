@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
-import materialDefs from './config/materials';
+import materialDefs from '../config/materials';
 
 const materials: Record<string, THREE.Material | LineMaterial> = {};
 

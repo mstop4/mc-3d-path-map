@@ -12,7 +12,7 @@ import {
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
-} from './types';
+} from '../types';
 
 const doorThickness = 0.25;
 const doorHeight = 2;

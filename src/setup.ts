@@ -2,8 +2,13 @@ import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
-import { createDoor, createPath, createPortal, createRoom } from './create';
-import { getMaterial, initMaterials } from './materials';
+import {
+  createDoor,
+  createPath,
+  createPortal,
+  createRoom,
+} from './components/mapObjects';
+import { getMaterial, initMaterials } from './components/materials';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { DoorData, PathData, PortalData, RoomData } from './types';
@@ -14,7 +19,7 @@ import pathsData from './data/paths';
 import roomsData from './data/rooms';
 import doorsData from './data/doors';
 import portalsData from './data/portals';
-import { setupGUI } from './gui';
+import { setupGUI } from './components/gui';
 
 const camX = -1;
 const camY = 1;
