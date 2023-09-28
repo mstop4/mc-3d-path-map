@@ -7,5 +7,8 @@ export default {
   '**/*.(js|json)': () => [
     `npm run prettier`,
     `npm run lint`,
+  ],
+  '**/*.css': () => [
+    `npm run prettier`,
   ]
 };
