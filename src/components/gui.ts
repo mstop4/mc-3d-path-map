@@ -1,5 +1,6 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects, loadCameraState } from '../setup';
+import { getMapObjects } from '../setup';
+import { loadCameraState } from './camera';
 
 let gui: GUI;
 

@@ -1,10 +1,9 @@
 import Stats from 'three/addons/libs/stats.module.js';
-import { getSceneObjects } from '../setup';
+import { renderer } from '../setup';
 
 let statsPanel: Stats;
 let trisPanel: Stats.Panel;
 let drawsPanel: Stats.Panel;
-let renderer: THREE.WebGLRenderer;
 
 export function addStatsPanel() {
   statsPanel = new Stats();
@@ -16,8 +15,6 @@ export function addStatsPanel() {
   document.body.appendChild(statsPanel.dom);
 
   statsPanel.showPanel(0);
-
-  renderer = getSceneObjects().renderer;
 }
 
 export function updateStatsPanel() {
