@@ -28,6 +28,7 @@ import roomsData from './data/rooms';
 import doorsData from './data/doors';
 import portalsData from './data/portals';
 import { setupGUI } from './components/gui';
+import { setupLegend } from './components/legend';
 
 let scene: THREE.Scene;
 export let renderer: THREE.WebGLRenderer;
@@ -58,6 +59,8 @@ export function setupScene() {
   labelRenderer.setSize(window.innerWidth, window.innerHeight);
   labelRenderer.domElement.className = 'labelRenderer';
   document.body.appendChild(labelRenderer.domElement);
+
+  setupLegend();
 
   // Add Stats panel
   if (import.meta.env.DEV) {

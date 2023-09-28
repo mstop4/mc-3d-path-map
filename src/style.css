@@ -16,6 +16,18 @@ body {
   pointer-events: none;
 }
 
+.legendContainer{
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 1rem;
+  min-height: 1rem;
+  background-color: lime;
+  pointer-events: none;
+}
+
+
 /* Make sure dat.gui stays on top of CSS2DRenderer labels */
 .dg.ac {
   z-index: 10000 !important;
