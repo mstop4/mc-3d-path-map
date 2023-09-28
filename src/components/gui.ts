@@ -1,5 +1,5 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects, resetCamera } from '../setup';
+import { getMapObjects, loadCameraState } from '../setup';
 
 let gui: GUI;
 
@@ -9,7 +9,10 @@ const options = {
     deprecatedPaths: true,
     simpleMaterials: false,
   },
-  resetCamera,
+  moveCameraIso: () => loadCameraState(0),
+  moveCameraOverhead: () => loadCameraState(1),
+  moveCameraSideEast: () => loadCameraState(2),
+  moveCameraSideNorth: () => loadCameraState(3),
 };
 
 export function setupGUI() {
@@ -28,9 +31,13 @@ export function setupGUI() {
     .add(options.visible, 'simpleMaterials')
     .name('Simple Colours')
     .onChange(toggleSimpleMaterials);
-
   showHideFolder.open();
-  gui.add(options, 'resetCamera').name('Reset Camera');
+
+  const cameraFolder = gui.addFolder('Position Camera');
+  cameraFolder.add(options, 'moveCameraIso').name('Isometric');
+  cameraFolder.add(options, 'moveCameraOverhead').name('Overhead');
+  cameraFolder.add(options, 'moveCameraSideEast').name('Side (Facing East)');
+  cameraFolder.add(options, 'moveCameraSideNorth').name('Side (Facing North)');
 }
 
 function toggleLabels() {

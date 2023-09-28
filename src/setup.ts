@@ -11,7 +11,7 @@ import { getMaterial, initMaterials } from './components/materials';
 import { addStatsPanel, updateStatsPanel } from './components/stats';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-import { DoorData, PathData, PortalData, RoomData } from './types';
+import { CameraState, DoorData, PathData, PortalData, RoomData } from './types';
 
 import featureConfig from './config/features.json';
 
@@ -33,6 +33,8 @@ let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
+
+const cameraStates: CameraState[] = [];
 
 const roomObjects: THREE.Mesh[] = [];
 const doorObjects: THREE.Mesh[] = [];
@@ -73,11 +75,18 @@ export function setupScene() {
   // Set up camera controls
   cameraControls = new MapControls(camera, renderer.domElement);
   cameraControls.enableDamping = false;
-
   camera.position.set(camX, camY, camZ);
-  camera.lookAt(camX + 1, camY - 1, camZ + 1);
+  camera.lookAt(0, 0, 0);
   cameraControls.update();
-  cameraControls.saveState();
+
+  saveCameraState(
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(camX, camY, camZ),
+    1,
+  ); // Isometric Camera
+  saveCameraState(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, camY, 0), 1); // Overhead Camera
+  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(-1, 64, 0), 1); // Side Camera (East)
+  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(0, 64, 1), 1); // Side Camera (North)
 
   // Set up lights
   const light = new THREE.AmbientLight(0xffffff); // soft white light
@@ -170,27 +179,29 @@ export function getSceneObjects() {
   };
 }
 
-export function resetCamera() {
-  cameraControls.reset();
+function saveCameraState(
+  target: THREE.Vector3,
+  position: THREE.Vector3,
+  zoom: number,
+) {
+  cameraStates.push({
+    target,
+    position,
+    zoom,
+  });
+
+  return cameraStates.length;
 }
 
-export function render() {
-  requestAnimationFrame(render);
+export function loadCameraState(index: number) {
+  if (index >= cameraStates.length) return;
+  const state = cameraStates[index];
 
-  if (featureConfig.raycasterOn) {
-    raycaster.setFromCamera(pointer, camera);
-    const hitObjects = raycaster.intersectObjects(scene.children, true);
-    if (hitObjects.length > 0) {
-      console.log(hitObjects[0].object.name);
-    }
-  }
-
+  cameraControls.target.copy(state.target);
+  camera.position.copy(state.position);
+  camera.zoom = state.zoom;
+  camera.updateProjectionMatrix();
   cameraControls.update();
-  renderer.render(scene, camera);
-  labelRenderer.render(scene, camera);
-  if (import.meta.env.DEV) {
-    updateStatsPanel();
-  }
 }
 
 function initMapObjects<T>(
@@ -219,4 +230,23 @@ function onWindowResize() {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
   labelRenderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+export function render() {
+  requestAnimationFrame(render);
+
+  if (featureConfig.raycasterOn) {
+    raycaster.setFromCamera(pointer, camera);
+    const hitObjects = raycaster.intersectObjects(scene.children, true);
+    if (hitObjects.length > 0) {
+      console.log(hitObjects[0].object.name);
+    }
+  }
+
+  cameraControls.update();
+  renderer.render(scene, camera);
+  labelRenderer.render(scene, camera);
+  if (import.meta.env.DEV) {
+    updateStatsPanel();
+  }
 }
