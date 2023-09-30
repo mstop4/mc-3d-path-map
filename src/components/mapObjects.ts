@@ -2,7 +2,9 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-import { getMaterial, simpleMaterialMap } from './materials';
+import { getMaterial } from './materials';
+
+import { defaultPathProps } from '../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import {
@@ -28,14 +30,23 @@ export function createPath(pathData: PathData, id: number) {
   if (rawPoints.length === 0) return null;
 
   const points = rawPoints.flat(1);
+
   const defaultMaterial = (
     deprecated ? getMaterial(`${type}Deprecated`) : getMaterial(type)
   ) as LineMaterial;
-  const simpleMaterial = (
-    deprecated
-      ? getMaterial(`${simpleMaterialMap[type]}Deprecated`)
-      : getMaterial(simpleMaterialMap[type])
-  ) as LineMaterial;
+
+  const { isExterior, isNatural } = defaultPathProps[type];
+
+  const extSimpleMaterial = isExterior
+    ? getMaterial(`simpleExterior${deprecated ? 'Deprecated' : ''}`)
+    : (getMaterial(
+        `simpleInterior${deprecated ? 'Deprecated' : ''}`,
+      ) as LineMaterial);
+  const natSimpleMaterial = isNatural
+    ? getMaterial(`simpleNatural${deprecated ? 'Deprecated' : ''}`)
+    : (getMaterial(
+        `simpleArtificial${deprecated ? 'Deprecated' : ''}`,
+      ) as LineMaterial);
 
   const pathGeom = new LineGeometry().setPositions(points);
   const pathMesh = new Line2(pathGeom, defaultMaterial);
@@ -47,7 +58,8 @@ export function createPath(pathData: PathData, id: number) {
   pathMesh.userData.type = type;
   pathMesh.userData.deprecated = deprecated;
   pathMesh.userData.defaultMaterial = defaultMaterial;
-  pathMesh.userData.simpleMaterial = simpleMaterial;
+  pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
+  pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
 
   return pathMesh;
 }

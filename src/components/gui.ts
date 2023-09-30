@@ -4,12 +4,18 @@ import { loadCameraState } from './camera';
 
 let gui: GUI;
 
+const colourModeKeys = {
+  default: 'Full',
+  ext: 'Interior/Exterior',
+  nat: 'Natural/Artificial',
+};
+
 const options = {
   visible: {
     labels: true,
     deprecatedPaths: true,
-    simpleMaterials: false,
   },
+  colourMode: 'Default',
   moveCameraIso: () => loadCameraState(0),
   moveCameraOverhead: () => loadCameraState(1),
   moveCameraSideEast: () => loadCameraState(2),
@@ -29,9 +35,9 @@ export function setupGUI() {
     .name('Deprecated Paths')
     .onChange(toggleDeprecatedPaths);
   showHideFolder
-    .add(options.visible, 'simpleMaterials')
-    .name('Simple Colours')
-    .onChange(toggleSimpleMaterials);
+    .add(options, 'colourMode', Object.values(colourModeKeys))
+    .name('Colour Mode')
+    .onChange(changeColourMode);
   showHideFolder.open();
 
   const cameraFolder = gui.addFolder('Position Camera');
@@ -65,12 +71,28 @@ function toggleDeprecatedPaths() {
   }
 }
 
-function toggleSimpleMaterials() {
+function changeColourMode() {
   const { pathObjects } = getMapObjects();
+  let materialKey;
+
+  switch (options.colourMode) {
+    case colourModeKeys.default:
+      materialKey = 'defaultMaterial';
+      break;
+
+    case colourModeKeys.ext:
+      materialKey = 'extSimpleMaterial';
+      break;
+
+    case colourModeKeys.nat:
+      materialKey = 'natSimpleMaterial';
+      break;
+
+    default:
+      materialKey = 'defaultMaterial';
+  }
 
   for (const path of pathObjects) {
-    path.material = options.visible.simpleMaterials
-      ? path.userData.simpleMaterial
-      : path.userData.defaultMaterial;
+    path.material = path.userData[materialKey];
   }
 }

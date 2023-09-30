@@ -1,9 +1,13 @@
 import * as THREE from 'three';
 import { LineMaterialParameters } from 'three/addons/lines/LineMaterial.js';
 
+import { defaultPathProps, simplePathProps } from './pathProps';
+
+type LineMaterialDefinitions = Record<string, LineMaterialParameters>;
+
 export type MaterialDefinitions = {
   mesh: Record<string, THREE.MeshStandardMaterialParameters>;
-  line: Record<string, LineMaterialParameters>;
+  line: LineMaterialDefinitions;
 };
 
 const materials: MaterialDefinitions = {
@@ -28,16 +32,23 @@ const materials: MaterialDefinitions = {
       side: THREE.DoubleSide,
     },
   },
-  line: {
-    ogTunnel: { color: 0x8090ff, linewidth: 0.0025 }, // Overground Tunnel
-    ugTunnel: { color: 0x80b0d0, linewidth: 0.0025 }, // Underground Tunnel
-    cBridge: { color: 0x80ff80, linewidth: 0.0025 }, // Covered Bridge
-    oBridge: { color: 0xffd040, linewidth: 0.0025 }, // Open Bridge
-    exPath: { color: 0xc00000, linewidth: 0.0025 }, // External Path
-    nCave: { color: 0xc06000, linewidth: 0.0025 }, // Natural Cave
-    ladder: { color: 0xffffff, linewidth: 0.0025 }, // Ladder
-    bastion: { color: 0x404080, linewidth: 0.0025 }, // Bastion
-  },
+  line: (() => {
+    const lineMaterials: LineMaterialDefinitions = {};
+
+    // Parse default path palette
+    for (const pathKey in defaultPathProps) {
+      const colourInt = parseInt(defaultPathProps[pathKey].colour, 16);
+      lineMaterials[pathKey] = { color: colourInt, linewidth: 0.0025 };
+    }
+
+    // Parse simple path palette
+    for (const pathKey in simplePathProps) {
+      const colourInt = parseInt(simplePathProps[pathKey].colour, 16);
+      lineMaterials[pathKey] = { color: colourInt, linewidth: 0.0025 };
+    }
+
+    return lineMaterials;
+  })(),
 };
 
 export default materials;

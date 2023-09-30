@@ -4,18 +4,6 @@ import materialDefs from '../config/materials';
 
 const materials: Record<string, THREE.Material | LineMaterial> = {};
 
-export const simpleMaterialMap = {
-  ugTunnel: 'ugTunnel',
-  ogTunnel: 'ugTunnel',
-  cBridge: 'ugTunnel',
-  oBridge: 'ugTunnel',
-  exPath: 'exPath',
-  nCave: 'exPath',
-  ladder: 'ugTunnel',
-  bastion: 'exPath',
-  nFortress: 'exPath',
-};
-
 export function initMaterials() {
   const { mesh, line } = materialDefs;
 
