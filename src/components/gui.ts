@@ -15,7 +15,7 @@ const options = {
     labels: true,
     deprecatedPaths: true,
   },
-  colourMode: 'Default',
+  colourMode: colourModeKeys.default,
   moveCameraIso: () => loadCameraState(0),
   moveCameraOverhead: () => loadCameraState(1),
   moveCameraSideEast: () => loadCameraState(2),
@@ -24,6 +24,11 @@ const options = {
 
 export function setupGUI() {
   gui = new GUI();
+  gui
+    .add(options, 'colourMode', Object.values(colourModeKeys))
+    .name('Colour Mode')
+    .onChange(changeColourMode);
+
   const showHideFolder = gui.addFolder('Show/Hide');
 
   showHideFolder
@@ -34,11 +39,6 @@ export function setupGUI() {
     .add(options.visible, 'deprecatedPaths')
     .name('Deprecated Paths')
     .onChange(toggleDeprecatedPaths);
-  showHideFolder
-    .add(options, 'colourMode', Object.values(colourModeKeys))
-    .name('Colour Mode')
-    .onChange(changeColourMode);
-  showHideFolder.open();
 
   const cameraFolder = gui.addFolder('Position Camera');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
