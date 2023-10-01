@@ -1,7 +1,7 @@
 import { GUI } from 'dat.gui';
 import { getMapObjects } from '../setup';
 import { loadCameraState } from './camera';
-import { switchLegend } from './legend';
+import { hideLegend, showLegend, switchLegend } from './legend';
 
 let gui: GUI;
 
@@ -15,6 +15,7 @@ const options = {
   visible: {
     labels: true,
     deprecatedPaths: true,
+    legend: true,
   },
   colourMode: colourModeKeys.default,
   moveCameraIso: () => loadCameraState(0),
@@ -40,6 +41,10 @@ export function setupGUI() {
     .add(options.visible, 'deprecatedPaths')
     .name('Deprecated Paths')
     .onChange(toggleDeprecatedPaths);
+  showHideFolder
+    .add(options.visible, 'legend')
+    .name('Legend')
+    .onChange(toggleLegend);
 
   const cameraFolder = gui.addFolder('Position Camera');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
@@ -99,5 +104,13 @@ function changeColourMode() {
 
   for (const path of pathObjects) {
     path.material = path.userData[materialKey];
+  }
+}
+
+function toggleLegend() {
+  if (options.visible.legend) {
+    showLegend();
+  } else {
+    hideLegend();
   }
 }

@@ -9,7 +9,6 @@ import {
 
 let legendContainer: HTMLElement | null;
 const legends: HTMLElement[] = [];
-let currentLegendVisible = 0;
 
 export function setupLegend() {
   legendContainer = document.getElementById('legendContainer');
@@ -83,18 +82,16 @@ export function switchLegend(index: number) {
   legends.forEach(
     (legend, i) => (legend.style.display = index === i ? 'block' : 'none'),
   );
-  currentLegendVisible = index;
 }
 
 export function showLegend() {
-  legends.forEach(
-    (legend, i) =>
-      (legend.style.display = currentLegendVisible === i ? 'block' : 'none'),
-  );
+  if (legendContainer) {
+    legendContainer.style.display = 'block';
+  }
 }
 
 export function hideLegend() {
-  for (const legend of legends) {
-    legend.style.display = 'none';
+  if (legendContainer) {
+    legendContainer.style.display = 'none';
   }
 }
