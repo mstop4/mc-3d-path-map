@@ -1,11 +1,11 @@
-type DefaultPathPropertyDefinition = {
+export type DefaultPathPropertyDefinition = {
   name: string;
   colour: string;
   isExterior: boolean;
   isNatural: boolean;
 };
 
-type SimplePathPropertyDefinition = {
+export type SimplePathPropertyDefinition = {
   name: string;
   colour: string;
 };

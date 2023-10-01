@@ -1,6 +1,7 @@
 import { GUI } from 'dat.gui';
 import { getMapObjects } from '../setup';
 import { loadCameraState } from './camera';
+import { switchLegend } from './legend';
 
 let gui: GUI;
 
@@ -78,18 +79,22 @@ function changeColourMode() {
   switch (options.colourMode) {
     case colourModeKeys.default:
       materialKey = 'defaultMaterial';
+      switchLegend(0);
       break;
 
     case colourModeKeys.ext:
       materialKey = 'extSimpleMaterial';
+      switchLegend(1);
       break;
 
     case colourModeKeys.nat:
       materialKey = 'natSimpleMaterial';
+      switchLegend(2);
       break;
 
     default:
       materialKey = 'defaultMaterial';
+      switchLegend(0);
   }
 
   for (const path of pathObjects) {
