@@ -1,6 +1,14 @@
 import * as THREE from 'three';
-import { MapControls } from 'three/addons/controls/MapControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
+import {
+  camera,
+  cameraControls,
+  getInitialCameraPosition,
+  saveCameraState,
+  setupCamera,
+  setupCameraControls,
+  viewScale,
+} from './components/camera';
 import {
   createDoor,
   createPath,
@@ -11,7 +19,7 @@ import { getMaterial, initMaterials } from './components/materials';
 import { addStatsPanel, updateStatsPanel } from './components/stats';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-import { CameraState, DoorData, PathData, PortalData, RoomData } from './types';
+import { DoorData, PathData, PortalData, RoomData } from './types';
 
 import featureConfig from './config/features.json';
 
@@ -20,21 +28,13 @@ import roomsData from './data/rooms';
 import doorsData from './data/doors';
 import portalsData from './data/portals';
 import { setupGUI } from './components/gui';
-
-const camX = -1;
-const camY = 1;
-const camZ = 1;
-const viewScale = 4;
+import { setupLegend } from './components/legend';
 
 let scene: THREE.Scene;
-let camera: THREE.OrthographicCamera;
-let cameraControls: MapControls;
-let renderer: THREE.WebGLRenderer;
+export let renderer: THREE.WebGLRenderer;
 let labelRenderer: CSS2DRenderer;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
-
-const cameraStates: CameraState[] = [];
 
 const roomObjects: THREE.Mesh[] = [];
 const doorObjects: THREE.Mesh[] = [];
@@ -45,14 +45,7 @@ const labelObjects: CSS2DObject[] = [];
 export function setupScene() {
   // Set up scene, camera, raycaster
   scene = new THREE.Scene();
-  camera = new THREE.OrthographicCamera(
-    -window.innerWidth / viewScale,
-    window.innerWidth / viewScale,
-    window.innerHeight / viewScale,
-    -window.innerHeight / viewScale,
-    -1000,
-    1000,
-  );
+  setupCamera();
   raycaster = new THREE.Raycaster();
   pointer = new THREE.Vector2();
 
@@ -67,24 +60,22 @@ export function setupScene() {
   labelRenderer.domElement.className = 'labelRenderer';
   document.body.appendChild(labelRenderer.domElement);
 
+  setupLegend();
+
   // Add Stats panel
   if (import.meta.env.DEV) {
     addStatsPanel();
   }
 
-  // Set up camera controls
-  cameraControls = new MapControls(camera, renderer.domElement);
-  cameraControls.enableDamping = false;
-  camera.position.set(camX, camY, camZ);
-  camera.lookAt(0, 0, 0);
-  cameraControls.update();
+  setupCameraControls(renderer);
+  const initCameraPos = getInitialCameraPosition();
 
+  saveCameraState(new THREE.Vector3(0, 0, 0), initCameraPos, 1); // Isometric Camera
   saveCameraState(
     new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(camX, camY, camZ),
+    new THREE.Vector3(0, initCameraPos.y, 0),
     1,
-  ); // Isometric Camera
-  saveCameraState(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, camY, 0), 1); // Overhead Camera
+  ); // Overhead Camera
   saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(-1, 64, 0), 1); // Side Camera (East)
   saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(0, 64, 1), 1); // Side Camera (North)
 
@@ -163,47 +154,6 @@ export function setupScene() {
   setupGUI();
 }
 
-export function getMapObjects() {
-  return {
-    roomObjects,
-    pathObjects,
-    doorObjects,
-    portalObjects,
-    labelObjects,
-  };
-}
-
-export function getSceneObjects() {
-  return {
-    renderer,
-  };
-}
-
-function saveCameraState(
-  target: THREE.Vector3,
-  position: THREE.Vector3,
-  zoom: number,
-) {
-  cameraStates.push({
-    target,
-    position,
-    zoom,
-  });
-
-  return cameraStates.length;
-}
-
-export function loadCameraState(index: number) {
-  if (index >= cameraStates.length) return;
-  const state = cameraStates[index];
-
-  cameraControls.target.copy(state.target);
-  camera.position.copy(state.position);
-  camera.zoom = state.zoom;
-  camera.updateProjectionMatrix();
-  cameraControls.update();
-}
-
 function initMapObjects<T>(
   data: T[],
   createObjFunc: (object: T, id: number) => boolean,
@@ -214,6 +164,16 @@ function initMapObjects<T>(
     const incrementId = createObjFunc(object, id);
     if (incrementId) id++;
   }
+}
+
+export function getMapObjects() {
+  return {
+    roomObjects,
+    pathObjects,
+    doorObjects,
+    portalObjects,
+    labelObjects,
+  };
 }
 
 function onPointerDown(event: MouseEvent) {

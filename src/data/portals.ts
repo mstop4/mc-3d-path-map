@@ -158,7 +158,7 @@ const data: PortalData[] = [
     location: [-255.5, 35, 169],
   },
   {
-    label: 'Grand Sinkhole',
+    label: 'Grand Sinkhole Cave',
     location: [-255.5, 34, 197],
   },
 ];

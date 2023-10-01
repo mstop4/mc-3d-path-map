@@ -1,14 +1,23 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects, loadCameraState } from '../setup';
+import { getMapObjects } from '../setup';
+import { loadCameraState } from './camera';
+import { hideLegend, showLegend, switchLegend } from './legend';
 
 let gui: GUI;
+
+const colourModeKeys = {
+  default: 'Full',
+  ext: 'Interior/Exterior',
+  nat: 'Natural/Artificial',
+};
 
 const options = {
   visible: {
     labels: true,
     deprecatedPaths: true,
-    simpleMaterials: false,
+    legend: true,
   },
+  colourMode: colourModeKeys.default,
   moveCameraIso: () => loadCameraState(0),
   moveCameraOverhead: () => loadCameraState(1),
   moveCameraSideEast: () => loadCameraState(2),
@@ -17,6 +26,11 @@ const options = {
 
 export function setupGUI() {
   gui = new GUI();
+  gui
+    .add(options, 'colourMode', Object.values(colourModeKeys))
+    .name('Colour Mode')
+    .onChange(changeColourMode);
+
   const showHideFolder = gui.addFolder('Show/Hide');
 
   showHideFolder
@@ -28,10 +42,9 @@ export function setupGUI() {
     .name('Deprecated Paths')
     .onChange(toggleDeprecatedPaths);
   showHideFolder
-    .add(options.visible, 'simpleMaterials')
-    .name('Simple Colours')
-    .onChange(toggleSimpleMaterials);
-  showHideFolder.open();
+    .add(options.visible, 'legend')
+    .name('Legend')
+    .onChange(toggleLegend);
 
   const cameraFolder = gui.addFolder('Position Camera');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
@@ -64,12 +77,40 @@ function toggleDeprecatedPaths() {
   }
 }
 
-function toggleSimpleMaterials() {
+function changeColourMode() {
   const { pathObjects } = getMapObjects();
+  let materialKey;
+
+  switch (options.colourMode) {
+    case colourModeKeys.default:
+      materialKey = 'defaultMaterial';
+      switchLegend(0);
+      break;
+
+    case colourModeKeys.ext:
+      materialKey = 'extSimpleMaterial';
+      switchLegend(1);
+      break;
+
+    case colourModeKeys.nat:
+      materialKey = 'natSimpleMaterial';
+      switchLegend(2);
+      break;
+
+    default:
+      materialKey = 'defaultMaterial';
+      switchLegend(0);
+  }
 
   for (const path of pathObjects) {
-    path.material = options.visible.simpleMaterials
-      ? path.userData.simpleMaterial
-      : path.userData.defaultMaterial;
+    path.material = path.userData[materialKey];
+  }
+}
+
+function toggleLegend() {
+  if (options.visible.legend) {
+    showLegend();
+  } else {
+    hideLegend();
   }
 }

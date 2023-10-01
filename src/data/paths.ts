@@ -1032,7 +1032,7 @@ const data: PathData[] = [
     ],
   },
   {
-    type: 'nCave',
+    type: 'exPath',
     visible: true,
     deprecated: false,
     points: [
@@ -1046,6 +1046,14 @@ const data: PathData[] = [
       [593, 100, 5],
       [599, 100, 9],
       [609, 100, 17],
+      [615, 100, 20.5],
+    ],
+  },
+  {
+    type: 'nCave',
+    visible: true,
+    deprecated: false,
+    points: [
       [615, 100, 20.5],
       [622, 100, 20.5],
       [623, 101, 20.5],
@@ -1063,7 +1071,7 @@ const data: PathData[] = [
     ],
   },
   {
-    type: 'nCave',
+    type: 'exPath',
     visible: true,
     deprecated: false,
     points: [
@@ -1080,6 +1088,14 @@ const data: PathData[] = [
       [576.5, 101, -71],
       [576.5, 102, -72],
       [576.5, 102, -80],
+    ],
+  },
+  {
+    type: 'nCave',
+    visible: true,
+    deprecated: false,
+    points: [
+      [576.5, 102, -80],
       [576.5, 103, -81],
       [576.5, 103, -85],
       [576.5, 100, -88],
@@ -1089,7 +1105,7 @@ const data: PathData[] = [
     ],
   },
   {
-    type: 'nCave',
+    type: 'exPath',
     visible: true,
     deprecated: false,
     points: [
