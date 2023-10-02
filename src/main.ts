@@ -79,11 +79,13 @@ function render() {
   cameraControls.update();
   renderer.clear();
   renderer.render(mapScene, camera);
-  labelRenderer.render(mapScene, camera);
-  viewHelper.render(renderer);
+
   if (import.meta.env.DEV) {
     updateStatsPanel();
   }
+
+  labelRenderer.render(mapScene, camera);
+  viewHelper.render(renderer);
 }
 
 setup();
