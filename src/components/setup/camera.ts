@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { CameraState } from '../types';
+import { CameraState } from '../../types';
 
 export let camera: THREE.OrthographicCamera;
 export let cameraControls: MapControls;
@@ -29,6 +29,17 @@ export function setupCameraControls(renderer: THREE.WebGLRenderer) {
   camera.position.set(camX, camY, camZ);
   camera.lookAt(0, 0, 0);
   cameraControls.update();
+
+  const initCameraPos = getInitialCameraPosition();
+
+  saveCameraState(new THREE.Vector3(0, 0, 0), initCameraPos, 1); // Isometric Camera
+  saveCameraState(
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, initCameraPos.y, 0),
+    1,
+  ); // Overhead Camera
+  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(-1, 64, 0), 1); // Side Camera (East)
+  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(0, 64, 1), 1); // Side Camera (North)
 }
 
 export function saveCameraState(

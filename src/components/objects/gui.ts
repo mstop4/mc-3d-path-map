@@ -1,6 +1,6 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects } from '../setup';
-import { loadCameraState } from './camera';
+import { getMapObjects } from '../setup/scenes/mapScene';
+import { loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 
 let gui: GUI;

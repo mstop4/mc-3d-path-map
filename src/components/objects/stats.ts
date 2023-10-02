@@ -1,5 +1,5 @@
 import Stats from 'three/addons/libs/stats.module.js';
-import { renderer } from '../setup';
+import { renderer } from '../setup/renderer';
 
 let statsPanel: Stats;
 let trisPanel: Stats.Panel;
