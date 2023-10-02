@@ -4,17 +4,17 @@ import {
   createPath,
   createPortal,
   createRoom,
-} from '../../objects/mapObjects';
-import { getMaterial } from '../../setup/materials';
+} from '../objects/mapObjects';
+import { getMaterial } from './materials';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-import { DoorData, PathData, PortalData, RoomData } from '../../../types';
+import { DoorData, PathData, PortalData, RoomData } from '../../types';
 
-import featureConfig from '../../../config/features.json';
-import pathsData from '../../../data/paths';
-import roomsData from '../../../data/rooms';
-import doorsData from '../../../data/doors';
-import portalsData from '../../../data/portals';
+import featureConfig from '../../config/features.json';
+import pathsData from '../../data/paths';
+import roomsData from '../../data/rooms';
+import doorsData from '../../data/doors';
+import portalsData from '../../data/portals';
 
 export let mapScene: THREE.Scene;
 const roomObjects: THREE.Mesh[] = [];

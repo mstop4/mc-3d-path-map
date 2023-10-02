@@ -9,6 +9,7 @@ export function setupRenderers() {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.autoClear = false;
   document.body.appendChild(renderer.domElement);
 
   labelRenderer = new CSS2DRenderer();

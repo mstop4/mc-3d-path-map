@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import {
   camera,
   cameraControls,
@@ -12,14 +13,14 @@ import {
   setupRenderers,
 } from './components/setup/renderer';
 import { initMaterials } from './components/setup/materials';
+import { mapScene, setupMapScene } from './components/setup/mapScene';
 import { addStatsPanel, updateStatsPanel } from './components/objects/stats';
 import { setupGUI } from './components/objects/gui';
 import { setupLegend } from './components/objects/legend';
 
 import featureConfig from './config/features.json';
 
-import { mapScene, setupMapScene } from './components/setup/scenes/mapScene';
-
+let viewHelper: ViewHelper;
 let raycaster: THREE.Raycaster;
 let pointer: THREE.Vector2;
 
@@ -33,6 +34,8 @@ function setup() {
   }
 
   setupMapScene();
+  viewHelper = new ViewHelper(camera, renderer.domElement);
+
   setupLegend();
   setupCameraControls(renderer);
   if (import.meta.env.DEV) {
@@ -73,10 +76,11 @@ function render() {
       console.log(hitObjects[0].object.name);
     }
   }
-
   cameraControls.update();
+  renderer.clear();
   renderer.render(mapScene, camera);
   labelRenderer.render(mapScene, camera);
+  viewHelper.render(renderer);
   if (import.meta.env.DEV) {
     updateStatsPanel();
   }
