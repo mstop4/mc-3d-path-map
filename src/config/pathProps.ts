@@ -22,19 +22,19 @@ export type SimplePathPropertyDefinitions = Record<
 export const defaultPathProps: DefaultPathPropertyDefinitions = {
   ogTunnel: {
     name: 'Surface Tunnel',
-    colour: '8090ff',
+    colour: '6060ff',
     isExterior: false,
     isNatural: false,
   },
   ugTunnel: {
     name: 'Underground Tunnel',
-    colour: '80b0d0',
+    colour: '60b0e0',
     isExterior: false,
     isNatural: false,
   },
   cBridge: {
     name: 'Covered Bridge',
-    colour: '80ff80',
+    colour: '00ff00',
     isExterior: false,
     isNatural: false,
   },
@@ -68,12 +68,18 @@ export const defaultPathProps: DefaultPathPropertyDefinitions = {
     isExterior: true,
     isNatural: true,
   },
+  nFortress: {
+    name: 'Nether Fortress',
+    colour: 'd00060',
+    isExterior: true,
+    isNatural: true,
+  },
 };
 
 export const simplePathProps: SimplePathPropertyDefinitions = {
   simpleInterior: {
     name: 'Interior',
-    colour: '80b0d0',
+    colour: '60b0e0',
   },
   simpleExterior: {
     name: 'Exterior',
@@ -85,6 +91,6 @@ export const simplePathProps: SimplePathPropertyDefinitions = {
   },
   simpleArtificial: {
     name: 'Artificial',
-    colour: '80ff80',
+    colour: '00ff00',
   },
 };

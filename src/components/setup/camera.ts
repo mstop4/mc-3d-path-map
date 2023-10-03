@@ -1,14 +1,13 @@
-import * as THREE from 'three';
+import { OrthographicCamera, type WebGLRenderer, Vector3 } from 'three';
 import { MapControls } from 'three/addons/controls/MapControls.js';
+import { getMapBounds } from './mapScene';
 import { CameraState } from '../../types';
 
-export let camera: THREE.OrthographicCamera;
+export let camera: OrthographicCamera;
 export let cameraControls: MapControls;
 let lastZoom: number;
 
-const camX = -1;
-const camY = 1;
-const camZ = 1;
+let initialCameraPosition: Vector3;
 export const viewScale = 4;
 const zoomConst = 0.5133420832795057; // used to calculate the relationship between camera zoom and the scale on the gui
 const guiScaleSize = 100;
@@ -17,7 +16,7 @@ const cameraStates: CameraState[] = [];
 let scaleNumberElem: HTMLElement | null;
 
 export function setupCamera() {
-  camera = new THREE.OrthographicCamera(
+  camera = new OrthographicCamera(
     -window.innerWidth / viewScale,
     window.innerWidth / viewScale,
     window.innerHeight / viewScale,
@@ -27,13 +26,35 @@ export function setupCamera() {
   );
 }
 
-export function setupCameraControls(renderer: THREE.WebGLRenderer) {
+export function setupCameraControls(renderer: WebGLRenderer) {
   cameraControls = new MapControls(camera, renderer.domElement);
   cameraControls.enableDamping = false;
-  camera.position.set(camX, camY, camZ);
-  camera.lookAt(0, 0, 0);
-  cameraControls.update();
+
+  const { center } = getMapBounds();
+  initialCameraPosition = new Vector3(
+    center[0] - 1,
+    center[1] + 1,
+    center[2] + 1,
+  );
   lastZoom = 0;
+
+  saveCameraState(new Vector3(...center), initialCameraPosition, 1); // Isometric Camera
+  saveCameraState(
+    new Vector3(...center),
+    new Vector3(center[0], 127, center[2]),
+    1,
+  ); // Overhead Camera
+  saveCameraState(
+    new Vector3(center[0], 64, center[2]),
+    new Vector3(center[0] - 1, 64, center[2]),
+    1,
+  ); // Side Camera (East)
+  saveCameraState(
+    new Vector3(center[0], 64, center[2]),
+    new Vector3(center[0], 64, center[2] + 1),
+    1,
+  ); // Side Camera (North)
+
   scaleNumberElem = document.getElementById('scaleNumber');
 
   if (scaleNumberElem !== null) {
@@ -41,16 +62,7 @@ export function setupCameraControls(renderer: THREE.WebGLRenderer) {
     cameraControls.addEventListener('change', onZoomChanged);
   }
 
-  const initCameraPos = getInitialCameraPosition();
-
-  saveCameraState(new THREE.Vector3(0, 0, 0), initCameraPos, 1); // Isometric Camera
-  saveCameraState(
-    new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, initCameraPos.y, 0),
-    1,
-  ); // Overhead Camera
-  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(-1, 64, 0), 1); // Side Camera (East)
-  saveCameraState(new THREE.Vector3(0, 64, 0), new THREE.Vector3(0, 64, 1), 1); // Side Camera (North)
+  loadCameraState(0);
 }
 
 function onZoomChanged() {
@@ -74,8 +86,8 @@ function onZoomChanged() {
 }
 
 export function saveCameraState(
-  target: THREE.Vector3,
-  position: THREE.Vector3,
+  target: Vector3,
+  position: Vector3,
   zoom: number,
 ) {
   cameraStates.push({
@@ -99,5 +111,5 @@ export function loadCameraState(index: number) {
 }
 
 export function getInitialCameraPosition() {
-  return new THREE.Vector3(camX, camY, camZ);
+  return initialCameraPosition;
 }

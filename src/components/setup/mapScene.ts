@@ -1,4 +1,10 @@
-import * as THREE from 'three';
+import {
+  Scene,
+  Mesh,
+  AmbientLight,
+  DirectionalLight,
+  PlaneGeometry,
+} from 'three';
 import {
   createDoor,
   createPath,
@@ -8,7 +14,13 @@ import {
 import { getMaterial } from './materials';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-import { DoorData, PathData, PortalData, RoomData } from '../../types';
+import {
+  DoorData,
+  MapBounds,
+  PathData,
+  PortalData,
+  RoomData,
+} from '../../types';
 
 import featureConfig from '../../config/features.json';
 import pathsData from '../../data/paths';
@@ -16,20 +28,29 @@ import roomsData from '../../data/rooms';
 import doorsData from '../../data/doors';
 import portalsData from '../../data/portals';
 
-export let mapScene: THREE.Scene;
-const roomObjects: THREE.Mesh[] = [];
-const doorObjects: THREE.Mesh[] = [];
-const portalObjects: THREE.Mesh[] = [];
-const pathObjects: THREE.Mesh[] = [];
+export let mapScene: Scene;
+const roomObjects: Mesh[] = [];
+const doorObjects: Mesh[] = [];
+const portalObjects: Mesh[] = [];
+const pathObjects: Mesh[] = [];
 const labelObjects: CSS2DObject[] = [];
+const mapBounds: MapBounds = {
+  center: [0, 64, 0],
+  xMin: 0,
+  xMax: 0,
+  yMin: 64,
+  yMax: 64,
+  zMin: 0,
+  zMax: 0,
+};
 
 export function setupMapScene() {
-  mapScene = new THREE.Scene();
+  mapScene = new Scene();
 
   // Set up lights
-  const light = new THREE.AmbientLight(0xffffff); // soft white light
+  const light = new AmbientLight(0xffffff); // soft white light
   mapScene.add(light);
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  const directionalLight = new DirectionalLight(0xffffff, 1);
   directionalLight.position.x = 1;
   directionalLight.position.y = 1;
   directionalLight.position.z = 1;
@@ -37,8 +58,8 @@ export function setupMapScene() {
 
   // Lava
   if (featureConfig.lavaGeometry) {
-    const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
-    const lavaMesh = new THREE.Mesh(lavaGeom, getMaterial('lava'));
+    const lavaGeom = new PlaneGeometry(1500, 1500);
+    const lavaMesh = new Mesh(lavaGeom, getMaterial('lava'));
     lavaMesh.rotation.x = Math.PI / 2;
     lavaMesh.position.y = 32;
     mapScene.add(lavaMesh);
@@ -59,6 +80,24 @@ export function setupMapScene() {
       labelObjects.push(roomLabel);
     }
 
+    if (object.shape === 'cuboid') {
+      const { corners } = object;
+      checkMapBounds(corners[0][0], corners[1][1], corners[0][2]);
+      checkMapBounds(corners[1][0], corners[0][1], corners[1][2]);
+    } else if (object.shape === 'cylinder') {
+      const { radius, height, bottomCenter } = object;
+      checkMapBounds(
+        bottomCenter[0] - radius,
+        bottomCenter[1],
+        bottomCenter[2] - radius,
+      );
+      checkMapBounds(
+        bottomCenter[0] + radius,
+        bottomCenter[1] + height,
+        bottomCenter[2] + radius,
+      );
+    }
+
     return incrementId;
   });
 
@@ -67,6 +106,12 @@ export function setupMapScene() {
     if (pathMesh !== null) {
       pathObjects.push(pathMesh);
       mapScene.add(pathMesh);
+
+      const { points } = object;
+      for (const point of points) {
+        checkMapBounds(...point);
+      }
+
       return true;
     }
     return false;
@@ -76,6 +121,10 @@ export function setupMapScene() {
     const doorMesh = createDoor(object, id);
     doorObjects.push(doorMesh);
     mapScene.add(doorMesh);
+
+    const { location } = object;
+    checkMapBounds(...location);
+
     return true;
   });
 
@@ -84,12 +133,17 @@ export function setupMapScene() {
     portalObjects.push(portalMesh);
     mapScene.add(portalMesh);
 
+    const { location } = object;
+    checkMapBounds(...location);
+
     if (portalLabel !== null) {
       labelObjects.push(portalLabel);
     }
 
     return true;
   });
+
+  calculateMapCenter();
 }
 
 function initMapObjects<T>(
@@ -104,6 +158,22 @@ function initMapObjects<T>(
   }
 }
 
+export function checkMapBounds(x: number, y: number, z: number) {
+  if (x < mapBounds.xMin) mapBounds.xMin = x;
+  if (x > mapBounds.xMax) mapBounds.xMax = x;
+  if (y < mapBounds.yMin) mapBounds.yMin = y;
+  if (y > mapBounds.yMax) mapBounds.yMax = y;
+  if (z < mapBounds.zMin) mapBounds.zMin = z;
+  if (z > mapBounds.zMax) mapBounds.zMax = z;
+}
+
+function calculateMapCenter() {
+  const { xMin, yMin, xMax, yMax, zMin, zMax } = mapBounds;
+  mapBounds.center[0] = (xMin + xMax) / 2;
+  mapBounds.center[1] = (yMin + yMax) / 2;
+  mapBounds.center[2] = (zMin + zMax) / 2;
+}
+
 export function getMapObjects() {
   return {
     roomObjects,
@@ -112,4 +182,8 @@ export function getMapObjects() {
     portalObjects,
     labelObjects,
   };
+}
+
+export function getMapBounds() {
+  return mapBounds;
 }
