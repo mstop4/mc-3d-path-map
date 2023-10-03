@@ -15,7 +15,6 @@ import { getMaterial } from './materials';
 
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
-  Coordinates,
   DoorData,
   MapBounds,
   PathData,
@@ -83,20 +82,20 @@ export function setupMapScene() {
 
     if (object.shape === 'cuboid') {
       const { corners } = object;
-      checkMapBounds([corners[0][0], corners[1][1], corners[0][2]]);
-      checkMapBounds([corners[1][0], corners[0][1], corners[1][2]]);
+      checkMapBounds(corners[0][0], corners[1][1], corners[0][2]);
+      checkMapBounds(corners[1][0], corners[0][1], corners[1][2]);
     } else if (object.shape === 'cylinder') {
       const { radius, height, bottomCenter } = object;
-      checkMapBounds([
+      checkMapBounds(
         bottomCenter[0] - radius,
         bottomCenter[1],
         bottomCenter[2] - radius,
-      ]);
-      checkMapBounds([
+      );
+      checkMapBounds(
         bottomCenter[0] + radius,
         bottomCenter[1] + height,
         bottomCenter[2] + radius,
-      ]);
+      );
     }
 
     return incrementId;
@@ -110,7 +109,7 @@ export function setupMapScene() {
 
       const { points } = object;
       for (const point of points) {
-        checkMapBounds(point);
+        checkMapBounds(...point);
       }
 
       return true;
@@ -124,7 +123,7 @@ export function setupMapScene() {
     mapScene.add(doorMesh);
 
     const { location } = object;
-    checkMapBounds(location);
+    checkMapBounds(...location);
 
     return true;
   });
@@ -135,7 +134,7 @@ export function setupMapScene() {
     mapScene.add(portalMesh);
 
     const { location } = object;
-    checkMapBounds(location);
+    checkMapBounds(...location);
 
     if (portalLabel !== null) {
       labelObjects.push(portalLabel);
@@ -159,13 +158,13 @@ function initMapObjects<T>(
   }
 }
 
-function checkMapBounds(point: Coordinates) {
-  if (point[0] < mapBounds.xMin) mapBounds.xMin = point[0];
-  if (point[0] > mapBounds.xMax) mapBounds.xMax = point[0];
-  if (point[1] < mapBounds.yMin) mapBounds.yMin = point[1];
-  if (point[1] > mapBounds.yMax) mapBounds.yMax = point[1];
-  if (point[2] < mapBounds.zMin) mapBounds.zMin = point[2];
-  if (point[2] > mapBounds.zMax) mapBounds.zMax = point[2];
+export function checkMapBounds(x: number, y: number, z: number) {
+  if (x < mapBounds.xMin) mapBounds.xMin = x;
+  if (x > mapBounds.xMax) mapBounds.xMax = x;
+  if (y < mapBounds.yMin) mapBounds.yMin = y;
+  if (y > mapBounds.yMax) mapBounds.yMax = y;
+  if (z < mapBounds.zMin) mapBounds.zMin = z;
+  if (z > mapBounds.zMax) mapBounds.zMax = z;
 }
 
 function calculateMapCenter() {
