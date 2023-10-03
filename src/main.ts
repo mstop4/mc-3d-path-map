@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import { Raycaster, Vector2 } from 'three';
 import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import {
   camera,
@@ -21,16 +21,16 @@ import { setupLegend } from './components/objects/legend';
 import featureConfig from './config/features.json';
 
 let viewHelper: ViewHelper;
-let raycaster: THREE.Raycaster;
-let pointer: THREE.Vector2;
+let raycaster: Raycaster;
+let pointer: Vector2;
 
 function setup() {
   initMaterials();
   setupCamera();
   setupRenderers();
   if (featureConfig.raycasterOn) {
-    raycaster = new THREE.Raycaster();
-    pointer = new THREE.Vector2();
+    raycaster = new Raycaster();
+    pointer = new Vector2();
   }
 
   setupMapScene();

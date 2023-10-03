@@ -1,8 +1,8 @@
-import * as THREE from 'three';
+import { type Material, MeshStandardMaterial } from 'three';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import materialDefs from '../../config/materials';
 
-const materials: Record<string, THREE.Material | LineMaterial> = {};
+const materials: Record<string, Material | LineMaterial> = {};
 
 export function initMaterials() {
   const { mesh, line } = materialDefs;
@@ -10,7 +10,7 @@ export function initMaterials() {
   // Mesh Materials
   for (const materialName in mesh) {
     const materialDef = mesh[materialName];
-    materials[materialName] = new THREE.MeshStandardMaterial(materialDef);
+    materials[materialName] = new MeshStandardMaterial(materialDef);
   }
 
   // Line Materials
@@ -30,6 +30,6 @@ export function initMaterials() {
   }
 }
 
-export function getMaterial(name: string): THREE.Material {
+export function getMaterial(name: string): Material {
   return materials[name] ?? null;
 }

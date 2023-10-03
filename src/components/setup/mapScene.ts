@@ -1,4 +1,10 @@
-import * as THREE from 'three';
+import {
+  Scene,
+  Mesh,
+  AmbientLight,
+  DirectionalLight,
+  PlaneGeometry,
+} from 'three';
 import {
   createDoor,
   createPath,
@@ -16,20 +22,20 @@ import roomsData from '../../data/rooms';
 import doorsData from '../../data/doors';
 import portalsData from '../../data/portals';
 
-export let mapScene: THREE.Scene;
-const roomObjects: THREE.Mesh[] = [];
-const doorObjects: THREE.Mesh[] = [];
-const portalObjects: THREE.Mesh[] = [];
-const pathObjects: THREE.Mesh[] = [];
+export let mapScene: Scene;
+const roomObjects: Mesh[] = [];
+const doorObjects: Mesh[] = [];
+const portalObjects: Mesh[] = [];
+const pathObjects: Mesh[] = [];
 const labelObjects: CSS2DObject[] = [];
 
 export function setupMapScene() {
-  mapScene = new THREE.Scene();
+  mapScene = new Scene();
 
   // Set up lights
-  const light = new THREE.AmbientLight(0xffffff); // soft white light
+  const light = new AmbientLight(0xffffff); // soft white light
   mapScene.add(light);
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  const directionalLight = new DirectionalLight(0xffffff, 1);
   directionalLight.position.x = 1;
   directionalLight.position.y = 1;
   directionalLight.position.z = 1;
@@ -37,8 +43,8 @@ export function setupMapScene() {
 
   // Lava
   if (featureConfig.lavaGeometry) {
-    const lavaGeom = new THREE.PlaneGeometry(1500, 1500);
-    const lavaMesh = new THREE.Mesh(lavaGeom, getMaterial('lava'));
+    const lavaGeom = new PlaneGeometry(1500, 1500);
+    const lavaMesh = new Mesh(lavaGeom, getMaterial('lava'));
     lavaMesh.rotation.x = Math.PI / 2;
     lavaMesh.position.y = 32;
     mapScene.add(lavaMesh);

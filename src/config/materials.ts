@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import { DoubleSide, type MeshStandardMaterialParameters } from 'three';
 import { LineMaterialParameters } from 'three/addons/lines/LineMaterial.js';
 
 import { defaultPathProps, simplePathProps } from './pathProps';
@@ -6,7 +6,7 @@ import { defaultPathProps, simplePathProps } from './pathProps';
 type LineMaterialDefinitions = Record<string, LineMaterialParameters>;
 
 export type MaterialDefinitions = {
-  mesh: Record<string, THREE.MeshStandardMaterialParameters>;
+  mesh: Record<string, MeshStandardMaterialParameters>;
   line: LineMaterialDefinitions;
 };
 
@@ -29,7 +29,7 @@ const materials: MaterialDefinitions = {
       color: 0xffe0c0,
       opacity: 0.5,
       transparent: true,
-      side: THREE.DoubleSide,
+      side: DoubleSide,
     },
   },
   line: (() => {

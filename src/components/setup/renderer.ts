@@ -1,11 +1,11 @@
-import * as THREE from 'three';
+import { WebGLRenderer } from 'three';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
-export let renderer: THREE.WebGLRenderer;
+export let renderer: WebGLRenderer;
 export let labelRenderer: CSS2DRenderer;
 
 export function setupRenderers() {
-  renderer = new THREE.WebGLRenderer();
+  renderer = new WebGLRenderer();
 
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);

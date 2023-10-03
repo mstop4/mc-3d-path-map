@@ -1,4 +1,10 @@
-import * as THREE from 'three';
+import {
+  Mesh,
+  type MeshStandardMaterial,
+  BoxGeometry,
+  CylinderGeometry,
+  SphereGeometry,
+} from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
@@ -65,8 +71,8 @@ export function createPath(pathData: PathData, id: number) {
 }
 
 export function createRoom(roomData: RoomData, id: number) {
-  let roomMesh: THREE.Mesh | null = null;
-  const material = getMaterial('room') as THREE.MeshStandardMaterial;
+  let roomMesh: Mesh | null = null;
+  const material = getMaterial('room') as MeshStandardMaterial;
 
   if (isCuboidRoomData(roomData)) {
     const { corners } = roomData;
@@ -75,22 +81,22 @@ export function createRoom(roomData: RoomData, id: number) {
     const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
     const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
 
-    const roomGeom = new THREE.BoxGeometry(width, height, length);
-    roomMesh = new THREE.Mesh(roomGeom, material);
+    const roomGeom = new BoxGeometry(width, height, length);
+    roomMesh = new Mesh(roomGeom, material);
     roomMesh.position.x = (corners[0][0] + corners[1][0]) / 2;
     roomMesh.position.y = (corners[0][1] + corners[1][1]) / 2;
     roomMesh.position.z = (corners[0][2] + corners[1][2]) / 2;
   } else if (isCylindricalRoomData(roomData)) {
     const { height, radius, bottomCenter } = roomData;
 
-    const roomGeom = new THREE.CylinderGeometry(
+    const roomGeom = new CylinderGeometry(
       radius + 1,
       radius + 1,
       height + 1,
       8,
       3,
     );
-    roomMesh = new THREE.Mesh(roomGeom, material);
+    roomMesh = new Mesh(roomGeom, material);
     roomMesh.position.x = bottomCenter[0];
     roomMesh.position.y = bottomCenter[1] + height / 2;
     roomMesh.position.z = bottomCenter[2];
@@ -138,8 +144,8 @@ export function createDoor(doorData: DoorData, id: number) {
     height = doorHeight;
   }
 
-  const doorGeom = new THREE.BoxGeometry(width, height, length);
-  const doorMesh = new THREE.Mesh(doorGeom, material);
+  const doorGeom = new BoxGeometry(width, height, length);
+  const doorMesh = new Mesh(doorGeom, material);
   doorMesh.position.x = location[0];
   doorMesh.position.y = location[1] + height / 2;
   doorMesh.position.z = location[2];
@@ -156,12 +162,12 @@ export function createPortal(portalData: PortalData, id: number) {
   const material = getMaterial('portal');
 
   // Create portal marker
-  const portalGeom = new THREE.SphereGeometry(
+  const portalGeom = new SphereGeometry(
     portalSize,
     portalWidthSegments,
     portalHeightSegments,
   );
-  const portalMesh = new THREE.Mesh(portalGeom, material);
+  const portalMesh = new Mesh(portalGeom, material);
   portalMesh.position.x = location[0];
   portalMesh.position.y = location[1] + portalSize / 2;
   portalMesh.position.z = location[2];
