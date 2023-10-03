@@ -2,9 +2,9 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-import { getMaterial } from './materials';
+import { getMaterial } from '../setup/materials';
 
-import { defaultPathProps } from '../config/pathProps';
+import { defaultPathProps } from '../../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import {
@@ -14,7 +14,7 @@ import {
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
-} from '../types';
+} from '../../types';
 
 const doorThickness = 0.25;
 const doorHeight = 2;

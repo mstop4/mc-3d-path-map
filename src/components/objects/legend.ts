@@ -5,7 +5,7 @@ import {
   SimplePathPropertyDefinitions,
   defaultPathProps,
   simplePathProps,
-} from '../config/pathProps';
+} from '../../config/pathProps';
 
 let legendContainer: HTMLElement | null;
 const legends: HTMLElement[] = [];

@@ -1,6 +1,6 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects } from '../setup';
-import { loadCameraState } from './camera';
+import { getMapObjects } from '../setup/mapScene';
+import { loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 
 let gui: GUI;
@@ -49,8 +49,8 @@ export function setupGUI() {
   const cameraFolder = gui.addFolder('Position Camera');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
   cameraFolder.add(options, 'moveCameraOverhead').name('Overhead');
-  cameraFolder.add(options, 'moveCameraSideEast').name('Side (Facing East)');
-  cameraFolder.add(options, 'moveCameraSideNorth').name('Side (Facing North)');
+  cameraFolder.add(options, 'moveCameraSideEast').name('Facing East');
+  cameraFolder.add(options, 'moveCameraSideNorth').name('Facing North');
 }
 
 function toggleLabels() {
