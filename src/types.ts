@@ -14,6 +14,15 @@ export type RoomTypes = 'ugRoom' | 'ogRoom';
 export type DoorTypes = 'ex' | 'conn';
 export type DoorOrientation = 'x' | 'y' | 'z';
 export type Coordinates = [number, number, number];
+export type MapBounds = {
+  center: Coordinates;
+  xMin: number;
+  xMax: number;
+  yMin: number;
+  yMax: number;
+  zMin: number;
+  zMax: number;
+};
 
 export type SceneComponents = {
   scene: THREE.Scene;
