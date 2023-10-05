@@ -1,14 +1,9 @@
-import { DoubleSide, type MeshStandardMaterialParameters } from 'three';
-import { LineMaterialParameters } from 'three/addons/lines/LineMaterial.js';
-
+import { DoubleSide } from 'three';
 import { defaultPathProps, simplePathProps } from './pathProps';
-
-type LineMaterialDefinitions = Record<string, LineMaterialParameters>;
-
-export type MaterialDefinitions = {
-  mesh: Record<string, MeshStandardMaterialParameters>;
-  line: LineMaterialDefinitions;
-};
+import {
+  LineMaterialDefinitions,
+  MaterialDefinitions,
+} from './materials.types';
 
 const materials: MaterialDefinitions = {
   mesh: {

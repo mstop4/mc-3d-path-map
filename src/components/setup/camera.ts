@@ -1,18 +1,19 @@
 import { OrthographicCamera, type WebGLRenderer, Vector3 } from 'three';
 import { MapControls } from 'three/addons/controls/MapControls.js';
 import { getMapBounds } from './mapScene';
-import { CameraState } from '../../types';
+import {
+  autoRotateSpeed,
+  guiScaleSize,
+  ratios,
+  viewScale,
+} from './camera.config';
+import { CameraState } from '../setup/camera.types';
 
 export let camera: OrthographicCamera;
 export let cameraControls: MapControls;
-let lastZoom: number;
-
-let initialCameraPosition: Vector3;
-export const viewScale = 4;
-const zoomConst = 0.5133420832795057; // used to calculate the relationship between camera zoom and the scale on the gui
-const guiScaleSize = 100;
-
 const cameraStates: CameraState[] = [];
+let lastZoom: number;
+let initialCameraPosition: Vector3;
 let scaleNumberElem: HTMLElement | null;
 
 export function setupCamera() {
@@ -29,14 +30,19 @@ export function setupCamera() {
 export function setupCameraControls(renderer: WebGLRenderer) {
   cameraControls = new MapControls(camera, renderer.domElement);
   cameraControls.enableDamping = false;
+  cameraControls.autoRotateSpeed = autoRotateSpeed;
 
-  const { center } = getMapBounds();
+  const { center, xMin, xMax, zMin, zMax } = getMapBounds();
   initialCameraPosition = new Vector3(
     center[0] - 1,
     center[1] + 1,
     center[2] + 1,
   );
   lastZoom = 0;
+
+  const xLength = xMax - xMin;
+  const zLength = zMax - zMin;
+  const diagonalLength = Math.sqrt(Math.pow(xLength, 2) + Math.pow(zLength, 2));
 
   saveCameraState(new Vector3(...center), initialCameraPosition, 1); // Isometric Camera
   saveCameraState(
@@ -54,6 +60,12 @@ export function setupCameraControls(renderer: WebGLRenderer) {
     new Vector3(center[0], 64, center[2] + 1),
     1,
   ); // Side Camera (North)
+  saveCameraState(
+    new Vector3(...center),
+    initialCameraPosition,
+    (ratios.isometricZoom / diagonalLength) *
+      (window.innerHeight / ratios.windowHeight),
+  ); // Demo Camera
 
   scaleNumberElem = document.getElementById('scaleNumber');
 
@@ -67,7 +79,7 @@ export function setupCameraControls(renderer: WebGLRenderer) {
 
 function onZoomChanged() {
   if (camera.zoom !== lastZoom && scaleNumberElem !== null) {
-    const rawScaleNumber = (zoomConst / camera.zoom) * guiScaleSize;
+    const rawScaleNumber = (ratios.zoomToScaleGUI / camera.zoom) * guiScaleSize;
     let formattedScaleNumber: string;
 
     if (rawScaleNumber >= 10) {

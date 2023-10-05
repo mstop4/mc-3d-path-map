@@ -1,11 +1,11 @@
 import {
-  DefaultPathPropertyDefinition,
+  DefaultPathProperties,
   DefaultPathPropertyDefinitions,
-  SimplePathPropertyDefinition,
+  SimplePathProperties,
   SimplePathPropertyDefinitions,
-  defaultPathProps,
-  simplePathProps,
-} from '../../config/pathProps';
+} from '../../config/pathProps.types';
+
+import { defaultPathProps, simplePathProps } from '../../config/pathProps';
 
 let legendContainer: HTMLElement | null;
 const legends: HTMLElement[] = [];
@@ -60,7 +60,7 @@ function createLegend(
 }
 
 function createLegendElement(
-  propDef: DefaultPathPropertyDefinition | SimplePathPropertyDefinition,
+  propDef: DefaultPathProperties | SimplePathProperties,
 ) {
   const listElem = document.createElement('li');
   const swatch = document.createElement('span');

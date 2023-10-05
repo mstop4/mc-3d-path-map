@@ -10,6 +10,14 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { getMaterial } from '../setup/materials';
 
+import {
+  baseDoorWidth,
+  doorHeight,
+  doorThickness,
+  portalHeightSegments,
+  portalSize,
+  portalWidthSegments,
+} from './mapObjects.config';
 import { defaultPathProps } from '../../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
@@ -20,15 +28,7 @@ import {
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
-} from '../../types';
-
-const doorThickness = 0.25;
-const doorHeight = 2;
-const baseDoorWidth = 1;
-
-const portalSize = 1;
-const portalWidthSegments = 4;
-const portalHeightSegments = 2;
+} from '../../data/data.types';
 
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;

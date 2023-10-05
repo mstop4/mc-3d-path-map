@@ -1,6 +1,6 @@
 import { GUI } from 'dat.gui';
 import { getMapObjects } from '../setup/mapScene';
-import { loadCameraState } from '../setup/camera';
+import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 
 let gui: GUI;
@@ -18,10 +18,11 @@ const options = {
     legend: true,
   },
   colourMode: colourModeKeys.default,
-  moveCameraIso: () => loadCameraState(0),
-  moveCameraOverhead: () => loadCameraState(1),
-  moveCameraSideEast: () => loadCameraState(2),
-  moveCameraSideNorth: () => loadCameraState(3),
+  moveCameraDemo: () => toggleCameraPostion(4, true),
+  moveCameraIso: () => toggleCameraPostion(0, false),
+  moveCameraOverhead: () => toggleCameraPostion(1, false),
+  moveCameraSideEast: () => toggleCameraPostion(2, false),
+  moveCameraSideNorth: () => toggleCameraPostion(3, false),
 };
 
 export function setupGUI() {
@@ -47,6 +48,7 @@ export function setupGUI() {
     .onChange(toggleLegend);
 
   const cameraFolder = gui.addFolder('Position Camera');
+  cameraFolder.add(options, 'moveCameraDemo').name('Demo');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
   cameraFolder.add(options, 'moveCameraOverhead').name('Overhead');
   cameraFolder.add(options, 'moveCameraSideEast').name('Facing East');
@@ -113,4 +115,9 @@ function toggleLegend() {
   } else {
     hideLegend();
   }
+}
+
+function toggleCameraPostion(index: number, autoRotate: boolean) {
+  loadCameraState(index);
+  cameraControls.autoRotate = autoRotate;
 }

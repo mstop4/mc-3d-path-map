@@ -1,4 +1,4 @@
-import { PathData } from '../types';
+import { PathData } from './data.types';
 
 const data: PathData[] = [
   {

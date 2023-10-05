@@ -1,23 +1,7 @@
-export type DefaultPathPropertyDefinition = {
-  name: string;
-  colour: string;
-  isExterior: boolean;
-  isNatural: boolean;
-};
-
-export type SimplePathPropertyDefinition = {
-  name: string;
-  colour: string;
-};
-
-export type DefaultPathPropertyDefinitions = Record<
-  string,
-  DefaultPathPropertyDefinition
->;
-export type SimplePathPropertyDefinitions = Record<
-  string,
-  SimplePathPropertyDefinition
->;
+import {
+  DefaultPathPropertyDefinitions,
+  SimplePathPropertyDefinitions,
+} from './pathProps.types';
 
 export const defaultPathProps: DefaultPathPropertyDefinitions = {
   ogTunnel: {

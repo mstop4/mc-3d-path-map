@@ -1,4 +1,4 @@
-import { PortalData } from '../types';
+import { PortalData } from './data.types';
 
 const data: PortalData[] = [
   {
