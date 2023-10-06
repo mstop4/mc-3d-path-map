@@ -2,15 +2,13 @@ import { GUI } from 'dat.gui';
 import { getMapObjects } from '../setup/mapScene';
 import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
+import {
+  allColourModeKeys,
+  colourModesAvailable,
+  activeColourModes,
+} from './gui.config';
 
 let gui: GUI;
-
-const colourModeKeys = {
-  default: 'Full',
-  cbf: 'Colourblind-friendly',
-  ext: 'Interior/Exterior',
-  nat: 'Natural/Artificial',
-};
 
 const options = {
   visible: {
@@ -18,7 +16,7 @@ const options = {
     deprecatedPaths: true,
     legend: true,
   },
-  colourMode: colourModeKeys.default,
+  colourMode: activeColourModes[colourModesAvailable[0]],
   moveCameraDemo: () => toggleCameraPostion(4, true),
   moveCameraIso: () => toggleCameraPostion(0, false),
   moveCameraOverhead: () => toggleCameraPostion(1, false),
@@ -29,7 +27,7 @@ const options = {
 export function setupGUI() {
   gui = new GUI();
   gui
-    .add(options, 'colourMode', Object.values(colourModeKeys))
+    .add(options, 'colourMode', Object.values(activeColourModes))
     .name('Colour Mode')
     .onChange(changeColourMode);
 
@@ -85,22 +83,22 @@ function changeColourMode() {
   let materialKey;
 
   switch (options.colourMode) {
-    case colourModeKeys.default:
+    case allColourModeKeys.default:
       materialKey = 'defaultMaterial';
       switchLegend(0);
       break;
 
-    case colourModeKeys.cbf:
+    case allColourModeKeys.cbf:
       materialKey = 'cbfMaterial';
       switchLegend(1);
       break;
 
-    case colourModeKeys.ext:
+    case allColourModeKeys.ext:
       materialKey = 'extSimpleMaterial';
       switchLegend(2);
       break;
 
-    case colourModeKeys.nat:
+    case allColourModeKeys.nat:
       materialKey = 'natSimpleMaterial';
       switchLegend(3);
       break;
