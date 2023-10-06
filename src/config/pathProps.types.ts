@@ -1,6 +1,7 @@
 export type DefaultPathProperties = {
   name: string;
   colour: string;
+  cbfColour: string;
   isExterior: boolean;
   isNatural: boolean;
 };

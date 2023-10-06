@@ -21,7 +21,7 @@ export function initMaterials() {
     materials[materialName] = new LineMaterial(materialDef);
 
     // Deprecated Line
-    materials[`${materialName}Deprecated`] = new LineMaterial({
+    materials[`${materialName}_deprecated`] = new LineMaterial({
       ...materialDef,
       opacity: 0.5,
       transparent: true,

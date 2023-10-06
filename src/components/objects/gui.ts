@@ -7,6 +7,7 @@ let gui: GUI;
 
 const colourModeKeys = {
   default: 'Full',
+  cbf: 'Colourblind-friendly',
   ext: 'Interior/Exterior',
   nat: 'Natural/Artificial',
 };
@@ -89,14 +90,19 @@ function changeColourMode() {
       switchLegend(0);
       break;
 
+    case colourModeKeys.cbf:
+      materialKey = 'cbfMaterial';
+      switchLegend(1);
+      break;
+
     case colourModeKeys.ext:
       materialKey = 'extSimpleMaterial';
-      switchLegend(1);
+      switchLegend(2);
       break;
 
     case colourModeKeys.nat:
       materialKey = 'natSimpleMaterial';
-      switchLegend(2);
+      switchLegend(3);
       break;
 
     default:

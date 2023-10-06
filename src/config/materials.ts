@@ -36,6 +36,12 @@ const materials: MaterialDefinitions = {
       lineMaterials[pathKey] = { color: colourInt, linewidth: 0.0025 };
     }
 
+    // Parse colourblind-friendly path palette
+    for (const pathKey in defaultPathProps) {
+      const colourInt = parseInt(defaultPathProps[pathKey].cbfColour, 16);
+      lineMaterials[`cb_${pathKey}`] = { color: colourInt, linewidth: 0.0025 };
+    }
+
     // Parse simple path palette
     for (const pathKey in simplePathProps) {
       const colourInt = parseInt(simplePathProps[pathKey].colour, 16);

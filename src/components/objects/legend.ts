@@ -18,6 +18,20 @@ export function setupLegend() {
   legendContainer.appendChild(defaultLegendDiv);
   legends.push(defaultLegendDiv);
 
+  // Prepare Colourblind-friendly path property defs
+  const cbfPathProps: SimplePathPropertyDefinitions = {};
+  for (const prop in defaultPathProps) {
+    const { name, cbfColour } = defaultPathProps[prop];
+    cbfPathProps[prop] = {
+      name,
+      colour: cbfColour,
+    };
+  }
+
+  const cbfLegendDiv = createLegend(cbfPathProps, 'cbf');
+  legendContainer.appendChild(cbfLegendDiv);
+  legends.push(cbfLegendDiv);
+
   const extSimpleLegendDiv = createLegend(
     {
       simpleInterior: simplePathProps.simpleInterior,
