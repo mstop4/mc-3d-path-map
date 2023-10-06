@@ -14,21 +14,11 @@ export function setupLegend() {
   legendContainer = document.getElementById('legendContainer');
   if (legendContainer === null) return;
 
-  const defaultLegendDiv = createLegend(defaultPathProps, 'full');
+  const defaultLegendDiv = createLegend(defaultPathProps, 'full', false);
   legendContainer.appendChild(defaultLegendDiv);
   legends.push(defaultLegendDiv);
 
-  // Prepare Colourblind-friendly path property defs
-  const cbfPathProps: SimplePathPropertyDefinitions = {};
-  for (const prop in defaultPathProps) {
-    const { name, cbfColour } = defaultPathProps[prop];
-    cbfPathProps[prop] = {
-      name,
-      colour: cbfColour,
-    };
-  }
-
-  const cbfLegendDiv = createLegend(cbfPathProps, 'cbf');
+  const cbfLegendDiv = createLegend(defaultPathProps, 'cbf', true);
   legendContainer.appendChild(cbfLegendDiv);
   legends.push(cbfLegendDiv);
 
@@ -38,6 +28,7 @@ export function setupLegend() {
       simpleExterior: simplePathProps.simpleExterior,
     },
     'full',
+    false,
   );
   legendContainer.appendChild(extSimpleLegendDiv);
   legends.push(extSimpleLegendDiv);
@@ -48,6 +39,7 @@ export function setupLegend() {
       simpleArtificial: simplePathProps.simpleArtificial,
     },
     'full',
+    false,
   );
   legendContainer.appendChild(natSimpleLegendDiv);
   legends.push(natSimpleLegendDiv);
@@ -58,6 +50,7 @@ export function setupLegend() {
 function createLegend(
   propDefs: DefaultPathPropertyDefinitions | SimplePathPropertyDefinitions,
   id: string,
+  isForColourBlind: boolean,
 ) {
   const legendDiv = document.createElement('div');
   legendDiv.id = id;
@@ -66,7 +59,9 @@ function createLegend(
   legendDiv.appendChild(legendElemList);
 
   for (const propName in propDefs) {
-    const listElem = createLegendElement(propDefs[propName]);
+    const listElem = isForColourBlind
+      ? createCBFLegendElement(propDefs[propName] as DefaultPathProperties)
+      : createLegendElement(propDefs[propName]);
     legendElemList.appendChild(listElem);
   }
 
@@ -84,6 +79,25 @@ function createLegendElement(
 
   swatch.className = 'legendSwatch';
   swatch.style.backgroundColor = `#${propDef.colour}`;
+  label.innerHTML = propDef.name;
+
+  listElem.appendChild(swatch);
+  listElem.appendChild(label);
+
+  return listElem;
+}
+
+function createCBFLegendElement(propDef: DefaultPathProperties) {
+  const listElem = document.createElement('li');
+  const swatch = document.createElement('span');
+  const label = document.createElement('span');
+
+  listElem.className = 'legendElem';
+
+  swatch.className = 'legendSwatch';
+  swatch.style.borderStyle = propDef.cbfIsDashed ? 'dashed' : 'solid';
+  swatch.style.borderColor = `#${propDef.cbfColour}`;
+  swatch.style.padding = '0 0.3rem';
   label.innerHTML = propDef.name;
 
   listElem.appendChild(swatch);

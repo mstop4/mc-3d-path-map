@@ -23,9 +23,8 @@ export function initMaterials() {
     // Deprecated Line
     materials[`${materialName}_deprecated`] = new LineMaterial({
       ...materialDef,
-      opacity: 0.5,
+      opacity: 0.4,
       transparent: true,
-      dashed: true,
     });
   }
 }

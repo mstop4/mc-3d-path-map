@@ -4,73 +4,83 @@ import {
   SimplePathPropertyDefinitions,
 } from './pathProps.types';
 
-const colourScheme = colorbrewer.Set1[9];
+const defaultColourScheme = colorbrewer.Set1[9];
+const cbfColourScheme = colorbrewer.RdYlBu[5];
 
 function removePoundSign(rgbHexCode: string) {
   return rgbHexCode.replace('#', '');
 }
 
 export const defaultPathProps: DefaultPathPropertyDefinitions = {
-  ogTunnel: {
-    name: 'Surface Tunnel',
-    colour: removePoundSign(colourScheme[6]),
-    cbfColour: '2166ac',
+  ugTunnel: {
+    name: 'Underground Tunnel',
+    colour: removePoundSign(defaultColourScheme[1]),
+    cbfColour: removePoundSign(cbfColourScheme[4]),
+    cbfIsDashed: false,
     isExterior: false,
     isNatural: false,
   },
-  ugTunnel: {
-    name: 'Underground Tunnel',
-    colour: removePoundSign(colourScheme[1]),
-    cbfColour: '87CEFA',
+  ogTunnel: {
+    name: 'Surface Tunnel',
+    colour: removePoundSign(defaultColourScheme[6]),
+    cbfColour: removePoundSign(cbfColourScheme[4]),
+    cbfIsDashed: true,
     isExterior: false,
     isNatural: false,
   },
   cBridge: {
     name: 'Covered Bridge',
-    colour: removePoundSign(colourScheme[2]),
-    cbfColour: '92c5de',
+    colour: removePoundSign(defaultColourScheme[2]),
+    cbfColour: removePoundSign(cbfColourScheme[3]),
+    cbfIsDashed: false,
     isExterior: false,
     isNatural: false,
   },
   oBridge: {
     name: 'Open Bridge',
-    colour: removePoundSign(colourScheme[5]),
-    cbfColour: 'd1e5f0',
+    colour: removePoundSign(defaultColourScheme[5]),
+    cbfColour: removePoundSign(cbfColourScheme[3]),
+    cbfIsDashed: true,
     isExterior: true,
     isNatural: false,
   },
-  exPath: {
-    name: 'Open Path',
-    colour: removePoundSign(colourScheme[0]),
-    cbfColour: 'e41a1c',
-    isExterior: true,
-    isNatural: true,
-  },
   nCave: {
     name: 'Cave',
-    colour: removePoundSign(colourScheme[4]),
-    cbfColour: 'fddbc7',
+    colour: removePoundSign(defaultColourScheme[4]),
+    cbfColour: removePoundSign(cbfColourScheme[0]),
+    cbfIsDashed: false,
     isExterior: false,
+    isNatural: true,
+  },
+  exPath: {
+    name: 'Open Path',
+    colour: removePoundSign(defaultColourScheme[0]),
+    cbfColour: removePoundSign(cbfColourScheme[0]),
+    cbfIsDashed: true,
+    isExterior: true,
     isNatural: true,
   },
   ladder: {
     name: 'Ladder',
-    colour: removePoundSign(colourScheme[8]),
-    cbfColour: 'f7f7f7',
+    colour: 'eeeeee',
+    cbfColour: removePoundSign(cbfColourScheme[2]),
+    cbfIsDashed: true,
     isExterior: true,
     isNatural: false,
   },
   bastion: {
     name: 'Bastion',
-    colour: removePoundSign(colourScheme[3]),
-    cbfColour: 'f4a582',
+    colour: removePoundSign(defaultColourScheme[3]),
+    cbfColour: removePoundSign(cbfColourScheme[1]),
+    cbfIsDashed: false,
     isExterior: true,
     isNatural: true,
   },
   nFortress: {
     name: 'Nether Fortress',
-    colour: removePoundSign(colourScheme[7]),
-    cbfColour: 'd6604d',
+    colour: removePoundSign(defaultColourScheme[7]),
+    cbfColour: removePoundSign(cbfColourScheme[1]),
+    cbfIsDashed: true,
     isExterior: true,
     isNatural: true,
   },

@@ -41,11 +41,11 @@ body {
 .legendElem {
   display: flex;
   align-items: center;
+  height: 1.5rem;
 }
 
 .legendSwatch {
   display: inline-flex;
-  border: 1px solid #fff;
   padding: 0.5rem;
   margin: 0.25rem;
   max-width: 0.5rem;

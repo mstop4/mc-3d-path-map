@@ -5,7 +5,7 @@ export const allColourModeKeys: Record<string, string> = {
   nat: 'Natural/Artificial',
 };
 
-export const colourModesAvailable = ['default', 'ext', 'nat'];
+export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
 
 export const activeColourModes = colourModesAvailable.reduce(
   (obj: Record<string, string>, key) => {

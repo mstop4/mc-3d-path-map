@@ -33,13 +33,23 @@ const materials: MaterialDefinitions = {
     // Parse default path palette
     for (const pathKey in defaultPathProps) {
       const colourInt = parseInt(defaultPathProps[pathKey].colour, 16);
-      lineMaterials[pathKey] = { color: colourInt, linewidth: 0.0025 };
+      lineMaterials[pathKey] = {
+        color: colourInt,
+        linewidth: 0.0025,
+        dashed: false,
+      };
     }
 
     // Parse colourblind-friendly path palette
     for (const pathKey in defaultPathProps) {
-      const colourInt = parseInt(defaultPathProps[pathKey].cbfColour, 16);
-      lineMaterials[`cb_${pathKey}`] = { color: colourInt, linewidth: 0.0025 };
+      const { cbfColour, cbfIsDashed } = defaultPathProps[pathKey];
+      const colourInt = parseInt(cbfColour, 16);
+      lineMaterials[`cb_${pathKey}`] = {
+        color: colourInt,
+        linewidth: 0.0025,
+        dashed: cbfIsDashed,
+        dashScale: 0.5,
+      };
     }
 
     // Parse simple path palette
