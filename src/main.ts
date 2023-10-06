@@ -5,7 +5,6 @@ import {
   cameraControls,
   setupCamera,
   setupCameraControls,
-  viewScale,
 } from './components/setup/camera';
 import {
   labelRenderer,
@@ -19,6 +18,7 @@ import { setupGUI } from './components/objects/gui';
 import { setupLegend } from './components/objects/legend';
 
 import featureConfig from './config/features.json';
+import { viewScale } from './components/setup/camera.config';
 
 let viewHelper: ViewHelper;
 let raycaster: Raycaster;

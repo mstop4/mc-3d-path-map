@@ -1,14 +1,9 @@
-import { DoubleSide, type MeshStandardMaterialParameters } from 'three';
-import { LineMaterialParameters } from 'three/addons/lines/LineMaterial.js';
-
+import { DoubleSide } from 'three';
 import { defaultPathProps, simplePathProps } from './pathProps';
-
-type LineMaterialDefinitions = Record<string, LineMaterialParameters>;
-
-export type MaterialDefinitions = {
-  mesh: Record<string, MeshStandardMaterialParameters>;
-  line: LineMaterialDefinitions;
-};
+import {
+  LineMaterialDefinitions,
+  MaterialDefinitions,
+} from './materials.types';
 
 const materials: MaterialDefinitions = {
   mesh: {
@@ -38,7 +33,23 @@ const materials: MaterialDefinitions = {
     // Parse default path palette
     for (const pathKey in defaultPathProps) {
       const colourInt = parseInt(defaultPathProps[pathKey].colour, 16);
-      lineMaterials[pathKey] = { color: colourInt, linewidth: 0.0025 };
+      lineMaterials[pathKey] = {
+        color: colourInt,
+        linewidth: 0.0025,
+        dashed: false,
+      };
+    }
+
+    // Parse colourblind-friendly path palette
+    for (const pathKey in defaultPathProps) {
+      const { cbfColour, cbfIsDashed } = defaultPathProps[pathKey];
+      const colourInt = parseInt(cbfColour, 16);
+      lineMaterials[`cb_${pathKey}`] = {
+        color: colourInt,
+        linewidth: 0.0025,
+        dashed: cbfIsDashed,
+        dashScale: 0.5,
+      };
     }
 
     // Parse simple path palette

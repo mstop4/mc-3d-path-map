@@ -1,4 +1,4 @@
-import { DoorData } from '../types';
+import { DoorData } from './data.types';
 
 const data: DoorData[] = [
   {

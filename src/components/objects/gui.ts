@@ -1,15 +1,14 @@
 import { GUI } from 'dat.gui';
 import { getMapObjects } from '../setup/mapScene';
-import { loadCameraState } from '../setup/camera';
+import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
+import {
+  allColourModeKeys,
+  colourModesAvailable,
+  activeColourModes,
+} from './gui.config';
 
 let gui: GUI;
-
-const colourModeKeys = {
-  default: 'Full',
-  ext: 'Interior/Exterior',
-  nat: 'Natural/Artificial',
-};
 
 const options = {
   visible: {
@@ -17,17 +16,18 @@ const options = {
     deprecatedPaths: true,
     legend: true,
   },
-  colourMode: colourModeKeys.default,
-  moveCameraIso: () => loadCameraState(0),
-  moveCameraOverhead: () => loadCameraState(1),
-  moveCameraSideEast: () => loadCameraState(2),
-  moveCameraSideNorth: () => loadCameraState(3),
+  colourMode: activeColourModes[colourModesAvailable[0]],
+  moveCameraDemo: () => toggleCameraPostion(4, true),
+  moveCameraIso: () => toggleCameraPostion(0, false),
+  moveCameraOverhead: () => toggleCameraPostion(1, false),
+  moveCameraSideEast: () => toggleCameraPostion(2, false),
+  moveCameraSideNorth: () => toggleCameraPostion(3, false),
 };
 
 export function setupGUI() {
   gui = new GUI();
   gui
-    .add(options, 'colourMode', Object.values(colourModeKeys))
+    .add(options, 'colourMode', Object.values(activeColourModes))
     .name('Colour Mode')
     .onChange(changeColourMode);
 
@@ -47,6 +47,7 @@ export function setupGUI() {
     .onChange(toggleLegend);
 
   const cameraFolder = gui.addFolder('Position Camera');
+  cameraFolder.add(options, 'moveCameraDemo').name('Demo');
   cameraFolder.add(options, 'moveCameraIso').name('Isometric');
   cameraFolder.add(options, 'moveCameraOverhead').name('Overhead');
   cameraFolder.add(options, 'moveCameraSideEast').name('Facing East');
@@ -82,19 +83,24 @@ function changeColourMode() {
   let materialKey;
 
   switch (options.colourMode) {
-    case colourModeKeys.default:
+    case allColourModeKeys.default:
       materialKey = 'defaultMaterial';
       switchLegend(0);
       break;
 
-    case colourModeKeys.ext:
-      materialKey = 'extSimpleMaterial';
+    case allColourModeKeys.cbf:
+      materialKey = 'cbfMaterial';
       switchLegend(1);
       break;
 
-    case colourModeKeys.nat:
-      materialKey = 'natSimpleMaterial';
+    case allColourModeKeys.ext:
+      materialKey = 'extSimpleMaterial';
       switchLegend(2);
+      break;
+
+    case allColourModeKeys.nat:
+      materialKey = 'natSimpleMaterial';
+      switchLegend(3);
       break;
 
     default:
@@ -113,4 +119,9 @@ function toggleLegend() {
   } else {
     hideLegend();
   }
+}
+
+function toggleCameraPostion(index: number, autoRotate: boolean) {
+  loadCameraState(index);
+  cameraControls.autoRotate = autoRotate;
 }

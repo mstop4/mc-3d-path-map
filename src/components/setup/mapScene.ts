@@ -16,11 +16,12 @@ import { getMaterial } from './materials';
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
   DoorData,
-  MapBounds,
   PathData,
   PortalData,
   RoomData,
-} from '../../types';
+} from '../../data/data.types';
+import { MapBounds } from './mapScene.types';
+import { isCuboidRoomData, isCylindricalRoomData } from '../../data/data.types';
 
 import featureConfig from '../../config/features.json';
 import pathsData from '../../data/paths';
@@ -80,11 +81,11 @@ export function setupMapScene() {
       labelObjects.push(roomLabel);
     }
 
-    if (object.shape === 'cuboid') {
+    if (isCuboidRoomData(object)) {
       const { corners } = object;
       checkMapBounds(corners[0][0], corners[1][1], corners[0][2]);
       checkMapBounds(corners[1][0], corners[0][1], corners[1][2]);
-    } else if (object.shape === 'cylinder') {
+    } else if (isCylindricalRoomData(object)) {
       const { radius, height, bottomCenter } = object;
       checkMapBounds(
         bottomCenter[0] - radius,

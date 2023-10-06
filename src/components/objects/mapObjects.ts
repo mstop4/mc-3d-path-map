@@ -10,6 +10,14 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { getMaterial } from '../setup/materials';
 
+import {
+  baseDoorWidth,
+  doorHeight,
+  doorThickness,
+  portalHeightSegments,
+  portalSize,
+  portalWidthSegments,
+} from './mapObjects.config';
 import { defaultPathProps } from '../../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
@@ -20,15 +28,7 @@ import {
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
-} from '../../types';
-
-const doorThickness = 0.25;
-const doorHeight = 2;
-const baseDoorWidth = 1;
-
-const portalSize = 1;
-const portalWidthSegments = 4;
-const portalHeightSegments = 2;
+} from '../../data/data.types';
 
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
@@ -38,20 +38,26 @@ export function createPath(pathData: PathData, id: number) {
   const points = rawPoints.flat(1);
 
   const defaultMaterial = (
-    deprecated ? getMaterial(`${type}Deprecated`) : getMaterial(type)
+    deprecated ? getMaterial(`${type}_deprecated`) : getMaterial(type)
+  ) as LineMaterial;
+
+  const cbfMaterial = (
+    deprecated
+      ? getMaterial(`cb_${type}_deprecated`)
+      : getMaterial(`cb_${type}`)
   ) as LineMaterial;
 
   const { isExterior, isNatural } = defaultPathProps[type];
 
   const extSimpleMaterial = isExterior
-    ? getMaterial(`simpleExterior${deprecated ? 'Deprecated' : ''}`)
+    ? getMaterial(`simpleExterior${deprecated ? '_deprecated' : ''}`)
     : (getMaterial(
-        `simpleInterior${deprecated ? 'Deprecated' : ''}`,
+        `simpleInterior${deprecated ? '_deprecated' : ''}`,
       ) as LineMaterial);
   const natSimpleMaterial = isNatural
-    ? getMaterial(`simpleNatural${deprecated ? 'Deprecated' : ''}`)
+    ? getMaterial(`simpleNatural${deprecated ? '_deprecated' : ''}`)
     : (getMaterial(
-        `simpleArtificial${deprecated ? 'Deprecated' : ''}`,
+        `simpleArtificial${deprecated ? '_deprecated' : ''}`,
       ) as LineMaterial);
 
   const pathGeom = new LineGeometry().setPositions(points);
@@ -64,6 +70,7 @@ export function createPath(pathData: PathData, id: number) {
   pathMesh.userData.type = type;
   pathMesh.userData.deprecated = deprecated;
   pathMesh.userData.defaultMaterial = defaultMaterial;
+  pathMesh.userData.cbfMaterial = cbfMaterial;
   pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
   pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
 

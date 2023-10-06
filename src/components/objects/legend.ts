@@ -1,11 +1,11 @@
 import {
-  DefaultPathPropertyDefinition,
+  DefaultPathProperties,
   DefaultPathPropertyDefinitions,
-  SimplePathPropertyDefinition,
+  SimplePathProperties,
   SimplePathPropertyDefinitions,
-  defaultPathProps,
-  simplePathProps,
-} from '../../config/pathProps';
+} from '../../config/pathProps.types';
+
+import { defaultPathProps, simplePathProps } from '../../config/pathProps';
 
 let legendContainer: HTMLElement | null;
 const legends: HTMLElement[] = [];
@@ -14,9 +14,13 @@ export function setupLegend() {
   legendContainer = document.getElementById('legendContainer');
   if (legendContainer === null) return;
 
-  const defaultLegendDiv = createLegend(defaultPathProps, 'full');
+  const defaultLegendDiv = createLegend(defaultPathProps, 'full', false);
   legendContainer.appendChild(defaultLegendDiv);
   legends.push(defaultLegendDiv);
+
+  const cbfLegendDiv = createLegend(defaultPathProps, 'cbf', true);
+  legendContainer.appendChild(cbfLegendDiv);
+  legends.push(cbfLegendDiv);
 
   const extSimpleLegendDiv = createLegend(
     {
@@ -24,6 +28,7 @@ export function setupLegend() {
       simpleExterior: simplePathProps.simpleExterior,
     },
     'full',
+    false,
   );
   legendContainer.appendChild(extSimpleLegendDiv);
   legends.push(extSimpleLegendDiv);
@@ -34,6 +39,7 @@ export function setupLegend() {
       simpleArtificial: simplePathProps.simpleArtificial,
     },
     'full',
+    false,
   );
   legendContainer.appendChild(natSimpleLegendDiv);
   legends.push(natSimpleLegendDiv);
@@ -44,6 +50,7 @@ export function setupLegend() {
 function createLegend(
   propDefs: DefaultPathPropertyDefinitions | SimplePathPropertyDefinitions,
   id: string,
+  isForColourBlind: boolean,
 ) {
   const legendDiv = document.createElement('div');
   legendDiv.id = id;
@@ -52,7 +59,9 @@ function createLegend(
   legendDiv.appendChild(legendElemList);
 
   for (const propName in propDefs) {
-    const listElem = createLegendElement(propDefs[propName]);
+    const listElem = isForColourBlind
+      ? createCBFLegendElement(propDefs[propName] as DefaultPathProperties)
+      : createLegendElement(propDefs[propName]);
     legendElemList.appendChild(listElem);
   }
 
@@ -60,7 +69,7 @@ function createLegend(
 }
 
 function createLegendElement(
-  propDef: DefaultPathPropertyDefinition | SimplePathPropertyDefinition,
+  propDef: DefaultPathProperties | SimplePathProperties,
 ) {
   const listElem = document.createElement('li');
   const swatch = document.createElement('span');
@@ -70,6 +79,25 @@ function createLegendElement(
 
   swatch.className = 'legendSwatch';
   swatch.style.backgroundColor = `#${propDef.colour}`;
+  label.innerHTML = propDef.name;
+
+  listElem.appendChild(swatch);
+  listElem.appendChild(label);
+
+  return listElem;
+}
+
+function createCBFLegendElement(propDef: DefaultPathProperties) {
+  const listElem = document.createElement('li');
+  const swatch = document.createElement('span');
+  const label = document.createElement('span');
+
+  listElem.className = 'legendElem';
+
+  swatch.className = 'legendSwatch';
+  swatch.style.borderStyle = propDef.cbfIsDashed ? 'dashed' : 'solid';
+  swatch.style.borderColor = `#${propDef.cbfColour}`;
+  swatch.style.padding = '0 0.3rem';
   label.innerHTML = propDef.name;
 
   listElem.appendChild(swatch);
