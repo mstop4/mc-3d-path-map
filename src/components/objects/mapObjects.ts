@@ -1,6 +1,6 @@
 import {
   Object3D,
-  Mesh,
+  LOD,
   InstancedMesh,
   BoxGeometry,
   CylinderGeometry,
@@ -8,6 +8,8 @@ import {
   Vector3,
   MathUtils,
 } from 'three';
+// @ts-expect-error no type declaratiosn for simplify-3d
+import simplify from 'simplify-3d';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
@@ -17,6 +19,7 @@ import {
   baseDoorWidth,
   doorHeight,
   doorThickness,
+  lodConfig,
   portalHeightSegments,
   portalSize,
   portalWidthSegments,
@@ -25,6 +28,7 @@ import { defaultPathProps } from '../../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import {
+  Coordinates,
   DoorData,
   PathData,
   PortalData,
@@ -40,11 +44,28 @@ let cuboidRoomObjects: InstancedMesh;
 let cylindricalRoomObjects: InstancedMesh;
 let doorObjects: InstancedMesh;
 let portalObjects: InstancedMesh;
-const pathObjects: Mesh[] = [];
+const pathObjects: LOD[] = [];
 const labelObjects: CSS2DObject[] = [];
 
 let numAllDoors: number;
 let numActiveDoors: number;
+
+function pointsArrayToVectors(array: Coordinates[]) {
+  return array.map(point => {
+    return { x: point[0], y: point[1], z: point[2] };
+  });
+}
+
+function vectorsToFlatPointsArray(
+  array: { x: number; y: number; z: number }[],
+) {
+  const pointsArray = [];
+  for (const point of array) {
+    pointsArray.push(point.x, point.y, point.z);
+  }
+
+  return pointsArray;
+}
 
 export function setupInstancedMapObjects(
   cuboidRoomsData: RoomData[],
@@ -122,8 +143,6 @@ export function createPath(pathData: PathData, id: number) {
   if (!visible) return null;
   if (rawPoints.length === 0) return null;
 
-  const points = rawPoints.flat(1);
-
   const defaultMaterial = (
     deprecated ? getMaterial(`${type}_deprecated`) : getMaterial(type)
   ) as LineMaterial;
@@ -147,23 +166,40 @@ export function createPath(pathData: PathData, id: number) {
         `simpleArtificial${deprecated ? '_deprecated' : ''}`,
       ) as LineMaterial);
 
-  const pathGeom = new LineGeometry().setPositions(points);
-  const pathMesh = new Line2(pathGeom, defaultMaterial);
-  pathMesh.computeLineDistances();
+  // Create LOD meshes
+  const vectorPoints = pointsArrayToVectors(rawPoints);
+  const pathLOD = new LOD();
 
-  // TODO: Is there a way to decimate LineGeometry for LOD purposes?
-  // SimplifyModifier doesn't work because LineGeometry uses instanced geometry
+  for (const config of lodConfig) {
+    let pathGeom;
 
-  pathMesh.name = `Path${id}`;
-  pathMesh.userData.type = type;
-  pathMesh.userData.deprecated = deprecated;
-  pathMesh.userData.defaultMaterial = defaultMaterial;
-  pathMesh.userData.cbfMaterial = cbfMaterial;
-  pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
-  pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
-  pathObjects.push(pathMesh);
+    if (config.tolerance > 0) {
+      const simpleVectorPoints = simplify(vectorPoints, config.tolerance, true);
+      const points = vectorsToFlatPointsArray(simpleVectorPoints);
+      pathGeom = new LineGeometry().setPositions(points);
+    } else {
+      pathGeom = new LineGeometry().setPositions(rawPoints.flat(1));
+    }
+    const pathMesh = new Line2(pathGeom, defaultMaterial);
+    pathMesh.computeLineDistances();
+    pathMesh.updateMatrix();
+    pathMesh.matrixAutoUpdate = false;
+    pathLOD.addLevel(pathMesh, config.distance);
+  }
 
-  return pathMesh;
+  pathLOD.updateMatrix();
+  pathLOD.matrixAutoUpdate = false;
+
+  pathLOD.name = `Path${id}`;
+  pathLOD.userData.type = type;
+  pathLOD.userData.deprecated = deprecated;
+  pathLOD.userData.defaultMaterial = defaultMaterial;
+  pathLOD.userData.cbfMaterial = cbfMaterial;
+  pathLOD.userData.extSimpleMaterial = extSimpleMaterial;
+  pathLOD.userData.natSimpleMaterial = natSimpleMaterial;
+  pathObjects.push(pathLOD);
+
+  return pathLOD;
 }
 
 export function createRoom(roomData: RoomData, id: number) {

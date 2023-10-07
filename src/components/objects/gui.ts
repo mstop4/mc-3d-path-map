@@ -1,3 +1,4 @@
+import { type Line2 } from 'three/addons/lines/Line2.js';
 import { GUI } from 'dat.gui';
 import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
@@ -105,7 +106,10 @@ function changeColourMode() {
   }
 
   for (const path of pathObjects) {
-    path.material = path.userData[materialKey];
+    for (const level of path.levels) {
+      const mesh = level.object as Line2;
+      mesh.material = path.userData[materialKey];
+    }
   }
 }
 
