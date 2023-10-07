@@ -1,5 +1,5 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects } from '../objects/mapObjects';
+import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {
@@ -63,7 +63,7 @@ function toggleLabels() {
 }
 
 function toggleDeprecatedPaths() {
-  const { pathObjects, doorObjects } = getMapObjects();
+  const { pathObjects } = getMapObjects();
 
   for (const path of pathObjects) {
     if (path.userData.deprecated) {
@@ -71,11 +71,7 @@ function toggleDeprecatedPaths() {
     }
   }
 
-  for (const door of doorObjects) {
-    if (door.userData.deprecated) {
-      door.visible = options.visible.deprecatedPaths;
-    }
-  }
+  toggleDeprecatedDoors(options.visible.deprecatedPaths);
 }
 
 function changeColourMode() {

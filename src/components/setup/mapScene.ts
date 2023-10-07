@@ -62,9 +62,18 @@ export function setupMapScene() {
     mapScene.add(lavaMesh);
   }
 
+  // Sort doors so deprecated ones are at the end of the array
+  const sortedDoorsData = doorsData.sort(
+    (a, b) => Number(a.deprecated) - Number(b.deprecated),
+  );
+
   // Add map elements
-  const portalObjects = setupInstancedMapObjects(portalsData);
+  const { portalObjects, doorObjects } = setupInstancedMapObjects(
+    portalsData,
+    sortedDoorsData,
+  );
   mapScene.add(portalObjects);
+  mapScene.add(doorObjects);
 
   initMapObjects<RoomData>(roomsData, (object, id) => {
     const roomMesh = createRoom(object, id);
@@ -111,10 +120,8 @@ export function setupMapScene() {
     return false;
   });
 
-  initMapObjects<DoorData>(doorsData, (object, id) => {
-    const doorMesh = createDoor(object, id);
-    mapScene.add(doorMesh);
-
+  initMapObjects<DoorData>(sortedDoorsData, (object, id) => {
+    createDoor(object, id);
     const { location } = object;
     checkMapBounds(...location);
 

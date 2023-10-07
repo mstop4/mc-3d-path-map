@@ -6,6 +6,8 @@ import {
   BoxGeometry,
   CylinderGeometry,
   SphereGeometry,
+  Vector3,
+  MathUtils,
 } from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
@@ -33,31 +35,63 @@ import {
 } from '../../data/data.types';
 
 const dummy = new Object3D();
+const upVector = new Vector3(0, 1, 0);
 
 const roomObjects: Mesh[] = [];
-const doorObjects: Mesh[] = [];
+let doorObjects: InstancedMesh;
 let portalObjects: InstancedMesh;
 const pathObjects: Mesh[] = [];
 const labelObjects: CSS2DObject[] = [];
 
-export function setupInstancedMapObjects(portalsData: PortalData[]) {
-  const material = getMaterial('portal');
+let numAllDoors: number;
+let numActiveDoors: number;
 
-  // Create portal marker
+export function setupInstancedMapObjects(
+  portalsData: PortalData[],
+  doorsData: DoorData[],
+) {
+  // Create portals
+  const portalMaterial = getMaterial('portal');
   const portalGeom = new SphereGeometry(
     portalSize,
     portalWidthSegments,
     portalHeightSegments,
   );
 
-  portalObjects = new InstancedMesh(portalGeom, material, portalsData.length);
+  portalObjects = new InstancedMesh(
+    portalGeom,
+    portalMaterial,
+    portalsData.length,
+  );
 
-  return portalObjects;
+  // Create doors
+  const doorMaterial = getMaterial('door');
+  const doorGeom = new BoxGeometry(doorThickness, doorHeight, baseDoorWidth);
+
+  doorObjects = new InstancedMesh(doorGeom, doorMaterial, doorsData.length);
+  const firstDeprecatedDoorIndex = doorsData.findIndex(door => door.deprecated);
+
+  // Count number of doors and how manyare not deprecated
+  numAllDoors = doorsData.length;
+  numActiveDoors =
+    firstDeprecatedDoorIndex !== -1
+      ? firstDeprecatedDoorIndex
+      : doorsData.length;
+
+  return {
+    portalObjects,
+    doorObjects,
+  };
 }
 
 export function updateInstancedMeshes() {
   portalObjects.instanceMatrix.needsUpdate = true;
-  portalObjects.computeBoundingSphere();
+  doorObjects.instanceMatrix.needsUpdate = true;
+}
+
+export function toggleDeprecatedDoors(visible: boolean) {
+  doorObjects.count = visible ? numAllDoors : numActiveDoors;
+  doorObjects.instanceMatrix.needsUpdate = true;
 }
 
 export function createPath(pathData: PathData, id: number) {
@@ -165,38 +199,24 @@ export function createRoom(roomData: RoomData, id: number) {
 }
 
 export function createDoor(doorData: DoorData, id: number) {
-  const { quantity, location, orientation, deprecated } = doorData;
-  const material = getMaterial('door');
-  let width, length, height;
+  const { quantity, location, orientation } = doorData;
 
-  if (orientation === 'x') {
-    width = doorThickness;
-    length = quantity * baseDoorWidth;
-    height = doorHeight;
-  } else {
-    width = quantity * baseDoorWidth;
-    length = doorThickness;
-    height = doorHeight;
+  // Create door marker
+  resetDummyObject();
+  dummy.position.set(location[0], location[1] + doorHeight / 2, location[2]);
+  if (orientation === 'z') {
+    dummy.setRotationFromAxisAngle(upVector, MathUtils.degToRad(90));
   }
-
-  const doorGeom = new BoxGeometry(width, height, length);
-  const doorMesh = new Mesh(doorGeom, material);
-  doorMesh.position.x = location[0];
-  doorMesh.position.y = location[1] + height / 2;
-  doorMesh.position.z = location[2];
-  doorMesh.updateMatrixWorld();
-
-  doorMesh.name = `Door${id}`;
-  doorMesh.userData.deprecated = deprecated;
-  doorObjects.push(doorMesh);
-
-  return doorMesh;
+  dummy.scale.set(1, 1, quantity);
+  dummy.updateMatrix();
+  doorObjects.setMatrixAt(id, dummy.matrix);
 }
 
 export function createPortal(portalData: PortalData, id: number) {
   const { label, location } = portalData;
 
   // Create portal marker
+  resetDummyObject();
   dummy.position.set(location[0], location[1] + portalSize / 2, location[2]);
   dummy.updateMatrix();
   portalObjects.setMatrixAt(id, dummy.matrix);
@@ -228,4 +248,11 @@ export function getMapObjects() {
     portalObjects,
     labelObjects,
   };
+}
+
+function resetDummyObject() {
+  // dummy.matrix.identity() doesn't work for some reason
+  dummy.position.set(0, 0, 0);
+  dummy.setRotationFromAxisAngle(upVector, 0);
+  dummy.scale.set(1, 1, 1);
 }
