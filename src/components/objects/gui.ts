@@ -1,5 +1,5 @@
 import { GUI } from 'dat.gui';
-import { getMapObjects } from '../setup/mapScene';
+import { getMapObjects } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {

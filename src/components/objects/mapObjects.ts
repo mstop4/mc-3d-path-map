@@ -1,6 +1,8 @@
 import {
+  Object3D,
   Mesh,
   type MeshStandardMaterial,
+  InstancedMesh,
   BoxGeometry,
   CylinderGeometry,
   SphereGeometry,
@@ -29,6 +31,34 @@ import {
   isCuboidRoomData,
   isCylindricalRoomData,
 } from '../../data/data.types';
+
+const dummy = new Object3D();
+
+const roomObjects: Mesh[] = [];
+const doorObjects: Mesh[] = [];
+let portalObjects: InstancedMesh;
+const pathObjects: Mesh[] = [];
+const labelObjects: CSS2DObject[] = [];
+
+export function setupInstancedMapObjects(portalsData: PortalData[]) {
+  const material = getMaterial('portal');
+
+  // Create portal marker
+  const portalGeom = new SphereGeometry(
+    portalSize,
+    portalWidthSegments,
+    portalHeightSegments,
+  );
+
+  portalObjects = new InstancedMesh(portalGeom, material, portalsData.length);
+
+  return portalObjects;
+}
+
+export function updateInstancedMeshes() {
+  portalObjects.instanceMatrix.needsUpdate = true;
+  portalObjects.computeBoundingSphere();
+}
 
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
@@ -73,6 +103,7 @@ export function createPath(pathData: PathData, id: number) {
   pathMesh.userData.cbfMaterial = cbfMaterial;
   pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
   pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
+  pathObjects.push(pathMesh);
 
   return pathMesh;
 }
@@ -109,10 +140,9 @@ export function createRoom(roomData: RoomData, id: number) {
     roomMesh.position.z = bottomCenter[2];
   }
 
-  let roomLabel = null;
-
   if (roomMesh !== null) {
     roomMesh.name = `Room${id}`;
+    roomObjects.push(roomMesh);
 
     // Create room label
     if (roomData.displayLabel) {
@@ -121,19 +151,17 @@ export function createRoom(roomData: RoomData, id: number) {
       labelDiv.className = 'portalLabel';
       labelDiv.textContent = roomData.label;
 
-      roomLabel = new CSS2DObject(labelDiv);
+      const roomLabel = new CSS2DObject(labelDiv);
       roomLabel.center.set(0.5, 1.5);
       roomMesh.add(roomLabel);
       roomLabel.layers.set(0);
+      labelObjects.push(roomLabel);
     }
 
     roomMesh.updateMatrixWorld();
   }
 
-  return {
-    roomMesh,
-    roomLabel,
-  };
+  return roomMesh;
 }
 
 export function createDoor(doorData: DoorData, id: number) {
@@ -160,40 +188,44 @@ export function createDoor(doorData: DoorData, id: number) {
 
   doorMesh.name = `Door${id}`;
   doorMesh.userData.deprecated = deprecated;
+  doorObjects.push(doorMesh);
 
   return doorMesh;
 }
 
 export function createPortal(portalData: PortalData, id: number) {
   const { label, location } = portalData;
-  const material = getMaterial('portal');
 
   // Create portal marker
-  const portalGeom = new SphereGeometry(
-    portalSize,
-    portalWidthSegments,
-    portalHeightSegments,
-  );
-  const portalMesh = new Mesh(portalGeom, material);
-  portalMesh.position.x = location[0];
-  portalMesh.position.y = location[1] + portalSize / 2;
-  portalMesh.position.z = location[2];
-  portalMesh.name = `Portal${id}`;
+  dummy.position.set(location[0], location[1] + portalSize / 2, location[2]);
+  dummy.updateMatrix();
+  portalObjects.setMatrixAt(id, dummy.matrix);
 
   // Create portal label
-  portalMesh.layers.enableAll();
   const portalDiv = document.createElement('div');
   portalDiv.className = 'portalLabel';
   portalDiv.textContent = label;
 
   const portalLabel = new CSS2DObject(portalDiv);
   portalLabel.center.set(0.5, 1.5);
-  portalMesh.add(portalLabel);
-  portalLabel.layers.set(0);
-  portalMesh.updateMatrixWorld();
+  labelObjects.push(portalLabel);
 
+  portalLabel.position.set(
+    location[0],
+    location[1] + portalSize / 2,
+    location[2],
+  );
+  portalLabel.layers.set(0);
+
+  return portalLabel;
+}
+
+export function getMapObjects() {
   return {
-    portalMesh,
-    portalLabel,
+    roomObjects,
+    pathObjects,
+    doorObjects,
+    portalObjects,
+    labelObjects,
   };
 }

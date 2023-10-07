@@ -10,10 +10,11 @@ import {
   createPath,
   createPortal,
   createRoom,
+  setupInstancedMapObjects,
+  updateInstancedMeshes,
 } from '../objects/mapObjects';
 import { getMaterial } from './materials';
 
-import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
   DoorData,
   PathData,
@@ -30,11 +31,6 @@ import doorsData from '../../data/doors';
 import portalsData from '../../data/portals';
 
 export let mapScene: Scene;
-const roomObjects: Mesh[] = [];
-const doorObjects: Mesh[] = [];
-const portalObjects: Mesh[] = [];
-const pathObjects: Mesh[] = [];
-const labelObjects: CSS2DObject[] = [];
 const mapBounds: MapBounds = {
   center: [0, 64, 0],
   xMin: 0,
@@ -67,18 +63,16 @@ export function setupMapScene() {
   }
 
   // Add map elements
+  const portalObjects = setupInstancedMapObjects(portalsData);
+  mapScene.add(portalObjects);
+
   initMapObjects<RoomData>(roomsData, (object, id) => {
-    const { roomMesh, roomLabel } = createRoom(object, id);
+    const roomMesh = createRoom(object, id);
     let incrementId = false;
 
     if (roomMesh !== null) {
-      roomObjects.push(roomMesh);
       mapScene.add(roomMesh);
       incrementId = true;
-    }
-
-    if (roomLabel !== null) {
-      labelObjects.push(roomLabel);
     }
 
     if (isCuboidRoomData(object)) {
@@ -105,7 +99,6 @@ export function setupMapScene() {
   initMapObjects<PathData>(pathsData, (object, id) => {
     const pathMesh = createPath(object, id);
     if (pathMesh !== null) {
-      pathObjects.push(pathMesh);
       mapScene.add(pathMesh);
 
       const { points } = object;
@@ -120,7 +113,6 @@ export function setupMapScene() {
 
   initMapObjects<DoorData>(doorsData, (object, id) => {
     const doorMesh = createDoor(object, id);
-    doorObjects.push(doorMesh);
     mapScene.add(doorMesh);
 
     const { location } = object;
@@ -130,20 +122,16 @@ export function setupMapScene() {
   });
 
   initMapObjects<PortalData>(portalsData, (object, id) => {
-    const { portalMesh, portalLabel } = createPortal(object, id);
-    portalObjects.push(portalMesh);
-    mapScene.add(portalMesh);
+    const portalLabel = createPortal(object, id);
+    mapScene.add(portalLabel);
 
     const { location } = object;
     checkMapBounds(...location);
 
-    if (portalLabel !== null) {
-      labelObjects.push(portalLabel);
-    }
-
     return true;
   });
 
+  updateInstancedMeshes();
   calculateMapCenter();
 }
 
@@ -173,16 +161,6 @@ function calculateMapCenter() {
   mapBounds.center[0] = (xMin + xMax) / 2;
   mapBounds.center[1] = (yMin + yMax) / 2;
   mapBounds.center[2] = (zMin + zMax) / 2;
-}
-
-export function getMapObjects() {
-  return {
-    roomObjects,
-    pathObjects,
-    doorObjects,
-    portalObjects,
-    labelObjects,
-  };
 }
 
 export function getMapBounds() {
