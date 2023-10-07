@@ -8,14 +8,12 @@ import {
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
-import { SimplifyModifier } from 'three/addons/modifiers/SimplifyModifier.js';
 import { getMaterial } from '../setup/materials';
 
 import {
   baseDoorWidth,
   doorHeight,
   doorThickness,
-  pathDecimationRatio,
   portalHeightSegments,
   portalSize,
   portalWidthSegments,
@@ -31,8 +29,6 @@ import {
   isCuboidRoomData,
   isCylindricalRoomData,
 } from '../../data/data.types';
-
-const modifier = new SimplifyModifier();
 
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
@@ -66,33 +62,19 @@ export function createPath(pathData: PathData, id: number) {
 
   const pathGeom = new LineGeometry().setPositions(points);
   const pathMesh = new Line2(pathGeom, defaultMaterial);
-  pathMesh.computeLineDistances();
-  pathMesh.scale.set(1, 1, 1);
 
-  const simplePathMesh = pathMesh.clone();
-  simplePathMesh.computeLineDistances();
-  simplePathMesh.material = simplePathMesh.material.clone();
-  const simpleVertexCount = Math.floor(
-    simplePathMesh.geometry.attributes.position.count * pathDecimationRatio,
-  );
+  // TODO: Is there a way to decimate LineGeometry for LOD purposes?
+  // SimplifyModifier doesn't work because LineGeometry uses instanced geometry
 
-  // FIXME: This doesn't work :(
-  simplePathMesh.geometry = modifier.modify(
-    simplePathMesh.geometry,
-    simpleVertexCount,
-  ) as LineGeometry;
+  pathMesh.name = `Path${id}`;
+  pathMesh.userData.type = type;
+  pathMesh.userData.deprecated = deprecated;
+  pathMesh.userData.defaultMaterial = defaultMaterial;
+  pathMesh.userData.cbfMaterial = cbfMaterial;
+  pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
+  pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
 
-  simplePathMesh.updateMatrixWorld();
-
-  simplePathMesh.name = `Path${id}`;
-  simplePathMesh.userData.type = type;
-  simplePathMesh.userData.deprecated = deprecated;
-  simplePathMesh.userData.defaultMaterial = defaultMaterial;
-  simplePathMesh.userData.cbfMaterial = cbfMaterial;
-  simplePathMesh.userData.extSimpleMaterial = extSimpleMaterial;
-  simplePathMesh.userData.natSimpleMaterial = natSimpleMaterial;
-
-  return simplePathMesh;
+  return pathMesh;
 }
 
 export function createRoom(roomData: RoomData, id: number) {
