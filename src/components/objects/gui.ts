@@ -1,5 +1,6 @@
+import { type Line2 } from 'three/addons/lines/Line2.js';
 import { GUI } from 'dat.gui';
-import { getMapObjects } from '../setup/mapScene';
+import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {
@@ -63,7 +64,7 @@ function toggleLabels() {
 }
 
 function toggleDeprecatedPaths() {
-  const { pathObjects, doorObjects } = getMapObjects();
+  const { pathObjects } = getMapObjects();
 
   for (const path of pathObjects) {
     if (path.userData.deprecated) {
@@ -71,11 +72,7 @@ function toggleDeprecatedPaths() {
     }
   }
 
-  for (const door of doorObjects) {
-    if (door.userData.deprecated) {
-      door.visible = options.visible.deprecatedPaths;
-    }
-  }
+  toggleDeprecatedDoors(options.visible.deprecatedPaths);
 }
 
 function changeColourMode() {
@@ -109,7 +106,10 @@ function changeColourMode() {
   }
 
   for (const path of pathObjects) {
-    path.material = path.userData[materialKey];
+    for (const level of path.levels) {
+      const mesh = level.object as Line2;
+      mesh.material = path.userData[materialKey];
+    }
   }
 }
 

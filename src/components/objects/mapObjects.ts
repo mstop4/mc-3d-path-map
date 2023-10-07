@@ -1,10 +1,15 @@
 import {
-  Mesh,
-  type MeshStandardMaterial,
+  Object3D,
+  LOD,
+  InstancedMesh,
   BoxGeometry,
   CylinderGeometry,
   SphereGeometry,
+  Vector3,
+  MathUtils,
 } from 'three';
+// @ts-expect-error no type declaratiosn for simplify-3d
+import simplify from 'simplify-3d';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
@@ -14,6 +19,7 @@ import {
   baseDoorWidth,
   doorHeight,
   doorThickness,
+  lodConfig,
   portalHeightSegments,
   portalSize,
   portalWidthSegments,
@@ -22,6 +28,7 @@ import { defaultPathProps } from '../../config/pathProps';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import {
+  Coordinates,
   DoorData,
   PathData,
   PortalData,
@@ -30,12 +37,111 @@ import {
   isCylindricalRoomData,
 } from '../../data/data.types';
 
+const dummy = new Object3D();
+const upVector = new Vector3(0, 1, 0);
+
+let cuboidRoomObjects: InstancedMesh;
+let cylindricalRoomObjects: InstancedMesh;
+let doorObjects: InstancedMesh;
+let portalObjects: InstancedMesh;
+const pathObjects: LOD[] = [];
+const labelObjects: CSS2DObject[] = [];
+
+let numAllDoors: number;
+let numActiveDoors: number;
+
+function pointsArrayToVectors(array: Coordinates[]) {
+  return array.map(point => {
+    return { x: point[0], y: point[1], z: point[2] };
+  });
+}
+
+function vectorsToFlatPointsArray(
+  array: { x: number; y: number; z: number }[],
+) {
+  const pointsArray = [];
+  for (const point of array) {
+    pointsArray.push(point.x, point.y, point.z);
+  }
+
+  return pointsArray;
+}
+
+export function setupInstancedMapObjects(
+  cuboidRoomsData: RoomData[],
+  cylindricalRoomsData: RoomData[],
+  portalsData: PortalData[],
+  doorsData: DoorData[],
+) {
+  // Create rooms
+  const roomMaterial = getMaterial('room');
+  const cuboidRoomGeom = new BoxGeometry(1, 1, 1);
+  const cylindricalRoomGeom = new CylinderGeometry(1, 1, 1, 8, 3);
+
+  cuboidRoomObjects = new InstancedMesh(
+    cuboidRoomGeom,
+    roomMaterial,
+    cuboidRoomsData.length,
+  );
+
+  cylindricalRoomObjects = new InstancedMesh(
+    cylindricalRoomGeom,
+    roomMaterial,
+    cylindricalRoomsData.length,
+  );
+
+  // Create portals
+  const portalMaterial = getMaterial('portal');
+  const portalGeom = new SphereGeometry(
+    portalSize,
+    portalWidthSegments,
+    portalHeightSegments,
+  );
+
+  portalObjects = new InstancedMesh(
+    portalGeom,
+    portalMaterial,
+    portalsData.length,
+  );
+
+  // Create doors
+  const doorMaterial = getMaterial('door');
+  const doorGeom = new BoxGeometry(doorThickness, doorHeight, baseDoorWidth);
+
+  doorObjects = new InstancedMesh(doorGeom, doorMaterial, doorsData.length);
+  const firstDeprecatedDoorIndex = doorsData.findIndex(door => door.deprecated);
+
+  // Count number of doors and how manyare not deprecated
+  numAllDoors = doorsData.length;
+  numActiveDoors =
+    firstDeprecatedDoorIndex !== -1
+      ? firstDeprecatedDoorIndex
+      : doorsData.length;
+
+  return {
+    cuboidRoomObjects,
+    cylindricalRoomObjects,
+    portalObjects,
+    doorObjects,
+  };
+}
+
+export function updateInstancedMeshes() {
+  cuboidRoomObjects.instanceMatrix.needsUpdate = true;
+  cylindricalRoomObjects.instanceMatrix.needsUpdate = true;
+  portalObjects.instanceMatrix.needsUpdate = true;
+  doorObjects.instanceMatrix.needsUpdate = true;
+}
+
+export function toggleDeprecatedDoors(visible: boolean) {
+  doorObjects.count = visible ? numAllDoors : numActiveDoors;
+  doorObjects.instanceMatrix.needsUpdate = true;
+}
+
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
   if (!visible) return null;
   if (rawPoints.length === 0) return null;
-
-  const points = rawPoints.flat(1);
 
   const defaultMaterial = (
     deprecated ? getMaterial(`${type}_deprecated`) : getMaterial(type)
@@ -60,140 +166,162 @@ export function createPath(pathData: PathData, id: number) {
         `simpleArtificial${deprecated ? '_deprecated' : ''}`,
       ) as LineMaterial);
 
-  const pathGeom = new LineGeometry().setPositions(points);
-  const pathMesh = new Line2(pathGeom, defaultMaterial);
-  pathMesh.computeLineDistances();
-  pathMesh.scale.set(1, 1, 1);
-  pathMesh.updateMatrixWorld();
+  // Create LOD meshes
+  const vectorPoints = pointsArrayToVectors(rawPoints);
+  const pathLOD = new LOD();
 
-  pathMesh.name = `Path${id}`;
-  pathMesh.userData.type = type;
-  pathMesh.userData.deprecated = deprecated;
-  pathMesh.userData.defaultMaterial = defaultMaterial;
-  pathMesh.userData.cbfMaterial = cbfMaterial;
-  pathMesh.userData.extSimpleMaterial = extSimpleMaterial;
-  pathMesh.userData.natSimpleMaterial = natSimpleMaterial;
+  for (const config of lodConfig) {
+    let pathGeom;
 
-  return pathMesh;
+    if (config.tolerance > 0) {
+      const simpleVectorPoints = simplify(vectorPoints, config.tolerance, true);
+      const points = vectorsToFlatPointsArray(simpleVectorPoints);
+      pathGeom = new LineGeometry().setPositions(points);
+    } else {
+      pathGeom = new LineGeometry().setPositions(rawPoints.flat(1));
+    }
+    const pathMesh = new Line2(pathGeom, defaultMaterial);
+    pathMesh.computeLineDistances();
+    pathMesh.updateMatrix();
+    pathMesh.matrixAutoUpdate = false;
+    pathLOD.addLevel(pathMesh, config.distance);
+  }
+
+  pathLOD.updateMatrix();
+  pathLOD.matrixAutoUpdate = false;
+
+  pathLOD.name = `Path${id}`;
+  pathLOD.userData.type = type;
+  pathLOD.userData.deprecated = deprecated;
+  pathLOD.userData.defaultMaterial = defaultMaterial;
+  pathLOD.userData.cbfMaterial = cbfMaterial;
+  pathLOD.userData.extSimpleMaterial = extSimpleMaterial;
+  pathLOD.userData.natSimpleMaterial = natSimpleMaterial;
+  pathObjects.push(pathLOD);
+
+  return pathLOD;
 }
 
 export function createRoom(roomData: RoomData, id: number) {
-  let roomMesh: Mesh | null = null;
-  const material = getMaterial('room') as MeshStandardMaterial;
+  // Create room label
+  let roomLabel: CSS2DObject | null = null;
+
+  if (roomData.displayLabel) {
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'portalLabel';
+    labelDiv.textContent = roomData.label;
+
+    roomLabel = new CSS2DObject(labelDiv);
+    roomLabel.center.set(0.5, 1.5);
+    roomLabel.layers.set(0);
+    labelObjects.push(roomLabel);
+  }
 
   if (isCuboidRoomData(roomData)) {
     const { corners } = roomData;
 
-    const width = Math.abs(corners[1][0] - corners[0][0]) + 1;
-    const height = Math.abs(corners[1][1] - corners[0][1]) + 1;
-    const length = Math.abs(corners[1][2] - corners[0][2]) + 1;
+    resetDummyObject();
+    dummy.position.set(
+      (corners[0][0] + corners[1][0]) / 2,
+      (corners[0][1] + corners[1][1]) / 2,
+      (corners[0][2] + corners[1][2]) / 2,
+    );
+    dummy.scale.set(
+      Math.abs(corners[1][0] - corners[0][0]) + 1,
+      Math.abs(corners[1][1] - corners[0][1]) + 1,
+      Math.abs(corners[1][2] - corners[0][2]) + 1,
+    );
+    dummy.updateMatrix();
+    cuboidRoomObjects.setMatrixAt(id, dummy.matrix);
 
-    const roomGeom = new BoxGeometry(width, height, length);
-    roomMesh = new Mesh(roomGeom, material);
-    roomMesh.position.x = (corners[0][0] + corners[1][0]) / 2;
-    roomMesh.position.y = (corners[0][1] + corners[1][1]) / 2;
-    roomMesh.position.z = (corners[0][2] + corners[1][2]) / 2;
+    if (roomLabel !== null) {
+      roomLabel.position.set(
+        (corners[0][0] + corners[1][0]) / 2,
+        (corners[0][1] + corners[1][1]) / 2,
+        (corners[0][2] + corners[1][2]) / 2,
+      );
+    }
   } else if (isCylindricalRoomData(roomData)) {
     const { height, radius, bottomCenter } = roomData;
 
-    const roomGeom = new CylinderGeometry(
-      radius + 1,
-      radius + 1,
-      height + 1,
-      8,
-      3,
+    resetDummyObject();
+    dummy.position.set(
+      bottomCenter[0],
+      bottomCenter[1] + height / 2,
+      bottomCenter[2],
     );
-    roomMesh = new Mesh(roomGeom, material);
-    roomMesh.position.x = bottomCenter[0];
-    roomMesh.position.y = bottomCenter[1] + height / 2;
-    roomMesh.position.z = bottomCenter[2];
-  }
+    dummy.scale.set(radius + 1, radius + 1, height + 1);
+    dummy.updateMatrix();
+    cylindricalRoomObjects.setMatrixAt(id, dummy.matrix);
 
-  let roomLabel = null;
-
-  if (roomMesh !== null) {
-    roomMesh.name = `Room${id}`;
-
-    // Create room label
-    if (roomData.displayLabel) {
-      roomMesh.layers.enableAll();
-      const labelDiv = document.createElement('div');
-      labelDiv.className = 'portalLabel';
-      labelDiv.textContent = roomData.label;
-
-      roomLabel = new CSS2DObject(labelDiv);
-      roomLabel.center.set(0.5, 1.5);
-      roomMesh.add(roomLabel);
-      roomLabel.layers.set(0);
+    if (roomLabel !== null) {
+      roomLabel.position.set(
+        bottomCenter[0],
+        bottomCenter[1] + height / 2,
+        bottomCenter[2],
+      );
     }
-
-    roomMesh.updateMatrixWorld();
   }
 
-  return {
-    roomMesh,
-    roomLabel,
-  };
+  return roomLabel;
 }
 
 export function createDoor(doorData: DoorData, id: number) {
-  const { quantity, location, orientation, deprecated } = doorData;
-  const material = getMaterial('door');
-  let width, length, height;
+  const { quantity, location, orientation } = doorData;
 
-  if (orientation === 'x') {
-    width = doorThickness;
-    length = quantity * baseDoorWidth;
-    height = doorHeight;
-  } else {
-    width = quantity * baseDoorWidth;
-    length = doorThickness;
-    height = doorHeight;
+  // Create door marker
+  resetDummyObject();
+  dummy.position.set(location[0], location[1] + doorHeight / 2, location[2]);
+  if (orientation === 'z') {
+    dummy.setRotationFromAxisAngle(upVector, MathUtils.degToRad(90));
   }
-
-  const doorGeom = new BoxGeometry(width, height, length);
-  const doorMesh = new Mesh(doorGeom, material);
-  doorMesh.position.x = location[0];
-  doorMesh.position.y = location[1] + height / 2;
-  doorMesh.position.z = location[2];
-  doorMesh.updateMatrixWorld();
-
-  doorMesh.name = `Door${id}`;
-  doorMesh.userData.deprecated = deprecated;
-
-  return doorMesh;
+  dummy.scale.set(1, 1, quantity);
+  dummy.updateMatrix();
+  doorObjects.setMatrixAt(id, dummy.matrix);
 }
 
 export function createPortal(portalData: PortalData, id: number) {
   const { label, location } = portalData;
-  const material = getMaterial('portal');
 
   // Create portal marker
-  const portalGeom = new SphereGeometry(
-    portalSize,
-    portalWidthSegments,
-    portalHeightSegments,
-  );
-  const portalMesh = new Mesh(portalGeom, material);
-  portalMesh.position.x = location[0];
-  portalMesh.position.y = location[1] + portalSize / 2;
-  portalMesh.position.z = location[2];
-  portalMesh.name = `Portal${id}`;
+  resetDummyObject();
+  dummy.position.set(location[0], location[1] + portalSize / 2, location[2]);
+  dummy.updateMatrix();
+  portalObjects.setMatrixAt(id, dummy.matrix);
 
   // Create portal label
-  portalMesh.layers.enableAll();
   const portalDiv = document.createElement('div');
   portalDiv.className = 'portalLabel';
   portalDiv.textContent = label;
 
   const portalLabel = new CSS2DObject(portalDiv);
   portalLabel.center.set(0.5, 1.5);
-  portalMesh.add(portalLabel);
-  portalLabel.layers.set(0);
-  portalMesh.updateMatrixWorld();
+  labelObjects.push(portalLabel);
 
+  portalLabel.position.set(
+    location[0],
+    location[1] + portalSize / 2,
+    location[2],
+  );
+  portalLabel.layers.set(0);
+
+  return portalLabel;
+}
+
+export function getMapObjects() {
   return {
-    portalMesh,
-    portalLabel,
+    cuboidRoomObjects,
+    cylindricalRoomObjects,
+    pathObjects,
+    doorObjects,
+    portalObjects,
+    labelObjects,
   };
+}
+
+function resetDummyObject() {
+  // dummy.matrix.identity() doesn't work for some reason
+  dummy.position.set(0, 0, 0);
+  dummy.setRotationFromAxisAngle(upVector, 0);
+  dummy.scale.set(1, 1, 1);
 }

@@ -26,12 +26,12 @@ type BaseRoomData = {
   type: RoomTypes;
 };
 
-type CuboidRoomData = BaseRoomData & {
+export type CuboidRoomData = BaseRoomData & {
   shape: 'cuboid';
   corners: [Coordinates, Coordinates];
 };
 
-type CylindricalRoomData = BaseRoomData & {
+export type CylindricalRoomData = BaseRoomData & {
   shape: 'cylinder';
   bottomCenter: Coordinates;
   height: number;

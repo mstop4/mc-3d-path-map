@@ -30,6 +30,7 @@
   "dependencies": {
     "colorbrewer": "^1.5.3",
     "dat.gui": "^0.7.9",
+    "simplify-3d": "^1.0.0",
     "three": "^0.157.0"
   }
 }
