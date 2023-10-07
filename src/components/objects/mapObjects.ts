@@ -126,6 +126,7 @@ export function createPath(pathData: PathData, id: number) {
 
   const pathGeom = new LineGeometry().setPositions(points);
   const pathMesh = new Line2(pathGeom, defaultMaterial);
+  pathMesh.computeLineDistances();
 
   // TODO: Is there a way to decimate LineGeometry for LOD purposes?
   // SimplifyModifier doesn't work because LineGeometry uses instanced geometry
