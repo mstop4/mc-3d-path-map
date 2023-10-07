@@ -16,10 +16,11 @@ import {
 import { getMaterial } from './materials';
 
 import {
+  CuboidRoomData,
+  CylindricalRoomData,
   DoorData,
   PathData,
   PortalData,
-  RoomData,
 } from '../../data/data.types';
 import { MapBounds } from './mapScene.types';
 import { isCuboidRoomData, isCylindricalRoomData } from '../../data/data.types';
@@ -62,47 +63,69 @@ export function setupMapScene() {
     mapScene.add(lavaMesh);
   }
 
+  // Split rooms data into cuboid and cylindircal
+  const cuboidRoomsData = [];
+  const cylindricalRoomsData = [];
+
+  for (const room of roomsData) {
+    if (isCuboidRoomData(room)) cuboidRoomsData.push(room);
+    else if (isCylindricalRoomData(room)) cylindricalRoomsData.push(room);
+  }
+
   // Sort doors so deprecated ones are at the end of the array
   const sortedDoorsData = doorsData.sort(
     (a, b) => Number(a.deprecated) - Number(b.deprecated),
   );
 
   // Add map elements
-  const { portalObjects, doorObjects } = setupInstancedMapObjects(
+  const {
+    cuboidRoomObjects,
+    cylindricalRoomObjects,
+    portalObjects,
+    doorObjects,
+  } = setupInstancedMapObjects(
+    cuboidRoomsData,
+    cylindricalRoomsData,
     portalsData,
     sortedDoorsData,
   );
+  mapScene.add(cuboidRoomObjects);
+  mapScene.add(cylindricalRoomObjects);
   mapScene.add(portalObjects);
   mapScene.add(doorObjects);
 
-  initMapObjects<RoomData>(roomsData, (object, id) => {
-    const roomMesh = createRoom(object, id);
-    let incrementId = false;
-
-    if (roomMesh !== null) {
-      mapScene.add(roomMesh);
-      incrementId = true;
+  initMapObjects<CuboidRoomData>(cuboidRoomsData, (object, id) => {
+    const roomLabel = createRoom(object, id);
+    if (roomLabel !== null) {
+      mapScene.add(roomLabel);
     }
 
-    if (isCuboidRoomData(object)) {
-      const { corners } = object;
-      checkMapBounds(corners[0][0], corners[1][1], corners[0][2]);
-      checkMapBounds(corners[1][0], corners[0][1], corners[1][2]);
-    } else if (isCylindricalRoomData(object)) {
-      const { radius, height, bottomCenter } = object;
-      checkMapBounds(
-        bottomCenter[0] - radius,
-        bottomCenter[1],
-        bottomCenter[2] - radius,
-      );
-      checkMapBounds(
-        bottomCenter[0] + radius,
-        bottomCenter[1] + height,
-        bottomCenter[2] + radius,
-      );
+    const { corners } = object;
+    checkMapBounds(corners[0][0], corners[1][1], corners[0][2]);
+    checkMapBounds(corners[1][0], corners[0][1], corners[1][2]);
+
+    return true;
+  });
+
+  initMapObjects<CylindricalRoomData>(cylindricalRoomsData, (object, id) => {
+    const roomLabel = createRoom(object, id);
+    if (roomLabel !== null) {
+      mapScene.add(roomLabel);
     }
 
-    return incrementId;
+    const { radius, height, bottomCenter } = object;
+    checkMapBounds(
+      bottomCenter[0] - radius,
+      bottomCenter[1],
+      bottomCenter[2] - radius,
+    );
+    checkMapBounds(
+      bottomCenter[0] + radius,
+      bottomCenter[1] + height,
+      bottomCenter[2] + radius,
+    );
+
+    return true;
   });
 
   initMapObjects<PathData>(pathsData, (object, id) => {
