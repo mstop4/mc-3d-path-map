@@ -2,7 +2,7 @@ import colorbrewer from 'colorbrewer';
 import {
   DefaultPathPropertyDefinitions,
   SimplePathPropertyDefinitions,
-} from './pathProps.types';
+} from './pathProps.types.ts';
 
 const defaultColourScheme = colorbrewer.Set1[9];
 const cbfColourScheme = colorbrewer.RdYlBu[5];
