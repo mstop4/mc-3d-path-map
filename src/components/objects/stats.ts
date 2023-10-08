@@ -13,6 +13,7 @@ export function addStatsPanel() {
   statsPanel.addPanel(trisPanel);
   statsPanel.addPanel(drawsPanel);
   document.body.appendChild(statsPanel.dom);
+  statsPanel.dom.style.top = '2.5rem';
 
   statsPanel.showPanel(0);
 }
