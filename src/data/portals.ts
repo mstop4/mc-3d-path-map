@@ -161,6 +161,14 @@ const data: PortalData[] = [
     label: 'Grand Sinkhole Cave',
     location: [-255.5, 34, 197],
   },
+  {
+    label: 'Lava Shower Airship',
+    location: [80.5, 70, 376],
+  },
+  {
+    label: 'Piglin Beach Village',
+    location: [-315.5, 66, 176],
+  },
 ];
 
 export default data;

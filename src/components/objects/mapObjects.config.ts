@@ -21,6 +21,6 @@ export const lodConfig = [
   },
   {
     tolerance: 4,
-    distance: 800,
+    distance: 600,
   },
 ];

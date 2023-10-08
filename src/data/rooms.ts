@@ -370,6 +370,16 @@ const data: RoomData[] = [
       [-252, 34, 199],
     ],
   },
+  {
+    label: 'Lava Shower Airship Portal Room',
+    displayLabel: false,
+    type: 'ogRoom',
+    shape: 'cuboid',
+    corners: [
+      [79, 73, 372],
+      [82, 70, 375],
+    ],
+  },
 ];
 
 export default data;

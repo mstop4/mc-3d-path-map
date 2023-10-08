@@ -513,6 +513,34 @@ const data: DoorData[] = [
     deprecated: false,
     location: [-255.5, 34, 211],
   },
+  {
+    quantity: 2,
+    type: 'conn',
+    orientation: 'z',
+    deprecated: false,
+    location: [109.5, 66, 354],
+  },
+  {
+    quantity: 2,
+    type: 'conn',
+    orientation: 'x',
+    deprecated: false,
+    location: [77, 70, 372.5],
+  },
+  {
+    quantity: 2,
+    type: 'conn',
+    orientation: 'z',
+    deprecated: false,
+    location: [-296.5, 47, 204],
+  },
+  {
+    quantity: 2,
+    type: 'conn',
+    orientation: 'x',
+    deprecated: false,
+    location: [-309, 66, 197.5],
+  },
 ];
 
 export default data;
