@@ -34,7 +34,7 @@ export function setupGUI() {
     .name('Camera Position')
     .onChange(changeCameraPosition);
 
-  const showHideFolder = gui.addFolder('Show/Hide');
+  const showHideFolder = gui.addFolder('Toggle Visibility');
 
   showHideFolder
     .add(options.visible, 'labels')
@@ -48,6 +48,7 @@ export function setupGUI() {
     .add(options.visible, 'legend')
     .name('Legend')
     .onChange(toggleLegend);
+  showHideFolder.open();
 }
 
 function toggleLabels() {
