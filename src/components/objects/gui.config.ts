@@ -5,6 +5,14 @@ export const allColourModeKeys: Record<string, string> = {
   nat: 'Natural/Artificial',
 };
 
+export const allCameraPositionsKeys: Record<string, string> = {
+  demo: 'Demo',
+  isometric: 'Isometric',
+  overhead: 'Overhead',
+  facingEast: 'Facing East',
+  facingNorth: 'Facing North',
+};
+
 export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
 
 export const activeColourModes = colourModesAvailable.reduce(

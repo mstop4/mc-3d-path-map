@@ -7,6 +7,7 @@ import {
   allColourModeKeys,
   colourModesAvailable,
   activeColourModes,
+  allCameraPositionsKeys,
 } from './gui.config';
 
 let gui: GUI;
@@ -18,11 +19,7 @@ const options = {
     legend: true,
   },
   colourMode: activeColourModes[colourModesAvailable[0]],
-  moveCameraDemo: () => toggleCameraPostion(4, true),
-  moveCameraIso: () => toggleCameraPostion(0, false),
-  moveCameraOverhead: () => toggleCameraPostion(1, false),
-  moveCameraSideEast: () => toggleCameraPostion(2, false),
-  moveCameraSideNorth: () => toggleCameraPostion(3, false),
+  cameraPosition: allCameraPositionsKeys.isometric,
 };
 
 export function setupGUI() {
@@ -31,6 +28,11 @@ export function setupGUI() {
     .add(options, 'colourMode', Object.values(activeColourModes))
     .name('Colour Mode')
     .onChange(changeColourMode);
+
+  gui
+    .add(options, 'cameraPosition', Object.values(allCameraPositionsKeys))
+    .name('Camera Position')
+    .onChange(changeCameraPosition);
 
   const showHideFolder = gui.addFolder('Show/Hide');
 
@@ -46,13 +48,6 @@ export function setupGUI() {
     .add(options.visible, 'legend')
     .name('Legend')
     .onChange(toggleLegend);
-
-  const cameraFolder = gui.addFolder('Position Camera');
-  cameraFolder.add(options, 'moveCameraDemo').name('Demo');
-  cameraFolder.add(options, 'moveCameraIso').name('Isometric');
-  cameraFolder.add(options, 'moveCameraOverhead').name('Overhead');
-  cameraFolder.add(options, 'moveCameraSideEast').name('Facing East');
-  cameraFolder.add(options, 'moveCameraSideNorth').name('Facing North');
 }
 
 function toggleLabels() {
@@ -110,6 +105,33 @@ function changeColourMode() {
       const mesh = level.object as Line2;
       mesh.material = path.userData[materialKey];
     }
+  }
+}
+
+function changeCameraPosition() {
+  switch (options.cameraPosition) {
+    case allCameraPositionsKeys.demo:
+      toggleCameraPostion(4, true);
+      break;
+
+    case allCameraPositionsKeys.isometric:
+      toggleCameraPostion(0, false);
+      break;
+
+    case allCameraPositionsKeys.overhead:
+      toggleCameraPostion(1, false);
+      break;
+
+    case allCameraPositionsKeys.facingEast:
+      toggleCameraPostion(2, false);
+      break;
+
+    case allCameraPositionsKeys.facingNorth:
+      toggleCameraPostion(3, false);
+      break;
+
+    default:
+      toggleCameraPostion(0, false);
   }
 }
 
