@@ -1584,7 +1584,7 @@ const data: PathData[] = [
   {
     type: 'exPath',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [179.5, 82, -150],
       [179.5, 82, -154],
@@ -1593,7 +1593,7 @@ const data: PathData[] = [
   {
     type: 'oBridge',
     visible: true,
-    deprecated: false,
+    deprecated: true,
     points: [
       [179.5, 82, -154],
       [179.5, 82, -164],
