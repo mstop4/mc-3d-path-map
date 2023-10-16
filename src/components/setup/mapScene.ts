@@ -130,7 +130,7 @@ export function setupMapScene() {
 
   initMapObjects<PathData>(pathsData, (object, id) => {
     const { pathMesh, debugPathLabel } = createPath(object, id);
-    if (import.meta.env.DEV && debugPathLabel !== null) {
+    if (debugPathLabel !== null) {
       mapScene.add(debugPathLabel);
     }
 
@@ -148,7 +148,12 @@ export function setupMapScene() {
   });
 
   initMapObjects<DoorData>(sortedDoorsData, (object, id) => {
-    createDoor(object, id);
+    const debugDoorLabel = createDoor(object, id);
+
+    if (debugDoorLabel !== null) {
+      mapScene.add(debugDoorLabel);
+    }
+
     const { location } = object;
     checkMapBounds(...location);
 

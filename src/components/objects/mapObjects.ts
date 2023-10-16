@@ -305,6 +305,22 @@ export function createDoor(doorData: DoorData, id: number) {
   dummy.scale.set(1, 1, quantity);
   dummy.updateMatrix();
   doorObjects.setMatrixAt(id, dummy.matrix);
+
+  let debugDoorLabel = null;
+
+  if (import.meta.env.DEV && featureConfig.debugForceLabels) {
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'portalLabel';
+    labelDiv.textContent = `Door${id}`;
+
+    debugDoorLabel = new CSS2DObject(labelDiv);
+    debugDoorLabel.center.set(0.5, 1.5);
+    debugDoorLabel.layers.set(0);
+
+    debugDoorLabel.position.set(location[0], location[1], location[2]);
+  }
+
+  return debugDoorLabel;
 }
 
 export function createPortal(portalData: PortalData, id: number) {
