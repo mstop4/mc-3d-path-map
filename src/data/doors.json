@@ -1,0 +1,556 @@
+[
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-24, 81, 20.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-25.5, 81, 23]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-46, 74, 22.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-60, 74, 24]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-73.5, 65, 5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-104, 41, 10.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-110, 41, 10.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-139, 43, 10.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-145, 48, 63.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-135.5, 58, 70]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-171.5, 67, 85]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-181, 67, 78.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-335.5, 70, 57]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-342.5, 75, 53]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-41, 79, 60]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-33, 80, 67]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-98, 76, 54]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-99, 76, 55.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-114, 62, 84.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-161.5, 75, 157]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-163, 55, 113.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-124, 73, 173.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-111, 80, 191.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-172.5, 91, 347]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-18, 68, 65.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [21, 46, -10]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [21, 46, -55.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [31, 46, -75]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-49, 39, -160]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-45.5, 39, -192]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-12, 40, -224.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-57, 88, -229.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [24, 98, 59]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [12, 85, 152]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [14, 85, 177]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-7.5, 71, 279]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-7.5, 75, 307]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [173, 67, 214]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [203.5, 66, 268]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [342, 88, 222]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [353, 91, 222.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [440, 82, 95.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [456, 82, 95.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [516.5, 90, -49]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [506, 90, -43.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [465, 98, -40.5]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [398, 89, -92]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [373, 79, -96]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [410, 37, -101]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [398, 101, -176]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [475, 115, -243.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [292.5, 115, -134]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [214, 68, -189.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [207, 60, -183.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [222, 58, -182]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [88, 38, -149.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [179.5, 82, -150]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [198.5, 79, -114]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [206.5, 68, 47]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [199, 77, 116.5]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [169, 95, -55]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [175, 95, -55]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [85.5, 48, 120]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [23, 36, 119]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [2.5, 37, 144]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [5, 70, 154]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [20, 69, 165]
+  },
+
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": true,
+    "location": [232, 64, 376.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [87.5, 37, 416]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [87.5, 70, 489]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [43, 77, 669.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [36.5, 77, 667]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-255.5, 34, 165]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-255.5, 34, 211]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [109.5, 66, 354]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [77, 70, 372.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-296.5, 47, 204]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-309, 66, 197.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-255.5, 89, 284]
+  }
+]

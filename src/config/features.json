@@ -1,5 +1,6 @@
 {
   "portalLabels": true,
+  "debugForceLabels": false,
   "lavaGeometry": false,
   "raycasterOn": false
 }

@@ -1,11 +1,9 @@
-import { PathData } from './data.types';
-
-const data: PathData[] = [
+[
   {
-    type: 'ogTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-4, 84, -0.5],
       [-20, 84, -0.5],
       [-21, 83, -0.5],
@@ -15,175 +13,178 @@ const data: PathData[] = [
       [-25.5, 82, 10],
       [-25.5, 81, 11],
       [-25.5, 81, 20.5],
-      [-25.5, 81, 23],
-    ],
+      [-25.5, 81, 23]
+    ]
   },
   {
-    type: 'ogTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-24, 81, 20.5],
       [-25.5, 81, 20.5],
       [-32.5, 74, 20.5],
       [-34.5, 74, 20.5],
       [-34.5, 74, 19.5],
-      [-37, 74, 19.5],
-    ],
+      [-37, 74, 19.5]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-43, 74, 22.5],
       [-61.5, 74, 22.5],
       [-61.5, 74, 10.5],
       [-64, 74, 10.5],
       [-73.5, 65, 10.5],
-      [-73.5, 65, 5],
-    ],
+      [-73.5, 65, 5]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-73.5, 65, 10.5],
       [-77, 65, 10.5],
       [-101, 41, 10.5],
-      [-104, 41, 10.5],
-    ],
+      [-104, 41, 10.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-110, 41, 10.5],
-      [-120, 42, 14],
-      [-126, 42, 19],
-      [-129, 41, 22],
-      [-135, 36, 25],
-      [-147, 38, 28.5],
-    ],
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-139, 43, 10.5],
+      [-110, 41, 10.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-147, 38, 28.5],
-      [-148.5, 38, 28.5],
-      [-148.5, 38, 35],
-      [-148.5, 45, 42],
-      [-148.5, 45, 43.5],
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-139, 43, 10.5],
+      [-143.5, 43, 10.5],
+      [-143.5, 43, 12],
+      [-143.5, 45, 14],
+      [-143.5, 45, 43.5],
       [-140.5, 45, 43.5],
       [-140.5, 45, 49],
       [-140.5, 48, 52],
       [-140.5, 48, 53.5],
       [-140.5, 48, 63.5],
-      [-146, 48, 63.5],
-    ],
+      [-145, 48, 63.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-140.5, 48, 53.5],
       [-135.5, 48, 53.5],
       [-135.5, 48, 58],
       [-135.5, 58, 68],
-      [-135.5, 58, 70],
-    ],
+      [-135.5, 58, 70]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-135.5, 58, 70],
       [-135.5, 58, 76.5],
       [-135.5, 58, 77],
       [-137, 58, 77],
+      [-148, 69, 77]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-148, 69, 77],
-      [-148, 70, 75],
-      [-158, 70, 75],
-    ],
+      [-148.5, 69, 76.5],
+      [-160, 69, 76.5],
+      [-164, 66, 76.5],
+      [-168, 66, 76.5],
+      [-169, 67, 76.5],
+      [-173.5, 67, 78.5],
+      [-173.5, 67, 75],
+      [-173.5, 69, 73],
+      [-173.5, 69, 71.5],
+      [-176, 69, 71.5],
+      [-177, 70, 71.5],
+      [-179, 70, 71.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-158, 70, 75],
-      [-167, 67, 75],
-      [-172.5, 67, 78.5],
-      [-177, 67, 78.5],
-      [-179, 70, 71.5],
-    ],
-  },
-  {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-179, 70, 71.5],
       [-335.5, 70, 71.5],
-      [-335.5, 70, 57],
-    ],
+      [-335.5, 70, 57]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-337, 70, 55.5],
       [-341, 74, 55.5],
       [-342.5, 74, 55.5],
       [-342.5, 74, 54],
-      [-342.5, 75, 53],
-    ],
+      [-342.5, 75, 53]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-172.5, 67, 78.5],
-      [-171.5, 67, 83.5],
-      [-182.5, 67, 83.5],
-    ],
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-171.5, 67, 85],
+      [-173.5, 67, 78.5],
+      [-181, 67, 78.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-182.5, 67, 83.5],
-      [-182.5, 67, 86.5],
-      [-182, 67, 86.5],
-      [-159, 90, 86.5],
-    ],
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-171.5, 67, 85],
+      [-171.5, 67, 87.5],
+      [-171, 67, 87.5],
+      [-148, 90, 87.5],
+      [-146, 90, 87.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-34.5, 74, 20.5],
       [-34.5, 74, 50.5],
       [-34.5, 74, 51.5],
       [-34.5, 74, 53],
-      [-34.5, 79, 58],
-    ],
+      [-34.5, 79, 58]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-34.5, 74, 50.5],
       [-36, 74, 50.5],
       [-38, 72, 50.5],
@@ -193,107 +194,94 @@ const data: PathData[] = [
       [-64, 70, 55.5],
       [-66, 72, 55.5],
       [-93, 72, 55.5],
-      [-97, 76, 55.5],
-    ],
+      [-97, 76, 55.5]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-97, 76, 55.5],
       [-101, 76, 55.5],
       [-103, 74, 55.5],
       [-112.5, 74, 55.5],
       [-112.5, 74, 65],
-      [-112.5, 66, 73],
-    ],
+      [-112.5, 66, 73]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-112.5, 66, 73],
       [-112.5, 66, 75.5],
       [-119, 66, 76.5],
       [-127, 60, 76.5],
-      [-135.5, 58, 76.5],
-    ],
+      [-135.5, 58, 76.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-135.5, 58, 76.5],
       [-135, 59, 82],
       [-135.5, 58, 84.5],
-      [-114, 62, 84.5],
-    ],
+      [-114, 62, 84.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-135.5, 58, 84.5],
-      [-148, 62, 84.5],
-      [-161, 60, 87.5],
-      [-167, 55, 87.5],
-      [-169.5, 55, 87.5],
-      [-172, 56, 90],
-      [-173, 56, 99],
-      [-173, 56, 107],
-      [-171.5, 55, 114.5],
-      [-163, 55, 114.5],
-    ],
+      [-146, 61, 84.5],
+      [-147.5, 61, 84.5],
+      [-147.5, 61, 87.5],
+      [-154, 61, 87.5],
+      [-162, 59, 87.5],
+      [-166, 55, 87.5],
+      [-173.5, 55, 87.5],
+      [-173.5, 55, 89],
+      [-173.5, 56, 90],
+      [-173, 56, 93],
+      [-175, 56, 104]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-163, 55, 114.5],
-      [-161.5, 55, 114.5],
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-163, 55, 113.5],
+      [-161.5, 55, 113.5],
       [-161.5, 55, 115],
-      [-161.5, 66, 126],
-      [-161.5, 66, 128.5],
-      [-164.5, 66, 128.5],
-      [-164.5, 66, 132.5],
-      [-160.5, 66, 132.5],
-      [-160.5, 66, 138.5],
-      [-162.5, 66, 138.5],
-      [-162.5, 66, 140.5],
-      [-164.5, 66, 141],
-      [-164.5, 68, 143],
-      [-164.5, 68, 144.5],
-      [-167.5, 69, 144.5],
-      [-167.5, 69, 145],
-      [-167.5, 77, 153],
-      [-167.5, 77, 154.5],
-      [-167.5, 77, 156],
-    ],
+      [-161.5, 75, 135],
+      [-161.5, 75, 157]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-167.5, 77, 154.5],
-      [-180, 77, 154.5],
-    ],
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-161.5, 75, 155.5],
+      [-178, 75, 155.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-159, 90, 86.5],
-      [-151, 90, 88],
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-146, 90, 87.5],
       [-141, 90, 90],
-      [-128, 90, 95],
-      [-130, 88, 101],
+      [-137, 90, 93],
+      [-130, 88, 100],
       [-134, 87, 108],
       [-136, 87, 115],
       [-137, 86, 125],
@@ -304,59 +292,61 @@ const data: PathData[] = [
       [-130, 75, 164],
       [-137, 73, 166],
       [-143, 73, 167],
-      [-146, 74, 166],
-      [-167, 75, 161],
-      [-167.5, 77, 156],
-    ],
+      [-154, 73, 167.5],
+      [-161.5, 73, 167.5],
+      [-161.5, 75, 164],
+      [-161.5, 75, 158],
+      [-161.5, 75, 157]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-130, 75, 164],
       [-128.5, 73, 173.5],
-      [-124, 73, 173.5],
-    ],
+      [-124, 73, 173.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-124, 73, 173.5],
       [-116, 73, 173.5],
-      [-109, 80, 173.5],
-    ],
+      [-109, 80, 173.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-108.5, 80, 175],
       [-108.5, 80, 191.5],
-      [-111, 80, 191.5],
-    ],
+      [-111, 80, 191.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-108.5, 80, 191.5],
       [-106.5, 80, 191.5],
       [-106.5, 80, 193],
       [-106.5, 72, 201],
       [-106.5, 72, 211.5],
-      [-126, 72, 211.5],
-    ],
+      [-126, 72, 211.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-126, 72, 211.5],
       [-132.5, 71, 211.5],
       [-132.5, 71, 239],
@@ -364,65 +354,68 @@ const data: PathData[] = [
       [-138, 75, 251],
       [-143, 75, 260],
       [-145.5, 76, 270],
-      [-145.5, 76, 277],
-    ],
+      [-145.5, 76, 277]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-145.5, 76, 277],
       [-145.5, 76, 282.5],
       [-142.5, 76, 282.5],
       [-142.5, 76, 285],
-      [-142.5, 95, 304],
-    ],
+      [-142.5, 95, 304]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-142.5, 95, 304],
+      [-139, 95, 311],
       [-137, 94, 313],
       [-137, 94, 324],
       [-138, 93, 334],
       [-143, 94, 341],
-      [-153, 95, 347.5],
-    ],
+      [-153, 95, 347.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-153, 95, 347.5],
-      [-167.5, 95, 347.5],
-      [-167.5, 95, 352.5],
-      [-169, 95, 352.5],
+      [-169.5, 95, 347.5],
+      [-169.5, 95, 349],
+      [-169.5, 93, 351],
+      [-169.5, 93, 352.5],
+      [-171, 93, 352.5],
       [-173, 91, 352.5],
-      [-172.5, 91, 350],
-    ],
+      [-172.5, 91, 347]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-34.5, 74, 51.5],
       [-17.5, 74, 51.5],
       [-17.5, 74, 53],
       [-17.5, 68, 59],
       [-17.5, 68, 65.5],
-      [-18, 68, 65.5],
-    ],
+      [-18, 68, 65.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-17.5, 68, 65.5],
       [-19, 68, 65.5],
       [-26, 61, 65.5],
@@ -441,14 +434,14 @@ const data: PathData[] = [
       [-27.5, 48, 70],
       [-27.5, 48, 70.5],
       [-10.5, 48, 70.5],
-      [-10.5, 48, 56],
-    ],
+      [-10.5, 48, 56]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-10.5, 48, 70.5],
       [1.5, 48, 70.5],
       [1.5, 48, 55.5],
@@ -466,55 +459,55 @@ const data: PathData[] = [
       [35.5, 46, -83],
       [35.5, 38, -91],
       [35.5, 38, -118.5],
-      [9, 39, -118.5],
-    ],
+      [9, 39, -118.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [19.5, 46, -55.5],
-      [21, 46, -55.5],
-    ],
+      [21, 46, -55.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [4.5, 39, -123],
       [4.5, 39, -125.5],
       [-0.5, 39, -125.5],
       [-0.5, 39, -138.5],
       [-41.5, 39, -138.5],
       [-41.5, 39, -155.5],
-      [-45, 39, -155.5],
-    ],
+      [-45, 39, -155.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-49, 39, -158],
-      [-49, 39, -160],
-    ],
+      [-49, 39, -160]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-49, 39, -160],
-      [-45.5, 39, -192],
-    ],
+      [-45.5, 39, -192]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-45.5, 39, -192],
       [-45.5, 39, -222],
       [-45.5, 40, -223],
@@ -540,32 +533,32 @@ const data: PathData[] = [
       [-64, 88, -227.5],
       [-64.5, 88, -227.5],
       [-64.5, 88, -229.5],
-      [-57, 88, -229.5],
-    ],
+      [-57, 88, -229.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-12, 40, -224.5],
-      [-99, 40, -224.5],
-    ],
+      [-99, 40, -224.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-64.5, 88, -227.5],
-      [-95, 88, -227.5],
-    ],
+      [-95, 88, -227.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-17.5, 74, 51.5],
       [-12.5, 74, 51.5],
       [-12.5, 74, 59],
@@ -587,35 +580,35 @@ const data: PathData[] = [
       [24, 93, 70.5],
       [25.5, 93, 70.5],
       [25.5, 93, 68],
-      [25.5, 98, 63],
-    ],
+      [25.5, 98, 63]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [14.5, 85, 76.5],
       [14.5, 85, 151.5],
-      [14.5, 85, 152],
-    ],
+      [14.5, 85, 152]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [14.5, 85, 152],
       [18.5, 85, 151.5],
       [18.5, 85, 177],
-      [14, 85, 177],
-    ],
+      [14, 85, 177]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [14, 85, 177],
       [11, 85, 176.5],
       [9, 83, 176.5],
@@ -637,34 +630,34 @@ const data: PathData[] = [
       [-5, 73, 268],
       [-3, 72, 271],
       [-7.5, 71, 276.5],
-      [-7.5, 71, 279],
-    ],
+      [-7.5, 71, 279]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-7.5, 71, 279],
-      [-7.5, 71, 290],
-    ],
+      [-7.5, 71, 290]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-7.5, 71, 297],
       [-7.5, 71, 302],
       [-7.5, 75, 306],
-      [-7.5, 75, 307],
-    ],
+      [-7.5, 75, 307]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [8, 74, 264],
       [15, 73, 262.5],
       [30.5, 73, 262.5],
@@ -673,90 +666,90 @@ const data: PathData[] = [
       [48.5, 73, 286.5],
       [53.5, 73, 291.5],
       [76, 73, 291.5],
-      [78, 74, 294],
-    ],
+      [78, 74, 294]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [78, 74, 294],
       [84, 75, 295],
       [94, 75, 303],
       [97, 76, 308],
-      [99, 73, 319],
-    ],
+      [99, 73, 319]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [99, 73, 319],
       [96, 73, 322],
       [95, 72, 323],
-      [94.5, 72, 325],
-    ],
+      [94.5, 72, 325]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [94.5, 72, 325],
       [94.5, 73, 326],
       [94.5, 73, 328.5],
-      [85, 73, 328.5],
-    ],
+      [85, 73, 328.5]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [95, 72, 323],
-      [98, 71, 323],
-    ],
+      [98, 71, 323]
+    ]
   },
   {
-    type: 'ladder',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [98, 71, 323],
-      [98, 65, 323],
-    ],
+      [98, 65, 323]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [98, 65, 323],
       [107, 65, 322.5],
       [108, 66, 322.5],
       [110, 66, 322.5],
       [111.5, 66, 322],
-      [111.5, 63, 319],
-    ],
+      [111.5, 63, 319]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [111.5, 63, 319],
       [111.5, 63, 318.5],
       [124, 63, 318.5],
-      [128, 63, 318],
-    ],
+      [128, 63, 318]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [128, 63, 318],
       [131.5, 63, 314.5],
       [131.5, 63, 308.5],
@@ -778,14 +771,14 @@ const data: PathData[] = [
       [147, 66, 213],
       [154, 66, 214],
       [160, 67, 214],
-      [173, 67, 214],
-    ],
+      [173, 67, 214]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [160, 67, 214],
       [159, 67, 224],
       [162, 67, 229],
@@ -793,27 +786,27 @@ const data: PathData[] = [
       [159, 68, 238],
       [153, 67, 235],
       [146, 66, 233],
-      [143, 66, 235],
-    ],
+      [143, 66, 235]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [160, 65, 271],
       [168, 66, 261],
       [180, 66, 262],
       [186, 66, 258],
       [199, 66, 260],
-      [203.5, 66, 267],
-    ],
+      [203.5, 66, 267]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [203.5, 66, 267],
       [208, 67, 267],
       [218, 68, 268],
@@ -838,81 +831,81 @@ const data: PathData[] = [
       [337, 90, 236],
       [338, 89, 230],
       [341, 88, 222],
-      [342, 88, 222],
-    ],
+      [342, 88, 222]
+    ]
   },
   {
-    type: 'ogTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [350, 88, 222.5],
       [353, 91, 222.5],
-      [353, 91, 222.5],
-    ],
+      [353, 91, 222.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [348.5, 88, 218],
       [348.5, 83, 213],
       [348.5, 83, 197.5],
-      [344.5, 83, 197.5],
-    ],
+      [344.5, 83, 197.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [344.5, 83, 197.5],
       [344.5, 83, 199],
       [344.5, 79, 203],
       [344.5, 79, 203.5],
       [343, 79, 203.5],
       [337, 73, 203.5],
-      [329, 69, 203.5],
-    ],
+      [329, 69, 203.5]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [329, 69, 203.5],
-      [323, 69, 203.5],
-    ],
+      [323, 69, 203.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [323, 69, 203.5],
       [318, 69, 203.5],
       [310, 77, 203.5],
       [263.5, 77, 203.5],
       [263.5, 77, 217.5],
-      [254, 77, 217.5],
-    ],
+      [254, 77, 217.5]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [254, 77, 217.5],
       [231, 77, 217.5],
-      [201.5, 77, 217.5],
-    ],
+      [201.5, 77, 217.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [201.5, 77, 217.5],
       [201.5, 77, 220.5],
       [200.5, 77, 221.5],
@@ -925,24 +918,24 @@ const data: PathData[] = [
       [181, 73, 209.5],
       [175, 67, 209.5],
       [174.5, 67, 209.5],
-      [174.5, 67, 211],
-    ],
+      [174.5, 67, 211]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [348.5, 83, 197.5],
       [348.5, 83, 179],
-      [348.5, 86, 176],
-    ],
+      [348.5, 86, 176]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [348.5, 86, 176],
       [356, 87, 173],
       [362, 86, 172],
@@ -961,36 +954,36 @@ const data: PathData[] = [
       [435, 81, 111],
       [437, 82, 103],
       [437, 82, 95.5],
-      [440, 82, 95.5],
-    ],
+      [440, 82, 95.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [440, 82, 95.5],
       [454.5, 82, 95.5],
-      [456, 82, 95.5],
-    ],
+      [456, 82, 95.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [454.5, 82, 95.5],
       [454.5, 82, 97],
       [454.5, 79, 100],
       [454.5, 79, 100.5],
-      [459, 79, 100.5],
-    ],
+      [459, 79, 100.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [437, 82, 95.5],
       [433, 82, 89],
       [434, 81, 84],
@@ -1002,23 +995,23 @@ const data: PathData[] = [
       [420, 76, 45],
       [416, 77, 38],
       [415, 81, 34],
-      [426, 81, 25.5],
-    ],
+      [426, 81, 25.5]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [426, 81, 25.5],
-      [467, 81, 25.5],
-    ],
+      [467, 81, 25.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [467, 81, 25.5],
       [476, 83, 33],
       [486, 85, 35],
@@ -1028,14 +1021,14 @@ const data: PathData[] = [
       [511, 93, 9],
       [520, 94, 6],
       [525.5, 89, 5.5],
-      [530, 90, 9],
-    ],
+      [530, 90, 9]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [530, 90, 9],
       [539, 92, 16],
       [548, 94, 17],
@@ -1046,35 +1039,35 @@ const data: PathData[] = [
       [593, 100, 5],
       [599, 100, 9],
       [609, 100, 17],
-      [615, 100, 20.5],
-    ],
+      [615, 100, 20.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [615, 100, 20.5],
       [622, 100, 20.5],
       [623, 101, 20.5],
-      [634, 101, 21.5],
-    ],
+      [634, 101, 21.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [634, 101, 21.5],
       [651.5, 101, 21.5],
-      [651.5, 101, 41],
-    ],
+      [651.5, 101, 41]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [593, 100, 5],
       [593, 101, -6],
       [592.5, 101, -14],
@@ -1087,88 +1080,88 @@ const data: PathData[] = [
       [577, 101, -68],
       [576.5, 101, -71],
       [576.5, 102, -72],
-      [576.5, 102, -80],
-    ],
+      [576.5, 102, -80]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [576.5, 102, -80],
       [576.5, 103, -81],
       [576.5, 103, -85],
       [576.5, 100, -88],
       [575, 100, -88.5],
       [573, 102, -88.5],
-      [568, 102, -88.5],
-    ],
+      [568, 102, -88.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [577, 101, -68],
       [570, 100, -70],
       [562, 101, -67],
       [556, 102, -65],
       [546, 102, -62],
-      [532, 100, -60],
-    ],
+      [532, 100, -60]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [532, 100, -60],
       [532, 97, -57],
       [532, 97, -57],
       [527, 92, -57],
       [527, 89, -53],
       [525.5, 89, -51.5],
-      [525.5, 89, -49],
-    ],
+      [525.5, 89, -49]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [525.5, 89, -49],
       [525.5, 90, -48],
       [525.5, 90, 4],
       [525.5, 89, 5],
-      [525.5, 89, 5.5],
-    ],
+      [525.5, 89, 5.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [525.5, 89, -51.5],
       [525, 90, -51.5],
       [516.5, 90, -51.5],
-      [516.5, 90, -49],
-    ],
+      [516.5, 90, -49]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [516.5, 90, -49],
       [516.5, 90, -43.5],
-      [506, 90, -43.5],
-    ],
+      [506, 90, -43.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [506, 90, -43.5],
       [500.5, 90, -43.5],
       [500.5, 90, -50.5],
@@ -1181,23 +1174,23 @@ const data: PathData[] = [
       [493, 97, -42.5],
       [491, 99, -42.5],
       [482, 99, -41],
-      [465, 98, -40.5],
-    ],
+      [465, 98, -40.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [465, 98, -40.5],
-      [458, 98, -40.5],
-    ],
+      [458, 98, -40.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [457.5, 98, -42],
       [457.5, 98, -43],
       [457.5, 87, -54],
@@ -1210,14 +1203,14 @@ const data: PathData[] = [
       [398, 89, -95.5],
       [397.5, 89, -95.5],
       [397.5, 89, -93.5],
-      [398, 89, -92],
-    ],
+      [398, 89, -92]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [397.5, 89, -95.5],
       [397.5, 89, -101.5],
       [384.5, 89, -101.5],
@@ -1241,65 +1234,65 @@ const data: PathData[] = [
       [406, 37, -93.5],
       [407.5, 37, -93.5],
       [407.5, 37, -98.5],
-      [409.5, 37, -98.5],
-    ],
+      [409.5, 37, -98.5]
+    ]
   },
   {
-    type: 'ogTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [409.5, 37, -98.5],
-      [409.5, 37, -114],
-    ],
+      [409.5, 37, -114]
+    ]
   },
   {
-    type: 'ladder',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [408, 37, -117],
-      [408, 32, -117],
-    ],
+      [408, 32, -117]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [408, 32, -117],
       [408, 32, -116.5],
-      [383, 32, -116.5],
-    ],
+      [383, 32, -116.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [384.5, 32, -116.5],
-      [384.5, 32, -121],
-    ],
+      [384.5, 32, -121]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [397.5, 89, -101.5],
       [397.5, 89, -102],
       [397.5, 98, -111],
       [397.5, 98, -168.5],
       [397.5, 98, -172],
       [397.5, 101, -175],
-      [398, 101, -176],
-    ],
+      [398, 101, -176]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [397.5, 98, -168.5],
       [400.5, 98, -168.5],
       [400.5, 98, -168],
@@ -1310,38 +1303,38 @@ const data: PathData[] = [
       [397.5, 118, -166],
       [397.5, 118, -173.5],
       [398.5, 118, -174.5],
-      [405, 118, -174.5],
-    ],
+      [405, 118, -174.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [398.5, 118, -174.5],
       [398.5, 118, -176],
       [398.5, 115, -179],
       [398.5, 115, -230.5],
       [410.5, 115, -230.5],
-      [410.5, 115, -243.5],
-    ],
+      [410.5, 115, -243.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [398.5, 115, -230.5],
       [398.5, 115, -243.5],
       [470.5, 115, -243.5],
-      [475, 115, -243.5],
-    ],
+      [475, 115, -243.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [470.5, 115, -243.5],
       [470.5, 115, -246],
       [470.5, 105, -256],
@@ -1353,45 +1346,45 @@ const data: PathData[] = [
       [473.5, 104, -237],
       [473.5, 104, -227.5],
       [475, 104, -227.5],
-      [484, 95, -227.5],
-    ],
+      [484, 95, -227.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [484, 95, -227.5],
-      [482, 94, -231.5],
-    ],
+      [482, 94, -231.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [482, 94, -231.5],
       [488, 88, -231.5],
       [489, 88, -231.5],
       [490, 87, -231.5],
       [490.5, 87, -231.5],
-      [490.5, 87, -234],
-    ],
+      [490.5, 87, -234]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [490.5, 87, -234],
-      [490.5, 82, -239],
-    ],
+      [490.5, 82, -239]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [384.5, 89, -101.5],
       [384.5, 89, -104.5],
       [384, 89, -104.5],
@@ -1400,14 +1393,14 @@ const data: PathData[] = [
       [374.5, 95, -110.5],
       [345.5, 95, -110.5],
       [345.5, 95, -118.5],
-      [325, 95, -118.5],
-    ],
+      [325, 95, -118.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [325, 95, -118.5],
       [324, 94, -118.5],
       [322.5, 94, -118.5],
@@ -1418,14 +1411,14 @@ const data: PathData[] = [
       [323.5, 93, -129],
       [323.5, 94, -130],
       [323.5, 94, -130.5],
-      [307.5, 94, -130.5],
-    ],
+      [307.5, 94, -130.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [307.5, 94, -130.5],
       [307.5, 94, -132],
       [307.5, 105, -143],
@@ -1433,14 +1426,14 @@ const data: PathData[] = [
       [306, 105, -144.5],
       [296, 115, -144.5],
       [292.5, 115, -144.5],
-      [292.5, 115, -134],
-    ],
+      [292.5, 115, -134]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [292.5, 115, -144.5],
       [291.5, 115, -144.5],
       [291.5, 115, -190.5],
@@ -1458,113 +1451,113 @@ const data: PathData[] = [
       [210.5, 67, -189.5],
       [211, 67, -189.5],
       [212, 68, -189.5],
-      [214, 68, -189.5],
-    ],
+      [214, 68, -189.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [210.5, 67, -189.5],
       [210.5, 67, -187.5],
       [209, 67, -187.5],
       [202, 60, -187.5],
       [201.5, 60, -187.5],
       [201.5, 60, -183.5],
-      [207, 60, -183.5],
-    ],
+      [207, 60, -183.5]
+    ]
   },
   {
-    type: 'ogTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [207, 60, -183.5],
       [209, 60, -183.5],
       [212, 57, -183.5],
       [215, 57, -181.5],
-      [220.5, 57, -181.5],
-    ],
+      [220.5, 57, -181.5]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [220.5, 57, -181.5],
-      [220.5, 57, -168],
-    ],
+      [220.5, 57, -168]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [201.5, 60, -183.5],
       [201.5, 60, -183.5],
       [201.5, 60, -169.5],
       [193, 60, -169.5],
       [187, 54, -169.5],
       [180.5, 54, -169.5],
-      [139, 54, -169.5],
-    ],
+      [139, 54, -169.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [139, 54, -169.5],
       [138, 53, -169.5],
-      [127, 53, -170.5],
-    ],
+      [127, 53, -170.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [127, 53, -170.5],
       [111, 37, -170.5],
-      [74.5, 37, -170.5],
-    ],
+      [74.5, 37, -170.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [74.5, 37, -170.5],
-      [74.5, 37, -167],
-    ],
+      [74.5, 37, -167]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [74.5, 37, -167],
       [74.5, 38, -166],
       [74.5, 38, -149.5],
-      [88, 38, -149.5],
-    ],
+      [88, 38, -149.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [74.5, 38, -149.5],
       [74.5, 38, -118.5],
-      [35.5, 38, -118.5],
-    ],
+      [35.5, 38, -118.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [180.5, 54, -169.5],
       [180.5, 54, -168],
       [180.5, 62, -160],
@@ -1578,32 +1571,32 @@ const data: PathData[] = [
       [179.5, 81, -142],
       [179.5, 81, -148],
       [179.5, 82, -149],
+      [179.5, 82, -150]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [179.5, 82, -150],
-    ],
+      [179.5, 82, -154]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
-      [179.5, 82, -150],
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [179.5, 82, -154],
-    ],
+      [179.5, 82, -164]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: true,
-    points: [
-      [179.5, 82, -154],
-      [179.5, 82, -164],
-    ],
-  },
-  {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [179.5, 82, -164],
       [171, 83, -165],
       [162, 82, -171],
@@ -1635,46 +1628,46 @@ const data: PathData[] = [
       [-43, 85, -215],
       [-44, 84, -223],
       [-50, 87, -225],
-      [-57, 88, -229.5],
-    ],
+      [-57, 88, -229.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [179.5, 79, -119.5],
       [198.5, 79, -119.5],
-      [198.5, 79, -114],
-    ],
+      [198.5, 79, -114]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [177.5, 79, -119.5],
       [177.5, 79, -119.5],
       [170.5, 79, -119.5],
-      [170.5, 79, -108],
-    ],
+      [170.5, 79, -108]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 79, -108],
       [170.5, 79, -59],
       [170.5, 79, -57],
-      [170.5, 79, -53.5],
-    ],
+      [170.5, 79, -53.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 79, -53.5],
       [174.5, 79, -53.5],
       [174.5, 79, -49],
@@ -1688,60 +1681,60 @@ const data: PathData[] = [
       [206.5, 63, 18.5],
       [206.5, 63, 41],
       [206.5, 68, 46],
-      [206.5, 68, 47],
-    ],
+      [206.5, 68, 47]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [206.5, 68, 47],
       [206.5, 68, 54.5],
       [207, 68, 54.5],
       [202, 68, 57],
       [197, 68, 61],
-      [190.5, 69, 66.5],
-    ],
+      [190.5, 69, 66.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [190.5, 69, 66.5],
       [185, 71, 72],
       [179, 74, 79],
       [172.5, 77, 84.5],
-      [170.5, 77, 84.5],
-    ],
+      [170.5, 77, 84.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 77, 84.5],
       [170.5, 77, 103.5],
       [170.5, 77, 106.5],
       [170.5, 77, 116.5],
-      [170.5, 77, 212.5],
-    ],
+      [170.5, 77, 212.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 77, 116.5],
-      [199, 77, 116.5],
-    ],
+      [199, 77, 116.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 77, 106.5],
       [172, 77, 106.5],
       [176, 81, 106.5],
@@ -1749,52 +1742,52 @@ const data: PathData[] = [
       [176.5, 81, 105],
       [176.5, 85, 101],
       [176.5, 85, 100.5],
-      [170, 85, 100.5],
-    ],
+      [170, 85, 100.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [206.5, 63, 18.5],
       [206.5, 63, 18.5],
-      [196, 63, 18.5],
-    ],
+      [196, 63, 18.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [200.5, 63, 18.5],
-      [200.5, 63, 7],
-    ],
+      [200.5, 63, 7]
+    ]
   },
 
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 79, -59],
-      [170, 79, -59],
-    ],
+      [170, 79, -59]
+    ]
   },
   {
-    type: 'ladder',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170, 79, -59],
-      [170, 95, -59],
-    ],
+      [170, 95, -59]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [175, 95, -55],
       [176, 95, -55],
       [180, 91, -55],
@@ -1812,27 +1805,27 @@ const data: PathData[] = [
       [208, 68, 25],
       [207, 68, 33],
       [212, 67, 42],
-      [207, 68, 54.5],
-    ],
+      [207, 68, 54.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [170.5, 77, 103.5],
       [166.5, 77, 103.5],
       [166.5, 77, 105],
       [166.5, 68, 114],
       [166.5, 68, 114.5],
-      [168, 68, 114.5],
-    ],
+      [168, 68, 114.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [168, 68, 114.5],
       [172, 64, 114.5],
       [174, 64, 114.5],
@@ -1848,14 +1841,14 @@ const data: PathData[] = [
       [179.5, 60, 105],
       [179.5, 60, 103.5],
       [178, 60, 103.5],
-      [173, 55, 103.5],
-    ],
+      [173, 55, 103.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [173, 55, 103.5],
       [172.5, 55, 103.5],
       [172.5, 55, 101.5],
@@ -1881,39 +1874,39 @@ const data: PathData[] = [
       [95, 46, 121],
       [90, 47, 123],
       [85, 48, 125],
-      [85.5, 48, 120],
-    ],
+      [85.5, 48, 120]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [84, 48, 116.5],
       [71, 35, 116.5],
       [23.5, 35, 116.5],
-      [23, 36, 119],
-    ],
+      [23, 36, 119]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [23, 36, 119],
       [21, 35, 127],
       [13, 35, 134],
       [4, 36, 138],
       [2.5, 36, 142],
       [2.5, 37, 143],
-      [2.5, 37, 144],
-    ],
+      [2.5, 37, 144]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [2.5, 37, 144],
       [2.5, 37, 146],
       [2.5, 37, 146],
@@ -1938,23 +1931,23 @@ const data: PathData[] = [
       [23, 70, 156.5],
       [21.5, 70, 156.5],
       [21.5, 70, 152.5],
-      [8, 70, 152.5],
-    ],
+      [8, 70, 152.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [23, 70, 156.5],
-      [23, 69, 162.5],
-    ],
+      [23, 69, 162.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [147, 66, 213],
       [148, 66, 205],
       [138, 66, 196],
@@ -1973,41 +1966,41 @@ const data: PathData[] = [
       [52, 60, 176],
       [48, 60, 180],
       [44, 59, 181],
-      [36, 56, 184.5],
-    ],
+      [36, 56, 184.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [36, 56, 184.5],
       [33.5, 56, 184.5],
       [33.5, 56, 184],
       [33.5, 66, 174],
       [25, 67, 165],
-      [20, 69, 165],
-    ],
+      [20, 69, 165]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [25, 67, 165],
       [25, 67, 162.5],
       [15, 77, 162.5],
       [14.5, 77, 162.5],
       [14.5, 77, 161],
       [14.5, 85, 153],
-      [14.5, 85, 152],
-    ],
+      [14.5, 85, 152]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [218, 68, 268],
       [217, 71, 273],
       [218, 76, 277],
@@ -2015,24 +2008,24 @@ const data: PathData[] = [
       [216, 83, 286],
       [213, 84, 291],
       [209, 87, 299],
-      [208.5, 87, 303],
-    ],
+      [208.5, 87, 303]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [208.5, 87, 303],
       [208.5, 87, 310],
-      [208.5, 84, 313],
-    ],
+      [208.5, 84, 313]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [208.5, 84, 313],
       [208.5, 84, 313.5],
       [206, 84, 313.5],
@@ -2068,14 +2061,14 @@ const data: PathData[] = [
       [222.5, 75, 362],
       [221.5, 75, 371.5],
       [225.5, 75, 371.5],
-      [225.5, 75, 373],
-    ],
+      [225.5, 75, 373]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [225.5, 75, 373],
       [225.5, 67, 381],
       [225.5, 67, 381.5],
@@ -2084,23 +2077,23 @@ const data: PathData[] = [
       [239.5, 64, 377],
       [239.5, 64, 376.5],
       [239.5, 64, 375],
-      [239.5, 59, 370],
-    ],
+      [239.5, 59, 370]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [239.5, 64, 376.5],
-      [232, 64, 376.5],
-    ],
+      [232, 64, 376.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [239.5, 59, 370],
       [239.5, 59, 366.5],
       [238, 59, 366.5],
@@ -2108,14 +2101,14 @@ const data: PathData[] = [
       [234.5, 56, 366.5],
       [234.5, 56, 365],
       [238.5, 52, 358],
-      [238.5, 52, 355.5],
-    ],
+      [238.5, 52, 355.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [238.5, 52, 355.5],
       [237, 52, 355.5],
       [230, 45, 355.5],
@@ -2131,14 +2124,14 @@ const data: PathData[] = [
       [215.5, 39, 373.5],
       [213, 39, 373.5],
       [211, 37, 373.5],
-      [205, 37, 373.5],
-    ],
+      [205, 37, 373.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [205, 37, 373.5],
       [199, 35, 378],
       [191, 36, 378],
@@ -2150,63 +2143,63 @@ const data: PathData[] = [
       [128, 43, 358],
       [124, 43, 361],
       [119, 38, 364],
-      [111, 35, 364],
-    ],
+      [111, 35, 364]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [111, 35, 364],
       [115, 35, 358],
-      [116.5, 35, 352],
-    ],
+      [116.5, 35, 352]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [116.5, 35, 352],
       [116.5, 41, 344],
       [116.5, 41, 338],
+      [116.5, 41, 333]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [116.5, 41, 333],
-    ],
+      [114, 41, 333]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
-      [116.5, 41, 333],
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [114, 41, 333],
-    ],
+      [114, 66, 333]
+    ]
   },
   {
-    type: 'ladder',
-    visible: true,
-    deprecated: false,
-    points: [
-      [114, 41, 333],
-      [114, 66, 333],
-    ],
-  },
-  {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [114, 66, 333],
       [110.5, 66, 333],
-      [110, 66, 322.5],
-    ],
+      [110, 66, 322.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [111, 35, 364],
       [111, 34, 371],
       [114, 34, 383],
@@ -2215,47 +2208,47 @@ const data: PathData[] = [
       [102, 34, 398],
       [97, 35, 405],
       [87.5, 37, 408],
-      [87.5, 37, 416],
-    ],
+      [87.5, 37, 416]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [87.5, 37, 416],
-      [87.5, 37, 445],
-    ],
+      [87.5, 37, 445]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [87.5, 37, 451],
       [87.5, 47, 461],
       [87.5, 47, 462.5],
       [90.5, 47, 462.5],
       [90.5, 47, 462],
-      [90.5, 55, 454],
-    ],
+      [90.5, 55, 454]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [87.5, 47, 462.5],
       [87.5, 47, 464],
       [87.5, 70, 487],
-      [87.5, 70, 489],
-    ],
+      [87.5, 70, 489]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [87.5, 70, 489],
       [88, 70, 493],
       [85, 70, 501],
@@ -2266,14 +2259,14 @@ const data: PathData[] = [
       [84, 71, 544],
       [78, 72, 545],
       [77, 76, 551],
-      [82, 79, 554],
-    ],
+      [82, 79, 554]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [82, 79, 554],
       [90, 82, 556],
       [95, 84, 562],
@@ -2282,14 +2275,14 @@ const data: PathData[] = [
       [92, 83, 589],
       [86, 82, 596],
       [79, 82, 601],
-      [71, 83, 607],
-    ],
+      [71, 83, 607]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [71, 83, 607],
       [62, 84, 611],
       [57, 85, 617],
@@ -2303,98 +2296,99 @@ const data: PathData[] = [
       [55, 81, 667.5],
       [46, 79, 669.5],
       [44, 77, 669.5],
-      [43, 77, 669.5],
-    ],
+      [43, 77, 669.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [43, 77, 669.5],
-      [38, 77, 669.5],
-    ],
+      [38, 77, 669.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [34, 77, 669.5],
       [32.5, 77, 669.5],
       [32.5, 77, 677],
       [32.5, 75, 679],
       [32.5, 75, 679.5],
-      [28.5, 75, 679.5],
-    ],
+      [28.5, 75, 679.5]
+    ]
   },
   {
-    type: 'nCave',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [28.5, 75, 679.5],
       [28.5, 75, 683.5],
-      [23, 75, 683.5],
-    ],
+      [23, 75, 683.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [23, 75, 683.5],
-      [20, 72, 683.5],
-    ],
+      [20, 72, 683.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [17.5, 72, 680],
       [17.5, 69, 677],
       [18.5, 69, 674.5],
       [18.5, 69, 670.5],
       [17, 69, 670.5],
-      [15, 67, 670.5],
-    ],
+      [15, 67, 670.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [18.5, 69, 674.5],
       [23.5, 69, 674.5],
-      [23.5, 69, 672],
-    ],
+      [23.5, 69, 672]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-173, 56, 107],
-      [-185, 54, 108.5],
-    ],
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-184, 54, 108.5],
+      [-175, 56, 104],
+      [-172, 55, 113.5],
+      [-163, 55, 113.5]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
-      [-185, 54, 108.5],
-      [-186, 55, 108.5],
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-184, 54, 108.5],
       [-203, 55, 108.5],
-      [-204, 54, 108.5],
-    ],
+      [-204, 54, 108.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-204, 54, 108.5],
       [-208, 54, 109.5],
       [-209, 55, 109.5],
@@ -2412,69 +2406,56 @@ const data: PathData[] = [
       [-255.5, 32, 161],
       [-255.5, 32, 162],
       [-255.5, 34, 164],
-      [-255.5, 34, 165],
-    ],
+      [-255.5, 34, 165]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-255.5, 34, 172],
-      [-255.5, 34, 195],
-    ],
+      [-255.5, 34, 195]
+    ]
   },
   {
-    type: 'cBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "cBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-255.5, 34, 199],
-      [-255.5, 34, 211],
-    ],
+      [-255.5, 34, 211]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
-      [-169.5, 55, 87.5],
-      [-168.5, 55, 84],
-      [-168.5, 54, 83],
-      [-168.5, 54, 79.5],
-      [-170, 54, 79.5],
-      [-171, 53, 79.5],
-      [-172, 53, 79.5],
-      [-179, 46, 79.5],
-      [-182.5, 46, 79.5],
-      [-186, 46, 87.5],
-      [-187, 47, 87.5],
-      [-190, 47, 91],
-      [-193, 47, 101],
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [-196, 46, 105.5],
       [-204, 54, 105.5],
-      [-208, 54, 109.5],
-    ],
+      [-208, 54, 109.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [-33, 80, 67],
       [-26, 80, 69.5],
       [-15, 69, 69.5],
       [-14, 69, 69.5],
       [-13, 68, 69.5],
       [-13, 68, 65.5],
-      [-16, 68, 65.5],
-    ],
+      [-16, 68, 65.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [-13, 68, 69.5],
       [-5, 68, 70],
       [-5, 67, 86],
@@ -2488,23 +2469,23 @@ const data: PathData[] = [
       [-29, 68, 164],
       [-16, 68, 163],
       [20, 69, 165],
-      [20, 69, 165],
-    ],
+      [20, 69, 165]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [5, 68, 164],
-      [5, 70, 154],
-    ],
+      [5, 70, 154]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [-16, 68, 163],
       [-13, 70, 151],
       [-7, 70, 147.5],
@@ -2517,14 +2498,14 @@ const data: PathData[] = [
       [9, 84, 155],
       [8, 85, 160],
       [9, 84, 171],
-      [9, 83, 176.5],
-    ],
+      [9, 83, 176.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: true,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": true,
+    "points": [
       [500.5, 90, -50.5],
       [502, 91, -53],
       [496, 92, -62],
@@ -2543,53 +2524,53 @@ const data: PathData[] = [
       [389, 87, -79],
       [397.5, 88, -90],
       [397.5, 89, -91],
-      [398, 89, -92],
-    ],
+      [398, 89, -92]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [110.5, 66, 333],
-      [109.5, 66, 333],
-    ],
+      [109.5, 66, 333]
+    ]
   },
   {
-    type: 'oBridge',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [109.5, 66, 333],
-      [109.5, 66, 354],
-    ],
+      [109.5, 66, 354]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [109.5, 66, 354],
       [109.5, 66, 367],
       [109.5, 70, 371],
       [109.5, 70, 372.5],
-      [82, 70, 372.5],
-    ],
+      [82, 70, 372.5]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [79, 70, 372.5],
-      [77, 70, 372.5],
-    ],
+      [77, 70, 372.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-255.5, 34, 211],
       [-255, 34, 216],
       [-263, 35, 217],
@@ -2598,14 +2579,14 @@ const data: PathData[] = [
       [-288, 40, 214],
       [-294, 45, 211],
       [-296.5, 47, 208],
-      [-296.5, 47, 204],
-    ],
+      [-296.5, 47, 204]
+    ]
   },
   {
-    type: 'ugTunnel',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-296.5, 47, 204],
       [-296.5, 47, 201],
       [-296.5, 57, 191],
@@ -2616,75 +2597,196 @@ const data: PathData[] = [
       [-299.5, 62, 197.5],
       [-300, 62, 197.5],
       [-304, 66, 197.5],
-      [-309, 66, 197.5],
-    ],
+      [-309, 66, 197.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-309, 66, 197.5],
       [-318, 66, 200],
       [-330, 66, 202.5],
       [-331, 67, 202.5],
       [-337, 67, 202.5],
-      [-338, 68, 202.5],
-    ],
+      [-338, 68, 202.5]
+    ]
   },
   {
-    type: 'bastion',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "bastion",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-338, 68, 202.5],
       [-339, 68, 202.5],
-      [-344, 73, 202.5],
-    ],
+      [-344, 73, 202.5]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-318, 66, 200],
-      [-315.5, 66, 176],
-    ],
+      [-315.5, 66, 176]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [-280, 38, 218],
       [-281, 38, 228],
       [-282, 35, 234],
       [-290, 35, 240],
       [-300, 35, 244],
       [-310, 36, 247],
-      [-320, 36, 249],
-    ],
+      [-320, 36, 249]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
       [82, 79, 554],
       [80, 83, 562],
       [78, 84, 569],
       [72, 84, 578],
       [69, 83, 588],
       [72, 82, 597],
-      [71, 83, 607],
-    ],
+      [71, 83, 607]
+    ]
   },
   {
-    type: 'exPath',
-    visible: true,
-    deprecated: false,
-    points: [],
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-173, 91, 352.5],
+      [-175.5, 91, 354.5],
+      [-175.5, 91, 356],
+      [-175.5, 92, 357],
+      [-181, 92, 359.5],
+      [-183, 94, 359.5],
+      [-186, 94, 359.5],
+      [-187, 95, 359.5],
+      [-190, 95, 359.5]
+    ]
   },
-];
-
-export default data;
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-190, 95, 359.5],
+      [-192, 95, 359.5],
+      [-199, 102, 359.5],
+      [-209, 102, 359.5]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-209, 102, 359.5],
+      [-218, 102, 359.5],
+      [-219, 101, 359.5],
+      [-224, 101, 359.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-224, 101, 359.5],
+      [-255.5, 101, 359.5],
+      [-255.5, 101, 297],
+      [-255.5, 89, 285],
+      [-255.5, 89, 284]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-175.5, 91, 354.5],
+      [-183.5, 91, 354.5],
+      [-183.5, 91, 352]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-183.5, 91, 352],
+      [-183.5, 100, 343],
+      [-183.5, 100, 339.5]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-168.5, 95, 347.5],
+      [-168.5, 95, 346],
+      [-168.5, 97, 344],
+      [-168.5, 97, 343],
+      [-168.5, 99, 340],
+      [-168.5, 99, 339.5],
+      [-175, 99, 339.5]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-175, 99, 339.5],
+      [-176, 100, 339.5],
+      [-193, 100, 339.5]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-193, 100, 339.5],
+      [-205, 101, 345],
+      [-216, 101, 349],
+      [-221, 102, 352]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [77, 70, 372.5],
+      [67, 71, 375],
+      [67, 70, 384],
+      [70, 70, 390],
+      [73, 70, 399],
+      [78, 70, 409],
+      [84, 70, 421],
+      [87.5, 69, 426],
+      [87.5, 55, 440],
+      [90, 55, 445],
+      [90.5, 55, 454]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": []
+  }
+]
