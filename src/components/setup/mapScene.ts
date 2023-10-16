@@ -129,7 +129,11 @@ export function setupMapScene() {
   });
 
   initMapObjects<PathData>(pathsData, (object, id) => {
-    const pathMesh = createPath(object, id);
+    const { pathMesh, debugPathLabel } = createPath(object, id);
+    if (import.meta.env.DEV && debugPathLabel !== null) {
+      mapScene.add(debugPathLabel);
+    }
+
     if (pathMesh !== null) {
       mapScene.add(pathMesh);
 

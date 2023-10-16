@@ -25,8 +25,10 @@ import {
   portalWidthSegments,
 } from './mapObjects.config';
 import { defaultPathProps } from '../../config/pathProps';
+import featureConfig from '../../config/features.json';
 
 import { type LineMaterial } from 'three/addons/lines/LineMaterial.js';
+
 import {
   Coordinates,
   DoorData,
@@ -140,8 +142,15 @@ export function toggleDeprecatedDoors(visible: boolean) {
 
 export function createPath(pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
-  if (!visible) return null;
-  if (rawPoints.length === 0) return null;
+  const returnValues: {
+    pathMesh: null | LOD;
+    debugPathLabel: null | CSS2DObject;
+  } = {
+    pathMesh: null,
+    debugPathLabel: null,
+  };
+  if (!visible) return returnValues;
+  if (rawPoints.length === 0) return returnValues;
 
   const defaultMaterial = (
     deprecated ? getMaterial(`${type}_deprecated`) : getMaterial(type)
@@ -199,14 +208,32 @@ export function createPath(pathData: PathData, id: number) {
   pathLOD.userData.natSimpleMaterial = natSimpleMaterial;
   pathObjects.push(pathLOD);
 
-  return pathLOD;
+  returnValues.pathMesh = pathLOD;
+
+  if (import.meta.env.DEV && featureConfig.debugForceLabels) {
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'portalLabel';
+    labelDiv.textContent = pathLOD.name;
+
+    returnValues.debugPathLabel = new CSS2DObject(labelDiv);
+    returnValues.debugPathLabel.center.set(0.5, 1.5);
+    returnValues.debugPathLabel.layers.set(0);
+
+    const center = getPathCenter(rawPoints);
+    returnValues.debugPathLabel.position.set(center[0], center[1], center[2]);
+  }
+
+  return returnValues;
 }
 
 export function createRoom(roomData: RoomData, id: number) {
   // Create room label
   let roomLabel: CSS2DObject | null = null;
 
-  if (roomData.displayLabel) {
+  if (
+    roomData.displayLabel ||
+    (import.meta.env.DEV && featureConfig.debugForceLabels)
+  ) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'portalLabel';
     labelDiv.textContent = roomData.label;
@@ -324,4 +351,20 @@ function resetDummyObject() {
   dummy.position.set(0, 0, 0);
   dummy.setRotationFromAxisAngle(upVector, 0);
   dummy.scale.set(1, 1, 1);
+}
+
+function getPathCenter(rawPoints: Coordinates[]) {
+  const coordsSum = [0, 0, 0];
+
+  for (const point of rawPoints) {
+    coordsSum[0] += point[0];
+    coordsSum[1] += point[1];
+    coordsSum[2] += point[2];
+  }
+
+  return [
+    coordsSum[0] / rawPoints.length,
+    coordsSum[1] / rawPoints.length,
+    coordsSum[2] / rawPoints.length,
+  ];
 }
