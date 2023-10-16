@@ -21,15 +21,21 @@ import {
   DoorData,
   PathData,
   PortalData,
+  RoomData,
 } from '../../data/data.types';
 import { MapBounds } from './mapScene.types';
 import { isCuboidRoomData, isCylindricalRoomData } from '../../data/data.types';
 
 import featureConfig from '../../config/features.json';
-import pathsData from '../../data/paths';
-import roomsData from '../../data/rooms';
-import doorsData from '../../data/doors';
-import portalsData from '../../data/portals';
+import pathsJson from '../../data/paths.json';
+import roomsJson from '../../data/rooms.json';
+import doorsJson from '../../data/doors.json';
+import portalsJson from '../../data/portals.json';
+
+const pathsData = pathsJson as PathData[];
+const roomsData = roomsJson as RoomData[];
+const doorsData = doorsJson as DoorData[];
+const portalsData = portalsJson as PortalData[];
 
 export let mapScene: Scene;
 const mapBounds: MapBounds = {
