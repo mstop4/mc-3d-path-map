@@ -30,13 +30,23 @@
     ]
   },
   {
+    "label": "Savanna Dam Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-185, 67, 77],
+      [-182, 70, 80]
+    ]
+  },
+  {
     "label": "Shattered Village Portal Room",
     "displayLabel": false,
     "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
-      [-147, 51, 61],
-      [-149, 48, 66]
+      [-148, 51, 62],
+      [-146, 48, 65]
     ]
   },
   {
@@ -75,8 +85,8 @@
     "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
-      [-187, 79, 151],
-      [-181, 77, 158]
+      [-182, 75, 154],
+      [-178, 78, 157]
     ]
   },
   {
@@ -95,8 +105,8 @@
     "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
-      [-174, 94, 348],
-      [-171, 91, 349]
+      [-175, 94, 343],
+      [-171, 91, 346]
     ]
   },
   {

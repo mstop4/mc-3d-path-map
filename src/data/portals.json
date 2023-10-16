@@ -13,11 +13,11 @@
   },
   {
     "label": "Shattered Village",
-    "location": [-150, 48, 63.5]
+    "location": [-148, 48, 63.5]
   },
   {
     "label": "Savanna Dam Village",
-    "location": [-177, 67, 78.5]
+    "location": [-186, 67, 78.5]
   },
   {
     "label": "Modest Protector",
@@ -33,7 +33,7 @@
   },
   {
     "label": "Open House Village",
-    "location": [-184, 77, 154.5]
+    "location": [-183, 75, 155.5]
   },
   {
     "label": "Soaking Village",
@@ -41,7 +41,7 @@
   },
   {
     "label": "Azurelion Village",
-    "location": [-172.5, 91, 347]
+    "location": [-173, 91, 342]
   },
   {
     "label": "Eastern Frontier Temple",
