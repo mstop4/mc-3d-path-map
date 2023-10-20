@@ -688,28 +688,20 @@
     "points": [
       [99, 73, 319],
       [96, 73, 322],
-      [95, 72, 323],
-      [94.5, 72, 325]
+      [95, 72, 323]
     ]
   },
   {
-    "type": "bastion",
+    "type": "nCave",
     "visible": true,
     "deprecated": false,
     "points": [
+      [98, 71, 323],
+      [95, 72, 323],
       [94.5, 72, 325],
       [94.5, 73, 326],
       [94.5, 73, 328.5],
       [85, 73, 328.5]
-    ]
-  },
-  {
-    "type": "bastion",
-    "visible": true,
-    "deprecated": false,
-    "points": [
-      [95, 72, 323],
-      [98, 71, 323]
     ]
   },
   {
@@ -722,7 +714,7 @@
     ]
   },
   {
-    "type": "bastion",
+    "type": "exPath",
     "visible": true,
     "deprecated": false,
     "points": [
@@ -731,25 +723,9 @@
       [108, 66, 322.5],
       [110, 66, 322.5],
       [111.5, 66, 322],
-      [111.5, 63, 319]
-    ]
-  },
-  {
-    "type": "bastion",
-    "visible": true,
-    "deprecated": false,
-    "points": [
       [111.5, 63, 319],
       [111.5, 63, 318.5],
       [124, 63, 318.5],
-      [128, 63, 318]
-    ]
-  },
-  {
-    "type": "exPath",
-    "visible": true,
-    "deprecated": false,
-    "points": [
       [128, 63, 318],
       [131.5, 63, 314.5],
       [131.5, 63, 308.5],
@@ -2186,7 +2162,7 @@
     ]
   },
   {
-    "type": "bastion",
+    "type": "exPath",
     "visible": true,
     "deprecated": false,
     "points": [
@@ -2528,7 +2504,7 @@
     ]
   },
   {
-    "type": "bastion",
+    "type": "exPath",
     "visible": true,
     "deprecated": false,
     "points": [
@@ -2614,7 +2590,7 @@
     ]
   },
   {
-    "type": "bastion",
+    "type": "exPath",
     "visible": true,
     "deprecated": false,
     "points": [

@@ -22,7 +22,7 @@ export const defaultPathProps: DefaultPathPropertyDefinitions = {
   },
   ogTunnel: {
     name: 'Surface Tunnel',
-    colour: removePoundSign(defaultColourScheme[6]),
+    colour: removePoundSign(defaultColourScheme[3]),
     cbfColour: removePoundSign(cbfColourScheme[4]),
     cbfIsDashed: true,
     isExterior: false,
@@ -67,22 +67,6 @@ export const defaultPathProps: DefaultPathPropertyDefinitions = {
     cbfIsDashed: true,
     isExterior: true,
     isNatural: false,
-  },
-  bastion: {
-    name: 'Bastion',
-    colour: removePoundSign(defaultColourScheme[3]),
-    cbfColour: removePoundSign(cbfColourScheme[1]),
-    cbfIsDashed: false,
-    isExterior: true,
-    isNatural: true,
-  },
-  nFortress: {
-    name: 'Nether Fortress',
-    colour: removePoundSign(defaultColourScheme[7]),
-    cbfColour: removePoundSign(cbfColourScheme[1]),
-    cbfIsDashed: true,
-    isExterior: true,
-    isNatural: true,
   },
 };
 

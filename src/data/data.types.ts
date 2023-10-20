@@ -5,9 +5,7 @@ type PathTypes =
   | 'oBridge'
   | 'exPath'
   | 'nCave'
-  | 'ladder'
-  | 'bastion'
-  | 'nFortress';
+  | 'ladder';
 type RoomTypes = 'ugRoom' | 'ogRoom';
 type DoorTypes = 'ex' | 'conn';
 type DoorOrientation = 'x' | 'y' | 'z';
