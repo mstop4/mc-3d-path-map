@@ -166,5 +166,9 @@
   {
     "label": "Piglin Beach Village",
     "location": [-315.5, 66, 176]
+  },
+  {
+    "label": "Cherrylion Village",
+    "location": [-239.5, 101, 365]
   }
 ]

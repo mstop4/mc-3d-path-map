@@ -381,11 +381,21 @@
   {
     "label": "Lava Shower Airship Portal Room",
     "displayLabel": false,
-    "type": "ogRoom",
+    "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
       [79, 73, 372],
       [82, 70, 375]
+    ]
+  },
+  {
+    "label": "Cherrylion Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-241, 104, 362],
+      [-238, 101, 364]
     ]
   }
 ]
