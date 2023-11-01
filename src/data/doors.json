@@ -587,5 +587,26 @@
     "orientation": "z",
     "deprecated": false,
     "location": [-171.5, 99, 336]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-203, 94, 378.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-196.5, 94, 447]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-32, 67, 575.5]
   }
 ]

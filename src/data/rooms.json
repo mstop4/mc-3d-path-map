@@ -397,5 +397,25 @@
       [-241, 104, 362],
       [-238, 101, 364]
     ]
+  },
+  {
+    "label": "Postcard Heights Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-198, 97, 443],
+      [-194, 94, 446]
+    ]
+  },
+  {
+    "label": "Salvagers' Island Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-31, 70, 574],
+      [-30, 67, 577]
+    ]
   }
 ]

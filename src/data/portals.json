@@ -170,5 +170,13 @@
   {
     "label": "Cherrylion Village",
     "location": [-239.5, 101, 365]
+  },
+  {
+    "label": "Postcard Heights",
+    "location": [-196.5, 94, 444]
+  },
+  {
+    "label": "Salvagers' Island",
+    "location": [-29, 67, 575.5]
   }
 ]
