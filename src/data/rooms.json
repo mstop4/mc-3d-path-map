@@ -417,5 +417,15 @@
       [-31, 70, 574],
       [-30, 67, 577]
     ]
+  },
+  {
+    "label": "Matchstick Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-113, 81, 372],
+      [-111, 78, 375]
+    ]
   }
 ]

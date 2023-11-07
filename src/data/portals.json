@@ -178,5 +178,9 @@
   {
     "label": "Salvagers' Island",
     "location": [-29, 67, 575.5]
+  },
+  {
+    "label": "Matchstick Village",
+    "location": [-110, 78, 373.5]
   }
 ]
