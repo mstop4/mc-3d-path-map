@@ -615,5 +615,12 @@
     "orientation": "x",
     "deprecated": false,
     "location": [-106, 78, 368.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-29, 77, 377.5]
   }
 ]

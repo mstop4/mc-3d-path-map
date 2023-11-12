@@ -427,5 +427,15 @@
       [-113, 81, 372],
       [-111, 78, 375]
     ]
+  },
+  {
+    "label": "Hidden Azalea Mine & Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-28, 80, 376],
+      [-25, 77, 378]
+    ]
   }
 ]
