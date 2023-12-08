@@ -186,5 +186,9 @@
   {
     "label": "Hidden Azalea Mine & Village",
     "location": [-26.5, 77, 375]
+  },
+  {
+    "label": "Dogtrio Village",
+    "location": [291.5, 52, 24]
   }
 ]

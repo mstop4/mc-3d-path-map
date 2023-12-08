@@ -437,5 +437,15 @@
       [-28, 80, 376],
       [-25, 77, 378]
     ]
+  },
+  {
+    "label": "Dogtrio Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [289, 54, 15],
+      [294, 51, 23]
+    ]
   }
 ]
