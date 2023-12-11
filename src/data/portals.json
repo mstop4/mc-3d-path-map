@@ -3,13 +3,13 @@
     "label": "World Origin",
     "location": [0, 84, -0.5],
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Arch House",
     "location": [-41, 74, 19.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Roselook Village",
@@ -26,8 +26,8 @@
   {
     "label": "Savanna Dam Village",
     "location": [-186, 67, 78.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Modest Protector",
@@ -56,13 +56,13 @@
   {
     "label": "Soaking Village",
     "location": [-107.5, 80, 171],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
     "label": "Azurelion Village",
     "location": [-173, 91, 342],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
@@ -98,13 +98,13 @@
   {
     "label": "Bloodblast Base",
     "location": [-4, 71, 293.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Bastion Crevasse",
     "location": [91.5, 73, 331],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
@@ -153,7 +153,7 @@
     "label": "Resurrection Village",
     "location": [412, 37, -118.5],
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Mount Snowcone",
@@ -171,7 +171,7 @@
     "label": "Bunflower Village",
     "location": [220.5, 57, -165],
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Lonely Temple",
@@ -218,19 +218,19 @@
   {
     "label": "Cozy Snugg Village",
     "location": [91, 37, 447.5],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
     "label": "Hideaway Outpost",
     "location": [36.5, 77, 670],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
     "label": "Grand Watcher Village",
     "location": [-255.5, 35, 169],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
@@ -254,8 +254,8 @@
   {
     "label": "Cherrylion Village",
     "location": [-239.5, 101, 365],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Postcard Heights",
@@ -266,25 +266,25 @@
   {
     "label": "Salvagers' Island",
     "location": [-29, 67, 575.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Matchstick Village",
     "location": [-110, 78, 373.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Hidden Azalea Mine & Village",
     "location": [-26.5, 77, 375],
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Dogtrio Village",
     "location": [291.5, 52, 24],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   }
 ]
