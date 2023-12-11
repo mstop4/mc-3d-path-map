@@ -1,194 +1,290 @@
 [
   {
     "label": "World Origin",
-    "location": [0, 84, -0.5]
+    "location": [0, 84, -0.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Arch House",
-    "location": [-41, 74, 19.5]
+    "location": [-41, 74, 19.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Roselook Village",
-    "location": [-107, 41, 10.5]
+    "location": [-107, 41, 10.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Shattered Village",
-    "location": [-148, 48, 63.5]
+    "location": [-148, 48, 63.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Savanna Dam Village",
-    "location": [-186, 67, 78.5]
+    "location": [-186, 67, 78.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Modest Protector",
-    "location": [-335.5, 70, 55.5]
+    "location": [-335.5, 70, 55.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Struggle Village",
-    "location": [-37, 79, 63.5]
+    "location": [-37, 79, 63.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Cornflower Village",
-    "location": [-110, 62, 84.5]
+    "location": [-110, 62, 84.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Open House Village",
-    "location": [-183, 75, 155.5]
+    "location": [-183, 75, 155.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Soaking Village",
-    "location": [-107.5, 80, 171]
+    "location": [-107.5, 80, 171],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Azurelion Village",
-    "location": [-173, 91, 342]
+    "location": [-173, 91, 342],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Eastern Frontier Temple",
-    "location": [25, 46, -55.5]
+    "location": [25, 46, -55.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Respite House",
-    "location": [5.5, 39, -120]
+    "location": [5.5, 39, -120],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Cut Hamlet",
-    "location": [-48.5, 39, -154]
+    "location": [-48.5, 39, -154],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Stony Bar Village",
-    "location": [-99, 88, -227.5]
+    "location": [-99, 88, -227.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Birch Base",
-    "location": [28, 98, 59.5]
+    "location": [28, 98, 59.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Bloodblast Base",
-    "location": [-4, 71, 293.5]
+    "location": [-4, 71, 293.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Bastion Crevasse",
-    "location": [91.5, 73, 331]
+    "location": [91.5, 73, 331],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Turtle-Beaver Resevoir",
-    "location": [176, 67, 213.5]
+    "location": [176, 67, 213.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Shattered Lands",
-    "location": [203.5, 66, 272]
+    "location": [203.5, 66, 272],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Scenic Village",
-    "location": [346, 88, 222.5]
+    "location": [346, 88, 222.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Garlic Kidney Mountain",
-    "location": [460.5, 79, 96]
+    "location": [460.5, 79, 96],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Long Fall Cave",
-    "location": [657, 101, 42.5]
+    "location": [657, 101, 42.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Creeper Arch Village",
-    "location": [568, 102, -88.5]
+    "location": [568, 102, -88.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Ritual Burn Village",
-    "location": [455, 98, -40.5]
+    "location": [455, 98, -40.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Resurrection Village",
-    "location": [412, 37, -118.5]
+    "location": [412, 37, -118.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Mount Snowcone",
-    "location": [480, 115, -243.5]
+    "location": [480, 115, -243.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Village of Boreal Bounty",
-    "location": [292.5, 115, -129]
+    "location": [292.5, 115, -129],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Bunflower Village",
-    "location": [220.5, 57, -165]
+    "location": [220.5, 57, -165],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Lonely Temple",
-    "location": [92, 38, -149.5]
+    "location": [92, 38, -149.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Dry Spot",
-    "location": [202, 79, -111.5]
+    "location": [202, 79, -111.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Canine Bank",
-    "location": [207, 68, 54.5]
+    "location": [207, 68, 54.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Pretzel River Heights",
-    "location": [204, 77, 116.5]
+    "location": [204, 77, 116.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Hoverblock Village",
-    "location": [172, 95, -55.5]
+    "location": [172, 95, -55.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Reverse Oasis",
-    "location": [88, 48, 116.5]
+    "location": [88, 48, 116.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Superpoint Caverns",
-    "location": [6.5, 70, 149]
+    "location": [6.5, 70, 149],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Cozy Snugg Village",
-    "location": [91, 37, 447.5]
+    "location": [91, 37, 447.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Hideaway Outpost",
-    "location": [36.5, 77, 670]
+    "location": [36.5, 77, 670],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Grand Watcher Village",
-    "location": [-255.5, 35, 169]
+    "location": [-255.5, 35, 169],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Grand Sinkhole Cave",
-    "location": [-255.5, 34, 197]
+    "location": [-255.5, 34, 197],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Lava Shower Airship",
-    "location": [80.5, 70, 376]
+    "location": [80.5, 70, 376],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Piglin Beach Village",
-    "location": [-315.5, 66, 176]
+    "location": [-315.5, 66, 176],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Cherrylion Village",
-    "location": [-239.5, 101, 365]
+    "location": [-239.5, 101, 365],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Postcard Heights",
-    "location": [-196.5, 94, 444]
+    "location": [-196.5, 94, 444],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Salvagers' Island",
-    "location": [-29, 67, 575.5]
+    "location": [-29, 67, 575.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Matchstick Village",
-    "location": [-110, 78, 373.5]
+    "location": [-110, 78, 373.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Hidden Azalea Mine & Village",
-    "location": [-26.5, 77, 375]
+    "location": [-26.5, 77, 375],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   },
   {
     "label": "Dogtrio Village",
-    "location": [291.5, 52, 24]
+    "location": [291.5, 52, 24],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   }
 ]

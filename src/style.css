@@ -11,6 +11,14 @@ body {
   background-color: transparent;
 }
 
+.portalLabel-enderChest {
+  color: #0b7;
+}
+
+.portalLabel-cherryTree {
+  color: hotpink;
+}
+
 .labelRenderer {
   position: absolute;
   top: 0px;

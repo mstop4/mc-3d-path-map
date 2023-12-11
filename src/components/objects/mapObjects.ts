@@ -324,7 +324,7 @@ export function createDoor(doorData: DoorData, id: number) {
 }
 
 export function createPortal(portalData: PortalData, id: number) {
-  const { label, location } = portalData;
+  const { label, location, hasEnderChest, hasCherryTree } = portalData;
 
   // Create portal marker
   resetDummyObject();
@@ -334,7 +334,9 @@ export function createPortal(portalData: PortalData, id: number) {
 
   // Create portal label
   const portalDiv = document.createElement('div');
-  portalDiv.className = 'portalLabel';
+  portalDiv.classList.add('portalLabel');
+  portalDiv.dataset.enderChest = hasEnderChest ? '1' : '0';
+  portalDiv.dataset.cherryTree = hasCherryTree ? '1' : '0';
   portalDiv.textContent = label;
 
   const portalLabel = new CSS2DObject(portalDiv);
