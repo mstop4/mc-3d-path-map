@@ -86,7 +86,7 @@
   {
     "label": "Stony Bar Village",
     "location": [-99, 88, -227.5],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
