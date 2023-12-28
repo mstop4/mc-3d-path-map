@@ -61,4 +61,6 @@ export type DoorData = {
 export type PortalData = {
   label: string;
   location: Coordinates;
+  hasEnderChest: boolean;
+  hasCherryTree: boolean;
 };

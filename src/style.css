@@ -5,10 +5,15 @@ body {
 
 .portalLabel {
   color: #fff;
+  opacity: 1;
   font-family: sans-serif;
   padding: 0;
   font-size: 0.75rem;
   background-color: transparent;
+}
+
+.portalLabel-filtered {
+  opacity: 0.25;
 }
 
 .labelRenderer {

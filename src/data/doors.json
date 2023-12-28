@@ -664,5 +664,54 @@
     "orientation": "x",
     "deprecated": false,
     "location": [-5, 95, 377.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-132, 87, -393.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-106.5, 88, -328]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-74, 93, -279.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-105, 40, -240.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-103.5, 39, -326]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-123, 36, -395.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-132.5, 36, -394]
   }
 ]

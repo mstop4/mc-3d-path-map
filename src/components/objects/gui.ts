@@ -1,4 +1,5 @@
 import { type Line2 } from 'three/addons/lines/Line2.js';
+import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { GUI } from 'dat.gui';
 import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
@@ -8,18 +9,22 @@ import {
   colourModesAvailable,
   activeColourModes,
   allCameraPositionsKeys,
+  allLabelFilters,
+  activeLabelFilters,
+  labelFiltersAvailable,
 } from './gui.config';
 
 let gui: GUI;
 
 const options = {
   visible: {
-    labels: true,
+    labelVisibility: true,
     deprecatedPaths: true,
     legend: true,
   },
   colourMode: activeColourModes[colourModesAvailable[0]],
   cameraPosition: allCameraPositionsKeys.isometric,
+  labelFilter: activeLabelFilters[labelFiltersAvailable[0]],
 };
 
 export function setupGUI() {
@@ -34,12 +39,17 @@ export function setupGUI() {
     .name('Camera Position')
     .onChange(changeCameraPosition);
 
-  const showHideFolder = gui.addFolder('Toggle Visibility');
+  const labelFolder = gui.addFolder('Labels');
+  labelFolder
+    .add(options.visible, 'labelVisibility')
+    .name('Show/Hide')
+    .onChange(toggleAllLabelVisibility);
+  labelFolder
+    .add(options, 'labelFilter', Object.values(activeLabelFilters))
+    .name('Highlight')
+    .onChange(changeLabelFilter);
 
-  showHideFolder
-    .add(options.visible, 'labels')
-    .name('Labels')
-    .onChange(toggleLabels);
+  const showHideFolder = gui.addFolder('Show/Hide');
   showHideFolder
     .add(options.visible, 'deprecatedPaths')
     .name('Deprecated Paths')
@@ -48,15 +58,21 @@ export function setupGUI() {
     .add(options.visible, 'legend')
     .name('Legend')
     .onChange(toggleLegend);
-  showHideFolder.open();
 }
 
-function toggleLabels() {
-  const { labelObjects } = getMapObjects();
-
-  for (const label of labelObjects) {
-    label.visible = options.visible.labels;
+function _toggleLabelVisibility(labels: CSS2DObject[]) {
+  for (const label of labels) {
+    label.visible = options.visible.labelVisibility;
   }
+}
+
+function toggleAllLabelVisibility() {
+  const { roomLabels, pathLabels, portalLabels, doorLabels } = getMapObjects();
+
+  _toggleLabelVisibility(roomLabels);
+  _toggleLabelVisibility(pathLabels);
+  _toggleLabelVisibility(portalLabels);
+  _toggleLabelVisibility(doorLabels);
 }
 
 function toggleDeprecatedPaths() {
@@ -105,6 +121,43 @@ function changeColourMode() {
     for (const level of path.levels) {
       const mesh = level.object as Line2;
       mesh.material = path.userData[materialKey];
+    }
+  }
+}
+
+function changeLabelFilter() {
+  const { portalLabels, roomLabels } = getMapObjects();
+
+  for (const label of portalLabels) {
+    label.element.className = 'portalLabel';
+
+    switch (options.labelFilter) {
+      case allLabelFilters.enderChests:
+        if (!label.userData.enderChest)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.cherryTrees:
+        if (!label.userData.cherryTree)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.none:
+      default:
+    }
+  }
+
+  for (const label of roomLabels) {
+    label.element.className = 'portalLabel';
+
+    switch (options.labelFilter) {
+      case allLabelFilters.enderChests:
+      case allLabelFilters.cherryTrees:
+        label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.none:
+      default:
     }
   }
 }

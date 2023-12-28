@@ -447,5 +447,25 @@
       [289, 54, 15],
       [294, 51, 23]
     ]
+  },
+  {
+    "label": "Chill Flora Mountain Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-108, 91, -310],
+      [-105, 88, -307]
+    ]
+  },
+  {
+    "label": "Crying Peaks Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-137, 90, -397],
+      [-134, 87, -393]
+    ]
   }
 ]
