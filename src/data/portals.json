@@ -158,8 +158,8 @@
   {
     "label": "Mount Snowcone",
     "location": [480, 115, -243.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Village of Boreal Bounty",
@@ -286,5 +286,17 @@
     "location": [291.5, 52, 24],
     "hasEnderChest": true,
     "hasCherryTree": true
+  },
+  {
+    "label": "Chill Flora Mountain Village",
+    "location": [-109, 88, -308.5],
+    "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Crying Peaks",
+    "location": [-135.5, 87, -398],
+    "hasEnderChest": true,
+    "hasCherryTree": false
   }
 ]

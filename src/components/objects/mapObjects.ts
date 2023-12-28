@@ -335,12 +335,12 @@ export function createPortal(portalData: PortalData, id: number) {
   // Create portal label
   const portalDiv = document.createElement('div');
   portalDiv.classList.add('portalLabel');
-  portalDiv.dataset.enderChest = hasEnderChest ? '1' : '0';
-  portalDiv.dataset.cherryTree = hasCherryTree ? '1' : '0';
   portalDiv.textContent = label;
 
   const portalLabel = new CSS2DObject(portalDiv);
   portalLabel.center.set(0.5, 1.5);
+  portalLabel.userData.enderChest = hasEnderChest;
+  portalLabel.userData.cherryTree = hasCherryTree;
   labelObjects.push(portalLabel);
 
   portalLabel.position.set(
