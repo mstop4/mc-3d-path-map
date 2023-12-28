@@ -8,7 +8,7 @@ import {
   Vector3,
   MathUtils,
 } from 'three';
-// @ts-expect-error no type declaratiosn for simplify-3d
+// @ts-expect-error no type declarations for simplify-3d
 import simplify from 'simplify-3d';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
@@ -47,7 +47,10 @@ let cylindricalRoomObjects: InstancedMesh;
 let doorObjects: InstancedMesh;
 let portalObjects: InstancedMesh;
 const pathObjects: LOD[] = [];
-const labelObjects: CSS2DObject[] = [];
+const roomLabels: CSS2DObject[] = [];
+const doorLabels: CSS2DObject[] = [];
+const portalLabels: CSS2DObject[] = [];
+const pathLabels: CSS2DObject[] = [];
 
 let numAllDoors: number;
 let numActiveDoors: number;
@@ -221,6 +224,7 @@ export function createPath(pathData: PathData, id: number) {
 
     const center = getPathCenter(rawPoints);
     returnValues.debugPathLabel.position.set(center[0], center[1], center[2]);
+    pathLabels.push(returnValues.debugPathLabel);
   }
 
   return returnValues;
@@ -241,7 +245,7 @@ export function createRoom(roomData: RoomData, id: number) {
     roomLabel = new CSS2DObject(labelDiv);
     roomLabel.center.set(0.5, 1.5);
     roomLabel.layers.set(0);
-    labelObjects.push(roomLabel);
+    roomLabels.push(roomLabel);
   }
 
   if (isCuboidRoomData(roomData)) {
@@ -318,6 +322,7 @@ export function createDoor(doorData: DoorData, id: number) {
     debugDoorLabel.layers.set(0);
 
     debugDoorLabel.position.set(location[0], location[1], location[2]);
+    doorLabels.push(debugDoorLabel);
   }
 
   return debugDoorLabel;
@@ -341,7 +346,7 @@ export function createPortal(portalData: PortalData, id: number) {
   portalLabel.center.set(0.5, 1.5);
   portalLabel.userData.enderChest = hasEnderChest;
   portalLabel.userData.cherryTree = hasCherryTree;
-  labelObjects.push(portalLabel);
+  portalLabels.push(portalLabel);
 
   portalLabel.position.set(
     location[0],
@@ -360,7 +365,10 @@ export function getMapObjects() {
     pathObjects,
     doorObjects,
     portalObjects,
-    labelObjects,
+    roomLabels,
+    portalLabels,
+    doorLabels,
+    pathLabels,
   };
 }
 

@@ -1,4 +1,5 @@
 import { type Line2 } from 'three/addons/lines/Line2.js';
+import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { GUI } from 'dat.gui';
 import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
@@ -39,7 +40,7 @@ export function setupGUI() {
   showHideFolder
     .add(options.visible, 'labels')
     .name('Labels')
-    .onChange(toggleLabels);
+    .onChange(toggleAllLabels);
   showHideFolder
     .add(options.visible, 'deprecatedPaths')
     .name('Deprecated Paths')
@@ -51,12 +52,19 @@ export function setupGUI() {
   showHideFolder.open();
 }
 
-function toggleLabels() {
-  const { labelObjects } = getMapObjects();
-
-  for (const label of labelObjects) {
+function _toggleLabels(labels: CSS2DObject[]) {
+  for (const label of labels) {
     label.visible = options.visible.labels;
   }
+}
+
+function toggleAllLabels() {
+  const { roomLabels, pathLabels, portalLabels, doorLabels } = getMapObjects();
+
+  _toggleLabels(roomLabels);
+  _toggleLabels(pathLabels);
+  _toggleLabels(portalLabels);
+  _toggleLabels(doorLabels);
 }
 
 function toggleDeprecatedPaths() {
