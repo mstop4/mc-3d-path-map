@@ -467,5 +467,15 @@
       [-137, 90, -397],
       [-134, 87, -393]
     ]
+  },
+  {
+    "label": "Chill Flora Deep Dark Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-94, 90, -330],
+      [-87, 86, -324]
+    ]
   }
 ]

@@ -14,8 +14,8 @@
   {
     "label": "Roselook Village",
     "location": [-107, 41, 10.5],
-    "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasEnderChest": true,
+    "hasCherryTree": true
   },
   {
     "label": "Shattered Village",
@@ -38,7 +38,7 @@
   {
     "label": "Struggle Village",
     "location": [-37, 79, 63.5],
-    "hasEnderChest": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   },
   {
@@ -63,7 +63,7 @@
     "label": "Azurelion Village",
     "location": [-173, 91, 342],
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Eastern Frontier Temple",
@@ -75,7 +75,7 @@
     "label": "Respite House",
     "location": [5.5, 39, -120],
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Cut Hamlet",
@@ -261,7 +261,7 @@
     "label": "Postcard Heights",
     "location": [-196.5, 94, 442],
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Salvagers' Island",
@@ -297,6 +297,12 @@
     "label": "Crying Peaks",
     "location": [-135.5, 87, -398],
     "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Chill Flora Deep Dark",
+    "location": [-90.5, 86, -327],
+    "hasEnderChest": false,
     "hasCherryTree": false
   }
 ]
