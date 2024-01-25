@@ -820,7 +820,7 @@
     ]
   },
   {
-    "type": "nCave",
+    "type": "ogTunnel",
     "visible": true,
     "deprecated": false,
     "points": [
@@ -3133,6 +3133,7 @@
       [-132, 71, 475],
       [-128, 70, 482],
       [-131, 70, 488],
+      [-131, 70, 493.5],
       [-133, 70, 498],
       [-133, 70, 507],
       [-129, 70, 513],
@@ -3582,9 +3583,238 @@
     ]
   },
   {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-196.5, 94, 447],
+      [-196.5, 94, 448.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-196.5, 94, 448.5],
+      [-196.5, 94, 469]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-196.5, 94, 469],
+      [-196.5, 94, 472],
+      [-196.5, 93, 473],
+      [-198.5, 93, 484],
+      [-198.5, 94, 485],
+      [-198, 94, 491.5]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-198, 94, 491.5],
+      [-200, 91, 491.5],
+      [-202, 91, 491.5],
+      [-202, 91, 493.5],
+      [-196, 86, 493.5],
+      [-196, 86, 495],
+      [-196, 83, 498],
+      [-197, 83, 498],
+      [-197, 80, 494],
+      [-196, 80, 494],
+      [-196, 77, 498],
+      [-197, 76, 498],
+      [-197, 76, 496],
+      [-197, 74, 494],
+      [-196, 74, 493],
+      [-196, 71, 489],
+      [-197, 68, 493],
+      [-197, 68, 493.5]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-197, 68, 493.5],
+      [-148, 68, 493.5]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-148, 68, 493.5],
+      [-147, 67, 493.5],
+      [-144, 67, 493.5],
+      [-143, 68, 493.5],
+      [-140, 68, 493.5],
+      [-138, 70, 493.5]
+    ]
+  },
+  {
     "type": "exPath",
     "visible": true,
     "deprecated": false,
-    "points": []
+    "points": [
+      [-138, 70, 493.5],
+      [-131, 70, 493.5]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-164.5, 68, 493.5],
+      [-164.5, 68, 497]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-166, 68, 493.5],
+      [-166, 68, 481]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-145.5, 67, 493.5],
+      [-145.5, 67, 490.5],
+      [-143.5, 67, 490.5],
+      [-143.5, 67, 489],
+      [-143.5, 68, 488],
+      [-144, 68, 481]
+    ]
+  },
+  {
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-144, 68, 481],
+      [-144, 63, 481]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-144, 63, 481],
+      [-142, 63, 481],
+      [-141.5, 63, 484],
+      [-141.5, 63, 497],
+      [-143, 63, 507.5],
+      [-170.5, 63, 507.5],
+      [-170.5, 63, 509.5],
+      [-174, 63, 509.5],
+      [-174, 63, 509],
+      [-174, 59, 505],
+      [-169, 59, 502]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-169, 59, 502],
+      [-166, 59, 502]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-166, 59, 505],
+      [-166, 59, 482]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-166, 59, 485],
+      [-169, 59, 485]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-166, 59, 489.5],
+      [-164, 59, 489.5],
+      [-160, 55, 489.5],
+      [-157.5, 55, 489.5],
+      [-157.5, 55, 481]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-157.5, 55, 481],
+      [-157.5, 55, 479.5],
+      [-171, 55, 479.5],
+      [-171, 55, 481]
+    ]
+  },
+  {
+    "type": "ladder",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-171, 55, 481],
+      [-171, 48, 481]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-171, 48, 481],
+      [-172.5, 48, 490],
+      [-172.5, 50, 492],
+      [-172.5, 50, 493.5],
+      [-172, 50, 493.5]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-172, 50, 493.5],
+      [-165, 43, 493.5],
+      [-146, 43, 493.5]
+    ]
+  },
+  {
+    "type": "ogTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-146, 43, 493.5],
+      [-143.5, 44, 493.5]
+    ]
   }
 ]
