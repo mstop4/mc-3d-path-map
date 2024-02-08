@@ -315,7 +315,7 @@ export function createDoor(doorData: DoorData, id: number) {
   if (import.meta.env.DEV && featureConfig.debugForceLabels) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'portalLabel';
-    labelDiv.textContent = `Door${id}`;
+    labelDiv.textContent = `Door${id + 1}`;
 
     debugDoorLabel = new CSS2DObject(labelDiv);
     debugDoorLabel.center.set(0.5, 1.5);
