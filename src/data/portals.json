@@ -301,8 +301,14 @@
   },
   {
     "label": "Lava Donut Cave",
-    "location": [-90.5, 86, -327],
+    "location": [-91, 38, -332.5],
     "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Striped Jungle",
+    "location": [-41.5, 71, -325],
+    "hasEnderChest": true,
     "hasCherryTree": false
   }
 ]

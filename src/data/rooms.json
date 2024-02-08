@@ -469,13 +469,23 @@
     ]
   },
   {
-    "label": "Chill Flora Deep Dark Portal Room",
+    "label": "Lava Donut Cave Portal Room",
     "displayLabel": false,
     "type": "ogRoom",
     "shape": "cuboid",
     "corners": [
-      [-94, 90, -330],
-      [-87, 86, -324]
+      [-94, 41, -337],
+      [-88, 38, -328]
+    ]
+  },
+  {
+    "label": "Striped Jungle Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-45, 75, -325],
+      [-38, 71, -322]
     ]
   }
 ]
