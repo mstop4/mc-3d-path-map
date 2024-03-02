@@ -487,5 +487,45 @@
       [-45, 75, -325],
       [-38, 71, -322]
     ]
+  },
+  {
+    "label": "Cold Commune Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [77, 73, 500],
+      [83, 70, 507]
+    ]
+  },
+  {
+    "label": "Snow Barrens Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [145, 56, 454],
+      [148, 53, 457]
+    ]
+  },
+  {
+    "label": "Chill Snugg Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [153, 66, 499],
+      [156, 63, 503]
+    ]
+  },
+  {
+    "label": "Chill Snugg Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [169, 37, 569],
+      [176, 34, 573]
+    ]
   }
 ]

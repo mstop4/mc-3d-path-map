@@ -310,5 +310,29 @@
     "location": [-41.5, 71, -325],
     "hasEnderChest": true,
     "hasCherryTree": false
+  },
+  {
+    "label": "Cold Commune Village",
+    "location": [80, 70, 503.5],
+    "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Snow Barrens Village",
+    "location": [149, 53, 455.5],
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Chill Snugg Village",
+    "location": [154.5, 63, 504],
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Illager Sentry Village",
+    "location": [172.5, 34, 571],
+    "hasEnderChest": false,
+    "hasCherryTree": false
   }
 ]
