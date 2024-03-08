@@ -58,7 +58,7 @@ export type DoorData = {
   location: Coordinates;
 };
 
-export type PortalData = {
+export type BaseData = {
   label: string;
   location: Coordinates;
   hasEnderChest: boolean;

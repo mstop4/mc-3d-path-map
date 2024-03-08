@@ -33,7 +33,7 @@ import {
   Coordinates,
   DoorData,
   PathData,
-  PortalData,
+  BaseData,
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
@@ -75,7 +75,7 @@ function vectorsToFlatPointsArray(
 export function setupInstancedMapObjects(
   cuboidRoomsData: RoomData[],
   cylindricalRoomsData: RoomData[],
-  portalsData: PortalData[],
+  basesData: BaseData[],
   doorsData: DoorData[],
 ) {
   // Create rooms
@@ -106,7 +106,7 @@ export function setupInstancedMapObjects(
   portalObjects = new InstancedMesh(
     portalGeom,
     portalMaterial,
-    portalsData.length,
+    basesData.length,
   );
 
   // Create doors
@@ -328,7 +328,7 @@ export function createDoor(doorData: DoorData, id: number) {
   return debugDoorLabel;
 }
 
-export function createPortal(portalData: PortalData, id: number) {
+export function createPortal(portalData: BaseData, id: number) {
   const { label, location, hasEnderChest, hasCherryTree } = portalData;
 
   // Create portal marker
