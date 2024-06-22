@@ -20,22 +20,22 @@ import {
   CylindricalRoomData,
   DoorData,
   PathData,
-  PortalData,
+  BaseData,
   RoomData,
 } from '../../data/data.types';
 import { MapBounds } from './mapScene.types';
 import { isCuboidRoomData, isCylindricalRoomData } from '../../data/data.types';
 
 import featureConfig from '../../config/features.json';
-import pathsJson from '../../data/paths.json';
-import roomsJson from '../../data/rooms.json';
-import doorsJson from '../../data/doors.json';
-import portalsJson from '../../data/portals.json';
+import pathsJson from '../../data/nether/paths.json';
+import roomsJson from '../../data/nether/rooms.json';
+import doorsJson from '../../data/nether/doors.json';
+import basesJson from '../../data/bases.json';
 
 const pathsData = pathsJson as PathData[];
 const roomsData = roomsJson as RoomData[];
 const doorsData = doorsJson as DoorData[];
-const portalsData = portalsJson as PortalData[];
+const basesData = basesJson as BaseData[];
 
 export let mapScene: Scene;
 const mapBounds: MapBounds = {
@@ -92,7 +92,7 @@ export function setupMapScene() {
   } = setupInstancedMapObjects(
     cuboidRoomsData,
     cylindricalRoomsData,
-    portalsData,
+    basesData,
     sortedDoorsData,
   );
   mapScene.add(cuboidRoomObjects);
@@ -166,7 +166,7 @@ export function setupMapScene() {
     return true;
   });
 
-  initMapObjects<PortalData>(portalsData, (object, id) => {
+  initMapObjects<BaseData>(basesData, (object, id) => {
     const portalLabel = createPortal(object, id);
     mapScene.add(portalLabel);
 
