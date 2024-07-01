@@ -6,9 +6,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'pages/worlds/bunnysnek.html'),
-        bunnysnek: resolve(__dirname, 'pages/worlds/bunnysnek.html'),
-        chocolatebnuuy: resolve(__dirname, 'pages/worlds/chocolatebnuuy.html'),
+        main: resolve(__dirname, 'index.html'),
+        bunnysnek: resolve(__dirname, 'pages/worlds/bunnysnek/index.html'),
+        chocolatebnuuy: resolve(__dirname, 'pages/worlds/chocolatebnuuy/index.html'),
       }
     }
   }
