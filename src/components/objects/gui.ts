@@ -1,8 +1,9 @@
 import { type Line2 } from 'three/addons/lines/Line2.js';
 import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { GUI } from 'dat.gui';
-import { getMapObjects, toggleDeprecatedDoors } from '../objects/mapObjects';
+import { toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
+import { getCurrentWorld } from '../setup/mapScene';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {
   allColourModeKeys,
@@ -67,8 +68,8 @@ function _toggleLabelVisibility(labels: CSS2DObject[]) {
 }
 
 function toggleAllLabelVisibility() {
-  const { roomLabels, pathLabels, portalLabels, doorLabels } = getMapObjects();
-
+  const { roomLabels, pathLabels, portalLabels, doorLabels } =
+    getCurrentWorld();
   _toggleLabelVisibility(roomLabels);
   _toggleLabelVisibility(pathLabels);
   _toggleLabelVisibility(portalLabels);
@@ -76,7 +77,8 @@ function toggleAllLabelVisibility() {
 }
 
 function toggleDeprecatedPaths() {
-  const { pathObjects } = getMapObjects();
+  const world = getCurrentWorld();
+  const { pathObjects } = world;
 
   for (const path of pathObjects) {
     if (path.userData.deprecated) {
@@ -84,11 +86,11 @@ function toggleDeprecatedPaths() {
     }
   }
 
-  toggleDeprecatedDoors(options.visible.deprecatedPaths);
+  toggleDeprecatedDoors(world, options.visible.deprecatedPaths);
 }
 
 function changeColourMode() {
-  const { pathObjects } = getMapObjects();
+  const { pathObjects } = getCurrentWorld();
   let materialKey;
 
   switch (options.colourMode) {
@@ -126,7 +128,7 @@ function changeColourMode() {
 }
 
 function changeLabelFilter() {
-  const { portalLabels, roomLabels } = getMapObjects();
+  const { portalLabels, roomLabels } = getCurrentWorld();
 
   for (const label of portalLabels) {
     label.element.className = 'portalLabel';

@@ -12,7 +12,7 @@ import {
   setupRenderers,
 } from './components/setup/renderer';
 import { initMaterials } from './components/setup/materials';
-import { mapScene, setupMapScene } from './components/setup/mapScene';
+import { getCurrentWorld, setupWorlds } from './components/setup/mapScene';
 import { addStatsPanel, updateStatsPanel } from './components/objects/stats';
 import { setupGUI } from './components/objects/gui';
 import { setupLegend } from './components/objects/legend';
@@ -33,11 +33,12 @@ function setup() {
     pointer = new Vector2();
   }
 
-  setupMapScene();
+  setupWorlds();
+  const currentWorld = getCurrentWorld();
   viewHelper = new ViewHelper(camera, renderer.domElement);
 
   setupLegend();
-  setupCameraControls(renderer);
+  setupCameraControls(currentWorld, renderer);
   if (import.meta.env.DEV) {
     addStatsPanel();
   }
@@ -68,6 +69,7 @@ function onWindowResize() {
 
 function render() {
   requestAnimationFrame(render);
+  const { mapScene } = getCurrentWorld();
 
   if (featureConfig.raycasterOn) {
     raycaster.setFromCamera(pointer, camera);

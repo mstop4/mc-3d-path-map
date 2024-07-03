@@ -1,13 +1,4 @@
-import {
-  Object3D,
-  LOD,
-  InstancedMesh,
-  BoxGeometry,
-  CylinderGeometry,
-  SphereGeometry,
-  Vector3,
-  MathUtils,
-} from 'three';
+import { Object3D, LOD, Vector3, MathUtils } from 'three';
 // @ts-expect-error no type declarations for simplify-3d
 import simplify from 'simplify-3d';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
@@ -15,15 +6,7 @@ import { LineGeometry } from 'three/addons/lines/LineGeometry.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { getMaterial } from '../setup/materials';
 
-import {
-  baseDoorWidth,
-  doorHeight,
-  doorThickness,
-  lodConfig,
-  portalHeightSegments,
-  portalSize,
-  portalWidthSegments,
-} from './mapObjects.config';
+import { doorHeight, lodConfig, portalSize } from './mapObjects.config';
 import { defaultPathProps } from '../../config/pathProps';
 import featureConfig from '../../config/features.json';
 
@@ -38,22 +21,10 @@ import {
   isCuboidRoomData,
   isCylindricalRoomData,
 } from '../../data/data.types';
+import { WorldData } from '../setup/mapScene.types';
 
 const dummy = new Object3D();
 const upVector = new Vector3(0, 1, 0);
-
-let cuboidRoomObjects: InstancedMesh;
-let cylindricalRoomObjects: InstancedMesh;
-let doorObjects: InstancedMesh;
-let portalObjects: InstancedMesh;
-const pathObjects: LOD[] = [];
-const roomLabels: CSS2DObject[] = [];
-const doorLabels: CSS2DObject[] = [];
-const portalLabels: CSS2DObject[] = [];
-const pathLabels: CSS2DObject[] = [];
-
-let numAllDoors: number;
-let numActiveDoors: number;
 
 function pointsArrayToVectors(array: Coordinates[]) {
   return array.map(point => {
@@ -72,78 +43,26 @@ function vectorsToFlatPointsArray(
   return pointsArray;
 }
 
-export function setupInstancedMapObjects(
-  cuboidRoomsData: RoomData[],
-  cylindricalRoomsData: RoomData[],
-  basesData: BaseData[],
-  doorsData: DoorData[],
-) {
-  // Create rooms
-  const roomMaterial = getMaterial('room');
-  const cuboidRoomGeom = new BoxGeometry(1, 1, 1);
-  const cylindricalRoomGeom = new CylinderGeometry(1, 1, 1, 8, 3);
-
-  cuboidRoomObjects = new InstancedMesh(
-    cuboidRoomGeom,
-    roomMaterial,
-    cuboidRoomsData.length,
-  );
-
-  cylindricalRoomObjects = new InstancedMesh(
-    cylindricalRoomGeom,
-    roomMaterial,
-    cylindricalRoomsData.length,
-  );
-
-  // Create portals
-  const portalMaterial = getMaterial('portal');
-  const portalGeom = new SphereGeometry(
-    portalSize,
-    portalWidthSegments,
-    portalHeightSegments,
-  );
-
-  portalObjects = new InstancedMesh(
-    portalGeom,
-    portalMaterial,
-    basesData.length,
-  );
-
-  // Create doors
-  const doorMaterial = getMaterial('door');
-  const doorGeom = new BoxGeometry(doorThickness, doorHeight, baseDoorWidth);
-
-  doorObjects = new InstancedMesh(doorGeom, doorMaterial, doorsData.length);
-  const firstDeprecatedDoorIndex = doorsData.findIndex(door => door.deprecated);
-
-  // Count number of doors and how manyare not deprecated
-  numAllDoors = doorsData.length;
-  numActiveDoors =
-    firstDeprecatedDoorIndex !== -1
-      ? firstDeprecatedDoorIndex
-      : doorsData.length;
-
-  return {
+export function updateInstancedMeshes(world: WorldData) {
+  const {
     cuboidRoomObjects,
     cylindricalRoomObjects,
     portalObjects,
     doorObjects,
-  };
-}
-
-export function updateInstancedMeshes() {
+  } = world;
   cuboidRoomObjects.instanceMatrix.needsUpdate = true;
   cylindricalRoomObjects.instanceMatrix.needsUpdate = true;
   portalObjects.instanceMatrix.needsUpdate = true;
   doorObjects.instanceMatrix.needsUpdate = true;
 }
 
-export function toggleDeprecatedDoors(visible: boolean) {
+export function toggleDeprecatedDoors(world: WorldData, visible: boolean) {
+  const { doorObjects, numActiveDoors, numAllDoors } = world;
   doorObjects.count = visible ? numAllDoors : numActiveDoors;
   doorObjects.instanceMatrix.needsUpdate = true;
 }
 
-export function createPath(pathData: PathData, id: number) {
+export function createPath(world: WorldData, pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
   const returnValues: {
     pathMesh: null | LOD;
@@ -209,7 +128,7 @@ export function createPath(pathData: PathData, id: number) {
   pathLOD.userData.cbfMaterial = cbfMaterial;
   pathLOD.userData.extSimpleMaterial = extSimpleMaterial;
   pathLOD.userData.natSimpleMaterial = natSimpleMaterial;
-  pathObjects.push(pathLOD);
+  world.pathObjects.push(pathLOD);
 
   returnValues.pathMesh = pathLOD;
 
@@ -224,13 +143,13 @@ export function createPath(pathData: PathData, id: number) {
 
     const center = getPathCenter(rawPoints);
     returnValues.debugPathLabel.position.set(center[0], center[1], center[2]);
-    pathLabels.push(returnValues.debugPathLabel);
+    world.pathLabels.push(returnValues.debugPathLabel);
   }
 
   return returnValues;
 }
 
-export function createRoom(roomData: RoomData, id: number) {
+export function createRoom(world: WorldData, roomData: RoomData, id: number) {
   // Create room label
   let roomLabel: CSS2DObject | null = null;
 
@@ -245,7 +164,7 @@ export function createRoom(roomData: RoomData, id: number) {
     roomLabel = new CSS2DObject(labelDiv);
     roomLabel.center.set(0.5, 1.5);
     roomLabel.layers.set(0);
-    roomLabels.push(roomLabel);
+    world.roomLabels.push(roomLabel);
   }
 
   if (isCuboidRoomData(roomData)) {
@@ -263,7 +182,7 @@ export function createRoom(roomData: RoomData, id: number) {
       Math.abs(corners[1][2] - corners[0][2]) + 1,
     );
     dummy.updateMatrix();
-    cuboidRoomObjects.setMatrixAt(id, dummy.matrix);
+    world.cuboidRoomObjects?.setMatrixAt(id, dummy.matrix);
 
     if (roomLabel !== null) {
       roomLabel.position.set(
@@ -283,7 +202,7 @@ export function createRoom(roomData: RoomData, id: number) {
     );
     dummy.scale.set(radius + 1, radius + 1, height + 1);
     dummy.updateMatrix();
-    cylindricalRoomObjects.setMatrixAt(id, dummy.matrix);
+    world.cylindricalRoomObjects?.setMatrixAt(id, dummy.matrix);
 
     if (roomLabel !== null) {
       roomLabel.position.set(
@@ -297,7 +216,7 @@ export function createRoom(roomData: RoomData, id: number) {
   return roomLabel;
 }
 
-export function createDoor(doorData: DoorData, id: number) {
+export function createDoor(world: WorldData, doorData: DoorData, id: number) {
   const { quantity, location, orientation } = doorData;
 
   // Create door marker
@@ -308,7 +227,7 @@ export function createDoor(doorData: DoorData, id: number) {
   }
   dummy.scale.set(1, 1, quantity);
   dummy.updateMatrix();
-  doorObjects.setMatrixAt(id, dummy.matrix);
+  world.doorObjects?.setMatrixAt(id, dummy.matrix);
 
   let debugDoorLabel = null;
 
@@ -322,20 +241,24 @@ export function createDoor(doorData: DoorData, id: number) {
     debugDoorLabel.layers.set(0);
 
     debugDoorLabel.position.set(location[0], location[1], location[2]);
-    doorLabels.push(debugDoorLabel);
+    world.doorLabels.push(debugDoorLabel);
   }
 
   return debugDoorLabel;
 }
 
-export function createPortal(portalData: BaseData, id: number) {
+export function createPortal(
+  world: WorldData,
+  portalData: BaseData,
+  id: number,
+) {
   const { label, location, hasEnderChest, hasCherryTree } = portalData;
 
   // Create portal marker
   resetDummyObject();
   dummy.position.set(location[0], location[1] + portalSize / 2, location[2]);
   dummy.updateMatrix();
-  portalObjects.setMatrixAt(id, dummy.matrix);
+  world.portalObjects?.setMatrixAt(id, dummy.matrix);
 
   // Create portal label
   const portalDiv = document.createElement('div');
@@ -346,7 +269,7 @@ export function createPortal(portalData: BaseData, id: number) {
   portalLabel.center.set(0.5, 1.5);
   portalLabel.userData.enderChest = hasEnderChest;
   portalLabel.userData.cherryTree = hasCherryTree;
-  portalLabels.push(portalLabel);
+  world.portalLabels.push(portalLabel);
 
   portalLabel.position.set(
     location[0],
@@ -356,20 +279,6 @@ export function createPortal(portalData: BaseData, id: number) {
   portalLabel.layers.set(0);
 
   return portalLabel;
-}
-
-export function getMapObjects() {
-  return {
-    cuboidRoomObjects,
-    cylindricalRoomObjects,
-    pathObjects,
-    doorObjects,
-    portalObjects,
-    roomLabels,
-    portalLabels,
-    doorLabels,
-    pathLabels,
-  };
 }
 
 function resetDummyObject() {

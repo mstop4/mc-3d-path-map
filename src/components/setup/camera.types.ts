@@ -1,5 +1,7 @@
+import { Vector3 } from 'three';
+
 export type CameraState = {
-  target: THREE.Vector3;
-  position: THREE.Vector3;
+  target: Vector3;
+  position: Vector3;
   zoom: number;
 };

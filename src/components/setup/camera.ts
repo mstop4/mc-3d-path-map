@@ -1,6 +1,5 @@
 import { OrthographicCamera, type WebGLRenderer, Vector3 } from 'three';
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { getMapBounds } from './mapScene';
 import {
   autoRotateSpeed,
   guiScaleSize,
@@ -8,6 +7,7 @@ import {
   viewScale,
 } from './camera.config';
 import { CameraState } from '../setup/camera.types';
+import { WorldData } from './mapScene.types';
 
 export let camera: OrthographicCamera;
 export let cameraControls: MapControls;
@@ -27,12 +27,12 @@ export function setupCamera() {
   );
 }
 
-export function setupCameraControls(renderer: WebGLRenderer) {
+export function setupCameraControls(world: WorldData, renderer: WebGLRenderer) {
   cameraControls = new MapControls(camera, renderer.domElement);
   cameraControls.enableDamping = false;
   cameraControls.autoRotateSpeed = autoRotateSpeed;
 
-  const { center, xMin, xMax, zMin, zMax } = getMapBounds();
+  const { center, xMin, xMax, zMin, zMax } = world.mapBounds;
   initialCameraPosition = new Vector3(
     center[0] - 1,
     center[1] + 1,
