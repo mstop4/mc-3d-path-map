@@ -3,7 +3,7 @@ import { type CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { GUI } from 'dat.gui';
 import { toggleDeprecatedDoors } from '../objects/mapObjects';
 import { cameraControls, loadCameraState } from '../setup/camera';
-import { getCurrentWorld } from '../setup/mapScene';
+import { getCurrentWorld, getWorld, setCurrentWorld } from '../setup/mapScene';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {
   allColourModeKeys,
@@ -13,9 +13,12 @@ import {
   allLabelFilters,
   activeLabelFilters,
   labelFiltersAvailable,
+  allWorldKeys,
 } from './gui.config';
+import { WorldData } from '../setup/mapScene.types';
 
 let gui: GUI;
+const sceneSwitchDelay = 1000 / 60;
 
 const options = {
   visible: {
@@ -23,6 +26,7 @@ const options = {
     deprecatedPaths: true,
     legend: true,
   },
+  currentWorld: allWorldKeys[Object.keys(allWorldKeys)[0]],
   colourMode: activeColourModes[colourModesAvailable[0]],
   cameraPosition: allCameraPositionsKeys.isometric,
   labelFilter: activeLabelFilters[labelFiltersAvailable[0]],
@@ -30,6 +34,10 @@ const options = {
 
 export function setupGUI() {
   gui = new GUI();
+  gui
+    .add(options, 'currentWorld', Object.values(allWorldKeys))
+    .name('World')
+    .onChange(changeWorld);
   gui
     .add(options, 'colourMode', Object.values(activeColourModes))
     .name('Colour Mode')
@@ -61,19 +69,26 @@ export function setupGUI() {
     .onChange(toggleLegend);
 }
 
-function _toggleLabelVisibility(labels: CSS2DObject[]) {
+function _toggleLabelVisibility(labels: CSS2DObject[], visibility: boolean) {
   for (const label of labels) {
-    label.visible = options.visible.labelVisibility;
+    label.visible = visibility;
   }
 }
 
+function _toggleWorldLabelVisibility(world: WorldData, visibility: boolean) {
+  const { roomLabels, pathLabels, portalLabels, doorLabels } = world;
+
+  _toggleLabelVisibility(roomLabels, visibility);
+  _toggleLabelVisibility(pathLabels, visibility);
+  _toggleLabelVisibility(portalLabels, visibility);
+  _toggleLabelVisibility(doorLabels, visibility);
+}
+
 function toggleAllLabelVisibility() {
-  const { roomLabels, pathLabels, portalLabels, doorLabels } =
-    getCurrentWorld();
-  _toggleLabelVisibility(roomLabels);
-  _toggleLabelVisibility(pathLabels);
-  _toggleLabelVisibility(portalLabels);
-  _toggleLabelVisibility(doorLabels);
+  const world = getCurrentWorld();
+  const { labelVisibility } = options.visible;
+
+  _toggleWorldLabelVisibility(world, labelVisibility);
 }
 
 function toggleDeprecatedPaths() {
@@ -188,6 +203,31 @@ function changeCameraPosition() {
 
     default:
       toggleCameraPostion(0, false);
+  }
+}
+
+function changeWorld() {
+  // Hide labels from current world
+  const currentWorld = getCurrentWorld();
+  _toggleWorldLabelVisibility(currentWorld, false);
+
+  const worldId = Object.keys(allWorldKeys).find(
+    id => allWorldKeys[id] === options.currentWorld,
+  );
+  if (worldId !== undefined) {
+    // Can't hide labels from previous world on the same frame as switching to new world
+    // Delay switching to new world slightly to prevent labels from previous world appearing in new world
+    setTimeout(() => {
+      setCurrentWorld(worldId);
+
+      // Update state of labels of new world
+      const { labelVisibility } = options.visible;
+      const newWorld = getWorld(worldId);
+      _toggleWorldLabelVisibility(newWorld, labelVisibility);
+
+      // Reset camera
+      changeCameraPosition();
+    }, sceneSwitchDelay);
   }
 }
 

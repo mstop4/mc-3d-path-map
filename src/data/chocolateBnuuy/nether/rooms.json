@@ -1,0 +1,12 @@
+[
+  {
+    "label": "World Origin Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-4, 88, -5],
+      [4, 84, 5]
+    ]
+  }
+]

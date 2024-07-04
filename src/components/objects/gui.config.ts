@@ -1,3 +1,10 @@
+import dataManifest from '../../data/manifest.json';
+
+export const allWorldKeys: Record<string, string> = {};
+for (const world of dataManifest) {
+  allWorldKeys[world.id] = world.name;
+}
+
 export const allColourModeKeys: Record<string, string> = {
   default: 'Full',
   cbf: 'Colourblind-friendly',

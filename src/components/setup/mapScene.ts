@@ -83,6 +83,10 @@ export function getCurrentWorld() {
   return allWorlds[currentWorldName];
 }
 
+export function setCurrentWorld(worldName: string) {
+  currentWorldName = worldName;
+}
+
 function setupWorld(
   worldName: string,
   pathsData: PathData[],
