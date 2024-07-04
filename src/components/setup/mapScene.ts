@@ -16,6 +16,7 @@ import {
   createRoom,
   updateInstancedMeshes,
 } from '../objects/mapObjects';
+import { setupCameraStates } from './camera';
 import { getMaterial } from './materials';
 
 import {
@@ -159,6 +160,7 @@ function setupWorld(
       zMin: 0,
       zMax: 0,
     },
+    cameraStates: [],
   };
 
   const { mapScene } = newWorld;
@@ -273,6 +275,7 @@ function setupWorld(
 
   updateInstancedMeshes(newWorld);
   calculateMapCenter(newWorld);
+  setupCameraStates(newWorld);
 
   allWorlds[worldName] = newWorld;
 }

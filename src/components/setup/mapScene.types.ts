@@ -1,6 +1,7 @@
 import type { Scene, InstancedMesh, LOD } from 'three';
 import type { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { Coordinates } from '../../data/data.types';
+import { CameraState } from './camera.types';
 
 export type WorldData = {
   mapScene: Scene;
@@ -16,6 +17,7 @@ export type WorldData = {
   numAllDoors: number;
   numActiveDoors: number;
   mapBounds: MapBounds;
+  cameraStates: CameraState[];
 };
 
 export type MapBounds = {

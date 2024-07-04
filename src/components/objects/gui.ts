@@ -34,10 +34,12 @@ const options = {
 
 export function setupGUI() {
   gui = new GUI();
+
   gui
     .add(options, 'currentWorld', Object.values(allWorldKeys))
     .name('World')
     .onChange(changeWorld);
+
   gui
     .add(options, 'colourMode', Object.values(activeColourModes))
     .name('Colour Mode')
@@ -225,8 +227,11 @@ function changeWorld() {
       const newWorld = getWorld(worldId);
       _toggleWorldLabelVisibility(newWorld, labelVisibility);
 
-      // Reset camera
+      // Update new world according to GUI settings
+      changeColourMode();
       changeCameraPosition();
+      changeLabelFilter();
+      toggleDeprecatedPaths();
     }, sceneSwitchDelay);
   }
 }
@@ -240,6 +245,7 @@ function toggleLegend() {
 }
 
 function toggleCameraPostion(index: number, autoRotate: boolean) {
-  loadCameraState(index);
+  const world = getCurrentWorld();
+  loadCameraState(world, index);
   cameraControls.autoRotate = autoRotate;
 }

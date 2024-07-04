@@ -3,6 +3,7 @@ import { ViewHelper } from 'three/addons/helpers/ViewHelper.js';
 import {
   camera,
   cameraControls,
+  loadCameraState,
   setupCamera,
   setupCameraControls,
 } from './components/setup/camera';
@@ -38,7 +39,9 @@ async function setup() {
   viewHelper = new ViewHelper(camera, renderer.domElement);
 
   setupLegend();
-  setupCameraControls(currentWorld, renderer);
+  setupCameraControls(renderer);
+  loadCameraState(currentWorld, 0);
+
   if (import.meta.env.DEV) {
     addStatsPanel();
   }
