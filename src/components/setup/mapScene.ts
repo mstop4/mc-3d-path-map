@@ -39,15 +39,7 @@ import { WorldData } from './mapScene.types';
 import { isCuboidRoomData, isCylindricalRoomData } from '../../data/data.types';
 
 import featureConfig from '../../config/features.json';
-import pathsJson from '../../data/nether/paths.json';
-import roomsJson from '../../data/nether/rooms.json';
-import doorsJson from '../../data/nether/doors.json';
-import basesJson from '../../data/bases.json';
-
-const pathsData = pathsJson as PathData[];
-const roomsData = roomsJson as RoomData[];
-const doorsData = doorsJson as DoorData[];
-const basesData = basesJson as BaseData[];
+import dataManifest from '../../data/manifest.json';
 
 const allWorlds: Record<string, WorldData> = {};
 let currentWorldName = 'bunnySnek';
@@ -65,8 +57,22 @@ const portalGeom = new SphereGeometry(
 
 const doorGeom = new BoxGeometry(doorThickness, doorHeight, baseDoorWidth);
 
-export function setupWorlds() {
-  setupWorld('bunnySnek', pathsData, roomsData, doorsData, basesData);
+export async function setupWorlds() {
+  for (const worldManifest of dataManifest) {
+    const { id, paths, rooms, doors, bases } = worldManifest;
+
+    const { default: pathsJson } = await import(paths);
+    const { default: roomsJson } = await import(rooms);
+    const { default: doorsJson } = await import(doors);
+    const { default: basesJson } = await import(bases);
+
+    const pathsData = pathsJson as PathData[];
+    const roomsData = roomsJson as RoomData[];
+    const doorsData = doorsJson as DoorData[];
+    const basesData = basesJson as BaseData[];
+
+    setupWorld(id, pathsData, roomsData, doorsData, basesData);
+  }
 }
 
 export function getWorld(worldName: string) {

@@ -24,7 +24,7 @@ let viewHelper: ViewHelper;
 let raycaster: Raycaster;
 let pointer: Vector2;
 
-function setup() {
+async function setup() {
   initMaterials();
   setupCamera();
   setupRenderers();
@@ -33,7 +33,7 @@ function setup() {
     pointer = new Vector2();
   }
 
-  setupWorlds();
+  await setupWorlds();
   const currentWorld = getCurrentWorld();
   viewHelper = new ViewHelper(camera, renderer.domElement);
 
@@ -90,5 +90,5 @@ function render() {
   viewHelper.render(renderer);
 }
 
-setup();
+await setup();
 render();

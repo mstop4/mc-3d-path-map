@@ -1,0 +1,10 @@
+[
+  {
+    "id": "bunnySnek",
+    "name": "Bunny Snek",
+    "bases": "../../data/bunnySnek/bases.json",
+    "paths": "../../data/bunnySnek/nether/paths.json",
+    "rooms": "../../data/bunnySnek/nether/rooms.json",
+    "doors": "../../data/bunnySnek/nether/doors.json"
+  }
+]
