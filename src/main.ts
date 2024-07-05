@@ -35,6 +35,7 @@ async function setup() {
   }
 
   await setupWorlds();
+
   const currentWorld = getCurrentWorld();
   viewHelper = new ViewHelper(camera, renderer.domElement);
 
