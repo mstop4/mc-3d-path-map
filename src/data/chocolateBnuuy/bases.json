@@ -1,8 +1,62 @@
 [
   {
-    "label": "World Origin",
-    "location": [0, 84, -0.5],
+    "label": "Monochrome Mountain",
+    "location": [-21, 85, -10.5],
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasBrewingStand": true,
+    "hasEnchantingTable": false,
+    "hasFood": true,
+    "hasLava": true,
+    "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Pointed Path Depths",
+    "location": [24, 59, 11.5],
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": true
+    "hasCherryTree": false
+  },
+  {
+    "label": "Pointed Path City",
+    "location": [57, 59, -24.5],
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Donut Cover Village",
+    "location": [-33.5, 64, 92],
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "(Unnamed Village)",
+    "location": [-42, 110, -54.5],
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
   }
 ]

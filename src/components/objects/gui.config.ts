@@ -5,6 +5,8 @@ for (const world of dataManifest) {
   allWorldKeys[world.id] = world.name;
 }
 
+export const defaultWorldKey = 'chocolateBnuuy';
+
 export const allColourModeKeys: Record<string, string> = {
   default: 'Full',
   cbf: 'Colourblind-friendly',

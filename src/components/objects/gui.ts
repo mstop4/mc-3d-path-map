@@ -14,6 +14,7 @@ import {
   activeLabelFilters,
   labelFiltersAvailable,
   allWorldKeys,
+  defaultWorldKey,
 } from './gui.config';
 import { WorldData } from '../setup/mapScene.types';
 
@@ -26,7 +27,7 @@ const options = {
     deprecatedPaths: true,
     legend: true,
   },
-  currentWorld: allWorldKeys[Object.keys(allWorldKeys)[0]],
+  currentWorld: allWorldKeys[defaultWorldKey],
   colourMode: activeColourModes[colourModesAvailable[0]],
   cameraPosition: allCameraPositionsKeys.isometric,
   labelFilter: activeLabelFilters[labelFiltersAvailable[0]],

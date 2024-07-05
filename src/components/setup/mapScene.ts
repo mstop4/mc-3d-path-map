@@ -27,6 +27,7 @@ import {
   portalSize,
   portalWidthSegments,
 } from '../objects/mapObjects.config';
+import { defaultWorldKey } from '../objects/gui.config';
 
 import {
   CuboidRoomData,
@@ -43,7 +44,7 @@ import featureConfig from '../../config/features.json';
 import dataManifest from '../../data/manifest.json';
 
 const allWorlds: Record<string, WorldData> = {};
-let currentWorldName = 'bunnySnek';
+let currentWorldName = defaultWorldKey;
 
 // Define geometry for rooms, portals, and doors
 // Materials are gotten at setup-time
