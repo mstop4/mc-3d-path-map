@@ -1,17 +1,15 @@
 import { OrthographicCamera, type WebGLRenderer, Vector3 } from 'three';
 import { MapControls } from 'three/addons/controls/MapControls.js';
-import { getMapBounds } from './mapScene';
 import {
   autoRotateSpeed,
   guiScaleSize,
   ratios,
   viewScale,
 } from './camera.config';
-import { CameraState } from '../setup/camera.types';
+import { WorldData } from './mapScene.types';
 
 export let camera: OrthographicCamera;
 export let cameraControls: MapControls;
-const cameraStates: CameraState[] = [];
 let lastZoom: number;
 let initialCameraPosition: Vector3;
 let scaleNumberElem: HTMLElement | null;
@@ -32,7 +30,16 @@ export function setupCameraControls(renderer: WebGLRenderer) {
   cameraControls.enableDamping = false;
   cameraControls.autoRotateSpeed = autoRotateSpeed;
 
-  const { center, xMin, xMax, zMin, zMax } = getMapBounds();
+  scaleNumberElem = document.getElementById('scaleNumber');
+
+  if (scaleNumberElem !== null) {
+    onZoomChanged();
+    cameraControls.addEventListener('change', onZoomChanged);
+  }
+}
+
+export function setupCameraStates(world: WorldData) {
+  const { center, xMin, xMax, zMin, zMax } = world.mapBounds;
   initialCameraPosition = new Vector3(
     center[0] - 1,
     center[1] + 1,
@@ -44,37 +51,32 @@ export function setupCameraControls(renderer: WebGLRenderer) {
   const zLength = zMax - zMin;
   const diagonalLength = Math.sqrt(Math.pow(xLength, 2) + Math.pow(zLength, 2));
 
-  saveCameraState(new Vector3(...center), initialCameraPosition, 1); // Isometric Camera
+  saveCameraState(world, new Vector3(...center), initialCameraPosition, 1); // Isometric Camera
   saveCameraState(
+    world,
     new Vector3(...center),
     new Vector3(center[0], 127, center[2]),
     1,
   ); // Overhead Camera
   saveCameraState(
+    world,
     new Vector3(center[0], 64, center[2]),
     new Vector3(center[0] - 1, 64, center[2]),
     1,
   ); // Side Camera (East)
   saveCameraState(
+    world,
     new Vector3(center[0], 64, center[2]),
     new Vector3(center[0], 64, center[2] + 1),
     1,
   ); // Side Camera (North)
   saveCameraState(
+    world,
     new Vector3(...center),
     initialCameraPosition,
     (ratios.isometricZoom / diagonalLength) *
       (window.innerHeight / ratios.windowHeight),
   ); // Demo Camera
-
-  scaleNumberElem = document.getElementById('scaleNumber');
-
-  if (scaleNumberElem !== null) {
-    onZoomChanged();
-    cameraControls.addEventListener('change', onZoomChanged);
-  }
-
-  loadCameraState(0);
 }
 
 function onZoomChanged() {
@@ -98,22 +100,23 @@ function onZoomChanged() {
 }
 
 export function saveCameraState(
+  world: WorldData,
   target: Vector3,
   position: Vector3,
   zoom: number,
 ) {
-  cameraStates.push({
+  world.cameraStates.push({
     target,
     position,
     zoom,
   });
 
-  return cameraStates.length;
+  return world.cameraStates.length;
 }
 
-export function loadCameraState(index: number) {
-  if (index >= cameraStates.length) return;
-  const state = cameraStates[index];
+export function loadCameraState(world: WorldData, index: number) {
+  if (index >= world.cameraStates.length) return;
+  const state = world.cameraStates[index];
 
   cameraControls.target.copy(state.target);
   camera.position.copy(state.position);

@@ -1,0 +1,51 @@
+[
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-24, 85, -13.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-18, 85, -9.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [53, 59, -24.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [57.5, 67, -16]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-39, 80, 4.5]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-37, 64, 89.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-37, 110, -54.5]
+  }
+]

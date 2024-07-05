@@ -1,0 +1,18 @@
+[
+  {
+    "id": "bunnySnek",
+    "name": "Bunny Snek",
+    "bases": "../../data/bunnySnek/bases.json",
+    "paths": "../../data/bunnySnek/nether/paths.json",
+    "rooms": "../../data/bunnySnek/nether/rooms.json",
+    "doors": "../../data/bunnySnek/nether/doors.json"
+  },
+  {
+    "id": "chocolateBnuuy",
+    "name": "Chocolate Bnuuy",
+    "bases": "../../data/chocolateBnuuy/bases.json",
+    "paths": "../../data/chocolateBnuuy/nether/paths.json",
+    "rooms": "../../data/chocolateBnuuy/nether/rooms.json",
+    "doors": "../../data/chocolateBnuuy/nether/doors.json"
+  }
+]
