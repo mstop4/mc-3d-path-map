@@ -3,6 +3,10 @@ import type { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { Coordinates } from '../../data/data.types';
 import { CameraState } from './camera.types';
 
+export type ModuleImport = {
+  default: Object;
+};
+
 export type WorldData = {
   mapScene: Scene;
   cuboidRoomObjects: InstancedMesh;
