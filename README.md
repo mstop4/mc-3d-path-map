@@ -1,8 +1,8 @@
-# Minecraft 3D Path Map
+# Minecraft 3D Nether Map Viewer
 
-![Screenshot of the Minecraft 3D Path Map web app, showing the network of paths in the Nether of my survivial single-player world.](https://raw.githubusercontent.com/mstop4/mc-3d-path-map/main/docs/splash1080.png)
+![Screenshot of the Minecraft 3D Nether Map Viewer app, showing the network of paths in the Nether of one of my survivial single-player world.](https://raw.githubusercontent.com/mstop4/mc-3d-path-map/main/docs/splash1080.png)
 
-A web app visualizing the network of paths in the Nether of my survival single-player (SSP) world.
+A web app visualizing the network of paths in the Nethers of my survival single-player (SSP) worlds.
 
 ## Stack
 
