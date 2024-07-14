@@ -48,8 +48,20 @@
     "hasCherryTree": false
   },
   {
-    "label": "(Unnamed Village)",
+    "label": "Stray Heights Village",
     "location": [-42, 110, -54.5],
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Wishbone Point",
+    "location": [-252.5, 76, -42],
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasBrewingStand": false,

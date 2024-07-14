@@ -40,13 +40,23 @@
     ]
   },
   {
-    "label": "Unnamed Village Portal Room",
+    "label": "Stray Heights Portal Room",
     "displayLabel": false,
     "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
       [-41, 110, -56],
       [-38, 113, -53]
+    ]
+  },
+  {
+    "label": "Wishbone Point Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-255, 76, -49],
+      [-250, 79, -43]
     ]
   }
 ]

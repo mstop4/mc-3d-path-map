@@ -47,5 +47,26 @@
     "orientation": "x",
     "deprecated": false,
     "location": [-37, 110, -54.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-261, 76, -43.5]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-253, 67, -32]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-255, 67, -49]
   }
 ]
