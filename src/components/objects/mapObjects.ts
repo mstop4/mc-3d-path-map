@@ -252,7 +252,19 @@ export function createPortal(
   portalData: BaseData,
   id: number,
 ) {
-  const { label, location, hasEnderChest, hasCherryTree } = portalData;
+  const {
+    label,
+    location,
+    hasEnderChest,
+    hasCherryTree,
+    hasBed,
+    hasBasicWorkstation,
+    hasStorage,
+    hasBrewingStand,
+    hasEnchantingTable,
+    hasFood,
+    hasLava,
+  } = portalData;
 
   // Create portal marker
   resetDummyObject();
@@ -267,6 +279,13 @@ export function createPortal(
 
   const portalLabel = new CSS2DObject(portalDiv);
   portalLabel.center.set(0.5, 1.5);
+  portalLabel.userData.bed = hasBed;
+  portalLabel.userData.basicWorkstation = hasBasicWorkstation;
+  portalLabel.userData.storage = hasStorage;
+  portalLabel.userData.brewingStand = hasBrewingStand;
+  portalLabel.userData.enchantingTable = hasEnchantingTable;
+  portalLabel.userData.food = hasFood;
+  portalLabel.userData.lava = hasLava;
   portalLabel.userData.enderChest = hasEnderChest;
   portalLabel.userData.cherryTree = hasCherryTree;
   world.portalLabels.push(portalLabel);

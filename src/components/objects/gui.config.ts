@@ -14,6 +14,13 @@ export const allColourModeKeys: Record<string, string> = {
 
 export const allLabelFilters: Record<string, string> = {
   none: 'None',
+  bed: 'Bed',
+  basicWorkstation: 'Crafting Table + Furnace',
+  storage: 'Storage',
+  food: 'Food Supply',
+  lava: 'Lava Source',
+  enchantingTable: 'Enchanting',
+  brewingStand: 'Brewing',
   enderChests: 'Ender Chests',
   cherryTrees: 'Cherry Trees',
 };
@@ -27,7 +34,18 @@ export const allCameraPositionsKeys: Record<string, string> = {
 };
 
 export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
-export const labelFiltersAvailable = ['none', 'enderChests', 'cherryTrees'];
+export const labelFiltersAvailable = [
+  'none',
+  'bed',
+  'basicWorkstation',
+  'storage',
+  'food',
+  'lava',
+  'enchantingTable',
+  'brewingStand',
+  'enderChests',
+  'cherryTrees',
+];
 
 export const activeColourModes = colourModesAvailable.reduce(
   (obj: Record<string, string>, key) => {

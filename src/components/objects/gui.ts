@@ -58,7 +58,7 @@ export function setupGUI() {
     .onChange(toggleAllLabelVisibility);
   labelFolder
     .add(options, 'labelFilter', Object.values(activeLabelFilters))
-    .name('Highlight')
+    .name('Filter Amenities')
     .onChange(changeLabelFilter);
 
   const showHideFolder = gui.addFolder('Show/Hide');
@@ -162,6 +162,41 @@ function changeLabelFilter() {
           label.element.classList.add('portalLabel-filtered');
         break;
 
+      case allLabelFilters.bed:
+        if (!label.userData.bed)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.basicWorkstation:
+        if (!label.userData.basicWorkstation)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.storage:
+        if (!label.userData.storage)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.food:
+        if (!label.userData.food)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.lava:
+        if (!label.userData.lava)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.enchantingTable:
+        if (!label.userData.enchantingTable)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.brewingStand:
+        if (!label.userData.brewingStand)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
       case allLabelFilters.none:
       default:
     }
@@ -171,13 +206,11 @@ function changeLabelFilter() {
     label.element.className = 'portalLabel';
 
     switch (options.labelFilter) {
-      case allLabelFilters.enderChests:
-      case allLabelFilters.cherryTrees:
+      case allLabelFilters.none:
+        break;
+      default:
         label.element.classList.add('portalLabel-filtered');
         break;
-
-      case allLabelFilters.none:
-      default:
     }
   }
 }
