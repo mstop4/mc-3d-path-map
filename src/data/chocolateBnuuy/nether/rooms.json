@@ -58,5 +58,15 @@
       [-255, 76, -49],
       [-250, 79, -43]
     ]
+  },
+  {
+    "label": "Sinkhole Shore Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [27, 59, 68],
+      [31, 62, 71]
+    ]
   }
 ]

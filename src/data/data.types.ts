@@ -63,4 +63,12 @@ export type BaseData = {
   location: Coordinates;
   hasEnderChest: boolean;
   hasCherryTree: boolean;
+  hasBed: boolean;
+  hasBasicWorkstation: boolean;
+  hasStorage: boolean;
+  hasSmithing: boolean;
+  hasBrewingStand: boolean;
+  hasEnchantingTable: boolean;
+  hasFood: boolean;
+  hasLava: boolean;
 };

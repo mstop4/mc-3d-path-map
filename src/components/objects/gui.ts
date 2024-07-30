@@ -6,13 +6,13 @@ import { cameraControls, loadCameraState } from '../setup/camera';
 import { getCurrentWorld, getWorld, setCurrentWorld } from '../setup/mapScene';
 import { hideLegend, showLegend, switchLegend } from './legend';
 import {
+  guiWidth,
   allColourModeKeys,
   colourModesAvailable,
   activeColourModes,
   allCameraPositionsKeys,
   allLabelFilters,
   activeLabelFilters,
-  labelFiltersAvailable,
   allWorldKeys,
 } from './gui.config';
 import { startingWorldKey } from '../../config/urlParamsHelper';
@@ -30,11 +30,23 @@ const options = {
   currentWorld: allWorldKeys[startingWorldKey],
   colourMode: activeColourModes[colourModesAvailable[0]],
   cameraPosition: allCameraPositionsKeys.isometric,
-  labelFilter: activeLabelFilters[labelFiltersAvailable[0]],
+  labelFilter: activeLabelFilters[startingWorldKey][0],
 };
+
+let labelFolder: GUI;
+
+function updateLabelFolder(worldId: string) {
+  labelFolder.__controllers[1].remove();
+
+  labelFolder
+    .add(options, 'labelFilter', Object.values(activeLabelFilters[worldId]))
+    .name('Filter Amenities')
+    .onChange(changeLabelFilter);
+}
 
 export function setupGUI() {
   gui = new GUI();
+  gui.width = guiWidth;
 
   gui
     .add(options, 'currentWorld', Object.values(allWorldKeys))
@@ -51,14 +63,18 @@ export function setupGUI() {
     .name('Camera Position')
     .onChange(changeCameraPosition);
 
-  const labelFolder = gui.addFolder('Labels');
+  labelFolder = gui.addFolder('Labels');
   labelFolder
     .add(options.visible, 'labelVisibility')
     .name('Show/Hide')
     .onChange(toggleAllLabelVisibility);
   labelFolder
-    .add(options, 'labelFilter', Object.values(activeLabelFilters))
-    .name('Highlight')
+    .add(
+      options,
+      'labelFilter',
+      Object.values(activeLabelFilters[startingWorldKey]),
+    )
+    .name('Filter Amenities')
     .onChange(changeLabelFilter);
 
   const showHideFolder = gui.addFolder('Show/Hide');
@@ -162,6 +178,46 @@ function changeLabelFilter() {
           label.element.classList.add('portalLabel-filtered');
         break;
 
+      case allLabelFilters.bed:
+        if (!label.userData.bed)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.basicWorkstation:
+        if (!label.userData.basicWorkstation)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.storage:
+        if (!label.userData.storage)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.food:
+        if (!label.userData.food)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.lava:
+        if (!label.userData.lava)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.smithing:
+        if (!label.userData.smithing)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.enchantingTable:
+        if (!label.userData.enchantingTable)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.brewingStand:
+        if (!label.userData.brewingStand)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
       case allLabelFilters.none:
       default:
     }
@@ -171,13 +227,11 @@ function changeLabelFilter() {
     label.element.className = 'portalLabel';
 
     switch (options.labelFilter) {
-      case allLabelFilters.enderChests:
-      case allLabelFilters.cherryTrees:
+      case allLabelFilters.none:
+        break;
+      default:
         label.element.classList.add('portalLabel-filtered');
         break;
-
-      case allLabelFilters.none:
-      default:
     }
   }
 }
@@ -218,6 +272,10 @@ function changeWorld() {
     id => allWorldKeys[id] === options.currentWorld,
   );
   if (worldId !== undefined) {
+    // Update Label Filter options to new world's selection
+    options.labelFilter = activeLabelFilters[worldId][0];
+    updateLabelFolder(worldId);
+
     // Can't hide labels from previous world on the same frame as switching to new world
     // Delay switching to new world slightly to prevent labels from previous world appearing in new world
     setTimeout(() => {
