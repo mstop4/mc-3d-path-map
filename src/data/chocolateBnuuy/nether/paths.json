@@ -287,5 +287,25 @@
       [-255, 67, -49],
       [-283, 67, -49]
     ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [21.5, 59, 13],
+      [21.5, 59, 69.5],
+      [27, 59, 69.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [21, 59, 69.5],
+      [16, 64, 69.5],
+      [-33.5, 64, 69.5]
+    ]
   }
 ]

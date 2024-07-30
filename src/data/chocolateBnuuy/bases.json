@@ -9,7 +9,7 @@
     "hasFood": true,
     "hasLava": true,
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": true
   },
   {
     "label": "Pointed Path Depths",
@@ -62,6 +62,18 @@
   {
     "label": "Wishbone Point",
     "location": [-252.5, 76, -42],
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Sinkhole Shore Village",
+    "location": [31, 59, 69.5],
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasBrewingStand": false,
