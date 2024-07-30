@@ -1,5 +1,7 @@
 import dataManifest from '../../data/manifest.json';
 
+export const guiWidth = 250;
+
 export const allWorldKeys: Record<string, string> = {};
 for (const world of dataManifest) {
   allWorldKeys[world.id] = world.name;
@@ -15,13 +17,14 @@ export const allColourModeKeys: Record<string, string> = {
 export const allLabelFilters: Record<string, string> = {
   none: 'None',
   bed: 'Bed',
-  basicWorkstation: 'Crafting Table + Furnace',
+  basicWorkstation: 'Crafting + Smelting',
   storage: 'Storage',
   food: 'Food Supply',
   lava: 'Lava Source',
+  smithing: 'Smithing',
   enchantingTable: 'Enchanting',
   brewingStand: 'Brewing',
-  enderChests: 'Ender Chests',
+  enderChests: 'Ender Chest',
   cherryTrees: 'Cherry Trees',
 };
 
@@ -34,18 +37,22 @@ export const allCameraPositionsKeys: Record<string, string> = {
 };
 
 export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
-export const labelFiltersAvailable = [
-  'none',
-  'bed',
-  'basicWorkstation',
-  'storage',
-  'food',
-  'lava',
-  'enchantingTable',
-  'brewingStand',
-  'enderChests',
-  'cherryTrees',
-];
+const labelFiltersAvailable: Record<string, string[]> = {
+  bunnySnek: ['none', 'enderChests', 'cherryTrees'],
+  chocolateBnuuy: [
+    'none',
+    'bed',
+    'basicWorkstation',
+    'storage',
+    'food',
+    'lava',
+    'smithing',
+    'enchantingTable',
+    'brewingStand',
+    'enderChests',
+    'cherryTrees',
+  ],
+};
 
 export const activeColourModes = colourModesAvailable.reduce(
   (obj: Record<string, string>, key) => {
@@ -55,10 +62,9 @@ export const activeColourModes = colourModesAvailable.reduce(
   {},
 );
 
-export const activeLabelFilters = labelFiltersAvailable.reduce(
-  (obj: Record<string, string>, key) => {
-    obj[key] = allLabelFilters[key];
-    return obj;
-  },
-  {},
+export const activeLabelFilters = Object.fromEntries(
+  Object.entries(labelFiltersAvailable).map(([worldId, labels]) => [
+    worldId,
+    labels.map(label => allLabelFilters[label]),
+  ]),
 );

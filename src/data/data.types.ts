@@ -66,6 +66,7 @@ export type BaseData = {
   hasBed: boolean;
   hasBasicWorkstation: boolean;
   hasStorage: boolean;
+  hasSmithing: boolean;
   hasBrewingStand: boolean;
   hasEnchantingTable: boolean;
   hasFood: boolean;

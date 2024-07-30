@@ -260,6 +260,7 @@ export function createPortal(
     hasBed,
     hasBasicWorkstation,
     hasStorage,
+    hasSmithing,
     hasBrewingStand,
     hasEnchantingTable,
     hasFood,
@@ -283,6 +284,7 @@ export function createPortal(
   portalLabel.userData.basicWorkstation = hasBasicWorkstation;
   portalLabel.userData.storage = hasStorage;
   portalLabel.userData.brewingStand = hasBrewingStand;
+  portalLabel.userData.smithing = hasSmithing;
   portalLabel.userData.enchantingTable = hasEnchantingTable;
   portalLabel.userData.food = hasFood;
   portalLabel.userData.lava = hasLava;
