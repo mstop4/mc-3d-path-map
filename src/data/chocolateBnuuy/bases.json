@@ -96,5 +96,19 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false
+  },
+  {
+    "label": "Northern Frontier Igloo",
+    "location": [-111, 67, -91.5],
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": false,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
   }
 ]
