@@ -61,6 +61,7 @@ export type DoorData = {
 export type BaseData = {
   label: string;
   location: Coordinates;
+  rating: number;
   hasEnderChest: boolean;
   hasCherryTree: boolean;
   hasBed: boolean;

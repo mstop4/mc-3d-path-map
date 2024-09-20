@@ -2,12 +2,13 @@
   {
     "label": "Monochrome Mountain",
     "location": [-21, 85, -10.5],
+    "rating": 5,
     "hasBed": true,
     "hasBasicWorkstation": true,
     "hasStorage": true,
     "hasSmithing": true,
     "hasBrewingStand": true,
-    "hasEnchantingTable": false,
+    "hasEnchantingTable": true,
     "hasFood": true,
     "hasLava": true,
     "hasEnderChest": true,
@@ -16,6 +17,7 @@
   {
     "label": "Pointed Path Depths",
     "location": [24, 59, 11.5],
+    "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasStorage": false,
@@ -30,6 +32,7 @@
   {
     "label": "Pointed Path City",
     "location": [57, 59, -24.5],
+    "rating": 3,
     "hasBed": true,
     "hasBasicWorkstation": true,
     "hasStorage": true,
@@ -44,6 +47,7 @@
   {
     "label": "Donut Cover Village",
     "location": [-33.5, 64, 92],
+    "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasStorage": true,
@@ -58,6 +62,7 @@
   {
     "label": "Stray Heights Village",
     "location": [-42, 110, -54.5],
+    "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasStorage": true,
@@ -72,6 +77,7 @@
   {
     "label": "Wishbone Point",
     "location": [-252.5, 76, -42],
+    "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasStorage": false,
@@ -86,6 +92,7 @@
   {
     "label": "Sinkhole Shore Village",
     "location": [31, 59, 69.5],
+    "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
     "hasStorage": false,
@@ -100,6 +107,7 @@
   {
     "label": "Northern Frontier Igloo",
     "location": [-111, 67, -91.5],
+    "rating": 1,
     "hasBed": true,
     "hasBasicWorkstation": true,
     "hasStorage": false,
@@ -109,6 +117,21 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Crystal Hollow Mountain",
+    "location": [-27.5, 64, 60],
+    "rating": 1,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
     "hasCherryTree": false
   }
 ]

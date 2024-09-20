@@ -78,5 +78,15 @@
       [-113, 67, -93],
       [-112, 70, -90]
     ]
+  },
+  {
+    "label": "Crystal Hollow Mountain Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-28, 64, 60],
+      [-26, 67, 62]
+    ]
   }
 ]

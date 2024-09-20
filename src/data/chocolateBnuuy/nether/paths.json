@@ -387,5 +387,23 @@
       [-76, 71, -22],
       [-68, 72, -12]
     ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-27.5, 64, 69.5],
+      [-27.5, 64, 62]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-33.5, 64, 61.5],
+      [-28, 64, 61.5]
+    ]
   }
 ]
