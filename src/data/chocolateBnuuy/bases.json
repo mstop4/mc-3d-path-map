@@ -133,5 +133,20 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false
+  },
+  {
+    "label": "Crystal Cavity Mountain",
+    "location": [-56, 64, 20.5],
+    "rating": 1,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
   }
 ]
