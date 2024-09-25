@@ -171,6 +171,20 @@ function setupWorld(
       zMax: 0,
     },
     cameraStates: [],
+    pathStats: {
+      pathTypeLengths: {
+        ugTunnel: 0,
+        ogTunnel: 0,
+        cBridge: 0,
+        oBridge: 0,
+        exPath: 0,
+        nCave: 0,
+        ladder: 0,
+      },
+      activePathsLength: 0,
+      deprecatedPathsLength: 0,
+      totalLength: 0,
+    },
   };
 
   const { mapScene } = newWorld;
@@ -243,6 +257,7 @@ function setupWorld(
 
   initMapObjects<PathData>(pathsData, (object, id) => {
     const { pathMesh, debugPathLabel } = createPath(newWorld, object, id);
+
     if (debugPathLabel !== null) {
       mapScene.add(debugPathLabel);
     }
@@ -285,6 +300,7 @@ function setupWorld(
 
   updateInstancedMeshes(newWorld);
   calculateMapCenter(newWorld);
+  calculateTotalPathLength(newWorld);
   setupCameraStates(newWorld);
 
   allWorlds[worldName] = newWorld;
@@ -325,4 +341,11 @@ function calculateMapCenter(world: WorldData) {
   mapBounds.center[0] = (xMin + xMax) / 2;
   mapBounds.center[1] = (yMin + yMax) / 2;
   mapBounds.center[2] = (zMin + zMax) / 2;
+}
+
+function calculateTotalPathLength(world: WorldData) {
+  const { pathStats } = world;
+  pathStats.totalLength =
+    pathStats.deprecatedPathsLength + pathStats.activePathsLength;
+  console.log(pathStats);
 }

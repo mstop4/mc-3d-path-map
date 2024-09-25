@@ -1,4 +1,4 @@
-type PathTypes =
+export type PathTypes =
   | 'ugTunnel'
   | 'ogTunnel'
   | 'cBridge'

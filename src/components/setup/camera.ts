@@ -49,7 +49,7 @@ export function setupCameraStates(world: WorldData) {
 
   const xLength = xMax - xMin;
   const zLength = zMax - zMin;
-  const diagonalLength = Math.sqrt(Math.pow(xLength, 2) + Math.pow(zLength, 2));
+  const diagonalLength = Math.sqrt(xLength ** 2 + zLength ** 2);
 
   saveCameraState(world, new Vector3(...center), initialCameraPosition, 1); // Isometric Camera
   saveCameraState(

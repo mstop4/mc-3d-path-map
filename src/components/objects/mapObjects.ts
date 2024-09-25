@@ -20,8 +20,10 @@ import {
   RoomData,
   isCuboidRoomData,
   isCylindricalRoomData,
+  PathTypes,
 } from '../../data/data.types';
 import { WorldData } from '../setup/mapScene.types';
+import { PathObject } from './mapObjects.types';
 
 const dummy = new Object3D();
 const upVector = new Vector3(0, 1, 0);
@@ -64,10 +66,7 @@ export function toggleDeprecatedDoors(world: WorldData, visible: boolean) {
 
 export function createPath(world: WorldData, pathData: PathData, id: number) {
   const { points: rawPoints, type, visible, deprecated } = pathData;
-  const returnValues: {
-    pathMesh: null | LOD;
-    debugPathLabel: null | CSS2DObject;
-  } = {
+  const returnValues: PathObject = {
     pathMesh: null,
     debugPathLabel: null,
   };
@@ -131,6 +130,8 @@ export function createPath(world: WorldData, pathData: PathData, id: number) {
   world.pathObjects.push(pathLOD);
 
   returnValues.pathMesh = pathLOD;
+
+  _addPathLengthDataToWorld(world, rawPoints, type, deprecated);
 
   if (import.meta.env.DEV && featureConfig.debugForceLabels) {
     const labelDiv = document.createElement('div');
@@ -323,4 +324,39 @@ function getPathCenter(rawPoints: Coordinates[]) {
     coordsSum[1] / rawPoints.length,
     coordsSum[2] / rawPoints.length,
   ];
+}
+
+function _getPathLength(rawPoints: Coordinates[]) {
+  const length: number = rawPoints.reduce(
+    (totalLength, curPoint, i, allPoints) => {
+      if (i === 0) return totalLength;
+
+      const a = Math.abs(curPoint[0] - allPoints[i - 1][0]);
+      const b = Math.abs(curPoint[1] - allPoints[i - 1][1]);
+      const c = Math.abs(curPoint[2] - allPoints[i - 1][2]);
+      const curLength = Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+
+      return totalLength + curLength;
+    },
+    0,
+  );
+
+  return length;
+}
+
+function _addPathLengthDataToWorld(
+  world: WorldData,
+  rawPoints: Coordinates[],
+  type: PathTypes,
+  deprecated: boolean,
+) {
+  const length = _getPathLength(rawPoints);
+  const { pathStats } = world;
+  pathStats.pathTypeLengths[type] += length;
+
+  if (deprecated) {
+    pathStats.deprecatedPathsLength += length;
+  } else {
+    pathStats.activePathsLength += length;
+  }
 }
