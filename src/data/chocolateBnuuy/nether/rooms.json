@@ -88,5 +88,15 @@
       [-28, 64, 60],
       [-26, 67, 62]
     ]
+  },
+  {
+    "label": "Miracle Diamond Island Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [62, 69, 218],
+      [65, 72, 221]
+    ]
   }
 ]

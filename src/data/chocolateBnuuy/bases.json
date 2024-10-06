@@ -148,5 +148,20 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false
+  },
+  {
+    "label": "Miracle Diamond Island",
+    "location": [63.5, 69, 222],
+    "rating": 2,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false
   }
 ]
