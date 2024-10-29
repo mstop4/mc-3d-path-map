@@ -92,10 +92,10 @@
   {
     "label": "Sinkhole Shore Village",
     "location": [31, 59, 69.5],
-    "rating": 0,
-    "hasBed": false,
+    "rating": 2,
+    "hasBed": true,
     "hasBasicWorkstation": false,
-    "hasStorage": false,
+    "hasStorage": true,
     "hasSmithing": false,
     "hasBrewingStand": false,
     "hasEnchantingTable": false,
@@ -152,7 +152,7 @@
   {
     "label": "Miracle Diamond Island",
     "location": [63.5, 69, 222],
-    "rating": 2,
+    "rating": 3,
     "hasBed": true,
     "hasBasicWorkstation": true,
     "hasStorage": true,
@@ -162,6 +162,36 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": true,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Trial Chamber Trial Version",
+    "location": [-61, 64, -38.5],
+    "rating": 1,
+    "hasBed": true,
+    "hasBasicWorkstation": false,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false
+  },
+  {
+    "label": "Sinkhole Plains Village",
+    "location": [-117, 78, 76.5],
+    "rating": 0,
+    "hasBed": false,
+    "hasBasicWorkstation": false,
+    "hasStorage": false,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
     "hasCherryTree": false
   }
 ]

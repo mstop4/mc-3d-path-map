@@ -98,5 +98,25 @@
       [62, 69, 218],
       [65, 72, 221]
     ]
+  },
+  {
+    "label": "Trial Chamber Trial Version Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-60, 64, -40],
+      [-55, 67, -37]
+    ]
+  },
+  {
+    "label": "Sinkhole Plains Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-116, 78, 75],
+      [-113, 81, 78]
+    ]
   }
 ]
