@@ -138,5 +138,19 @@
     "orientation": "x",
     "deprecated": false,
     "location": [42, 75, 72]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-55.5, 64, -42]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-113, 78, 76.5]
   }
 ]
