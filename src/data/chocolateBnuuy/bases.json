@@ -12,7 +12,9 @@
     "hasFood": true,
     "hasLava": true,
     "hasEnderChest": true,
-    "hasCherryTree": true
+    "hasCherryTree": true,
+    "dogs": 1,
+    "cats": 0
   },
   {
     "label": "Pointed Path Depths",
@@ -27,7 +29,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Pointed Path City",
@@ -42,7 +46,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Donut Cover Village",
@@ -57,7 +63,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Stray Heights Village",
@@ -72,7 +80,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Wishbone Point",
@@ -87,7 +97,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Sinkhole Shore Village",
@@ -102,7 +114,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Northern Frontier Igloo",
@@ -117,7 +131,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Crystal Hollow Mountain",
@@ -132,7 +148,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Crystal Cavity Mountain",
@@ -147,7 +165,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Miracle Diamond Island",
@@ -156,13 +176,15 @@
     "hasBed": true,
     "hasBasicWorkstation": true,
     "hasStorage": true,
-    "hasSmithing": false,
+    "hasSmithing": true,
     "hasBrewingStand": false,
     "hasEnchantingTable": false,
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": true,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Trial Chamber Trial Version",
@@ -177,7 +199,9 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
   },
   {
     "label": "Sinkhole Plains Village",
@@ -192,6 +216,25 @@
     "hasFood": false,
     "hasLava": false,
     "hasEnderChest": false,
-    "hasCherryTree": false
+    "hasCherryTree": false,
+    "dogs": 0,
+    "cats": 0
+  },
+  {
+    "label": "Northwall Village",
+    "location": [-42.5, 86, -119],
+    "rating": 0,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": true,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "dogs": 2,
+    "cats": 0
   }
 ]

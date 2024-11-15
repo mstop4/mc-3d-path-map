@@ -118,5 +118,15 @@
       [-116, 78, 75],
       [-113, 81, 78]
     ]
+  },
+  {
+    "label": "Northwall Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-44, 86, -125],
+      [-41, 89, -120]
+    ]
   }
 ]

@@ -152,5 +152,33 @@
     "orientation": "x",
     "deprecated": false,
     "location": [-113, 78, 76.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-27, 95, -66.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-19.5, 96, -122]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-19.5, 96, -129]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-43.5, 96, -129]
   }
 ]
