@@ -72,4 +72,6 @@ export type BaseData = {
   hasEnchantingTable: boolean;
   hasFood: boolean;
   hasLava: boolean;
+  dogs: number;
+  cats: number;
 };

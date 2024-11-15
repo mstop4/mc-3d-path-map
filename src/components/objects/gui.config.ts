@@ -26,6 +26,8 @@ export const allLabelFilters: Record<string, string> = {
   brewingStand: 'Brewing',
   enderChests: 'Ender Chest',
   cherryTrees: 'Cherry Trees',
+  dogs: 'Tamed Wolves',
+  cats: 'Tamed Cats',
 };
 
 export const allCameraPositionsKeys: Record<string, string> = {
@@ -51,6 +53,7 @@ const labelFiltersAvailable: Record<string, string[]> = {
     'brewingStand',
     'enderChests',
     'cherryTrees',
+    'dogs',
   ],
 };
 

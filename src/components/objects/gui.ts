@@ -40,7 +40,7 @@ function updateLabelFolder(worldId: string) {
 
   labelFolder
     .add(options, 'labelFilter', Object.values(activeLabelFilters[worldId]))
-    .name('Filter Amenities')
+    .name('Filter')
     .onChange(changeLabelFilter);
 }
 
@@ -74,7 +74,7 @@ export function setupGUI() {
       'labelFilter',
       Object.values(activeLabelFilters[startingWorldKey]),
     )
-    .name('Filter Amenities')
+    .name('Filter')
     .onChange(changeLabelFilter);
 
   const showHideFolder = gui.addFolder('Show/Hide');
@@ -215,6 +215,11 @@ function changeLabelFilter() {
 
       case allLabelFilters.brewingStand:
         if (!label.userData.brewingStand)
+          label.element.classList.add('portalLabel-filtered');
+        break;
+
+      case allLabelFilters.dogs:
+        if (!label.userData.dogs)
           label.element.classList.add('portalLabel-filtered');
         break;
 

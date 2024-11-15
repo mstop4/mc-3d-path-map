@@ -265,6 +265,8 @@ export function createPortal(
     hasEnchantingTable,
     hasFood,
     hasLava,
+    dogs,
+    cats,
   } = portalData;
 
   // Create portal marker
@@ -290,6 +292,9 @@ export function createPortal(
   portalLabel.userData.lava = hasLava;
   portalLabel.userData.enderChest = hasEnderChest;
   portalLabel.userData.cherryTree = hasCherryTree;
+  portalLabel.userData.dogs = dogs > 0;
+  portalLabel.userData.cats = cats > 0;
+
   world.portalLabels.push(portalLabel);
 
   portalLabel.position.set(
