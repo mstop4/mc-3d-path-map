@@ -180,5 +180,47 @@
     "orientation": "z",
     "deprecated": false,
     "location": [-43.5, 96, -129]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [178.5, 101, 281]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [178.5, 101, 270]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [177, 91, 266.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [104.5, 83, 234]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [22.5, 59, -106]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [95, 59, -95.5]
   }
 ]

@@ -128,5 +128,45 @@
       [-44, 86, -125],
       [-41, 89, -120]
     ]
+  },
+  {
+    "label": "Collection Woods Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [178, 91, 265],
+      [182, 94, 268]
+    ]
+  },
+  {
+    "label": "Collection Woods Bunker",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [175, 101, 271],
+      [182, 103, 280]
+    ]
+  },
+  {
+    "label": "Snow Terrace Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [21, 59, -112],
+      [24, 62, -107]
+    ]
+  },
+  {
+    "label": "Emergent Revenant Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [96, 59, -97],
+      [100, 62, -94]
+    ]
   }
 ]
