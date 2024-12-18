@@ -222,5 +222,19 @@
     "orientation": "x",
     "deprecated": false,
     "location": [95, 59, -95.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [136, 77, 203.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [137, 67, 200.5]
   }
 ]

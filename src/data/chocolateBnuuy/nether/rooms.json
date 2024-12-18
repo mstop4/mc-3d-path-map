@@ -168,5 +168,15 @@
       [96, 59, -97],
       [100, 62, -94]
     ]
+  },
+  {
+    "label": "Slime Time Trial Chamber Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [100, 67, 240],
+      [103, 70, 243]
+    ]
   }
 ]
