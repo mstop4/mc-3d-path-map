@@ -161,71 +161,22 @@ function changeColourMode() {
   }
 }
 
+function _addFilteredClass(key: string, label: CSS2DObject) {
+  if (label.userData[key] === false) {
+    label.element.classList.add('portalLabel-filtered');
+  }
+}
+
 function changeLabelFilter() {
   const { portalLabels, roomLabels } = getCurrentWorld();
+  const filterKey =
+    Object.keys(allLabelFilters).find(
+      key => allLabelFilters[key] === options.labelFilter,
+    ) ?? '';
 
   for (const label of portalLabels) {
     label.element.className = 'portalLabel';
-
-    switch (options.labelFilter) {
-      case allLabelFilters.enderChests:
-        if (!label.userData.enderChest)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.cherryTrees:
-        if (!label.userData.cherryTree)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.bed:
-        if (!label.userData.bed)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.basicWorkstation:
-        if (!label.userData.basicWorkstation)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.storage:
-        if (!label.userData.storage)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.food:
-        if (!label.userData.food)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.lava:
-        if (!label.userData.lava)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.smithing:
-        if (!label.userData.smithing)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.enchantingTable:
-        if (!label.userData.enchantingTable)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.brewingStand:
-        if (!label.userData.brewingStand)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.dogs:
-        if (!label.userData.dogs)
-          label.element.classList.add('portalLabel-filtered');
-        break;
-
-      case allLabelFilters.none:
-      default:
-    }
+    _addFilteredClass(filterKey, label);
   }
 
   for (const label of roomLabels) {

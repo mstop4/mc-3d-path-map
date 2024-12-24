@@ -74,4 +74,10 @@ export type BaseData = {
   hasLava: boolean;
   dogs: number;
   cats: number;
+  village: boolean;
+  ancientCity: boolean;
+  trialChamber: boolean;
+  stronghold: boolean;
+  igloo: boolean;
+  mineshaft: boolean;
 };

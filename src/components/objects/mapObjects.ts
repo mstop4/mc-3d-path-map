@@ -265,6 +265,12 @@ export function createPortal(
     hasEnchantingTable,
     hasFood,
     hasLava,
+    village,
+    ancientCity,
+    trialChamber,
+    stronghold,
+    igloo,
+    mineshaft,
     dogs,
     cats,
   } = portalData;
@@ -292,6 +298,12 @@ export function createPortal(
   portalLabel.userData.lava = hasLava;
   portalLabel.userData.enderChest = hasEnderChest;
   portalLabel.userData.cherryTree = hasCherryTree;
+  portalLabel.userData.village = village;
+  portalLabel.userData.ancientCity = ancientCity;
+  portalLabel.userData.trialChamber = trialChamber;
+  portalLabel.userData.stronghold = stronghold;
+  portalLabel.userData.igloo = igloo;
+  portalLabel.userData.mineshaft = mineshaft;
   portalLabel.userData.dogs = dogs > 0;
   portalLabel.userData.cats = cats > 0;
 

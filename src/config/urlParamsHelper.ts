@@ -1,6 +1,6 @@
 import dataManifest from '../data/manifest.json';
 
-const defaultWorldKey = 'bunnySnek';
+const defaultWorldKey = 'chocolateBnuuy';
 export const startingWorldKey = getStartingWorld();
 
 function getStartingWorld() {

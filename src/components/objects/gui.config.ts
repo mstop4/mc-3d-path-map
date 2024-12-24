@@ -24,8 +24,14 @@ export const allLabelFilters: Record<string, string> = {
   smithing: 'Smithing',
   enchantingTable: 'Enchanting',
   brewingStand: 'Brewing',
-  enderChests: 'Ender Chest',
-  cherryTrees: 'Cherry Trees',
+  enderChest: 'Ender Chest',
+  cherryTree: 'Cherry Trees',
+  village: 'Villages',
+  ancientCity: 'Ancient Cities',
+  trialChamber: 'Trial Chambers',
+  stronghold: 'Strongholds',
+  igloo: 'Igloos',
+  mineshaft: 'Mineshafts',
   dogs: 'Tamed Wolves',
   cats: 'Tamed Cats',
 };
@@ -40,7 +46,7 @@ export const allCameraPositionsKeys: Record<string, string> = {
 
 export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
 const labelFiltersAvailable: Record<string, string[]> = {
-  bunnySnek: ['none', 'enderChests', 'cherryTrees'],
+  bunnySnek: ['none', 'enderChest', 'cherryTree'],
   chocolateBnuuy: [
     'none',
     'bed',
@@ -51,9 +57,16 @@ const labelFiltersAvailable: Record<string, string[]> = {
     'smithing',
     'enchantingTable',
     'brewingStand',
-    'enderChests',
-    'cherryTrees',
+    'enderChest',
+    'cherryTree',
+    'village',
+    'ancientCity',
+    'trialChamber',
+    'stronghold',
+    'igloo',
+    'mineshaft',
     'dogs',
+    'cats',
   ],
 };
 
