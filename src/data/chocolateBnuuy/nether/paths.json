@@ -1348,5 +1348,184 @@
       [137, 67, 200.5],
       [139, 67, 200.5]
     ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-285, 67, -30],
+      [-332, 67, -30]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-332, 67, -30],
+      [-341, 67, -30]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-341, 67, -34],
+      [-341, 67, -16]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-341, 67, -16],
+      [-341, 67, 93]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-332, 67, 27],
+      [-351, 67, 27],
+      [-356, 68, 29],
+      [-356, 72, 25],
+      [-355, 73, 25],
+      [-354, 73, 31],
+      [-352, 74, 36],
+      [-356, 78, 36],
+      [-356, 79, 35]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-356, 79, 35],
+      [-350, 79, 34],
+      [-282, 79, 34]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-328, 79, 8],
+      [-328, 79, 57]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-328, 79, 57],
+      [-328, 79, 94]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-348.5, 67, 27],
+      [-348.5, 67, 30]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-348.5, 67, 30],
+      [-348.5, 63, 34],
+      [-360, 64, 42],
+      [-367, 62, 44],
+      [-367, 61, 54],
+      [-361.5, 62, 60]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-341, 67, 63.5],
+      [-343, 67, 63.5],
+      [-348, 62, 63.5],
+      [-357, 62, 63.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-364, 62, 63.5],
+      [-379, 62, 63.5]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-379, 62, 63.5],
+      [-386, 62, 63.5],
+      [-395, 61, 61.5],
+      [-397, 63, 61.5],
+      [-401.5, 63, 61.5],
+      [-401.5, 63, 63],
+      [-403.5, 61, 68],
+      [-406.5, 61, 75],
+      [-407.5, 59, 80],
+      [-412.5, 59, 89],
+      [-413.5, 61, 94],
+      [-410.5, 61, 101]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-410.5, 61, 101],
+      [-410.5, 61, 107.5],
+      [-449.5, 61, 107.5],
+      [-449.5, 61, 108]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-449.5, 61, 108],
+      [-449.5, 64, 111],
+      [-449.5, 64, 112.5],
+      [-450, 64, 112.5],
+      [-452, 66, 112.5],
+      [-453.5, 66, 112.5],
+      [-453.5, 66, 108],
+      [-453.5, 68, 106],
+      [-453.5, 68, 104.5],
+      [-459, 68, 104.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-459, 68, 104.5],
+      [-461.5, 68, 104.5],
+      [-461.5, 68, 106]
+    ]
   }
 ]
