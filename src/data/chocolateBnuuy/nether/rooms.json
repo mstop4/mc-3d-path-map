@@ -105,8 +105,8 @@
     "type": "ugRoom",
     "shape": "cuboid",
     "corners": [
-      [-60, 64, -40],
-      [-55, 67, -37]
+      [-61, 47, -40],
+      [-58, 50, -38]
     ]
   },
   {
@@ -197,6 +197,16 @@
     "corners": [
       [-463, 68, 107],
       [-460, 71, 110]
+    ]
+  },
+  {
+    "label": "Twinkle Toes City Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-31, 29, -77],
+      [-28, 32, -75]
     ]
   }
 ]
