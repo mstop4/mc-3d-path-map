@@ -1,14 +1,14 @@
 export default {
-  '**/*.ts': () => [
-    `npm run prettier`,
-    'npm run check-ts',
-    `npm run lint`,
+  '*.ts': [
+    'prettier --write',
+    'tsc-files --noEmit --pretty',
+    'eslint --fix'
   ],
-  '**/*.(js|json)': () => [
-    `npm run prettier`,
-    `npm run lint`,
+  '*.js': [
+    'prettier --write',
+    'eslint --fix'
   ],
-  '**/*.css': () => [
-    `npm run prettier`,
+  '*.{json,css}': [
+    'prettier --write'
   ]
 };
