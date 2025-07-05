@@ -228,5 +228,15 @@
       [-118, 63, -132],
       [-115, 66, -128]
     ]
+  },
+  {
+    "label": "Patch Island Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [96, 68, 218],
+      [99, 71, 220]
+    ]
   }
 ]
