@@ -16,9 +16,9 @@
   {
     "quantity": 2,
     "type": "conn",
-    "orientation": "x",
+    "orientation": "z",
     "deprecated": false,
-    "location": [53, 59, -24.5]
+    "location": [57.5, 39, -26]
   },
   {
     "quantity": 2,
