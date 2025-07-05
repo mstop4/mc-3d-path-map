@@ -299,5 +299,12 @@
     "orientation": "z",
     "deprecated": false,
     "location": [216.5, 35, -231]
+  },
+  {
+    "quantity": 1,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-114, 63, -129]
   }
 ]

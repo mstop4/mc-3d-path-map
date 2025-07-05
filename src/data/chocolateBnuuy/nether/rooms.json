@@ -218,5 +218,15 @@
       [212, 35, -238],
       [221, 38, -232]
     ]
+  },
+  {
+    "label": "Lava Curtain Stronghold Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-118, 63, -132],
+      [-115, 66, -128]
+    ]
   }
 ]
