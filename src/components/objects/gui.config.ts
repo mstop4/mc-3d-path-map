@@ -32,6 +32,7 @@ export const allLabelFilters: Record<string, string> = {
   stronghold: 'Strongholds',
   igloo: 'Igloos',
   mineshaft: 'Mineshafts',
+  oceanMonument: 'Ocean Monuments',
   dogs: 'Tamed Wolves',
   cats: 'Tamed Cats',
 };
@@ -65,6 +66,7 @@ const labelFiltersAvailable: Record<string, string[]> = {
     'stronghold',
     'igloo',
     'mineshaft',
+    'oceanMonument',
     'dogs',
     'cats',
   ],

@@ -271,6 +271,7 @@ export function createPortal(
     stronghold,
     igloo,
     mineshaft,
+    oceanMonument,
     dogs,
     cats,
   } = portalData;
@@ -304,6 +305,7 @@ export function createPortal(
   portalLabel.userData.stronghold = stronghold;
   portalLabel.userData.igloo = igloo;
   portalLabel.userData.mineshaft = mineshaft;
+  portalLabel.userData.oceanMonument = oceanMonument;
   portalLabel.userData.dogs = dogs > 0;
   portalLabel.userData.cats = cats > 0;
 

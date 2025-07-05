@@ -80,4 +80,5 @@ export type BaseData = {
   stronghold: boolean;
   igloo: boolean;
   mineshaft: boolean;
+  oceanMonument: boolean;
 };
