@@ -26,7 +26,7 @@
     "prettier": "^3.3.2",
     "tsc-files": "^1.1.4",
     "typescript": "^5.5.3",
-    "vite": "^5.3.3"
+    "vite": "^7.0.2"
   },
   "dependencies": {
     "colorbrewer": "^1.5.6",
