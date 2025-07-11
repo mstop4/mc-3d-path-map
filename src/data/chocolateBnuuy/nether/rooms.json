@@ -238,5 +238,15 @@
       [96, 68, 218],
       [99, 71, 220]
     ]
+  },
+  {
+    "label": "Sublower Base Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [7, 35, -53],
+      [10, 38, -48]
+    ]
   }
 ]
