@@ -308,7 +308,7 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
-    "dogs": 0,
+    "dogs": 3,
     "cats": 0
   },
   {
@@ -445,7 +445,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
-    "village": false,
+    "village": true,
     "ancientCity": false,
     "trialChamber": false,
     "stronghold": false,
