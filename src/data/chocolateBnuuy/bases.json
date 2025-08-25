@@ -598,5 +598,29 @@
     "oceanMonument": false,
     "dogs": 0,
     "cats": 0
+  },
+  {
+    "label": "Fractured Swamp",
+    "location": [357, 81, -162],
+    "rating": 3,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "village": false,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "dogs": 1,
+    "cats": 0
   }
 ]

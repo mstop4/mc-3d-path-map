@@ -327,5 +327,47 @@
     "orientation": "z",
     "deprecated": false,
     "location": [-45.5, 80, -133]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [355, 81, -157]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [355, 81, -166]
+  },
+  {
+    "quantity": 1,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [323, 100, -163]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [248.5, 101, -170]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [308.5, 100, -169]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [200.5, 52, -189]
   }
 ]

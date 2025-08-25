@@ -248,5 +248,15 @@
       [7, 35, -53],
       [10, 38, -48]
     ]
+  },
+  {
+    "label": "Fractured Swamp Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [355, 81, -165],
+      [359, 84, -158]
+    ]
   }
 ]
