@@ -343,22 +343,22 @@
     "location": [355, 81, -166]
   },
   {
-    "quantity": 1,
-    "type": "ex",
+    "quantity": 2,
+    "type": "conn",
     "orientation": "x",
     "deprecated": false,
-    "location": [323, 100, -163]
+    "location": [313, 100, -162.5]
   },
   {
     "quantity": 2,
-    "type": "ex",
+    "type": "conn",
     "orientation": "z",
     "deprecated": false,
     "location": [248.5, 101, -170]
   },
   {
     "quantity": 2,
-    "type": "ex",
+    "type": "conn",
     "orientation": "z",
     "deprecated": false,
     "location": [308.5, 100, -169]
@@ -369,5 +369,19 @@
     "orientation": "z",
     "deprecated": false,
     "location": [200.5, 52, -189]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [307.5, 100, -160]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [304, 102, -164.5]
   }
 ]

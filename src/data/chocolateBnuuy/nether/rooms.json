@@ -258,5 +258,15 @@
       [355, 81, -165],
       [359, 84, -158]
     ]
+  },
+  {
+    "label": "Ghast Perch Frog Chamber",
+    "displayLabel": true,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [307, 100, -168],
+      [312, 102, -161]
+    ]
   }
 ]
