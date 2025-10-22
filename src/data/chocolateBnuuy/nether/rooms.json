@@ -268,5 +268,25 @@
       [307, 100, -168],
       [312, 102, -161]
     ]
+  },
+  {
+    "label": "Dive Spire Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-223, 70, -170],
+      [-218, 73, -164]
+    ]
+  },
+  {
+    "label": "Thirsty Temple Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-151, 54, -281],
+      [-144, 57, -276]
+    ]
   }
 ]

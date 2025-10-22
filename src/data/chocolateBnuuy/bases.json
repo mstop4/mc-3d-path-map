@@ -20,8 +20,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
-    "dogs": 1,
-    "cats": 0
+    "desertTemple": false,
+    "dogs": 2,
+    "cats": 0,
+    "foxes": 1,
+    "happyGhasts": 1
   },
   {
     "label": "Pointed Path Depths",
@@ -44,8 +47,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Pointed Path City",
@@ -68,8 +74,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Donut Cover Village",
@@ -92,8 +101,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Stray Heights Village",
@@ -116,8 +128,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Wishbone Point",
@@ -140,8 +155,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Sinkhole Shore Village",
@@ -164,8 +182,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Northern Frontier Igloo",
@@ -188,8 +209,11 @@
     "igloo": true,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Crystal Hollow Mountain",
@@ -212,8 +236,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Crystal Cavity Mountain",
@@ -236,8 +263,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Miracle Diamond Island",
@@ -260,8 +290,11 @@
     "igloo": false,
     "mineshaft": true,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Trial Chamber Trial Version",
@@ -284,8 +317,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Sinkhole Plains Village",
@@ -308,8 +344,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 3,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Northwall Village",
@@ -332,8 +371,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 2,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Collection Woods",
@@ -356,8 +398,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Snow Terrace Village",
@@ -380,8 +425,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Emergent Revenant Village",
@@ -404,8 +452,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Slime Time Trial Chamber",
@@ -428,8 +479,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "??? Village",
@@ -452,8 +506,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Impaled Island",
@@ -476,8 +533,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Twinkle Toes City",
@@ -500,8 +560,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Lava Curtain Stronghold",
@@ -524,8 +587,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Slime Time Temple",
@@ -548,8 +614,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": true,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Patch Island Village",
@@ -572,8 +641,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 1
+    "cats": 1,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Sublower Base",
@@ -596,8 +668,11 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
+    "desertTemple": false,
     "dogs": 0,
-    "cats": 0
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   },
   {
     "label": "Fractured Swamp",
@@ -620,7 +695,64 @@
     "igloo": false,
     "mineshaft": false,
     "oceanMonument": false,
-    "dogs": 1,
-    "cats": 0
+    "desertTemple": false,
+    "dogs": 2,
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
+  },
+  {
+    "label": "Dive Spire",
+    "location": [-221, 70, -167],
+    "rating": 1,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "village": false,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "desertTemple": false,
+    "dogs": 0,
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
+  },
+  {
+    "label": "Thirsty Temple",
+    "location": [-147.5, 54, -278],
+    "rating": 2,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "village": false,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "desertTemple": true,
+    "dogs": 0,
+    "cats": 0,
+    "foxes": 0,
+    "happyGhasts": 0
   }
 ]
