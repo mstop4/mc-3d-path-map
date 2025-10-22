@@ -74,6 +74,8 @@ export type BaseData = {
   hasLava: boolean;
   dogs: number;
   cats: number;
+  foxes: number;
+  happyGhasts: number;
   village: boolean;
   ancientCity: boolean;
   trialChamber: boolean;
@@ -81,4 +83,5 @@ export type BaseData = {
   igloo: boolean;
   mineshaft: boolean;
   oceanMonument: boolean;
+  desertTemple: boolean;
 };
