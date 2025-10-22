@@ -33,8 +33,11 @@ export const allLabelFilters: Record<string, string> = {
   igloo: 'Igloos',
   mineshaft: 'Mineshafts',
   oceanMonument: 'Ocean Monuments',
+  desertTemple: 'Desert Temples',
   dogs: 'Tamed Wolves',
   cats: 'Tamed Cats',
+  foxes: 'Tamed Foxes',
+  happyGhasts: 'Happy Ghasts',
 };
 
 export const allCameraPositionsKeys: Record<string, string> = {
@@ -48,28 +51,7 @@ export const allCameraPositionsKeys: Record<string, string> = {
 export const colourModesAvailable = ['default', 'cbf', 'ext', 'nat'];
 const labelFiltersAvailable: Record<string, string[]> = {
   bunnySnek: ['none', 'enderChest', 'cherryTree'],
-  chocolateBnuuy: [
-    'none',
-    'bed',
-    'basicWorkstation',
-    'storage',
-    'food',
-    'lava',
-    'smithing',
-    'enchantingTable',
-    'brewingStand',
-    'enderChest',
-    'cherryTree',
-    'village',
-    'ancientCity',
-    'trialChamber',
-    'stronghold',
-    'igloo',
-    'mineshaft',
-    'oceanMonument',
-    'dogs',
-    'cats',
-  ],
+  chocolateBnuuy: Object.keys(allLabelFilters),
 };
 
 export const activeColourModes = colourModesAvailable.reduce(

@@ -255,25 +255,13 @@ export function createPortal(
   const {
     label,
     location,
-    hasEnderChest,
-    hasCherryTree,
-    hasBed,
-    hasBasicWorkstation,
-    hasStorage,
-    hasSmithing,
-    hasBrewingStand,
-    hasEnchantingTable,
-    hasFood,
-    hasLava,
-    village,
-    ancientCity,
-    trialChamber,
-    stronghold,
-    igloo,
-    mineshaft,
-    oceanMonument,
+    // eslint-disable-next-line
+    rating, // not used yet
     dogs,
     cats,
+    foxes,
+    happyGhasts,
+    ...userData
   } = portalData;
 
   // Create portal marker
@@ -289,25 +277,11 @@ export function createPortal(
 
   const portalLabel = new CSS2DObject(portalDiv);
   portalLabel.center.set(0.5, 1.5);
-  portalLabel.userData.bed = hasBed;
-  portalLabel.userData.basicWorkstation = hasBasicWorkstation;
-  portalLabel.userData.storage = hasStorage;
-  portalLabel.userData.brewingStand = hasBrewingStand;
-  portalLabel.userData.smithing = hasSmithing;
-  portalLabel.userData.enchantingTable = hasEnchantingTable;
-  portalLabel.userData.food = hasFood;
-  portalLabel.userData.lava = hasLava;
-  portalLabel.userData.enderChest = hasEnderChest;
-  portalLabel.userData.cherryTree = hasCherryTree;
-  portalLabel.userData.village = village;
-  portalLabel.userData.ancientCity = ancientCity;
-  portalLabel.userData.trialChamber = trialChamber;
-  portalLabel.userData.stronghold = stronghold;
-  portalLabel.userData.igloo = igloo;
-  portalLabel.userData.mineshaft = mineshaft;
-  portalLabel.userData.oceanMonument = oceanMonument;
+  portalLabel.userData = userData;
   portalLabel.userData.dogs = dogs > 0;
   portalLabel.userData.cats = cats > 0;
+  portalLabel.userData.foxes = foxes > 0;
+  portalLabel.userData.happyGhasts = happyGhasts > 0;
 
   world.portalLabels.push(portalLabel);
 
