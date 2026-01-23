@@ -277,7 +277,7 @@
     "hasBasicWorkstation": true,
     "hasStorage": true,
     "hasSmithing": true,
-    "hasBrewingStand": false,
+    "hasBrewingStand": true,
     "hasEnchantingTable": false,
     "hasFood": true,
     "hasLava": true,
