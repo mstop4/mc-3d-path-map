@@ -75,6 +75,7 @@ export type BaseData = {
   dogs: number;
   cats: number;
   foxes: number;
+  horses: number;
   happyGhasts: number;
   village: boolean;
   ancientCity: boolean;

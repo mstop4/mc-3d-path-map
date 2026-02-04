@@ -260,6 +260,7 @@ export function createPortal(
     dogs,
     cats,
     foxes,
+    horses,
     happyGhasts,
     ...userData
   } = portalData;
@@ -281,6 +282,7 @@ export function createPortal(
   portalLabel.userData.dogs = dogs > 0;
   portalLabel.userData.cats = cats > 0;
   portalLabel.userData.foxes = foxes > 0;
+  portalLabel.userData.horses = horses > 0;
   portalLabel.userData.happyGhasts = happyGhasts > 0;
 
   world.portalLabels.push(portalLabel);

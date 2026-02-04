@@ -288,5 +288,25 @@
       [-151, 54, -281],
       [-144, 57, -276]
     ]
+  },
+  {
+    "label": "Emergency Lake Upper Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [471, 118, 592],
+      [475, 120, 595]
+    ]
+  },
+  {
+    "label": "Emergency Lake Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [475, 66, 592],
+      [479, 69, 597]
+    ]
   }
 ]

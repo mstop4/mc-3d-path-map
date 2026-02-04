@@ -37,6 +37,7 @@ export const allLabelFilters: Record<string, string> = {
   dogs: 'Tamed Wolves',
   cats: 'Tamed Cats',
   foxes: 'Tamed Foxes',
+  horses: 'Tamed Horses',
   happyGhasts: 'Happy Ghasts',
 };
 

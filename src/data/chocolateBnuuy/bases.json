@@ -24,6 +24,7 @@
     "dogs": 2,
     "cats": 0,
     "foxes": 1,
+    "horses": 0,
     "happyGhasts": 1
   },
   {
@@ -51,6 +52,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -78,6 +80,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -105,6 +108,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -132,6 +136,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -159,6 +164,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -186,6 +192,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -213,6 +220,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -240,6 +248,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -267,6 +276,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -294,6 +304,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -348,6 +359,7 @@
     "dogs": 3,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -375,6 +387,7 @@
     "dogs": 2,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -402,6 +415,7 @@
     "dogs": 0,
     "cats": 2,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -429,6 +443,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -456,6 +471,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -483,6 +499,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -510,6 +527,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -537,6 +555,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -564,6 +583,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -591,6 +611,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -645,6 +666,7 @@
     "dogs": 0,
     "cats": 1,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -672,6 +694,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -699,6 +722,7 @@
     "dogs": 2,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -726,6 +750,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -753,6 +778,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   },
   {
@@ -780,11 +806,12 @@
     "dogs": 2,
     "cats": 0,
     "foxes": 0,
+    "horses": 1,
     "happyGhasts": 0
   },
   {
     "label": "Emergency Lake",
-    "location": [474.5, 66, 591],
+    "location": [477, 66, 594.5],
     "rating": 0,
     "hasBed": false,
     "hasBasicWorkstation": false,
@@ -807,6 +834,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 1,
     "happyGhasts": 0
   },
   {
@@ -834,6 +862,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "horses": 0,
     "happyGhasts": 0
   }
 ]
