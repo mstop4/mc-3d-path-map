@@ -34,6 +34,7 @@ export const allLabelFilters: Record<string, string> = {
   mineshaft: 'Mineshafts',
   oceanMonument: 'Ocean Monuments',
   desertTemple: 'Desert Temples',
+  woodlandMansion: 'Woodland Mansions',
   dogs: 'Tamed Wolves',
   cats: 'Tamed Cats',
   foxes: 'Tamed Foxes',
