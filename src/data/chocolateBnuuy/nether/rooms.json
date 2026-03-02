@@ -308,5 +308,25 @@
       [475, 66, 592],
       [479, 69, 597]
     ]
+  },
+  {
+    "label": "Cleftside Village Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [491, 84, 895],
+      [494, 87, 898]
+    ]
+  },
+  {
+    "label": "Cloudcut Bypass Dock Portal Room",
+    "displayLabel": false,
+    "type": "ogRoom",
+    "shape": "cuboid",
+    "corners": [
+      [448, 110, 741],
+      [451, 113, 744]
+    ]
   }
 ]
