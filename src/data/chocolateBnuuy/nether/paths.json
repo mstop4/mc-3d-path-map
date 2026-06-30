@@ -727,6 +727,77 @@
     ]
   },
   {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [63.5, 69, 214.5],
+      [61, 69, 210],
+      [55.5, 69, 210],
+      [55.5, 69, 207]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [55.5, 69, 207],
+      [55.5, 69, 206],
+      [55.5, 67, 204],
+      [53, 67, 200],
+      [47, 71, 196],
+      [41, 72, 197],
+      [38, 74, 192],
+      [37, 75, 187],
+      [34, 76, 182],
+      [30, 76, 180],
+      [26, 78, 173],
+      [25, 81, 168],
+      [20, 83, 164],
+      [18, 83, 158],
+      [19, 82, 151],
+      [19.5, 81, 146]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [19.5, 81, 146],
+      [19.5, 81, 124],
+      [19.5, 76, 118]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [19.5, 76, 118],
+      [21, 77, 112],
+      [24, 76, 106],
+      [28, 77, 102],
+      [28, 77, 102],
+      [31, 77, 94],
+      [35, 77, 89],
+      [41, 77, 86],
+      [40.5, 78, 84],
+      [40.5, 78, 80]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [40.5, 78, 80],
+      [40.5, 75, 77],
+      [41, 75, 72]
+    ]
+  },
+  {
     "type": "ogTunnel",
     "visible": true,
     "deprecated": false,
@@ -871,18 +942,10 @@
       [63, 83, 66],
       [59, 83, 66],
       [59, 83, 86],
-      [51, 83, 86]
-    ]
-  },
-  {
-    "type": "ogTunnel",
-    "visible": true,
-    "deprecated": false,
-    "points": [
-      [63, 83, 66],
-      [59, 83, 66],
-      [59, 83, 86],
-      [51, 83, 86]
+      [51, 83, 86],
+      [50, 82, 86],
+      [45, 82, 86],
+      [41, 77, 86]
     ]
   },
   {
@@ -2558,6 +2621,318 @@
       [488, 110, 736.5],
       [449.5, 110, 736.5],
       [449.5, 110, 741]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [488, 110, 736.5],
+      [449.5, 110, 736.5],
+      [449.5, 110, 741]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-250.5, 43, 718],
+      [-243, 44, 724],
+      [-237, 45, 725],
+      [-232, 45, 726.5],
+      [-230, 47, 726.5]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-230, 47, 726.5],
+      [-227, 47, 726.5],
+      [-224, 50, 726.5],
+      [-222, 50, 726.5],
+      [-221, 51, 726.5],
+      [-204.5, 51, 726.5],
+      [-204.5, 51, 705]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-204.5, 51, 709.5],
+      [-201.5, 51, 709.5],
+      [-201.5, 51, 708],
+      [-201.5, 56, 703],
+      [-201.5, 56, 701.5],
+      [-201.5, 56, 701.5],
+      [-206, 56, 701.5],
+      [-206, 56, 699],
+      [-206, 53, 695],
+      [-206, 53, 678]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-206, 53, 678],
+      [-206, 53, 657],
+      [-206, 54, 652],
+      [-208, 58, 652],
+      [-208, 59, 654],
+      [-202, 59, 654],
+      [-197, 60, 656],
+      [-197, 64, 652],
+      [-199, 65, 652],
+      [-199, 65, 663]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-199, 65, 663],
+      [-199, 65, 714]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-234, 53, 667],
+      [-216, 53, 667]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-216, 53, 667],
+      [-196, 53, 667]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-196, 53, 667],
+      [-130, 53, 667]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-130, 53, 667],
+      [-95.5, 53, 667],
+      [-95.5, 53, 665],
+      [-95.5, 56, 663],
+      [-95.5, 56, 661.5],
+      [-97, 56, 661.5],
+      [-104, 63, 661.5],
+      [-105.5, 63, 661.5],
+      [-105.5, 63, 660],
+      [-105.5, 63, 660],
+      [-105.5, 67, 656]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-105.5, 67, 656],
+      [-115, 68, 644],
+      [-112, 69, 636],
+      [-93.5, 68, 634]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-187, 53, 714],
+      [-187, 53, 667]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-187, 53, 667],
+      [-187, 53, 657],
+      [-185, 54, 652],
+      [-189, 58, 652],
+      [-189, 59, 654],
+      [-156, 59, 654]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-180, 59, 654],
+      [-180, 59, 593]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-196, 53, 686],
+      [-159, 53, 686]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-149, 53, 676],
+      [-149, 53, 654]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-149, 53, 654],
+      [-149, 53, 563]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-121, 53, 610],
+      [-162, 53, 610]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-162, 53, 610],
+      [-177, 53, 610]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-136, 53, 753],
+      [-136, 53, 688]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-136, 53, 688],
+      [-136, 53, 655]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-136, 53, 655],
+      [-136, 53, 631]
+    ]
+  },
+  {
+    "type": "nCave",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-136, 53, 631],
+      [-136, 53, 625],
+      [-136, 56, 622],
+      [-136, 56, 620]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-136, 53, 674],
+      [-125, 53, 674]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-125, 53, 674],
+      [-82, 53, 674]
+    ]
+  },
+  {
+    "type": "oBridge",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-82, 53, 674],
+      [-64, 53, 674]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-129, 53, 674],
+      [-129, 53, 684]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-129, 53, 684],
+      [-129, 53, 707]
+    ]
+  },
+  {
+    "type": "exPath",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-129, 53, 707],
+      [-129, 53, 716]
+    ]
+  },
+  {
+    "type": "ugTunnel",
+    "visible": true,
+    "deprecated": false,
+    "points": [
+      [-129, 53, 716],
+      [-129, 53, 734]
     ]
   }
 ]
