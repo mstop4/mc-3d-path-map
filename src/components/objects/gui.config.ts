@@ -26,6 +26,7 @@ export const allLabelFilters: Record<string, string> = {
   hasBrewingStand: 'Brewing',
   hasEnderChest: 'Ender Chest',
   hasCherryTree: 'Cherry Trees',
+  hasBeekeeping: 'Beekeeping',
   village: 'Villages',
   ancientCity: 'Ancient Cities',
   trialChamber: 'Trial Chambers',
@@ -39,6 +40,7 @@ export const allLabelFilters: Record<string, string> = {
   cats: 'Tamed Cats',
   foxes: 'Tamed Foxes',
   horses: 'Tamed Horses',
+  donkeys: 'Tamed Donkeys',
   happyGhasts: 'Happy Ghasts',
 };
 

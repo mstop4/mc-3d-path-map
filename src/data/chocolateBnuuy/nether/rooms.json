@@ -328,5 +328,35 @@
       [448, 110, 741],
       [451, 113, 744]
     ]
+  },
+  {
+    "label": "Horse Portal Village Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [88, 85, 364],
+      [91, 88, 367]
+    ]
+  },
+  {
+    "label": "Great Vistas Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-67, 92, 465],
+      [-64, 95, 468]
+    ]
+  },
+  {
+    "label": "Ring Pond Portal Room",
+    "displayLabel": false,
+    "type": "ugRoom",
+    "shape": "cuboid",
+    "corners": [
+      [-189, 83, 560],
+      [-187, 86, 563]
+    ]
   }
 ]

@@ -13,6 +13,7 @@
     "hasLava": true,
     "hasEnderChest": true,
     "hasCherryTree": true,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -26,6 +27,7 @@
     "cats": 0,
     "foxes": 1,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 1
   },
   {
@@ -42,6 +44,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -55,6 +58,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -71,6 +75,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": true,
     "trialChamber": false,
@@ -84,6 +89,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -100,6 +106,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -113,6 +120,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -129,6 +137,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -142,6 +151,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -158,6 +168,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -171,6 +182,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -187,6 +199,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -200,6 +213,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -216,6 +230,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -229,6 +244,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -245,6 +261,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -258,6 +275,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -274,6 +292,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -287,6 +306,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -303,6 +323,7 @@
     "hasLava": true,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -316,6 +337,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -332,6 +354,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": true,
@@ -344,6 +367,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -360,6 +384,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -373,6 +398,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -389,6 +415,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -402,6 +429,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -418,6 +446,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -431,6 +460,7 @@
     "cats": 2,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -447,6 +477,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -460,6 +491,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -476,6 +508,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -489,6 +522,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -505,6 +539,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": true,
@@ -518,6 +553,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -534,6 +570,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -547,6 +584,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -563,6 +601,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -576,6 +615,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -592,6 +632,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": true,
     "trialChamber": false,
@@ -605,6 +646,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -621,6 +663,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -634,6 +677,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -650,6 +694,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -662,6 +707,7 @@
     "dogs": 0,
     "cats": 0,
     "foxes": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -678,6 +724,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -691,6 +738,7 @@
     "cats": 1,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -707,6 +755,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -720,6 +769,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -736,6 +786,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -749,6 +800,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -765,6 +817,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -778,6 +831,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -794,6 +848,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -807,6 +862,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -823,6 +879,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -836,6 +893,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 1,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -852,6 +910,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -865,6 +924,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 1,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -881,6 +941,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -894,6 +955,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -910,6 +972,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -923,6 +986,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -939,6 +1003,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -952,6 +1017,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -968,6 +1034,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -981,6 +1048,7 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -997,6 +1065,7 @@
     "hasLava": false,
     "hasEnderChest": true,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": false,
     "ancientCity": false,
     "trialChamber": false,
@@ -1006,10 +1075,11 @@
     "oceanMonument": false,
     "desertTemple": false,
     "woodlandMansion": false,
-    "dogs": 0,
+    "dogs": 1,
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
     "happyGhasts": 0
   },
   {
@@ -1026,6 +1096,7 @@
     "hasLava": false,
     "hasEnderChest": false,
     "hasCherryTree": false,
+    "hasBeekeeping": false,
     "village": true,
     "ancientCity": false,
     "trialChamber": false,
@@ -1039,6 +1110,100 @@
     "cats": 0,
     "foxes": 0,
     "horses": 0,
+    "donkeys": 0,
+    "happyGhasts": 0
+  },
+  {
+    "label": "Horse Portal Village",
+    "location": [87, 85, 364.5],
+    "rating": 3,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": true,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "hasBeekeeping": false,
+    "village": true,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "desertTemple": false,
+    "woodlandMansion": false,
+    "dogs": 0,
+    "cats": 0,
+    "foxes": 0,
+    "horses": 1,
+    "donkeys": 0,
+    "happyGhasts": 0
+  },
+  {
+    "label": "Great Vistas",
+    "location": [-65.5, 92, 464],
+    "rating": 1,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": false,
+    "hasLava": false,
+    "hasEnderChest": false,
+    "hasCherryTree": false,
+    "hasBeekeeping": false,
+    "village": false,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "desertTemple": false,
+    "woodlandMansion": false,
+    "dogs": 0,
+    "cats": 0,
+    "foxes": 0,
+    "horses": 0,
+    "donkeys": 0,
+    "happyGhasts": 0
+  },
+  {
+    "label": "Ring Pond",
+    "location": [-190, 83, 561],
+    "rating": 3,
+    "hasBed": true,
+    "hasBasicWorkstation": true,
+    "hasStorage": true,
+    "hasSmithing": false,
+    "hasBrewingStand": false,
+    "hasEnchantingTable": false,
+    "hasFood": true,
+    "hasLava": false,
+    "hasEnderChest": true,
+    "hasCherryTree": false,
+    "hasBeekeeping": false,
+    "village": false,
+    "ancientCity": false,
+    "trialChamber": false,
+    "stronghold": false,
+    "igloo": false,
+    "mineshaft": false,
+    "oceanMonument": false,
+    "desertTemple": false,
+    "woodlandMansion": false,
+    "dogs": 0,
+    "cats": 0,
+    "foxes": 0,
+    "horses": 4,
+    "donkeys": 1,
     "happyGhasts": 0
   }
 ]

@@ -425,5 +425,54 @@
     "orientation": "z",
     "deprecated": false,
     "location": [55.5, 69, 207]
+  },
+  {
+    "quantity": 2,
+    "type": "ex",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [86, 86, 371.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-63, 92, 467.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "z",
+    "deprecated": false,
+    "location": [-65.5, 92, 469]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-137, 90, 476.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-198, 79, 599.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-201, 79, 599.5]
+  },
+  {
+    "quantity": 2,
+    "type": "conn",
+    "orientation": "x",
+    "deprecated": false,
+    "location": [-201, 79, 633.5]
   }
 ]
